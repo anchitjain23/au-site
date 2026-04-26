@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What’s your spending personality? — Au</title>
+<meta name="description" content="5 questions. One brutally accurate profile of how you relate to money. Powered by Au.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#C9A96E;--gold-light:#E8D5B0;--gold-dark:#9B7A45;--black:#080706;--off-black:#111010;--surface:#141312;--border:rgba(201,169,110,0.18);--text:#F5F0E8;--text-muted:#7A7570;--text-dim:#4A4742}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--black);color:var(--text);font-family:'Outfit',sans-serif;min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.6}
+.container{position:relative;z-index:1;max-width:560px;margin:0 auto;padding:0 24px;min-height:100vh;display:flex;flex-direction:column}
+.site-header{padding:28px 0 0;display:flex;align-items:center;gap:10px}
+.au-badge{width:38px;height:38px;border:1.5px solid var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0}
+.au-badge .atomic{font-size:7px;color:var(--gold);font-family:'Crimson Pro',serif;line-height:1;letter-spacing:0.5px}
+.au-badge .symbol{font-size:16px;color:var(--text);font-family:'Crimson Pro',serif;font-weight:600;line-height:1}
+.site-header .wordmark{font-family:'Crimson Pro',serif;font-size:13px;color:var(--text-muted);letter-spacing:2px;text-transform:uppercase}
+#screen-intro{flex:1;display:flex;flex-direction:column;justify-content:center;padding:48px 0 80px}
+.intro-eyebrow{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.intro-headline{font-family:'Crimson Pro',serif;font-size:clamp(40px,9vw,58px);font-weight:300;line-height:1.05;color:var(--text);margin-bottom:8px}
+.intro-headline em{font-style:italic;color:var(--gold)}
+.intro-sub{font-family:'Crimson Pro',serif;font-size:19px;font-weight:300;color:var(--text-muted);line-height:1.5;margin-bottom:44px;max-width:400px}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--black);font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:16px 32px;border:none;cursor:pointer;transition:all 0.2s;width:fit-content}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-1px)}
+.intro-meta{margin-top:24px;font-size:12px;color:var(--text-dim);display:flex;gap:20px}
+.intro-meta span::before{content:'· '}
+.intro-meta span:first-child::before{content:''}
+#screen-quiz{display:none;flex:1;flex-direction:column;padding:32px 0 60px}
+#screen-quiz.active{display:flex}
+.progress-bar-wrap{margin-bottom:48px}
+.progress-numbers{display:flex;justify-content:space-between;font-size:11px;color:var(--text-dim);margin-bottom:8px;font-weight:500;letter-spacing:1px}
+.progress-track{height:1px;background:var(--text-dim);position:relative}
+.progress-fill{height:100%;background:var(--gold);transition:width 0.5s cubic-bezier(0.4,0,0.2,1)}
+.question-number{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.question-text{font-family:'Crimson Pro',serif;font-size:clamp(26px,5.5vw,36px);font-weight:300;line-height:1.2;color:var(--text);margin-bottom:40px}
+.options-grid{display:flex;flex-direction:column;gap:10px}
+.option-btn{width:100%;text-align:left;background:transparent;border:1px solid var(--border);color:var(--text);font-family:'Outfit',sans-serif;font-size:14px;padding:18px 20px;cursor:pointer;transition:all 0.18s;display:flex;align-items:flex-start;gap:14px;line-height:1.45}
+.option-btn:hover{border-color:var(--gold)}
+.option-btn.selected{border-color:var(--gold);background:rgba(201,169,110,0.1)}
+.option-letter{font-size:11px;font-weight:700;letter-spacing:1px;color:var(--gold);margin-top:1px;flex-shrink:0;width:16px}
+#screen-result{display:none;flex:1;flex-direction:column;padding:32px 0 80px}
+#screen-result.active{display:flex}
+.result-eyebrow{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.result-type{font-family:'Crimson Pro',serif;font-size:clamp(36px,8vw,52px);font-weight:600;line-height:1.05;color:var(--text);margin-bottom:6px}
+.result-tagline{font-family:'Crimson Pro',serif;font-size:18px;font-weight:300;font-style:italic;color:var(--gold);margin-bottom:28px}
+.result-divider{width:40px;height:1px;background:var(--gold);margin-bottom:28px}
+.result-description{font-family:'Crimson Pro',serif;font-size:18px;font-weight:300;line-height:1.7;color:var(--text);margin-bottom:24px}
+.result-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:28px}
+.stat-cell{background:var(--off-black);padding:18px 20px}
+.stat-label{font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--text-dim);margin-bottom:6px}
+.stat-value{font-family:'Crimson Pro',serif;font-size:20px;font-weight:400;color:var(--gold)}
+.result-insight{border-left:2px solid var(--gold);padding:14px 18px;background:rgba(201,169,110,0.06);margin-bottom:36px}
+.result-insight p{font-size:13px;line-height:1.65;color:var(--text-muted)}
+.result-insight strong{color:var(--text);font-weight:500}
+.cta-section{border-top:1px solid var(--border);padding-top:32px}
+.cta-headline{font-family:'Crimson Pro',serif;font-size:22px;font-weight:400;color:var(--text);margin-bottom:6px}
+.cta-sub{font-size:13px;color:var(--text-muted);margin-bottom:20px;line-height:1.5}
+.email-form{display:flex;gap:0;margin-bottom:16px}
+.email-input{flex:1;background:var(--surface);border:1px solid var(--border);border-right:none;color:var(--text);font-family:'Outfit',sans-serif;font-size:13px;padding:14px 16px;outline:none}
+.email-input:focus{border-color:var(--gold)}
+.email-input::placeholder{color:var(--text-dim)}
+.btn-submit{background:var(--gold);color:var(--black);border:none;font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:14px 20px;cursor:pointer}
+.success-msg{display:none;font-family:'Crimson Pro',serif;font-size:16px;font-style:italic;color:var(--gold);padding:14px 0}
+.share-row{display:flex;gap:10px;flex-wrap:wrap}
+.share-btn{display:flex;align-items:center;gap:8px;background:transparent;border:1px solid var(--border);color:var(--text-muted);font-family:'Outfit',sans-serif;font-size:12px;font-weight:500;padding:10px 16px;cursor:pointer}
+.share-btn:hover{border-color:var(--gold);color:var(--gold)}
+.retake-btn{background:none;border:none;color:var(--text-dim);font-family:'Outfit',sans-serif;font-size:12px;cursor:pointer;padding:0;margin-top:20px;text-decoration:underline;display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{animation:fadeUp 0.45s cubic-bezier(0.4,0,0.2,1) both}
+.a0{animation-delay:0s}.a1{animation-delay:0.08s}.a2{animation-delay:0.16s}.a3{animation-delay:0.24s}.a4{animation-delay:0.32s}.a5{animation-delay:0.40s}
+</style>
+</head>
+<body>
+<div class="container">
+<header class="site-header">
+<div class="au-badge"><span class="atomic">79</span><span class="symbol">Au</span></div>
+<span class="wordmark">Au · au79.app</span>
+</header>
+<section id="screen-intro">
+<p class="intro-eyebrow fade-up a0">Spending personality quiz</p>
+<h1 class="intro-headline fade-up a1">What kind of<br><em>spender</em> are you?</h1>
+<p class="intro-sub fade-up a2">5 questions. One brutally accurate profile of how you actually relate to money.</p>
+<button class="btn-primary fade-up a3" onclick="startQuiz()">Find out <svg style="width:16px;height:16px" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<div class="intro-meta fade-up a4"><span>5 questions</span><span>2 minutes</span><span>6 personality types</span></div>
+</section>
+<section id="screen-quiz">
+<div class="progress-bar-wrap"><div class="progress-numbers"><span id="q-current">1 / 5</span><span id="q-label">Question 1</span></div><div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:20%"></div></div></div>
+<p class="question-number" id="q-number">01</p>
+<h2 class="question-text" id="q-text"></h2>
+<div class="options-grid" id="options-grid"></div>
+</section>
+<section id="screen-result">
+<p class="result-eyebrow fade-up a0">Your spending personality</p>
+<h2 class="result-type fade-up a1" id="result-type"></h2>
+<p class="result-tagline fade-up a2" id="result-tagline"></p>
+<div class="result-divider fade-up a3"></div>
+<p class="result-description fade-up a3" id="result-description"></p>
+<div class="result-stats fade-up a4" id="result-stats"></div>
+<div class="result-insight fade-up a4" id="result-insight"></div>
+<div class="cta-section fade-up a5">
+<h3 class="cta-headline">Au was built for you.</h3>
+<p class="cta-sub">Au is a new finance app that shows you the real cost of every purchase — in days toward your goals, not just dollars. Join the waitlist for early access.</p>
+<form class="email-form" onsubmit="submitEmail(event)"><input type="email" class="email-input" id="email-input" placeholder="your@email.com" required><button type="submit" class="btn-submit">Join waitlist</button></form>
+<div class="success-msg" id="success-msg">You're on the list. Au will find you.</div>
+<div class="share-row">
+<button class="share-btn" onclick="shareTwitter()"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.732-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>Share on X</button>
+<button class="share-btn" onclick="shareLinkedIn()"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>Share on LinkedIn</button>
+<button class="share-btn" onclick="copyLink()"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>Copy link</button>
+</div>
+<button class="retake-btn" onclick="retake()">Retake quiz</button>
+</div>
+</section>
+</div>
+<script>
+const questions=[{text:"You get paid today. What happens to the money in the next 48 hours?",options:["It goes straight into savings before I even think about spending.","I pay the bills, then spend what's left — probably quite a bit of it.","I treat myself first. I earned it.","I immediately think about what experience I could use it for.","I map it against my goals and allocate it deliberately.","I don't really think about it. It just... goes."]},{text:"There's a thing you want. It costs $300. What do you do?",options:["Research it for weeks, find the best deal, maybe find a cheaper alternative.","Buy it without much thought — if I want it, I want it now.","Add it to a list and buy it when I've hit a savings milestone.","Ask myself if it'll make a real memory, then decide.","Calculate exactly what it costs me in days toward my main goal.","Feel guilty about wanting it but probably buy it anyway."]},{text:"Your biggest financial blind spot is probably:",options:["Being too restrictive — I save but don't enjoy money enough.","Subscriptions I forgot I was paying for.","Big one-off splurges that feel justified in the moment.","Spending on experiences and then feeling the hit later.","Overthinking every decision to the point of analysis paralysis.","Not really tracking anything — I just hope for the best."]},{text:"How do you feel about your financial situation right now?",options:["In control, maybe too cautious.","Fine — not panicking, not thriving.","I live well. I'll figure out the future later.","Rich in experiences, tighter on savings than I'd like.","Optimised but always looking for the next efficiency.","A bit overwhelmed by it all, honestly."]},{text:"Someone tells you: 'That $349 purchase is actually 8 days further from your house deposit.' You:",options:["Already knew something like this. Numbers don't surprise me.","Feel mildly guilty but buy it anyway.","Pause. Put it back. The goal matters more.","Think: is the experience worth 8 days? Sometimes yes.","Immediately calculate if there's a cheaper alternative that does the same job.","This is why I avoid checking my finances — too stressful."]}];
+const personalities=[{type:"The Vault",tagline:"You save like your life depends on it.",description:"You have an almost physical discomfort with money leaving your account. Your savings rate is probably higher than 90% of people you know. The risk isn't that you spend too much — it's that you might reach 65 with a full bank account and an empty life.",stats:[{label:"Savings discipline",value:"Exceptional"},{label:"Enjoyment rate",value:"Too low"},{label:"Goal clarity",value:"Crystal clear"},{label:"Blind spot",value:"Living now"}],insight:"<strong>Au was built partly for you.</strong> Not to tell you to save more. But to show you that calculated spending on things you love isn't a failure."},{type:"The Drifter",tagline:"Money comes in, money goes out.",description:"You're not reckless — you're just not paying that much attention. The money always seems to disappear and you're never quite sure where it went.",stats:[{label:"Spending awareness",value:"Low"},{label:"Subscription creep",value:"High risk"},{label:"Goal tracking",value:"Minimal"},{label:"Blind spot",value:"The small stuff"}],insight:"<strong>The Drifter doesn't need a lecture.</strong> They need a system that works without effort. Au's bank sync builds your financial picture automatically."},{type:"The Indulger",tagline:"You deserve nice things. Frequently.",description:"You work hard and your lifestyle reflects it. The problem isn't the big purchases — it's that there are a lot of them, and they compound.",stats:[{label:"Lifestyle quality",value:"High"},{label:"Future planning",value:"Deferred"},{label:"Impulse control",value:"Low"},{label:"Blind spot",value:"Compounding cost"}],insight:"<strong>The Goal Impact Bar was built for The Indulger.</strong> When you see that a $280 jacket is 6 days from your Bali holiday, you make a real choice instead of a default one."},{type:"The Experience Collector",tagline:"You spend intentionally on moments, rarely on things.",description:"Your bank statement tells a story — restaurants, flights, concerts, travel. You don't buy stuff. You buy memories.",stats:[{label:"Spending intentionality",value:"High"},{label:"Long-term planning",value:"Weak"},{label:"Lifestyle satisfaction",value:"Strong"},{label:"Blind spot",value:"The 10-year view"}],insight:"<strong>You don't need to spend less.</strong> You need to connect what you're spending to what you actually want in ten years."},{type:"The Optimiser",tagline:"You've already thought about this more than most.",description:"You track things. You compare. You find the dupe. Your financial literacy is probably in the top 10%.",stats:[{label:"Financial literacy",value:"Advanced"},{label:"Decision speed",value:"Slow (by design)"},{label:"Efficiency mindset",value:"High"},{label:"Blind spot",value:"Paralysis by analysis"}],insight:"<strong>You'll get the most from Au's Dupe Finder.</strong> Having comparison automated frees your mental energy for decisions that actually require thinking."},{type:"The Avoider",tagline:"Out of sight, out of mind — for now.",description:"Checking your bank balance induces a specific type of low-level dread. Not knowing feels safer than knowing.",stats:[{label:"Financial anxiety",value:"Present"},{label:"Awareness by choice",value:"Low"},{label:"Actual situation",value:"Probably fine"},{label:"Blind spot",value:"Everything, deliberately"}],insight:"<strong>Au is explicitly not a guilt machine.</strong> It shows you the future — what's possible, how close you are. That's a very different thing to look at."}];
+let currentQ=0,answers=[],selectedIndex=-1;
+function startQuiz(){document.getElementById('screen-intro').style.display='none';document.getElementById('screen-quiz').classList.add('active');renderQuestion();}
+function renderQuestion(){selectedIndex=-1;const q=questions[currentQ];const nums=['01','02','03','04','05'];const letters=['A','B','C','D','E','F'];document.getElementById('q-current').textContent=(currentQ+1)+' / 5';document.getElementById('q-label').textContent='Question '+(currentQ+1);document.getElementById('q-number').textContent=nums[currentQ];document.getElementById('progress-fill').style.width=((currentQ+1)/5*100)+'%';const qEl=document.getElementById('q-text');qEl.style.animation='none';qEl.offsetHeight;qEl.style.animation='fadeUp 0.4s ease both';qEl.textContent=q.text;const grid=document.getElementById('options-grid');grid.innerHTML='';q.options.forEach((opt,i)=>{const btn=document.createElement('button');btn.className='option-btn fade-up';btn.style.animationDelay=(0.05+i*0.06)+'s';btn.innerHTML='<span class="option-letter">'+letters[i]+'</span><span>'+opt+'</span>';btn.onclick=()=>selectOption(i,btn);grid.appendChild(btn);});}
+function selectOption(index,btn){document.querySelectorAll('.option-btn').forEach(b=>b.classList.remove('selected'));btn.classList.add('selected');answers[currentQ]=index;setTimeout(()=>{currentQ++;if(currentQ<questions.length){renderQuestion();}else{showResult();}},300);}
+function showResult(){document.getElementById('screen-quiz').classList.remove('active');const counts=[0,0,0,0,0,0];answers.forEach(a=>counts[a]++);const p=personalities[counts.indexOf(Math.max(...counts))];document.getElementById('result-type').textContent=p.type;document.getElementById('result-tagline').textContent=p.tagline;document.getElementById('result-description').textContent=p.description;document.getElementById('result-stats').innerHTML=p.stats.map(s=>'<div class="stat-cell"><div class="stat-label">'+s.label+'</div><div class="stat-value">'+s.value+'</div></div>').join('');document.getElementById('result-insight').innerHTML='<p>'+p.insight+'</p>';document.getElementById('screen-result').classList.add('active');window.scrollTo({top:0,behavior:'smooth'});window._rType=p.type;window._rTag=p.tagline;}
+function submitEmail(e){e.preventDefault();const email=document.getElementById('email-input').value;fetch('https://assets.mailerlite.com/jsonp/185375535782691982/forms/subscribe',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'fields[email]='+encodeURIComponent(email)+'&ml-submit=1'}).catch(()=>{});document.querySelector('.email-form').style.display='none';document.getElementById('success-msg').style.display='block';}
+function shareTwitter(){const text='My spending personality: "'+window._rType+'" — '+window._rTag+'\n\nFind out yours:';window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(text)+'&url='+encodeURIComponent('https://au79.app/personality'),'_blank');}
+function shareLinkedIn(){window.open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent('https://au79.app/personality'),'_blank');}
+function copyLink(){navigator.clipboard.writeText('https://au79.app/personality').then(()=>{const btn=event.target.closest('.share-btn');const orig=btn.innerHTML;btn.innerHTML='Copied!';setTimeout(()=>{btn.innerHTML=orig;},2000);});}
+function retake(){currentQ=0;answers=[];document.getElementById('screen-result').classList.remove('active');document.getElementById('screen-intro').style.display='';window.scrollTo({top:0,behavior:'smooth'});}
+</script>
+</body>
+</html>
