@@ -13,20 +13,20 @@
 body{background:var(--black);color:var(--text);font-family:'Outfit',sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px}
 body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.6}
 .wrap{position:relative;z-index:1;max-width:520px;width:100%;text-align:center;display:flex;flex-direction:column;align-items:center}
-.tagline{font-family:'Crimson Pro',serif;font-size:13px;font-weight:600;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
-.headline{font-family:'Crimson Pro',serif;font-size:13px;font-weight:300;letter-spacing:3px;color:var(--text-muted);text-transform:uppercase;margin-bottom:32px}
-.au-badge{width:120px;height:120px;border:2.5px solid var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:36px}
-.au-badge .num{font-size:16px;color:var(--gold);font-family:'Crimson Pro',serif;line-height:1;letter-spacing:1px}
-.au-badge .sym{font-size:58px;color:var(--text);font-family:'Crimson Pro',serif;font-weight:700;line-height:1}
-.big{font-family:'Crimson Pro',serif;font-size:clamp(40px,6vw,64px);font-weight:300;font-style:italic;color:var(--gold);line-height:1.05;margin-bottom:36px}
-.quiz-link{font-size:13px;color:var(--text-dim);margin-bottom:24px}
+.tagline{font-family:'Crimson Pro',serif;font-size:13px;font-weight:600;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:16px}
+.headline{font-family:'Crimson Pro',serif;font-size:13px;font-weight:300;letter-spacing:3px;color:var(--text-muted);text-transform:uppercase;margin-bottom:48px}
+.au-badge{width:140px;height:140px;border:2.5px solid var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:52px}
+.au-badge .num{font-size:17px;color:var(--gold);font-family:'Crimson Pro',serif;line-height:1;letter-spacing:1px}
+.au-badge .sym{font-size:68px;color:var(--text);font-family:'Crimson Pro',serif;font-weight:700;line-height:1}
+.big{font-family:'Crimson Pro',serif;font-size:clamp(48px,6vw,64px);font-weight:300;font-style:italic;color:var(--gold);line-height:1.0;margin-bottom:52px}
+.quiz-link{font-size:14px;color:var(--text-dim);margin-bottom:28px}
 .quiz-link a{color:var(--gold);text-decoration:none}
 .quiz-link a:hover{text-decoration:underline}
-.email-form{display:flex;gap:0;width:100%;max-width:420px}
-.email-input{flex:1;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-right:none;color:var(--text);font-family:'Outfit',sans-serif;font-size:14px;padding:15px 18px;outline:none;transition:border-color 0.2s}
+.email-form{display:flex;gap:0;width:100%;max-width:440px}
+.email-input{flex:1;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-right:none;color:var(--text);font-family:'Outfit',sans-serif;font-size:15px;padding:17px 20px;outline:none;transition:border-color 0.2s}
 .email-input::placeholder{color:var(--text-dim)}
 .email-input:focus{border-color:var(--gold)}
-.btn-join{background:var(--gold);color:var(--black);border:none;font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:15px 22px;cursor:pointer;white-space:nowrap;transition:background 0.2s}
+.btn-join{background:var(--gold);color:var(--black);border:none;font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:17px 24px;cursor:pointer;white-space:nowrap;transition:background 0.2s}
 .btn-join:hover{background:var(--gold-light)}
 .success{display:none;font-family:'Crimson Pro',serif;font-size:17px;font-style:italic;color:var(--gold);padding:14px 0}
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
