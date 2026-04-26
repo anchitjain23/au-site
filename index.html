@@ -12,33 +12,37 @@
 :root{--gold:#C9A96E;--gold-light:#E8D5B0;--black:#080706;--text:#F5F0E8;--text-muted:#7A7570;--text-dim:#4A4742;--border:rgba(201,169,110,0.18)}
 body{background:var(--black);color:var(--text);font-family:'Outfit',sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px}
 body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:0.6}
-.wrap{position:relative;z-index:1;max-width:480px;width:100%;text-align:center}
-.au-badge{width:52px;height:52px;border:1.5px solid var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 32px}
-.au-badge .num{font-size:9px;color:var(--gold);font-family:'Crimson Pro',serif;line-height:1;letter-spacing:0.5px}
-.au-badge .sym{font-size:22px;color:var(--text);font-family:'Crimson Pro',serif;font-weight:600;line-height:1}
-.tagline{font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
-.headline{font-family:'Crimson Pro',serif;font-size:clamp(13px,3vw,15px);font-weight:300;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px}
+.wrap{position:relative;z-index:1;max-width:480px;width:100%;text-align:center;display:flex;flex-direction:column;align-items:center;gap:0}
+.tagline{font-family:'Outfit',sans-serif;font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.headline{font-family:'Crimson Pro',serif;font-size:clamp(13px,3vw,15px);font-weight:300;letter-spacing:3px;text-transform:uppercase;color:var(--text-muted);margin-bottom:28px}
+.au-badge{width:88px;height:88px;border:2px solid var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:28px}
+.au-badge .num{font-size:14px;color:var(--gold);font-family:'Crimson Pro',serif;line-height:1;letter-spacing:0.5px}
+.au-badge .sym{font-size:42px;color:var(--text);font-family:'Crimson Pro',serif;font-weight:600;line-height:1}
 .big{font-family:'Crimson Pro',serif;font-size:clamp(34px,8vw,48px);font-weight:300;font-style:italic;color:var(--gold);line-height:1.1;margin-bottom:40px}
-.email-form{display:flex;gap:0;margin-bottom:16px;max-width:380px;margin-left:auto;margin-right:auto}
+.email-form{display:flex;gap:0;margin-bottom:16px;max-width:380px;width:100%}
 .email-input{flex:1;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-right:none;color:var(--text);font-family:'Outfit',sans-serif;font-size:13px;padding:14px 16px;outline:none;transition:border-color 0.2s}
 .email-input::placeholder{color:var(--text-dim)}
 .email-input:focus{border-color:var(--gold)}
 .btn-join{background:var(--gold);color:var(--black);border:none;font-family:'Outfit',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:14px 20px;cursor:pointer;white-space:nowrap;transition:background 0.2s}
 .btn-join:hover{background:var(--gold-light)}
 .success{display:none;font-family:'Crimson Pro',serif;font-size:17px;font-style:italic;color:var(--gold);padding:14px 0}
-.quiz-link{margin-top:24px;font-size:12px;color:var(--text-dim)}
+.quiz-link{margin-top:16px;font-size:12px;color:var(--text-dim)}
 .quiz-link a{color:var(--gold);text-decoration:none}
 .quiz-link a:hover{text-decoration:underline}
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-.wrap>*{animation:fadeUp 0.5s ease both}
-.au-badge{animation-delay:0s}.tagline{animation-delay:0.1s}.headline{animation-delay:0.15s}.big{animation-delay:0.2s}.email-form{animation-delay:0.3s}.quiz-link{animation-delay:0.4s}
+.tagline{animation:fadeUp 0.5s ease 0s both}
+.headline{animation:fadeUp 0.5s ease 0.08s both}
+.au-badge{animation:fadeUp 0.5s ease 0.16s both}
+.big{animation:fadeUp 0.5s ease 0.24s both}
+.email-form{animation:fadeUp 0.5s ease 0.32s both}
+.quiz-link{animation:fadeUp 0.5s ease 0.40s both}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="au-badge"><span class="num">79</span><span class="sym">Au</span></div>
   <p class="tagline">Rich &middot; Primal &middot; Eternal &middot; Absolute</p>
   <p class="headline">Like the ancient element it's named after</p>
+  <div class="au-badge"><span class="num">79</span><span class="sym">Au</span></div>
   <p class="big">Coming soon.</p>
   <form class="email-form" onsubmit="join(event)">
     <input type="email" class="email-input" id="email" placeholder="your@email.com" required>
