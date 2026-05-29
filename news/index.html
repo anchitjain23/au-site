@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>News · Au</title>
-  <meta name="description" content="Updates, announcements, and thinking from the Au team." />
+  <meta name="description" content="Updates and announcements from the Au team." />
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
@@ -29,15 +29,12 @@
     h1 em{font-style:italic;color:var(--gold)}
     .lead{font-size:17px;color:var(--text-body);line-height:1.8}
     .posts{max-width:720px;margin:0 auto;padding:40px 24px 100px}
-    .post-card{border-bottom:1px solid rgba(245,240,232,0.08);padding:36px 0;transition:transform .2s}
-    .post-card:first-child{padding-top:0}
+    .post-card{padding:36px 0}
     .post-meta{display:flex;align-items:center;gap:16px;margin-bottom:14px}
     .post-tag{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);background:var(--gold-dim);padding:4px 10px;border-radius:20px}
     .post-date{font-size:12px;color:var(--text-body)}
-    .post-title{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.5vw,30px);font-weight:500;color:var(--cream);margin-bottom:12px;line-height:1.25}
-    .post-excerpt{font-size:14px;color:var(--text-body);line-height:1.75;max-width:580px}
-    .post-read{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--gold);text-decoration:none;margin-top:16px;transition:gap .2s}
-    .post-read:hover{gap:10px}
+    .post-title{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3vw,36px);font-weight:500;color:var(--cream);margin-bottom:14px;line-height:1.25}
+    .post-excerpt{font-size:15px;color:var(--text-body);line-height:1.8;max-width:580px}
     .newsletter-band{background:var(--black-card);border-top:1px solid rgba(201,169,110,0.1);border-bottom:1px solid rgba(201,169,110,0.1);padding:80px 24px;text-align:center}
     .newsletter-band h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.5vw,40px);font-weight:400;margin-bottom:12px}
     .newsletter-band p{font-size:14px;color:var(--text-body);max-width:420px;margin:0 auto 28px}
@@ -78,59 +75,26 @@
 <div class="page-hero">
   <p class="eyebrow">News</p>
   <h1>Updates from<br>the <em>Au</em> team.</h1>
-  <p class="lead">Product announcements, thinking on personal finance, and what we're building next.</p>
+  <p class="lead">Product announcements and what we're building next.</p>
 </div>
 
 <div class="posts">
-
   <div class="post-card">
     <div class="post-meta">
       <span class="post-tag">Announcement</span>
       <span class="post-date">May 2026</span>
     </div>
-    <h2 class="post-title">Au is now available on the App Store</h2>
-    <p class="post-excerpt">After months of building, testing, and refining — Au is live. You can download it today, connect your bank account in under two minutes, and see the true cost of every purchase before you make it. We built Au because every other finance app tells you what you did wrong after the money is already gone. Au shows you the consequence before you spend. That's the only moment that actually changes behaviour.</p>
-    <a href="/" class="post-read">Download Au →</a>
+    <h2 class="post-title">Au is launching on the App Store in July 2026</h2>
+    <p class="post-excerpt">We're putting the finishing touches on Au and will be launching on iOS in July 2026. Au shows you what every purchase truly costs — not in dollars, but in days toward the goals that matter to you. Join the waitlist to be first in line and get notified the moment we go live.</p>
   </div>
-
-  <div class="post-card">
-    <div class="post-meta">
-      <span class="post-tag">Product</span>
-      <span class="post-date">April 2026</span>
-    </div>
-    <h2 class="post-title">Why we measure everything in days, not dollars</h2>
-    <p class="post-excerpt">$310 means nothing. $310 is an abstraction. But "26 days further from your house deposit" — that means something. It connects to your life. The decision to express every financial consequence in time rather than money is the single most important design choice in Au, and it took us a long time to get there. Here's the thinking behind it.</p>
-    <a href="/news/" class="post-read">Read more →</a>
-  </div>
-
-  <div class="post-card">
-    <div class="post-meta">
-      <span class="post-tag">Thinking</span>
-      <span class="post-date">March 2026</span>
-    </div>
-    <h2 class="post-title">The problem with every finance app (and why we built Au)</h2>
-    <p class="post-excerpt">Seventy percent of people who download a personal finance app delete it within thirty days. The reason isn't apathy — it's shame. Every app is built around the same broken model: show people what they did wrong, make them feel bad, hope that guilt turns into better behaviour. It doesn't. Au is built on a completely different idea.</p>
-    <a href="/news/" class="post-read">Read more →</a>
-  </div>
-
-  <div class="post-card">
-    <div class="post-meta">
-      <span class="post-tag">Feature</span>
-      <span class="post-date">February 2026</span>
-    </div>
-    <h2 class="post-title">Introducing Atom — your AI financial advisor</h2>
-    <p class="post-excerpt">Atom is Au's AI, powered by Claude. It knows everything about your financial life and you can talk to it about any of it — text or voice, any time. Serious questions like "what happens to my goals if I take a pay cut?" and playful ones like "what if I bought a Batmobile?" Both get real, data-backed answers drawn from your actual situation.</p>
-    <a href="/product/" class="post-read">See all features →</a>
-  </div>
-
 </div>
 
 <div class="newsletter-band">
-  <h2>Stay in the loop</h2>
-  <p>Product updates and thinking on personal finance — direct to your inbox. No spam.</p>
+  <h2>Be first to know</h2>
+  <p>Join the waitlist and get notified the moment Au launches.</p>
   <div class="newsletter-form">
     <input type="email" placeholder="your@email.com" />
-    <button type="button">Subscribe</button>
+    <button type="button">Join Waitlist</button>
   </div>
 </div>
 
