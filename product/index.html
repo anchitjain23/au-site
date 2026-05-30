@@ -2,67 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Product · Au</title>
-  <meta name="description" content="Every feature Au offers — from the Goal Impact Bar to Atom AI to Dupe Finder." />
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;1,200;1,300&family=DM+Sans:wght@200;300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--gold:#C9A96E;--gold-light:#D9BC8F;--gold-dim:rgba(201,169,110,0.15);--black:#080706;--black-card:#0F0F0F;--black-raised:#1A1A1A;--cream:#F5F0E8;--cream-dim:rgba(245,240,232,0.55);--green:#5BA85A;--text-body:#C8C3BB}
+    :root{--black:#0C0B09;--cream:#F3F0E7;--cream-mid:#EDE9DE;--gold:#B8924A;--green:#5BA85A;--text:#111;--mid:#666;--light:#aaa;--border:rgba(0,0,0,0.08)}
     html{scroll-behavior:smooth}
-    body{background:var(--black);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.6;overflow-x:hidden}
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 48px;background:rgba(8,7,6,0.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(201,169,110,0.12)}
-    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-    .nav-badge{width:36px;height:36px;border:1.5px solid var(--gold);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
-    .nav-badge .atomic{font-size:7px;color:var(--gold);letter-spacing:.04em}
-    .nav-badge .symbol{font-size:16px;color:var(--gold);font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1}
-    .nav-badge .number{font-size:6px;color:var(--gold);letter-spacing:.04em}
-    .nav-wordmark{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:var(--cream);letter-spacing:.06em}
-    .nav-links{display:flex;align-items:center;gap:28px}
-    .nav-links a{color:var(--text-body);font-size:14px;text-decoration:none;letter-spacing:.02em;transition:color .2s}
-    .nav-links a:hover,.nav-links a.active{color:var(--cream)}
-    .nav-cta{background:var(--gold);color:var(--black);padding:10px 22px;border-radius:6px;font-size:13px;font-weight:500;text-decoration:none;letter-spacing:.04em;transition:background .2s,transform .15s}
-    .nav-cta:hover{background:var(--gold-light);transform:translateY(-1px)}
-    .page-hero{padding:160px 24px 80px;text-align:center;max-width:700px;margin:0 auto}
-    .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
-    h1{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,6vw,72px);font-weight:400;line-height:1.1;margin-bottom:24px}
+    body{background:var(--cream);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden}
+    nav{background:var(--black);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:42px;position:sticky;top:0;z-index:200}
+    .nav-logo{width:32px;height:32px;border:1px solid rgba(255,255,255,0.28);border-radius:3px;display:flex;align-items:center;justify-content:center;flex-shrink:0;text-decoration:none}
+    .nav-wm{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:300;color:rgba(255,255,255,0.42);letter-spacing:0.08em;line-height:1}
+    .nav-links{display:flex;align-items:center;flex:1;justify-content:space-evenly;padding:0 40px}
+    .nav-links a{font-size:11px;color:rgba(255,255,255,0.42);letter-spacing:0.03em;text-decoration:none;transition:color .2s}
+    .nav-links a:hover,.nav-links a.active{color:rgba(255,255,255,0.78)}
+    .nav-dl{border:1px solid rgba(255,255,255,0.35);color:rgba(255,255,255,0.55);padding:5px 16px;border-radius:3px;font-size:11px;font-weight:300;letter-spacing:0.03em;text-decoration:none}
+    .page-hero{padding:72px 40px 56px;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+    .page-hero-bg{position:absolute;inset:0;display:grid;grid-template-columns:repeat(18,1fr);gap:1.5px;padding:8px;pointer-events:none}
+    .phb{background:rgba(0,0,0,0.018);border-radius:1px}
+    .phb.au{background:rgba(184,146,74,0.07)}
+    .phb.nb{background:rgba(184,146,74,0.03)}
+    .page-hero-overlay{position:absolute;inset:0;background:linear-gradient(145deg,rgba(243,240,231,0.9) 0%,rgba(243,240,231,0.97) 60%)}
+    .page-hero-inner{position:relative;z-index:5;max-width:700px}
+    .eyebrow{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+    .eyebrow::before{content:'';width:20px;height:1px;background:var(--gold);flex-shrink:0}
+    h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,6vw,72px);font-weight:200;line-height:0.92;letter-spacing:-0.04em;margin-bottom:20px}
     h1 em{font-style:italic;color:var(--gold)}
-    .lead{font-size:18px;color:var(--text-body);line-height:1.8}
-    .features-section{padding:40px 24px 100px;max-width:1100px;margin:0 auto}
-    .group-label{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;margin-top:56px}
-    .group-title{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3vw,36px);font-weight:400;color:var(--cream);margin-bottom:32px;border-bottom:1px solid rgba(201,169,110,0.15);padding-bottom:16px}
-    .features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-    .feature-card{background:var(--black-card);border:1px solid rgba(201,169,110,0.12);border-radius:16px;padding:32px 28px;transition:border-color .25s,transform .2s}
-    .feature-card:hover{border-color:rgba(201,169,110,0.35);transform:translateY(-3px)}
-    .feature-icon{width:40px;height:40px;background:var(--gold-dim);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:18px}
-    .feature-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:var(--cream);margin-bottom:8px}
-    .feature-desc{font-size:14px;color:var(--text-body);line-height:1.7}
-    .feature-example{margin-top:16px;padding:12px 14px;background:var(--black-raised);border-radius:8px;border-left:2px solid var(--gold);font-size:12px;color:var(--cream-dim);line-height:1.6;font-style:italic}
-    .feature-example strong{color:var(--gold);font-style:normal;font-weight:500}
-    .cta-band{background:var(--black-card);border-top:1px solid rgba(201,169,110,0.1);border-bottom:1px solid rgba(201,169,110,0.1);padding:80px 24px;text-align:center}
-    .cta-band h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,48px);font-weight:400;margin-bottom:16px}
-    .cta-band h2 em{font-style:italic;color:var(--gold)}
-    .cta-band p{font-size:15px;color:var(--text-body);max-width:440px;margin:0 auto 32px}
-    .btn-primary{display:inline-flex;align-items:center;gap:9px;background:var(--gold);color:var(--black);padding:15px 30px;border-radius:8px;font-size:15px;font-weight:500;text-decoration:none;letter-spacing:.02em;transition:background .2s,transform .15s;box-shadow:0 4px 24px rgba(201,169,110,0.25)}
-    .btn-primary:hover{background:var(--gold-light);transform:translateY(-2px)}
-    .btn-primary svg{width:18px;height:18px}
-    footer{padding:60px 48px 40px;border-top:1px solid rgba(201,169,110,0.1);display:flex;flex-direction:column;gap:32px}
-    .footer-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
-    .footer-brand p{font-size:13px;color:var(--text-body);margin-top:8px;max-width:260px;line-height:1.6}
-    .footer-links-col{display:flex;flex-direction:column;gap:10px}
-    .footer-links-col h4{font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:var(--gold);margin-bottom:4px}
-    .footer-links-col a{font-size:13px;color:var(--text-body);text-decoration:none;transition:color .2s}
-    .footer-links-col a:hover{color:var(--cream)}
-    .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding-top:24px;border-top:1px solid rgba(245,240,232,0.06);font-size:12px;color:rgba(245,240,232,0.35)}
-    @media(max-width:768px){nav{padding:16px 20px}.nav-links{display:none}.footer-top{flex-direction:column}footer{padding:48px 24px 32px}}
-      /* NAV OVERRIDE */
-    nav { background: #0C0B09 !important; display: flex !important; align-items: center !important; justify-content: space-between !important; padding: 0 40px !important; height: 42px !important; position: sticky !important; top: 0 !important; z-index: 200 !important; }
-    .nav-logo { width: 32px !important; height: 32px !important; border: 1px solid rgba(255,255,255,0.28) !important; border-radius: 3px !important; display: flex !important; align-items: center !important; justify-content: center !important; flex-shrink: 0 !important; text-decoration: none !important; background: transparent !important; }
-    .nav-wm { font-family: "Cormorant Garamond", serif !important; font-size: 16px !important; font-weight: 300 !important; color: rgba(255,255,255,0.42) !important; letter-spacing: 0.08em !important; line-height: 1 !important; }
-    .nav-links { display: flex !important; align-items: center !important; flex: 1 !important; justify-content: space-evenly !important; padding: 0 40px !important; }
-    .nav-links a { font-size: 11px !important; color: rgba(255,255,255,0.42) !important; letter-spacing: 0.03em !important; text-decoration: none !important; }
-    .nav-links a:hover { color: rgba(255,255,255,0.75) !important; }
-    .nav-cta, .nav-dl { border: 1px solid rgba(255,255,255,0.35) !important; color: rgba(255,255,255,0.55) !important; padding: 5px 16px !important; border-radius: 3px !important; font-size: 11px !important; font-weight: 300 !important; letter-spacing: 0.03em !important; text-decoration: none !important; background: transparent !important; }
+    .lead{font-size:15px;color:var(--mid);line-height:1.85;max-width:520px}
+    .content{max-width:800px;margin:0 auto;padding:72px 40px 80px}
+    .section-block{margin-bottom:52px}
+    .section-block h2{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3vw,34px);font-weight:300;color:var(--text);margin-bottom:14px;line-height:1.2}
+    .section-block p{font-size:14px;color:var(--mid);line-height:1.85;margin-bottom:12px}
+    .section-block p a{color:var(--gold);text-decoration:none}
+    .gold-rule{height:1px;background:linear-gradient(90deg,transparent,rgba(184,146,74,0.25),transparent);margin:52px 0}
+    footer{padding:52px 40px 36px;background:var(--black);border-top:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;gap:32px}
+    .ft-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
+    .ft-brand .fw{font-family:'Cormorant Garamond',serif;font-size:22px;color:rgba(255,255,255,0.7)}
+    .ft-brand p{font-size:12px;color:rgba(255,255,255,0.25);margin-top:6px;max-width:220px;line-height:1.7}
+    .ft-col{display:flex;flex-direction:column;gap:8px}
+    .ft-col h4{font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:0.16em;color:rgba(255,255,255,0.25);margin-bottom:2px}
+    .ft-col a{font-size:12px;color:rgba(255,255,255,0.35);text-decoration:none;transition:color .2s}
+    .ft-col a:hover{color:rgba(255,255,255,0.7)}
+    .ft-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.05);font-size:11px;color:rgba(255,255,255,0.18)}
+    @media(max-width:768px){nav{padding:0 20px}.nav-links{display:none}.page-hero{padding:56px 24px 40px}.content{padding:52px 24px 60px}footer{padding:48px 24px 32px}.ft-top{flex-direction:column}}
+  </style>
+  <title>Features · Au</title>
+  <meta name="description" content="Every feature in Au — from the Goal Impact Bar to Atom AI." />
+  <style>
+    .group-label{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;margin-top:52px}
+    .group-title{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,30px);font-weight:300;color:var(--text);margin-bottom:28px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+    .feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:8px}
+    .fc{background:#fff;border:1px solid var(--border);border-radius:10px;padding:26px 22px;transition:border-color .2s,transform .2s;position:relative}
+    .fc:hover{border-color:rgba(184,146,74,0.3);transform:translateY(-2px)}
+    .fc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity .3s;border-radius:10px 10px 0 0}
+    .fc:hover::before{opacity:1}
+    .fc-n{font-family:'Space Mono',monospace;font-size:10px;color:rgba(184,146,74,0.4);margin-bottom:12px}
+    .fc-nm{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:400;color:var(--text);margin-bottom:8px}
+    .fc-d{font-size:13px;color:var(--mid);line-height:1.75}
+    .fc-ex{margin-top:12px;padding:10px 12px;background:rgba(184,146,74,0.05);border-left:2px solid var(--gold);border-radius:0 6px 6px 0;font-size:12px;color:rgba(0,0,0,0.45);font-style:italic;line-height:1.65}
+    .fc-ex strong{color:var(--gold);font-style:normal}
+    @media(max-width:768px){.feat-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -77,148 +75,57 @@
   </div>
   <a href="/" class="nav-dl">Download</a>
 </nav>
-
 <div class="page-hero">
-  <p class="eyebrow">The Product</p>
-  <h1>Intelligence at the<br>moment it <em>matters.</em></h1>
-  <p class="lead">Every feature in Au is built around one idea: the most important moment in personal finance is the second before you spend, not the month after.</p>
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-inner">
+    <p class="eyebrow">Features</p>
+    <h1>Intelligence at every<br>point of <em>decision.</em></h1>
+    <p class="lead">Every feature in Au is built around one idea: the most important moment in personal finance is the second before you spend, not the month after.</p>
+  </div>
 </div>
-
-<div class="features-section">
-
+<div class="content">
   <p class="group-label">Anchor Features</p>
-  <h2 class="group-title">The foundation — features every Au user uses every day</h2>
-  <div class="features-grid">
-    <div class="feature-card">
-      <div class="feature-icon">🏦</div>
-      <h3 class="feature-name">Bank Account Sync</h3>
-      <p class="feature-desc">Connects to 12,000+ financial institutions via Plaid. Every transaction pulled in automatically and reflected in your goals within minutes. Read-only — Au never touches your money.</p>
-      <div class="feature-example"><strong>Example:</strong> Pay rent on the 1st, coffee on the 3rd. By the 6th, both are categorised. You did nothing.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🤖</div>
-      <h3 class="feature-name">AI Transaction Categorisation</h3>
-      <p class="feature-desc">Every transaction sorted automatically. It handles the messy ones — "SQ*BLUEBOTTLE" becomes Coffee. The AI learns from corrections. 95%+ accuracy within 60 days.</p>
-      <div class="feature-example"><strong>Example:</strong> Three DoorDash orders correctly filed as Food Delivery — not just Food &amp; Drink — so insights stay specific.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">📊</div>
-      <h3 class="feature-name">Real-Time Dashboard</h3>
-      <p class="feature-desc">Net worth, income vs spend, top categories, and goal progress — all live. Not end-of-day. When you spend $12 on lunch, the dashboard reflects it within minutes.</p>
-      <div class="feature-example"><strong>Example:</strong> It's the 20th. You've spent $2,400 of your usual $3,200 budget. Your house deposit is 37% complete. All in one glance.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🎯</div>
-      <h3 class="feature-name">Goal Setting &amp; Tracking</h3>
-      <p class="feature-desc">Any number of goals running simultaneously. Au calculates the realistic path based on your actual income and spending — not a generic calculator. Completion dates update automatically as your habits change.</p>
-      <div class="feature-example"><strong>Example:</strong> You cut takeout by $200/month. Your house deposit moves forward from October 2027 to August 2027.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">💡</div>
-      <h3 class="feature-name">Au Insights Engine</h3>
-      <p class="feature-desc">Specific, goal-linked, actionable intelligence. Not generic warnings — patterns you don't see yourself, quantified in time, surfaced before you need them.</p>
-      <div class="feature-example"><strong>Example:</strong> "You've used Uber 14 times this month. Cutting back to your usual saves $180 and moves your Japan holiday 12 days closer."</div>
-    </div>
+  <div class="group-title">The foundation — used every day</div>
+  <div class="feat-grid">
+    <div class="fc"><div class="fc-n">01</div><div class="fc-nm">Bank Sync</div><div class="fc-d">12,000+ institutions via Plaid. Every transaction pulled in automatically, reflected in your goals within minutes. Read-only — Au never touches your money.</div></div>
+    <div class="fc"><div class="fc-n">02</div><div class="fc-nm">AI Categorisation</div><div class="fc-d">Self-improving AI that learns your patterns. Knows "SQ*BLUEBOTTLE" is a coffee shop. 95%+ accuracy within 60 days.</div></div>
+    <div class="fc"><div class="fc-n">03</div><div class="fc-nm">Real-Time Dashboard</div><div class="fc-d">Net worth, income vs spend, goal progress — all live. When you spend 2 on lunch, the dashboard reflects it within minutes.</div></div>
+    <div class="fc"><div class="fc-n">04</div><div class="fc-nm">Goal Setting &amp; Tracking</div><div class="fc-d">Any number of goals running simultaneously. Au calculates the realistic path based on your actual income and spending. Completion dates update automatically.</div></div>
+    <div class="fc"><div class="fc-n">05</div><div class="fc-nm">Au Insights Engine</div><div class="fc-d">Proactive, goal-linked intelligence. Specific patterns quantified in time, surfaced before you need them — not after the damage is done.</div></div>
   </div>
 
-  <p class="group-label" style="margin-top:72px">Primary Features</p>
-  <h2 class="group-title">What makes Au unlike anything else in the market</h2>
-  <div class="features-grid">
-    <div class="feature-card">
-      <div class="feature-icon">⚡</div>
-      <h3 class="feature-name">Goal Impact Bar</h3>
-      <p class="feature-desc">Au's flagship. Every wishlist item shows how many days it pushes your goal back. When you skip an item, Au celebrates: "You just saved 8 days. Your house deposit is closer."</p>
-      <div class="feature-example"><strong>Example:</strong> $549 Vitamix blender → your Bali holiday moves back <strong>18 days</strong>. You skip it.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🛍</div>
-      <h3 class="feature-name">AI Personal Shopper</h3>
-      <p class="feature-desc">Add any item to your wishlist and Au evaluates it completely — not just whether you can afford it, but whether it's the right time given your goals, bills, and savings rate. Import directly from Amazon or screenshot any wishlist.</p>
-      <div class="feature-example"><strong>Example:</strong> Screenshot 7 ASOS items. Au imports all 7 and flags the two that only push your holiday back 3 days combined.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🔍</div>
-      <h3 class="feature-name">Dupe Finder</h3>
-      <p class="feature-desc">Automatically finds high-quality cheaper alternatives for anything in your wishlist. The Goal Impact Bar updates in real time as you toggle between original and dupe. Au earns an affiliate commission — you pay nothing extra.</p>
-      <div class="feature-example"><strong>Example:</strong> Dyson Airwrap ($599) → BaByliss Air Style ($89, 4.7 stars). Save $510 and gain 17 days toward your goal.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">⚛️</div>
-      <h3 class="feature-name">Atom — Your AI</h3>
-      <p class="feature-desc">Powered by Claude. Knows your complete financial life. Text or voice, any time. Serious questions and wild simulations — all backed by your real data.</p>
-      <div class="feature-example"><strong>Example:</strong> "Should I buy this $1,200 laptop?" → "Buying now pushes your Japan trip back 5 weeks. Wait until your bonus and it drops to 2 weeks."</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🌙</div>
-      <h3 class="feature-name">Mood Spending Detection</h3>
-      <p class="feature-desc">Identifies when you're most likely making impulse decisions. When you add something during a high-risk window, Au adds one quiet line of context. Never a block. Never a lecture. Just an honest data point.</p>
-      <div class="feature-example"><strong>Example:</strong> 11:47pm Friday. You add a $280 jacket. Au: "This is your highest-spend time of the week. Historically you remove 60% of things added at this hour."</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🌟</div>
-      <h3 class="feature-name">Spending Personality Profile</h3>
-      <p class="feature-desc">After 30 days, Au generates a personalised profile of how you actually relate to money. Shareable — designed to be posted, screenshotted, sent. Drives organic word-of-mouth.</p>
-      <div class="feature-example"><strong>Example:</strong> "The Experience Collector. You spend intentionally on travel and food. Your blind spot is subscription creep — 7 active subs unused this month."</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🔮</div>
-      <h3 class="feature-name">Future You Simulator</h3>
-      <p class="feature-desc">Toggle purchases on and off and watch your projected financial future update in real time. Two versions of your future side by side — the gap between them is the most motivating number in personal finance.</p>
-      <div class="feature-example"><strong>Example:</strong> Cancel two unused subs and skip three wishlist items. Future You at 35 goes from $4,200 saved to $11,800.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🏠</div>
-      <h3 class="feature-name">Au Together</h3>
-      <p class="feature-desc">Shared household goals, combined income tracking, per-member spend views, and joint insights. Works for couples, roommates, families, anyone. Each person keeps their own private view.</p>
-      <div class="feature-example"><strong>Example:</strong> Combined income $9,400, combined spend $6,200, shared deposit goal 44% complete — one dashboard.</div>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">💸</div>
-      <h3 class="feature-name">Bill Negotiation Coach</h3>
-      <p class="feature-desc">Identifies every bill where you're likely overpaying and generates a personalised negotiation script from Atom — based on your specific provider, tenure, and current market rates. Included in Au Atomic. Always.</p>
-      <div class="feature-example"><strong>Example:</strong> Internet bill at $89/mo. Average in your area: $61. Atom writes your script. You call and get it to $65. $288 saved this year.</div>
-    </div>
+  <p class="group-label" style="margin-top:48px">Primary Features</p>
+  <div class="group-title">What makes Au unlike anything else</div>
+  <div class="feat-grid">
+    <div class="fc"><div class="fc-n">06</div><div class="fc-nm">Goal Impact Bar</div><div class="fc-d">Every wishlist item shows one number: how many days it delays your goal. Not the price. Days.</div><div class="fc-ex"><strong>Example:</strong> 49 Vitamix → your Bali holiday moves back 18 days. You skip it.</div></div>
+    <div class="fc"><div class="fc-n">07</div><div class="fc-nm">AI Personal Shopper</div><div class="fc-d">Import from Amazon or screenshot any wishlist. Au evaluates timing against your goals, bills, and savings rate — not just whether you can afford it.</div></div>
+    <div class="fc"><div class="fc-n">08</div><div class="fc-nm">Dupe Finder</div><div class="fc-d">Finds high-quality cheaper alternatives for anything in your wishlist. Au earns an affiliate commission — you pay nothing extra.</div><div class="fc-ex"><strong>Example:</strong> Dyson Airwrap 99 → BaByliss 9, 4.7 stars. Save 10, gain 17 days.</div></div>
+    <div class="fc"><div class="fc-n">09</div><div class="fc-nm">Atom AI</div><div class="fc-d">Powered by Claude. Knows your complete financial life. Text or voice. Serious questions and wild simulations — backed by your real data.</div></div>
+    <div class="fc"><div class="fc-n">10</div><div class="fc-nm">Mood Spending Detection</div><div class="fc-d">Identifies your highest-risk spending windows. One quiet line of context at the moment it matters. Never a block. Never a lecture.</div></div>
+    <div class="fc"><div class="fc-n">11</div><div class="fc-nm">Spending Personality Profile</div><div class="fc-d">After 30 days, a shareable profile of how you actually relate to money. Designed to spread like Spotify Wrapped.</div></div>
+    <div class="fc"><div class="fc-n">12</div><div class="fc-nm">Future You Simulator</div><div class="fc-d">Toggle purchases on and off. Watch your projected financial future update in real time. The gap between the two versions of you is the most motivating number in personal finance.</div></div>
+    <div class="fc"><div class="fc-n">13</div><div class="fc-nm">Au Together</div><div class="fc-d">Shared household goals, combined income tracking, per-member views. For couples, roommates, families — anyone.</div></div>
+    <div class="fc"><div class="fc-n">14</div><div class="fc-nm">Bill Negotiation Coach</div><div class="fc-d">Identifies every bill where you're likely overpaying and generates a personalised negotiation script. Included in Au Atomic. Always.</div></div>
   </div>
-
 </div>
-
-<div class="cta-band">
-  <h2>Ready to see the <em>true cost</em><br>of every purchase?</h2>
-  <p>Download Au and connect your first account in under two minutes.</p>
-  <a href="/" class="btn-primary">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-    Download on App Store
-  </a>
-</div>
-
 <footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <span style="font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--cream)">Au</span>
-      <p>The AI personal finance app that shows you what every purchase truly costs — in days, not dollars.</p>
-    </div>
-    <div class="footer-links-col">
-      <h4>Product</h4>
-      <a href="/product/">Features</a>
-      <a href="/pricing/">Pricing</a>
-      <a href="/">Download</a>
-    </div>
-    <div class="footer-links-col">
-      <h4>Company</h4>
-      <a href="/about/">About</a>
-      <a href="/news/">News</a>
-      <a href="/contact/">Contact</a>
-    </div>
-    <div class="footer-links-col">
-      <h4>Legal</h4>
-      <a href="/privacy/">Privacy Policy</a>
-      <a href="/terms/">Terms of Service</a>
-    </div>
+  <div class="ft-top">
+    <div class="ft-brand"><div class="fw">Au</div><p>The AI personal finance app that shows you what every purchase truly costs — in days, not dollars.</p></div>
+    <div class="ft-col"><h4>Product</h4><a href="/product/">Features</a><a href="/pricing/">Pricing</a><a href="/">Download</a></div>
+    <div class="ft-col"><h4>Company</h4><a href="/about/">About</a><a href="/news/">Blog</a><a href="/contact/">Contact</a></div>
+    <div class="ft-col"><h4>Legal</h4><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Service</a></div>
   </div>
-  <div class="footer-bottom">
-    <span>© 2026 Aurum Technologies Inc. All rights reserved.</span>
-    <span>au79.app · anchitj@au79.app</span>
-  </div>
+  <div class="ft-bot"><span>© 2026 Aurum Technologies Inc. All rights reserved.</span><span>au79.app · anchitj@au79.app</span></div>
 </footer>
+<script>
+(function(){
+  const syms=['H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si','P','S','Cl','Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu','Zn','Ga','Ge','As','Se','Br','Kr','Rb','Sr','Y','Zr','Nb','Mo','Tc','Ru','Rh','Pd','Ag','Cd','In','Sn','Sb','Te','I','Xe','Cs','Ba','La','Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg','Tl','Pb','Bi','Po','At','Rn'];
+  const near=['Ir','Pt','Hg','Tl'];
+  document.querySelectorAll('.page-hero-bg').forEach(bg=>{
+    syms.forEach(s=>{const d=document.createElement('div');d.className='phb'+(s==='Au'?' au':near.includes(s)?' nb':'');bg.appendChild(d);});
+  });
+})();
+</script>
 </body>
 </html>

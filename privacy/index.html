@@ -2,46 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy · Au</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;1,200;1,300&family=DM+Sans:wght@200;300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--gold:#C9A96E;--gold-light:#D9BC8F;--gold-dim:rgba(201,169,110,0.15);--black:#080706;--black-card:#0F0F0F;--black-raised:#1A1A1A;--cream:#F5F0E8;--green:#5BA85A;--text-body:#C8C3BB}
-    body{background:var(--black);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.6;overflow-x:hidden}
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 48px;background:rgba(8,7,6,0.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(201,169,110,0.12)}
-    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-    .nav-badge{width:36px;height:36px;border:1.5px solid var(--gold);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
-    .nav-badge .atomic{font-size:7px;color:var(--gold);letter-spacing:.04em}
-    .nav-badge .symbol{font-size:16px;color:var(--gold);font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1}
-    .nav-badge .number{font-size:6px;color:var(--gold);letter-spacing:.04em}
-    .nav-wordmark{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:var(--cream);letter-spacing:.06em}
-    .nav-links{display:flex;align-items:center;gap:28px}
-    .nav-links a{color:var(--text-body);font-size:14px;text-decoration:none;transition:color .2s}
-    .nav-links a:hover{color:var(--cream)}
-    .nav-cta{background:var(--gold);color:var(--black);padding:10px 22px;border-radius:6px;font-size:13px;font-weight:500;text-decoration:none;transition:background .2s}
-    .nav-cta:hover{background:var(--gold-light)}
-    .doc-wrap{max-width:680px;margin:0 auto;padding:160px 24px 100px}
-    .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
-    h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,56px);font-weight:400;line-height:1.1;margin-bottom:12px}
+    :root{--black:#0C0B09;--cream:#F3F0E7;--cream-mid:#EDE9DE;--gold:#B8924A;--green:#5BA85A;--text:#111;--mid:#666;--light:#aaa;--border:rgba(0,0,0,0.08)}
+    html{scroll-behavior:smooth}
+    body{background:var(--cream);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden}
+    nav{background:var(--black);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:42px;position:sticky;top:0;z-index:200}
+    .nav-logo{width:32px;height:32px;border:1px solid rgba(255,255,255,0.28);border-radius:3px;display:flex;align-items:center;justify-content:center;flex-shrink:0;text-decoration:none}
+    .nav-wm{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:300;color:rgba(255,255,255,0.42);letter-spacing:0.08em;line-height:1}
+    .nav-links{display:flex;align-items:center;flex:1;justify-content:space-evenly;padding:0 40px}
+    .nav-links a{font-size:11px;color:rgba(255,255,255,0.42);letter-spacing:0.03em;text-decoration:none;transition:color .2s}
+    .nav-links a:hover,.nav-links a.active{color:rgba(255,255,255,0.78)}
+    .nav-dl{border:1px solid rgba(255,255,255,0.35);color:rgba(255,255,255,0.55);padding:5px 16px;border-radius:3px;font-size:11px;font-weight:300;letter-spacing:0.03em;text-decoration:none}
+    .page-hero{padding:72px 40px 56px;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+    .page-hero-bg{position:absolute;inset:0;display:grid;grid-template-columns:repeat(18,1fr);gap:1.5px;padding:8px;pointer-events:none}
+    .phb{background:rgba(0,0,0,0.018);border-radius:1px}
+    .phb.au{background:rgba(184,146,74,0.07)}
+    .phb.nb{background:rgba(184,146,74,0.03)}
+    .page-hero-overlay{position:absolute;inset:0;background:linear-gradient(145deg,rgba(243,240,231,0.9) 0%,rgba(243,240,231,0.97) 60%)}
+    .page-hero-inner{position:relative;z-index:5;max-width:700px}
+    .eyebrow{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+    .eyebrow::before{content:'';width:20px;height:1px;background:var(--gold);flex-shrink:0}
+    h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,6vw,72px);font-weight:200;line-height:0.92;letter-spacing:-0.04em;margin-bottom:20px}
     h1 em{font-style:italic;color:var(--gold)}
-    .meta{font-size:13px;color:var(--text-body);margin-bottom:48px;padding-bottom:32px;border-bottom:1px solid rgba(201,169,110,0.15)}
-    .doc-section{margin-bottom:40px}
-    .doc-section h2{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:var(--cream);margin-bottom:12px}
-    .doc-section p{font-size:14px;color:var(--text-body);line-height:1.85}
-    footer{padding:60px 48px 40px;border-top:1px solid rgba(201,169,110,0.1);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
-    footer span{font-size:12px;color:rgba(245,240,232,0.35)}
-    footer a{font-size:12px;color:var(--gold);text-decoration:none}
-    @media(max-width:768px){nav{padding:16px 20px}.nav-links{display:none}footer{padding:40px 24px}}
-      /* NAV OVERRIDE */
-    nav { background: #0C0B09 !important; display: flex !important; align-items: center !important; justify-content: space-between !important; padding: 0 40px !important; height: 42px !important; position: sticky !important; top: 0 !important; z-index: 200 !important; }
-    .nav-logo { width: 32px !important; height: 32px !important; border: 1px solid rgba(255,255,255,0.28) !important; border-radius: 3px !important; display: flex !important; align-items: center !important; justify-content: center !important; flex-shrink: 0 !important; text-decoration: none !important; background: transparent !important; }
-    .nav-wm { font-family: "Cormorant Garamond", serif !important; font-size: 16px !important; font-weight: 300 !important; color: rgba(255,255,255,0.42) !important; letter-spacing: 0.08em !important; line-height: 1 !important; }
-    .nav-links { display: flex !important; align-items: center !important; flex: 1 !important; justify-content: space-evenly !important; padding: 0 40px !important; }
-    .nav-links a { font-size: 11px !important; color: rgba(255,255,255,0.42) !important; letter-spacing: 0.03em !important; text-decoration: none !important; }
-    .nav-links a:hover { color: rgba(255,255,255,0.75) !important; }
-    .nav-cta, .nav-dl { border: 1px solid rgba(255,255,255,0.35) !important; color: rgba(255,255,255,0.55) !important; padding: 5px 16px !important; border-radius: 3px !important; font-size: 11px !important; font-weight: 300 !important; letter-spacing: 0.03em !important; text-decoration: none !important; background: transparent !important; }
+    .lead{font-size:15px;color:var(--mid);line-height:1.85;max-width:520px}
+    .content{max-width:800px;margin:0 auto;padding:72px 40px 80px}
+    .section-block{margin-bottom:52px}
+    .section-block h2{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3vw,34px);font-weight:300;color:var(--text);margin-bottom:14px;line-height:1.2}
+    .section-block p{font-size:14px;color:var(--mid);line-height:1.85;margin-bottom:12px}
+    .section-block p a{color:var(--gold);text-decoration:none}
+    .gold-rule{height:1px;background:linear-gradient(90deg,transparent,rgba(184,146,74,0.25),transparent);margin:52px 0}
+    footer{padding:52px 40px 36px;background:var(--black);border-top:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;gap:32px}
+    .ft-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
+    .ft-brand .fw{font-family:'Cormorant Garamond',serif;font-size:22px;color:rgba(255,255,255,0.7)}
+    .ft-brand p{font-size:12px;color:rgba(255,255,255,0.25);margin-top:6px;max-width:220px;line-height:1.7}
+    .ft-col{display:flex;flex-direction:column;gap:8px}
+    .ft-col h4{font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:0.16em;color:rgba(255,255,255,0.25);margin-bottom:2px}
+    .ft-col a{font-size:12px;color:rgba(255,255,255,0.35);text-decoration:none;transition:color .2s}
+    .ft-col a:hover{color:rgba(255,255,255,0.7)}
+    .ft-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.05);font-size:11px;color:rgba(255,255,255,0.18)}
+    @media(max-width:768px){nav{padding:0 20px}.nav-links{display:none}.page-hero{padding:56px 24px 40px}.content{padding:52px 24px 60px}footer{padding:48px 24px 32px}.ft-top{flex-direction:column}}
   </style>
+  <title>Privacy Policy · Au</title>
 </head>
 <body>
 <nav>
@@ -55,15 +59,47 @@
   </div>
   <a href="/" class="nav-dl">Download</a>
 </nav>
-<div class="doc-wrap">
-  <p class="eyebrow">Legal</p>
-  <h1>Privacy <em>Policy</em></h1>
-  <p class="meta">Last updated: May 2026 · Aurum Technologies Inc.</p>
-  <div class="doc-section"><h2>1. Information We Collect</h2><p>Au collects information you provide directly — such as your email address when you create an account — and financial data retrieved through Plaid, our banking data partner. We do not store your bank login credentials. All financial data is accessed in read-only mode.</p></div><div class="doc-section"><h2>2. How We Use Your Information</h2><p>We use your data to operate the Au service, provide personalised financial insights, calculate Goal Impact scores, and improve the accuracy of our AI categorisation. We do not sell your personal data to third parties.</p></div><div class="doc-section"><h2>3. Data Sharing</h2><p>We share data only with service providers required to operate Au — including Plaid (banking connections), Anthropic (AI), and cloud infrastructure providers. All partners are bound by data processing agreements. We do not share data for advertising purposes.</p></div><div class="doc-section"><h2>4. Advertising</h2><p>Au Oxygen (free tier) displays non-targeted contextual advertisements — relevant to what is on screen, never based on user data or browsing history. Paid subscribers (Au Atomic and Au Fusion) are completely ad-free.</p></div><div class="doc-section"><h2>5. Data Security</h2><p>All data is encrypted in transit (TLS 1.2+) and at rest. We follow industry-standard practices for access control and data protection. Plaid connections use bank-level encryption.</p></div><div class="doc-section"><h2>6. Your Rights</h2><p>You may request access to, correction of, or deletion of your personal data at any time by contacting us at <a href="mailto:anchitj@au79.app" style="color:var(--gold)">anchitj@au79.app</a>. You may also disconnect your bank accounts and delete your Au account at any time from within the app.</p></div><div class="doc-section"><h2>7. Retention</h2><p>We retain your data for as long as your account is active. When you delete your account, we remove your personal information within 30 days, except where we are legally required to retain it.</p></div><div class="doc-section"><h2>8. Contact</h2><p>For privacy questions or data requests: <a href="mailto:anchitj@au79.app" style="color:var(--gold)">anchitj@au79.app</a><br>Aurum Technologies Inc., Toronto, Ontario, Canada.</p></div>
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-inner">
+    <p class="eyebrow">Legal</p>
+    <h1>Privacy <em>Policy</em></h1>
+    <p class="lead">Last updated: May 2026 · Aurum Technologies Inc.</p>
+  </div>
+</div>
+<div class="content">
+  <div class="section-block"><h2>1. Information We Collect</h2><p>Au collects information you provide directly — such as your email address when you create an account — and financial data retrieved through Plaid, our banking data partner. We do not store your bank login credentials. All financial data is accessed in read-only mode.</p></div>
+  <div class="gold-rule"></div>
+  <div class="section-block"><h2>2. How We Use Your Information</h2><p>We use your data to operate the Au service, provide personalised financial insights, calculate Goal Impact scores, and improve AI categorisation accuracy. We do not sell your personal data to third parties.</p></div>
+  <div class="gold-rule"></div>
+  <div class="section-block"><h2>3. Data Sharing</h2><p>We share data only with service providers required to operate Au — including Plaid (banking connections), Anthropic (AI), and cloud infrastructure providers. All partners are bound by data processing agreements. We do not share data for advertising purposes.</p></div>
+  <div class="gold-rule"></div>
+  <div class="section-block"><h2>4. Advertising</h2><p>Au Oxygen (free tier) displays non-targeted contextual advertisements — relevant to what is on screen, never based on user data. Paid subscribers are completely ad-free.</p></div>
+  <div class="gold-rule"></div>
+  <div class="section-block"><h2>5. Data Security</h2><p>All data is encrypted in transit (TLS 1.2+) and at rest. We follow industry-standard practices for access control and data protection.</p></div>
+  <div class="gold-rule"></div>
+  <div class="section-block"><h2>6. Your Rights</h2><p>You may request access to, correction of, or deletion of your personal data at any time by contacting <a href="mailto:anchitj@au79.app">anchitj@au79.app</a>. You may disconnect your bank accounts and delete your Au account at any time from within the app.</p></div>
+  <div class="gold-rule"></div>
+  <div class="section-block"><h2>7. Contact</h2><p>For privacy questions: <a href="mailto:anchitj@au79.app">anchitj@au79.app</a><br>Aurum Technologies Inc., Toronto, Ontario, Canada.</p></div>
 </div>
 <footer>
-  <span>© 2026 Aurum Technologies Inc.</span>
-  <div style="display:flex;gap:20px"><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Service</a></div>
+  <div class="ft-top">
+    <div class="ft-brand"><div class="fw">Au</div><p>The AI personal finance app that shows you what every purchase truly costs — in days, not dollars.</p></div>
+    <div class="ft-col"><h4>Product</h4><a href="/product/">Features</a><a href="/pricing/">Pricing</a><a href="/">Download</a></div>
+    <div class="ft-col"><h4>Company</h4><a href="/about/">About</a><a href="/news/">Blog</a><a href="/contact/">Contact</a></div>
+    <div class="ft-col"><h4>Legal</h4><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Service</a></div>
+  </div>
+  <div class="ft-bot"><span>© 2026 Aurum Technologies Inc. All rights reserved.</span><span>au79.app · anchitj@au79.app</span></div>
 </footer>
+<script>
+(function(){
+  const syms=['H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si','P','S','Cl','Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu','Zn','Ga','Ge','As','Se','Br','Kr','Rb','Sr','Y','Zr','Nb','Mo','Tc','Ru','Rh','Pd','Ag','Cd','In','Sn','Sb','Te','I','Xe','Cs','Ba','La','Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg','Tl','Pb','Bi','Po','At','Rn'];
+  const near=['Ir','Pt','Hg','Tl'];
+  document.querySelectorAll('.page-hero-bg').forEach(bg=>{
+    syms.forEach(s=>{const d=document.createElement('div');d.className='phb'+(s==='Au'?' au':near.includes(s)?' nb':'');bg.appendChild(d);});
+  });
+})();
+</script>
 </body>
 </html>
