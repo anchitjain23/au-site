@@ -44,21 +44,21 @@
     .nav-dl:hover { border-color: rgba(255,255,255,0.6); color: rgba(255,255,255,0.8); }
 
     /* ── BANNER ── */
-    .banner { background: var(--black); height: 302px; position: relative; overflow: hidden; }
-    .banner::after { content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 2; background: linear-gradient(180deg, rgba(12,11,9,0.55) 0%, transparent 20%, transparent 80%, rgba(12,11,9,0.55) 100%); }
-    .table-grid { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 1; display: grid; grid-template-columns: repeat(7,1fr); grid-template-rows: repeat(3,1fr); gap: 3px; width: 100%; padding: 3px; height: 100%; }
-    .el { border: 1px solid rgba(255,255,255,0.05); border-radius: 4px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 8px 6px; background: rgba(255,255,255,0.015); }
-    .el .el-n { font-family: 'Space Mono', monospace; font-size: 9px; color: rgba(255,255,255,0.1); align-self: flex-start; line-height: 1; }
-    .el .el-s { font-family: 'Cormorant Garamond', serif; font-size: 32px; color: rgba(255,255,255,0.1); line-height: 1; font-weight: 300; }
-    .el .el-nm { font-family: 'Space Mono', monospace; font-size: 7px; color: rgba(255,255,255,0.07); letter-spacing: 0.03em; line-height: 1; }
+    .banner { background: var(--black); height: 378px; position: relative; overflow: hidden; }
+    .banner::after { content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 2; background: linear-gradient(180deg, rgba(12,11,9,0.6) 0%, transparent 18%, transparent 82%, rgba(12,11,9,0.6) 100%); }
+    .table-grid { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 1; display: grid; grid-template-columns: repeat(auto-fill, 82px); grid-template-rows: repeat(5, 82px); gap: 5px; width: calc(100% + 72px); }
+    .el { width: 82px; height: 82px; border: 1px solid rgba(255,255,255,0.05); border-radius: 5px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 8px 7px; background: rgba(255,255,255,0.015); flex-shrink: 0; }
+    .el .el-n { font-family: 'Space Mono', monospace; font-size: 9.5px; color: rgba(255,255,255,0.1); align-self: flex-start; line-height: 1; }
+    .el .el-s { font-family: 'Cormorant Garamond', serif; font-size: 31px; color: rgba(255,255,255,0.1); line-height: 1; font-weight: 300; }
+    .el .el-nm { font-family: 'Space Mono', monospace; font-size: 7px; color: rgba(255,255,255,0.07); letter-spacing: 0.02em; line-height: 1; }
     .el.near { border-color: rgba(255,255,255,0.08); background: rgba(255,255,255,0.025); }
-    .el.near .el-n { color: rgba(255,255,255,0.2); }
-    .el.near .el-s { color: rgba(255,255,255,0.2); }
-    .el.near .el-nm { color: rgba(255,255,255,0.12); }
-    .el.au { border: 1.5px solid rgba(201,169,110,0.6); background: rgba(201,169,110,0.08); box-shadow: 0 0 32px rgba(201,169,110,0.2), 0 0 80px rgba(201,169,110,0.08); }
-    .el.au .el-n { color: rgba(201,169,110,0.6); font-size: 11px; }
-    .el.au .el-s { font-size: 40px; color: #C9A96E; }
-    .el.au .el-nm { color: rgba(201,169,110,0.5); font-size: 8.5px; }
+    .el.near .el-n { color: rgba(255,255,255,0.18); }
+    .el.near .el-s { color: rgba(255,255,255,0.18); }
+    .el.near .el-nm { color: rgba(255,255,255,0.1); }
+    .el.au { border: 1.5px solid rgba(201,169,110,0.6); background: rgba(201,169,110,0.08); box-shadow: 0 0 28px rgba(201,169,110,0.22), 0 0 70px rgba(201,169,110,0.08); }
+    .el.au .el-n { color: rgba(201,169,110,0.6); font-size: 10.5px; }
+    .el.au .el-s { font-size: 36px; color: #C9A96E; }
+    .el.au .el-nm { color: rgba(201,169,110,0.5); font-size: 7.5px; }
 
     /* ── HERO ── */
     .hero { padding: 80px 40px 64px; position: relative; overflow: hidden; border-bottom: 1px solid var(--border); }
@@ -242,7 +242,7 @@
     .pc.feat::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); border-radius: 16px 16px 0 0; }
     .pc-badge { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--gold); color: #fff; padding: 2px 14px; border-radius: 20px; font-size: 9.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; }
     .pc-tier { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
-    .pc-nm { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; color: var(--text-dark); margin-bottom: 16px; }
+    .pc-nm { font-family: 'Cormorant Garamond', serif; font-size: 31px; font-weight: 400; color: var(--text-dark); margin-bottom: 16px; }
     .pc-pr { font-size: 38px; font-weight: 300; color: var(--text-dark); line-height: 1; }
     .pc-pr sup { font-size: 16px; vertical-align: top; margin-top: 6px; display: inline-block; }
     .pc-per { font-size: 12px; color: var(--text-light); margin-top: 4px; margin-bottom: 6px; }
@@ -320,31 +320,8 @@
 
 <!-- BANNER -->
 <div class="banner">
-  <div class="table-grid">
-    <div class="el"><span class="el-n">44</span><span class="el-s">Ru</span><span class="el-nm">Ruthenium</span></div>
-    <div class="el"><span class="el-n">45</span><span class="el-s">Rh</span><span class="el-nm">Rhodium</span></div>
-    <div class="el"><span class="el-n">46</span><span class="el-s">Pd</span><span class="el-nm">Palladium</span></div>
-    <div class="el near"><span class="el-n">47</span><span class="el-s">Ag</span><span class="el-nm">Silver</span></div>
-    <div class="el"><span class="el-n">48</span><span class="el-s">Cd</span><span class="el-nm">Cadmium</span></div>
-    <div class="el"><span class="el-n">49</span><span class="el-s">In</span><span class="el-nm">Indium</span></div>
-    <div class="el"><span class="el-n">50</span><span class="el-s">Sn</span><span class="el-nm">Tin</span></div>
-    <div class="el"><span class="el-n">76</span><span class="el-s">Os</span><span class="el-nm">Osmium</span></div>
-    <div class="el near"><span class="el-n">77</span><span class="el-s">Ir</span><span class="el-nm">Iridium</span></div>
-    <div class="el near"><span class="el-n">78</span><span class="el-s">Pt</span><span class="el-nm">Platinum</span></div>
-    <div class="el au"><span class="el-n">79</span><span class="el-s">Au</span><span class="el-nm">Aurum</span></div>
-    <div class="el near"><span class="el-n">80</span><span class="el-s">Hg</span><span class="el-nm">Mercury</span></div>
-    <div class="el near"><span class="el-n">81</span><span class="el-s">Tl</span><span class="el-nm">Thallium</span></div>
-    <div class="el"><span class="el-n">82</span><span class="el-s">Pb</span><span class="el-nm">Lead</span></div>
-    <div class="el"><span class="el-n">108</span><span class="el-s">Hs</span><span class="el-nm">Hassium</span></div>
-    <div class="el"><span class="el-n">109</span><span class="el-s">Mt</span><span class="el-nm">Meitner.</span></div>
-    <div class="el"><span class="el-n">110</span><span class="el-s">Ds</span><span class="el-nm">Darmst.</span></div>
-    <div class="el"><span class="el-n">111</span><span class="el-s">Rg</span><span class="el-nm">Roentg.</span></div>
-    <div class="el"><span class="el-n">112</span><span class="el-s">Cn</span><span class="el-nm">Copern.</span></div>
-    <div class="el"><span class="el-n">113</span><span class="el-s">Nh</span><span class="el-nm">Nihonium</span></div>
-    <div class="el"><span class="el-n">114</span><span class="el-s">Fl</span><span class="el-nm">Flerov.</span></div>
+    <div class="table-grid" id="bannerGrid"></div>
   </div>
-</div>
-
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg" id="heroBg"></div>
@@ -709,6 +686,49 @@
       document.querySelectorAll('.panel')[parseInt(d.dataset.i)].scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
   });
+
+
+  // Banner grid — fills full width with square tiles, Au centered
+  (function() {
+    const rows = [
+      // Row 1
+      [{n:'26',s:'Fe',nm:'Iron'},{n:'27',s:'Co',nm:'Cobalt'},{n:'28',s:'Ni',nm:'Nickel'},{n:'29',s:'Cu',nm:'Copper',c:'near'},{n:'30',s:'Zn',nm:'Zinc'},{n:'31',s:'Ga',nm:'Gallium'},{n:'32',s:'Ge',nm:'German.'},{n:'33',s:'As',nm:'Arsenic'},{n:'34',s:'Se',nm:'Seleniu.'},{n:'35',s:'Br',nm:'Bromine'},{n:'36',s:'Kr',nm:'Krypton'},{n:'37',s:'Rb',nm:'Rubidium'},{n:'38',s:'Sr',nm:'Strontiu.'},{n:'39',s:'Y',nm:'Yttrium'},{n:'40',s:'Zr',nm:'Zirconiu.'},{n:'41',s:'Nb',nm:'Niobium'},{n:'42',s:'Mo',nm:'Molybden.'},{n:'43',s:'Tc',nm:'Technet.'},{n:'44',s:'Ru',nm:'Ruthen.'},{n:'45',s:'Rh',nm:'Rhodium'},{n:'46',s:'Pd',nm:'Pallad.'},{n:'47',s:'Ag',nm:'Silver',c:'near'},{n:'48',s:'Cd',nm:'Cadmium'},{n:'49',s:'In',nm:'Indium'},{n:'50',s:'Sn',nm:'Tin'}],
+      // Row 2
+      [{n:'44',s:'Ru',nm:'Ruthen.'},{n:'45',s:'Rh',nm:'Rhodium'},{n:'46',s:'Pd',nm:'Pallad.'},{n:'47',s:'Ag',nm:'Silver',c:'near'},{n:'48',s:'Cd',nm:'Cadmium'},{n:'49',s:'In',nm:'Indium'},{n:'50',s:'Sn',nm:'Tin'},{n:'51',s:'Sb',nm:'Antimony'},{n:'52',s:'Te',nm:'Telluriu.'},{n:'53',s:'I',nm:'Iodine'},{n:'54',s:'Xe',nm:'Xenon'},{n:'55',s:'Cs',nm:'Caesium'},{n:'56',s:'Ba',nm:'Barium'},{n:'57',s:'La',nm:'Lanthanu.'},{n:'58',s:'Ce',nm:'Cerium'},{n:'59',s:'Pr',nm:'Praseody.'},{n:'60',s:'Nd',nm:'Neodymiu.'},{n:'61',s:'Pm',nm:'Promethi.'},{n:'62',s:'Sm',nm:'Samarium'},{n:'63',s:'Eu',nm:'Europiu.'},{n:'64',s:'Gd',nm:'Gadolini.'},{n:'65',s:'Tb',nm:'Terbium'},{n:'66',s:'Dy',nm:'Dysprosi.'},{n:'67',s:'Ho',nm:'Holmium'},{n:'68',s:'Er',nm:'Erbium'}],
+      // Row 3 — AU ROW
+      [{n:'70',s:'Yb',nm:'Ytterbiu.'},{n:'71',s:'Lu',nm:'Lutetium'},{n:'72',s:'Hf',nm:'Hafnium'},{n:'73',s:'Ta',nm:'Tantalum'},{n:'74',s:'W',nm:'Tungsten'},{n:'75',s:'Re',nm:'Rhenium'},{n:'76',s:'Os',nm:'Osmium'},{n:'77',s:'Ir',nm:'Iridium',c:'near'},{n:'78',s:'Pt',nm:'Platinum',c:'near'},{n:'79',s:'Au',nm:'Aurum',c:'au'},{n:'80',s:'Hg',nm:'Mercury',c:'near'},{n:'81',s:'Tl',nm:'Thallium',c:'near'},{n:'82',s:'Pb',nm:'Lead'},{n:'83',s:'Bi',nm:'Bismuth'},{n:'84',s:'Po',nm:'Polonium'},{n:'85',s:'At',nm:'Astatine'},{n:'86',s:'Rn',nm:'Radon'},{n:'87',s:'Fr',nm:'Francium'},{n:'88',s:'Ra',nm:'Radium'},{n:'89',s:'Ac',nm:'Actinium'},{n:'90',s:'Th',nm:'Thorium'},{n:'91',s:'Pa',nm:'Protacti.'},{n:'92',s:'U',nm:'Uranium'},{n:'93',s:'Np',nm:'Neptunium'},{n:'94',s:'Pu',nm:'Plutonium'}],
+      // Row 4
+      [{n:'106',s:'Sg',nm:'Seaborg.'},{n:'107',s:'Bh',nm:'Bohrium'},{n:'108',s:'Hs',nm:'Hassium'},{n:'109',s:'Mt',nm:'Meitner.'},{n:'110',s:'Ds',nm:'Darmst.'},{n:'111',s:'Rg',nm:'Roentg.'},{n:'112',s:'Cn',nm:'Copern.'},{n:'113',s:'Nh',nm:'Nihonium'},{n:'114',s:'Fl',nm:'Fleroviu.'},{n:'115',s:'Mc',nm:'Moscov.'},{n:'116',s:'Lv',nm:'Livermor.'},{n:'117',s:'Ts',nm:'Tenness.'},{n:'118',s:'Og',nm:'Oganes.'},{n:'104',s:'Rf',nm:'Rutherfo.'},{n:'105',s:'Db',nm:'Dubnium'},{n:'106',s:'Sg',nm:'Seaborg.'},{n:'107',s:'Bh',nm:'Bohrium'},{n:'108',s:'Hs',nm:'Hassium'},{n:'109',s:'Mt',nm:'Meitner.'},{n:'110',s:'Ds',nm:'Darmst.'},{n:'111',s:'Rg',nm:'Roentg.'},{n:'112',s:'Cn',nm:'Copern.'},{n:'113',s:'Nh',nm:'Nihonium'},{n:'114',s:'Fl',nm:'Fleroviu.'},{n:'115',s:'Mc',nm:'Moscov.'}],
+      // Row 5
+      [{n:'118',s:'Og',nm:'Oganes.'},{n:'117',s:'Ts',nm:'Tenness.'},{n:'116',s:'Lv',nm:'Livermor.'},{n:'115',s:'Mc',nm:'Moscov.'},{n:'114',s:'Fl',nm:'Fleroviu.'},{n:'113',s:'Nh',nm:'Nihonium'},{n:'112',s:'Cn',nm:'Copern.'},{n:'111',s:'Rg',nm:'Roentg.'},{n:'110',s:'Ds',nm:'Darmst.'},{n:'109',s:'Mt',nm:'Meitner.'},{n:'108',s:'Hs',nm:'Hassium'},{n:'107',s:'Bh',nm:'Bohrium'},{n:'106',s:'Sg',nm:'Seaborg.'},{n:'105',s:'Db',nm:'Dubnium'},{n:'104',s:'Rf',nm:'Rutherfo.'},{n:'103',s:'Lr',nm:'Lawrence.'},{n:'102',s:'No',nm:'Nobelium'},{n:'101',s:'Md',nm:'Mendele.'},{n:'100',s:'Fm',nm:'Fermium'},{n:'99',s:'Es',nm:'Einstein.'},{n:'98',s:'Cf',nm:'Californ.'},{n:'97',s:'Bk',nm:'Berkeli.'},{n:'96',s:'Cm',nm:'Curium'},{n:'95',s:'Am',nm:'Americi.'},{n:'94',s:'Pu',nm:'Plutonium'}],
+    ];
+
+    const grid = document.getElementById('bannerGrid');
+    if (!grid) return;
+
+    // Calculate how many tiles fit across the screen
+    const tileSize = 82 + 5; // tile + gap
+    const cols = Math.ceil((window.innerWidth + tileSize) / tileSize) + 1;
+
+    // Au is at position 9 (0-based) in row 3 — center it
+    const auCol = 9;
+    const startOffset = Math.floor(cols / 2) - auCol;
+
+    rows.forEach(row => {
+      for (let i = 0; i < cols; i++) {
+        const idx = ((i - startOffset) % row.length + row.length) % row.length;
+        const el = row[idx];
+        const d = document.createElement('div');
+        d.className = 'el' + (el.c ? ' ' + el.c : '');
+        d.innerHTML = `<span class="el-n">${el.n}</span><span class="el-s">${el.s}</span><span class="el-nm">${el.nm}</span>`;
+        grid.appendChild(d);
+      }
+    });
+
+    // Set grid columns dynamically
+    grid.style.gridTemplateColumns = `repeat(${cols}, 82px)`;
+    grid.style.gridTemplateRows = `repeat(5, 82px)`;
+  })();
 
   // Scroll reveal
   const rvObs = new IntersectionObserver(entries => {
