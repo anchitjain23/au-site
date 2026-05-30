@@ -301,15 +301,17 @@
       .stats { grid-template-columns: repeat(2,1fr); }
     }
   
-    .ticker-wrap { background: #0C0B09; border-bottom: 1px solid rgba(201,169,110,0.12); overflow: hidden; height: 36px; position: relative; }
+    .ticker-wrap { background: #0C0B09; border-bottom: 1px solid rgba(201,169,110,0.12); overflow: hidden; height: 50px; position: relative; display: flex; align-items: center; }
     .ticker-wrap::before,.ticker-wrap::after { content:''; position:absolute; top:0; bottom:0; width:120px; z-index:2; pointer-events:none; }
     .ticker-wrap::before { left:0; background:linear-gradient(90deg,#0C0B09,transparent); }
     .ticker-wrap::after { right:0; background:linear-gradient(270deg,#0C0B09,transparent); }
-    .ticker-track { display:flex; align-items:center; height:100%; animation:tick 40s linear infinite; white-space:nowrap; }
+        .ticker-track { display:flex; align-items:center; height:100%; animation:tick 40s linear infinite; white-space:nowrap; }
     @keyframes tick { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-    .ti-gold { font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.1em; color:#C9A96E; padding:0 18px; }
-    .ti-dim { font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.1em; color:rgba(255,255,255,0.25); padding:0 18px; }
+    .ti-gold { font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.1em; color:#C9A96E; padding:0 18px; transition:color 1.2s ease; }
+    .ti-dim { font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.1em; color:rgba(255,255,255,0.25); padding:0 18px; transition:color 1.2s ease; }
     .ti-sep { color:rgba(255,255,255,0.1); font-family:'Space Mono',monospace; font-size:10px; }
+    .ticker-track.flipped .ti-gold { color:rgba(255,255,255,0.25); }
+    .ticker-track.flipped .ti-dim { color:#C9A96E; }
   </style>
 </head>
 <body>
@@ -742,6 +744,20 @@
     // Set grid columns dynamically
     grid.style.gridTemplateColumns = `repeat(${cols}, 82px)`;
     grid.style.gridTemplateRows = `repeat(5, 82px)`;
+  })();
+
+
+  // Ticker color flip on cycle
+  (function(){
+    var track = document.querySelector('.ticker-track');
+    if(!track) return;
+    var dur = 40000; // matches animation duration
+    var flipped = false;
+    setInterval(function(){
+      flipped = !flipped;
+      if(flipped) track.classList.add('flipped');
+      else track.classList.remove('flipped');
+    }, dur);
   })();
 
   // Scroll reveal
