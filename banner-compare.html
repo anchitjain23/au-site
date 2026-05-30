@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Au Banner Comparison</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400&family=Space+Mono:wght@400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0C0B09;font-family:'DM Sans',sans-serif}
+.lbl{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.3);padding:14px 20px 8px}
+
+/* OPTION A — 52px tiles, 11 cols, 5 rows */
+.banner-a{background:#0C0B09;height:378px;position:relative;overflow:hidden}
+.banner-a::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(180deg,rgba(12,11,9,0.6) 0%,transparent 18%,transparent 82%,rgba(12,11,9,0.6) 100%)}
+.grid-a{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;display:grid;grid-template-columns:repeat(11,52px);grid-template-rows:repeat(5,52px);gap:3px}
+.grid-a .el{width:52px;height:52px;border:1px solid rgba(255,255,255,0.05);border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:6px 5px;background:rgba(255,255,255,0.015)}
+.grid-a .el .el-n{font-family:'Space Mono',monospace;font-size:7px;color:rgba(255,255,255,0.1);align-self:flex-start;line-height:1}
+.grid-a .el .el-s{font-family:'Cormorant Garamond',serif;font-size:20px;color:rgba(255,255,255,0.1);line-height:1;font-weight:300}
+.grid-a .el .el-nm{font-family:'Space Mono',monospace;font-size:5.5px;color:rgba(255,255,255,0.07);letter-spacing:0.02em;line-height:1}
+.grid-a .el.near{border-color:rgba(255,255,255,0.08);background:rgba(255,255,255,0.025)}
+.grid-a .el.near .el-n{color:rgba(255,255,255,0.18)}
+.grid-a .el.near .el-s{color:rgba(255,255,255,0.18)}
+.grid-a .el.near .el-nm{color:rgba(255,255,255,0.1)}
+.grid-a .el.au{border:1.5px solid rgba(201,169,110,0.6);background:rgba(201,169,110,0.08);box-shadow:0 0 24px rgba(201,169,110,0.2),0 0 60px rgba(201,169,110,0.08)}
+.grid-a .el.au .el-n{color:rgba(201,169,110,0.6);font-size:8px}
+.grid-a .el.au .el-s{font-size:24px;color:#C9A96E}
+.grid-a .el.au .el-nm{color:rgba(201,169,110,0.5);font-size:6px}
+
+/* OPTION B — 68px tiles, 9 cols, 5 rows */
+.banner-b{background:#0C0B09;height:378px;position:relative;overflow:hidden}
+.banner-b::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(180deg,rgba(12,11,9,0.6) 0%,transparent 18%,transparent 82%,rgba(12,11,9,0.6) 100%)}
+.grid-b{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;display:grid;grid-template-columns:repeat(9,68px);grid-template-rows:repeat(5,68px);gap:4px}
+.grid-b .el{width:68px;height:68px;border:1px solid rgba(255,255,255,0.05);border-radius:5px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:8px 6px;background:rgba(255,255,255,0.015)}
+.grid-b .el .el-n{font-family:'Space Mono',monospace;font-size:8px;color:rgba(255,255,255,0.1);align-self:flex-start;line-height:1}
+.grid-b .el .el-s{font-family:'Cormorant Garamond',serif;font-size:26px;color:rgba(255,255,255,0.1);line-height:1;font-weight:300}
+.grid-b .el .el-nm{font-family:'Space Mono',monospace;font-size:6px;color:rgba(255,255,255,0.07);letter-spacing:0.02em;line-height:1}
+.grid-b .el.near{border-color:rgba(255,255,255,0.08);background:rgba(255,255,255,0.025)}
+.grid-b .el.near .el-n{color:rgba(255,255,255,0.18)}
+.grid-b .el.near .el-s{color:rgba(255,255,255,0.18)}
+.grid-b .el.near .el-nm{color:rgba(255,255,255,0.1)}
+.grid-b .el.au{border:1.5px solid rgba(201,169,110,0.6);background:rgba(201,169,110,0.08);box-shadow:0 0 28px rgba(201,169,110,0.22),0 0 70px rgba(201,169,110,0.08)}
+.grid-b .el.au .el-n{color:rgba(201,169,110,0.6);font-size:9px}
+.grid-b .el.au .el-s{font-size:30px;color:#C9A96E}
+.grid-b .el.au .el-nm{color:rgba(201,169,110,0.5);font-size:6.5px}
+</style>
+</head>
+<body>
+<div class="lbl">Option A — 52px square tiles · 11 cols × 5 rows · denser, bleeds off edge</div>
+<div class="banner-a">
+  <div class="grid-a">
+      <!-- Row 0 -->
+      <div class="el"><span class="el-n">26</span><span class="el-s">Fe</span><span class="el-nm">Iron</span></div>
+      <div class="el"><span class="el-n">27</span><span class="el-s">Co</span><span class="el-nm">Cobalt</span></div>
+      <div class="el"><span class="el-n">28</span><span class="el-s">Ni</span><span class="el-nm">Nickel</span></div>
+      <div class="el near"><span class="el-n">29</span><span class="el-s">Cu</span><span class="el-nm">Copper</span></div>
+      <div class="el"><span class="el-n">30</span><span class="el-s">Zn</span><span class="el-nm">Zinc</span></div>
+      <div class="el"><span class="el-n">31</span><span class="el-s">Ga</span><span class="el-nm">Gallium</span></div>
+      <div class="el"><span class="el-n">32</span><span class="el-s">Ge</span><span class="el-nm">Germanium</span></div>
+      <div class="el"><span class="el-n">33</span><span class="el-s">As</span><span class="el-nm">Arsenic</span></div>
+      <div class="el"><span class="el-n">34</span><span class="el-s">Se</span><span class="el-nm">Selenium</span></div>
+      <div class="el"><span class="el-n">35</span><span class="el-s">Br</span><span class="el-nm">Bromine</span></div>
+      <div class="el"><span class="el-n">36</span><span class="el-s">Kr</span><span class="el-nm">Krypton</span></div>
+      <!-- Row 1 -->
+      <div class="el"><span class="el-n">44</span><span class="el-s">Ru</span><span class="el-nm">Ruthenium</span></div>
+      <div class="el"><span class="el-n">45</span><span class="el-s">Rh</span><span class="el-nm">Rhodium</span></div>
+      <div class="el"><span class="el-n">46</span><span class="el-s">Pd</span><span class="el-nm">Palladium</span></div>
+      <div class="el near"><span class="el-n">47</span><span class="el-s">Ag</span><span class="el-nm">Silver</span></div>
+      <div class="el"><span class="el-n">48</span><span class="el-s">Cd</span><span class="el-nm">Cadmium</span></div>
+      <div class="el"><span class="el-n">49</span><span class="el-s">In</span><span class="el-nm">Indium</span></div>
+      <div class="el"><span class="el-n">50</span><span class="el-s">Sn</span><span class="el-nm">Tin</span></div>
+      <div class="el"><span class="el-n">51</span><span class="el-s">Sb</span><span class="el-nm">Antimony</span></div>
+      <div class="el"><span class="el-n">52</span><span class="el-s">Te</span><span class="el-nm">Tellurium</span></div>
+      <div class="el"><span class="el-n">53</span><span class="el-s">I</span><span class="el-nm">Iodine</span></div>
+      <div class="el"><span class="el-n">54</span><span class="el-s">Xe</span><span class="el-nm">Xenon</span></div>
+      <!-- Row 2 — AU -->
+      <div class="el"><span class="el-n">74</span><span class="el-s">W</span><span class="el-nm">Tungsten</span></div>
+      <div class="el"><span class="el-n">75</span><span class="el-s">Re</span><span class="el-nm">Rhenium</span></div>
+      <div class="el"><span class="el-n">76</span><span class="el-s">Os</span><span class="el-nm">Osmium</span></div>
+      <div class="el near"><span class="el-n">77</span><span class="el-s">Ir</span><span class="el-nm">Iridium</span></div>
+      <div class="el near"><span class="el-n">78</span><span class="el-s">Pt</span><span class="el-nm">Platinum</span></div>
+      <div class="el au"><span class="el-n">79</span><span class="el-s">Au</span><span class="el-nm">Aurum</span></div>
+      <div class="el near"><span class="el-n">80</span><span class="el-s">Hg</span><span class="el-nm">Mercury</span></div>
+      <div class="el near"><span class="el-n">81</span><span class="el-s">Tl</span><span class="el-nm">Thallium</span></div>
+      <div class="el"><span class="el-n">82</span><span class="el-s">Pb</span><span class="el-nm">Lead</span></div>
+      <div class="el"><span class="el-n">83</span><span class="el-s">Bi</span><span class="el-nm">Bismuth</span></div>
+      <div class="el"><span class="el-n">84</span><span class="el-s">Po</span><span class="el-nm">Polonium</span></div>
+      <!-- Row 3 -->
+      <div class="el"><span class="el-n">106</span><span class="el-s">Sg</span><span class="el-nm">Seaborg.</span></div>
+      <div class="el"><span class="el-n">107</span><span class="el-s">Bh</span><span class="el-nm">Bohrium</span></div>
+      <div class="el"><span class="el-n">108</span><span class="el-s">Hs</span><span class="el-nm">Hassium</span></div>
+      <div class="el"><span class="el-n">109</span><span class="el-s">Mt</span><span class="el-nm">Meitner.</span></div>
+      <div class="el"><span class="el-n">110</span><span class="el-s">Ds</span><span class="el-nm">Darmst.</span></div>
+      <div class="el"><span class="el-n">111</span><span class="el-s">Rg</span><span class="el-nm">Roentg.</span></div>
+      <div class="el"><span class="el-n">112</span><span class="el-s">Cn</span><span class="el-nm">Copern.</span></div>
+      <div class="el"><span class="el-n">113</span><span class="el-s">Nh</span><span class="el-nm">Nihonium</span></div>
+      <div class="el"><span class="el-n">114</span><span class="el-s">Fl</span><span class="el-nm">Flerovium</span></div>
+      <div class="el"><span class="el-n">115</span><span class="el-s">Mc</span><span class="el-nm">Moscovium</span></div>
+      <div class="el"><span class="el-n">116</span><span class="el-s">Lv</span><span class="el-nm">Livermor.</span></div>
+      <!-- Row 4 -->
+      <div class="el"><span class="el-n">118</span><span class="el-s">Og</span><span class="el-nm">Oganesson</span></div>
+      <div class="el"><span class="el-n">117</span><span class="el-s">Ts</span><span class="el-nm">Tenness.</span></div>
+      <div class="el"><span class="el-n">116</span><span class="el-s">Lv</span><span class="el-nm">Livermor.</span></div>
+      <div class="el"><span class="el-n">115</span><span class="el-s">Mc</span><span class="el-nm">Moscovium</span></div>
+      <div class="el"><span class="el-n">114</span><span class="el-s">Fl</span><span class="el-nm">Flerovium</span></div>
+      <div class="el"><span class="el-n">113</span><span class="el-s">Nh</span><span class="el-nm">Nihonium</span></div>
+      <div class="el"><span class="el-n">112</span><span class="el-s">Cn</span><span class="el-nm">Copern.</span></div>
+      <div class="el"><span class="el-n">111</span><span class="el-s">Rg</span><span class="el-nm">Roentg.</span></div>
+      <div class="el"><span class="el-n">110</span><span class="el-s">Ds</span><span class="el-nm">Darmst.</span></div>
+      <div class="el"><span class="el-n">109</span><span class="el-s">Mt</span><span class="el-nm">Meitner.</span></div>
+      <div class="el"><span class="el-n">108</span><span class="el-s">Hs</span><span class="el-nm">Hassium</span></div>
+  </div>
+</div>
+<div class="lbl" style="margin-top:2px">Option B — 68px square tiles · 9 cols × 5 rows · bigger, more readable</div>
+<div class="banner-b">
+  <div class="grid-b">
+      <!-- Row 0 -->
+      <div class="el"><span class="el-n">26</span><span class="el-s">Fe</span><span class="el-nm">Iron</span></div>
+      <div class="el"><span class="el-n">27</span><span class="el-s">Co</span><span class="el-nm">Cobalt</span></div>
+      <div class="el"><span class="el-n">28</span><span class="el-s">Ni</span><span class="el-nm">Nickel</span></div>
+      <div class="el near"><span class="el-n">29</span><span class="el-s">Cu</span><span class="el-nm">Copper</span></div>
+      <div class="el"><span class="el-n">30</span><span class="el-s">Zn</span><span class="el-nm">Zinc</span></div>
+      <div class="el"><span class="el-n">31</span><span class="el-s">Ga</span><span class="el-nm">Gallium</span></div>
+      <div class="el"><span class="el-n">32</span><span class="el-s">Ge</span><span class="el-nm">Germanium</span></div>
+      <div class="el"><span class="el-n">33</span><span class="el-s">As</span><span class="el-nm">Arsenic</span></div>
+      <div class="el"><span class="el-n">34</span><span class="el-s">Se</span><span class="el-nm">Selenium</span></div>
+      <div class="el"><span class="el-n">35</span><span class="el-s">Br</span><span class="el-nm">Bromine</span></div>
+      <div class="el"><span class="el-n">36</span><span class="el-s">Kr</span><span class="el-nm">Krypton</span></div>
+      <!-- Row 1 -->
+      <div class="el"><span class="el-n">44</span><span class="el-s">Ru</span><span class="el-nm">Ruthenium</span></div>
+      <div class="el"><span class="el-n">45</span><span class="el-s">Rh</span><span class="el-nm">Rhodium</span></div>
+      <div class="el"><span class="el-n">46</span><span class="el-s">Pd</span><span class="el-nm">Palladium</span></div>
+      <div class="el near"><span class="el-n">47</span><span class="el-s">Ag</span><span class="el-nm">Silver</span></div>
+      <div class="el"><span class="el-n">48</span><span class="el-s">Cd</span><span class="el-nm">Cadmium</span></div>
+      <div class="el"><span class="el-n">49</span><span class="el-s">In</span><span class="el-nm">Indium</span></div>
+      <div class="el"><span class="el-n">50</span><span class="el-s">Sn</span><span class="el-nm">Tin</span></div>
+      <div class="el"><span class="el-n">51</span><span class="el-s">Sb</span><span class="el-nm">Antimony</span></div>
+      <div class="el"><span class="el-n">52</span><span class="el-s">Te</span><span class="el-nm">Tellurium</span></div>
+      <div class="el"><span class="el-n">53</span><span class="el-s">I</span><span class="el-nm">Iodine</span></div>
+      <div class="el"><span class="el-n">54</span><span class="el-s">Xe</span><span class="el-nm">Xenon</span></div>
+      <!-- Row 2 — AU -->
+      <div class="el"><span class="el-n">74</span><span class="el-s">W</span><span class="el-nm">Tungsten</span></div>
+      <div class="el"><span class="el-n">75</span><span class="el-s">Re</span><span class="el-nm">Rhenium</span></div>
+      <div class="el"><span class="el-n">76</span><span class="el-s">Os</span><span class="el-nm">Osmium</span></div>
+      <div class="el near"><span class="el-n">77</span><span class="el-s">Ir</span><span class="el-nm">Iridium</span></div>
+      <div class="el near"><span class="el-n">78</span><span class="el-s">Pt</span><span class="el-nm">Platinum</span></div>
+      <div class="el au"><span class="el-n">79</span><span class="el-s">Au</span><span class="el-nm">Aurum</span></div>
+      <div class="el near"><span class="el-n">80</span><span class="el-s">Hg</span><span class="el-nm">Mercury</span></div>
+      <div class="el near"><span class="el-n">81</span><span class="el-s">Tl</span><span class="el-nm">Thallium</span></div>
+      <div class="el"><span class="el-n">82</span><span class="el-s">Pb</span><span class="el-nm">Lead</span></div>
+      <div class="el"><span class="el-n">83</span><span class="el-s">Bi</span><span class="el-nm">Bismuth</span></div>
+      <div class="el"><span class="el-n">84</span><span class="el-s">Po</span><span class="el-nm">Polonium</span></div>
+      <!-- Row 3 -->
+      <div class="el"><span class="el-n">106</span><span class="el-s">Sg</span><span class="el-nm">Seaborg.</span></div>
+      <div class="el"><span class="el-n">107</span><span class="el-s">Bh</span><span class="el-nm">Bohrium</span></div>
+      <div class="el"><span class="el-n">108</span><span class="el-s">Hs</span><span class="el-nm">Hassium</span></div>
+      <div class="el"><span class="el-n">109</span><span class="el-s">Mt</span><span class="el-nm">Meitner.</span></div>
+      <div class="el"><span class="el-n">110</span><span class="el-s">Ds</span><span class="el-nm">Darmst.</span></div>
+      <div class="el"><span class="el-n">111</span><span class="el-s">Rg</span><span class="el-nm">Roentg.</span></div>
+      <div class="el"><span class="el-n">112</span><span class="el-s">Cn</span><span class="el-nm">Copern.</span></div>
+      <div class="el"><span class="el-n">113</span><span class="el-s">Nh</span><span class="el-nm">Nihonium</span></div>
+      <div class="el"><span class="el-n">114</span><span class="el-s">Fl</span><span class="el-nm">Flerovium</span></div>
+      <div class="el"><span class="el-n">115</span><span class="el-s">Mc</span><span class="el-nm">Moscovium</span></div>
+      <div class="el"><span class="el-n">116</span><span class="el-s">Lv</span><span class="el-nm">Livermor.</span></div>
+      <!-- Row 4 -->
+      <div class="el"><span class="el-n">118</span><span class="el-s">Og</span><span class="el-nm">Oganesson</span></div>
+      <div class="el"><span class="el-n">117</span><span class="el-s">Ts</span><span class="el-nm">Tenness.</span></div>
+      <div class="el"><span class="el-n">116</span><span class="el-s">Lv</span><span class="el-nm">Livermor.</span></div>
+      <div class="el"><span class="el-n">115</span><span class="el-s">Mc</span><span class="el-nm">Moscovium</span></div>
+      <div class="el"><span class="el-n">114</span><span class="el-s">Fl</span><span class="el-nm">Flerovium</span></div>
+      <div class="el"><span class="el-n">113</span><span class="el-s">Nh</span><span class="el-nm">Nihonium</span></div>
+      <div class="el"><span class="el-n">112</span><span class="el-s">Cn</span><span class="el-nm">Copern.</span></div>
+      <div class="el"><span class="el-n">111</span><span class="el-s">Rg</span><span class="el-nm">Roentg.</span></div>
+      <div class="el"><span class="el-n">110</span><span class="el-s">Ds</span><span class="el-nm">Darmst.</span></div>
+      <div class="el"><span class="el-n">109</span><span class="el-s">Mt</span><span class="el-nm">Meitner.</span></div>
+      <div class="el"><span class="el-n">108</span><span class="el-s">Hs</span><span class="el-nm">Hassium</span></div>
+  </div>
+</div>
+</body>
+</html>
