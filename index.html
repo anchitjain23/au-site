@@ -26,13 +26,7 @@
     }
 
     html { scroll-behavior: smooth; }
-    body { background: var(--cream); color: var(--text-dark); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; cursor: none; }
-
-    /* CURSOR */
-    #cur { position: fixed; width: 7px; height: 7px; background: var(--black); border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); transition: width .2s, height .2s, background .2s; }
-    #cur-ring { position: fixed; width: 32px; height: 32px; border: 1px solid rgba(0,0,0,0.2); border-radius: 50%; pointer-events: none; z-index: 9998; transform: translate(-50%,-50%); transition: width .25s, height .25s; }
-    body.lh #cur { width: 12px; height: 12px; background: var(--gold); }
-    body.lh #cur-ring { width: 44px; height: 44px; border-color: rgba(184,146,74,0.4); }
+    body { background: var(--cream); color: var(--text-dark); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; }
 
     /* ── NAV ── */
     nav {
@@ -310,8 +304,6 @@
 </head>
 <body>
 
-<div id="cur"></div>
-<div id="cur-ring"></div>
 
 <!-- NAV -->
 <nav>
@@ -668,17 +660,6 @@
 </footer>
 
 <script>
-  // Cursor
-  const cur = document.getElementById('cur');
-  const ring = document.getElementById('cur-ring');
-  let mx=0,my=0,rx=0,ry=0;
-  document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; cur.style.left=mx+'px'; cur.style.top=my+'px'; });
-  (function anim(){ rx+=(mx-rx)*.1; ry+=(my-ry)*.1; ring.style.left=rx+'px'; ring.style.top=ry+'px'; requestAnimationFrame(anim); })();
-  document.querySelectorAll('a,button').forEach(el => {
-    el.addEventListener('mouseenter', () => document.body.classList.add('lh'));
-    el.addEventListener('mouseleave', () => document.body.classList.remove('lh'));
-  });
-
   // Hero background table
   const syms = ['H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si','P','S','Cl','Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu','Zn','Ga','Ge','As','Se','Br','Kr','Rb','Sr','Y','Zr','Nb','Mo','Tc','Ru','Rh','Pd','Ag','Cd','In','Sn','Sb','Te','I','Xe','Cs','Ba','La','Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg','Tl','Pb','Bi','Po','At','Rn'];
   const near = ['Ir','Pt','Hg','Tl'];
