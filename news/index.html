@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>News · Au</title>
-  <meta name="description" content="Updates and announcements from the Au team." />
+  <meta name="description" content="Updates, announcements, and thinking from the Au team." />
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
@@ -11,17 +11,19 @@
     :root{--gold:#C9A96E;--gold-light:#D9BC8F;--gold-dim:rgba(201,169,110,0.15);--black:#080706;--black-card:#0F0F0F;--black-raised:#1A1A1A;--cream:#F5F0E8;--cream-dim:rgba(245,240,232,0.55);--green:#5BA85A;--text-body:#C8C3BB}
     html{scroll-behavior:smooth}
     body{background:var(--black);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.6;overflow-x:hidden}
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 48px;background:rgba(8,7,6,0.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(201,169,110,0.12)}
-    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-    .nav-badge{width:36px;height:36px;border:1.5px solid var(--gold);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
-    .nav-badge .atomic{font-size:7px;color:var(--gold);letter-spacing:.04em}
-    .nav-badge .symbol{font-size:16px;color:var(--gold);font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1}
-    .nav-badge .number{font-size:6px;color:var(--gold);letter-spacing:.04em}
-    .nav-wordmark{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:var(--cream);letter-spacing:.06em}
-    .nav-links{display:flex;align-items:center;gap:28px}
-    .nav-links a{color:var(--text-body);font-size:14px;text-decoration:none;letter-spacing:.02em;transition:color .2s}
-    .nav-links a:hover,.nav-links a.active{color:var(--cream)}
-    .nav-cta{background:var(--gold);color:var(--black);padding:10px 22px;border-radius:6px;font-size:13px;font-weight:500;text-decoration:none;letter-spacing:.04em;transition:background .2s,transform .15s}
+        nav {
+      background: #0C0B09;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px; height: 42px;
+      position: sticky; top: 0; z-index: 200;
+    }
+    .nav-logo { width: 32px; height: 32px; border: 1px solid rgba(255,255,255,0.28); border-radius: 3px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; text-decoration: none; }
+    .nav-wm { font-family: "Cormorant Garamond", serif; font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.42); letter-spacing: 0.08em; line-height: 1; }
+    .nav-links { display: flex; align-items: center; flex: 1; justify-content: space-evenly; padding: 0 40px; }
+    .nav-links a { font-size: 11px; color: rgba(255,255,255,0.42); letter-spacing: 0.03em; text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: rgba(255,255,255,0.75); }
+    .nav-dl { border: 1px solid rgba(255,255,255,0.35); color: rgba(255,255,255,0.55); padding: 5px 16px; border-radius: 3px; font-size: 11px; font-weight: 300; letter-spacing: 0.03em; text-decoration: none; transition: border-color .2s, color .2s; }
+    .nav-dl:hover { border-color: rgba(255,255,255,0.6); color: rgba(255,255,255,0.8); }
     .nav-cta:hover{background:var(--gold-light);transform:translateY(-1px)}
     .page-hero{padding:160px 24px 64px;text-align:center;max-width:620px;margin:0 auto}
     .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
@@ -29,12 +31,15 @@
     h1 em{font-style:italic;color:var(--gold)}
     .lead{font-size:17px;color:var(--text-body);line-height:1.8}
     .posts{max-width:720px;margin:0 auto;padding:40px 24px 100px}
-    .post-card{padding:36px 0}
+    .post-card{border-bottom:1px solid rgba(245,240,232,0.08);padding:36px 0;transition:transform .2s}
+    .post-card:first-child{padding-top:0}
     .post-meta{display:flex;align-items:center;gap:16px;margin-bottom:14px}
     .post-tag{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);background:var(--gold-dim);padding:4px 10px;border-radius:20px}
     .post-date{font-size:12px;color:var(--text-body)}
-    .post-title{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3vw,36px);font-weight:500;color:var(--cream);margin-bottom:14px;line-height:1.25}
-    .post-excerpt{font-size:15px;color:var(--text-body);line-height:1.8;max-width:580px}
+    .post-title{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.5vw,30px);font-weight:500;color:var(--cream);margin-bottom:12px;line-height:1.25}
+    .post-excerpt{font-size:14px;color:var(--text-body);line-height:1.75;max-width:580px}
+    .post-read{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--gold);text-decoration:none;margin-top:16px;transition:gap .2s}
+    .post-read:hover{gap:10px}
     .newsletter-band{background:var(--black-card);border-top:1px solid rgba(201,169,110,0.1);border-bottom:1px solid rgba(201,169,110,0.1);padding:80px 24px;text-align:center}
     .newsletter-band h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.5vw,40px);font-weight:400;margin-bottom:12px}
     .newsletter-band p{font-size:14px;color:var(--text-body);max-width:420px;margin:0 auto 28px}
@@ -57,44 +62,73 @@
 </head>
 <body>
 <nav>
-  <a href="/" class="nav-logo">
-    <div class="nav-badge"><span class="atomic">Au</span><span class="symbol">Au</span><span class="number">79</span></div>
-    <span class="nav-wordmark">Au</span>
-  </a>
+  <a href="/" class="nav-logo"><span class="nav-wm">Au</span></a>
   <div class="nav-links">
     <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/product/">Product</a>
+    <a href="/product/">Features</a>
     <a href="/pricing/">Pricing</a>
-    <a href="/news/" class="active">News</a>
+    <a href="/news/">Blog</a>
     <a href="/contact/">Contact</a>
-    <a href="/" class="nav-cta">Download</a>
   </div>
+  <a href="/" class="nav-dl">Download</a>
 </nav>
 
 <div class="page-hero">
   <p class="eyebrow">News</p>
   <h1>Updates from<br>the <em>Au</em> team.</h1>
-  <p class="lead">Product announcements and what we're building next.</p>
+  <p class="lead">Product announcements, thinking on personal finance, and what we're building next.</p>
 </div>
 
 <div class="posts">
+
   <div class="post-card">
     <div class="post-meta">
       <span class="post-tag">Announcement</span>
       <span class="post-date">May 2026</span>
     </div>
-    <h2 class="post-title">Au is launching on the App Store in July 2026</h2>
-    <p class="post-excerpt">We're putting the finishing touches on Au and will be launching on iOS in July 2026. Au shows you what every purchase truly costs — not in dollars, but in days toward the goals that matter to you. Join the waitlist to be first in line and get notified the moment we go live.</p>
+    <h2 class="post-title">Au is now available on the App Store</h2>
+    <p class="post-excerpt">After months of building, testing, and refining — Au is live. You can download it today, connect your bank account in under two minutes, and see the true cost of every purchase before you make it. We built Au because every other finance app tells you what you did wrong after the money is already gone. Au shows you the consequence before you spend. That's the only moment that actually changes behaviour.</p>
+    <a href="/" class="post-read">Download Au →</a>
   </div>
+
+  <div class="post-card">
+    <div class="post-meta">
+      <span class="post-tag">Product</span>
+      <span class="post-date">April 2026</span>
+    </div>
+    <h2 class="post-title">Why we measure everything in days, not dollars</h2>
+    <p class="post-excerpt">$310 means nothing. $310 is an abstraction. But "26 days further from your house deposit" — that means something. It connects to your life. The decision to express every financial consequence in time rather than money is the single most important design choice in Au, and it took us a long time to get there. Here's the thinking behind it.</p>
+    <a href="/news/" class="post-read">Read more →</a>
+  </div>
+
+  <div class="post-card">
+    <div class="post-meta">
+      <span class="post-tag">Thinking</span>
+      <span class="post-date">March 2026</span>
+    </div>
+    <h2 class="post-title">The problem with every finance app (and why we built Au)</h2>
+    <p class="post-excerpt">Seventy percent of people who download a personal finance app delete it within thirty days. The reason isn't apathy — it's shame. Every app is built around the same broken model: show people what they did wrong, make them feel bad, hope that guilt turns into better behaviour. It doesn't. Au is built on a completely different idea.</p>
+    <a href="/news/" class="post-read">Read more →</a>
+  </div>
+
+  <div class="post-card">
+    <div class="post-meta">
+      <span class="post-tag">Feature</span>
+      <span class="post-date">February 2026</span>
+    </div>
+    <h2 class="post-title">Introducing Atom — your AI financial advisor</h2>
+    <p class="post-excerpt">Atom is Au's AI, powered by Claude. It knows everything about your financial life and you can talk to it about any of it — text or voice, any time. Serious questions like "what happens to my goals if I take a pay cut?" and playful ones like "what if I bought a Batmobile?" Both get real, data-backed answers drawn from your actual situation.</p>
+    <a href="/product/" class="post-read">See all features →</a>
+  </div>
+
 </div>
 
 <div class="newsletter-band">
-  <h2>Be first to know</h2>
-  <p>Join the waitlist and get notified the moment Au launches.</p>
+  <h2>Stay in the loop</h2>
+  <p>Product updates and thinking on personal finance — direct to your inbox. No spam.</p>
   <div class="newsletter-form">
     <input type="email" placeholder="your@email.com" />
-    <button type="button">Join Waitlist</button>
+    <button type="button">Subscribe</button>
   </div>
 </div>
 

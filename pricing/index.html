@@ -11,17 +11,19 @@
     :root{--gold:#C9A96E;--gold-light:#D9BC8F;--gold-dim:rgba(201,169,110,0.15);--black:#080706;--black-card:#0F0F0F;--black-raised:#1A1A1A;--cream:#F5F0E8;--cream-dim:rgba(245,240,232,0.55);--green:#5BA85A;--text-body:#C8C3BB}
     html{scroll-behavior:smooth}
     body{background:var(--black);color:var(--cream);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.6;overflow-x:hidden}
-    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 48px;background:rgba(8,7,6,0.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(201,169,110,0.12)}
-    .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
-    .nav-badge{width:36px;height:36px;border:1.5px solid var(--gold);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
-    .nav-badge .atomic{font-size:7px;color:var(--gold);letter-spacing:.04em}
-    .nav-badge .symbol{font-size:16px;color:var(--gold);font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1}
-    .nav-badge .number{font-size:6px;color:var(--gold);letter-spacing:.04em}
-    .nav-wordmark{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:var(--cream);letter-spacing:.06em}
-    .nav-links{display:flex;align-items:center;gap:28px}
-    .nav-links a{color:var(--text-body);font-size:14px;text-decoration:none;letter-spacing:.02em;transition:color .2s}
-    .nav-links a:hover,.nav-links a.active{color:var(--cream)}
-    .nav-cta{background:var(--gold);color:var(--black);padding:10px 22px;border-radius:6px;font-size:13px;font-weight:500;text-decoration:none;letter-spacing:.04em;transition:background .2s,transform .15s}
+        nav {
+      background: #0C0B09;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px; height: 42px;
+      position: sticky; top: 0; z-index: 200;
+    }
+    .nav-logo { width: 32px; height: 32px; border: 1px solid rgba(255,255,255,0.28); border-radius: 3px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; text-decoration: none; }
+    .nav-wm { font-family: "Cormorant Garamond", serif; font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.42); letter-spacing: 0.08em; line-height: 1; }
+    .nav-links { display: flex; align-items: center; flex: 1; justify-content: space-evenly; padding: 0 40px; }
+    .nav-links a { font-size: 11px; color: rgba(255,255,255,0.42); letter-spacing: 0.03em; text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: rgba(255,255,255,0.75); }
+    .nav-dl { border: 1px solid rgba(255,255,255,0.35); color: rgba(255,255,255,0.55); padding: 5px 16px; border-radius: 3px; font-size: 11px; font-weight: 300; letter-spacing: 0.03em; text-decoration: none; transition: border-color .2s, color .2s; }
+    .nav-dl:hover { border-color: rgba(255,255,255,0.6); color: rgba(255,255,255,0.8); }
     .nav-cta:hover{background:var(--gold-light);transform:translateY(-1px)}
     .page-hero{padding:160px 24px 64px;text-align:center;max-width:620px;margin:0 auto}
     .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
@@ -63,19 +65,15 @@
 </head>
 <body>
 <nav>
-  <a href="/" class="nav-logo">
-    <div class="nav-badge"><span class="atomic">Au</span><span class="symbol">Au</span><span class="number">79</span></div>
-    <span class="nav-wordmark">Au</span>
-  </a>
+  <a href="/" class="nav-logo"><span class="nav-wm">Au</span></a>
   <div class="nav-links">
     <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/product/">Product</a>
-    <a href="/pricing/" class="active">Pricing</a>
-    <a href="/news/">News</a>
+    <a href="/product/">Features</a>
+    <a href="/pricing/">Pricing</a>
+    <a href="/news/">Blog</a>
     <a href="/contact/">Contact</a>
-    <a href="/" class="nav-cta">Download</a>
   </div>
+  <a href="/" class="nav-dl">Download</a>
 </nav>
 
 <div class="page-hero">
