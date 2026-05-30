@@ -300,6 +300,16 @@
       .ft-top { flex-direction: column; }
       .stats { grid-template-columns: repeat(2,1fr); }
     }
+  
+    .ticker-wrap { background: #0C0B09; border-bottom: 1px solid rgba(201,169,110,0.12); overflow: hidden; height: 36px; position: relative; }
+    .ticker-wrap::before,.ticker-wrap::after { content:''; position:absolute; top:0; bottom:0; width:120px; z-index:2; pointer-events:none; }
+    .ticker-wrap::before { left:0; background:linear-gradient(90deg,#0C0B09,transparent); }
+    .ticker-wrap::after { right:0; background:linear-gradient(270deg,#0C0B09,transparent); }
+    .ticker-track { display:flex; align-items:center; height:100%; animation:tick 40s linear infinite; white-space:nowrap; }
+    @keyframes tick { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+    .ti-gold { font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.1em; color:#C9A96E; padding:0 18px; }
+    .ti-dim { font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.1em; color:rgba(255,255,255,0.25); padding:0 18px; }
+    .ti-sep { color:rgba(255,255,255,0.1); font-family:'Space Mono',monospace; font-size:10px; }
   </style>
 </head>
 <body>
@@ -322,6 +332,10 @@
 <div class="banner">
     <div class="table-grid" id="bannerGrid"></div>
   </div>
+
+<!-- STRIP -->
+<div class="ticker-wrap"><div class="ticker-track"><span class="ti-gold">Au · 79 · Aurum</span><span class="ti-sep">···</span><span class="ti-dim">Rare · Enduring · Precise</span><span class="ti-sep">···</span><span class="ti-gold">196.967 g/mol</span><span class="ti-sep">···</span><span class="ti-dim">The AI Personal Finance App</span><span class="ti-sep">···</span><span class="ti-gold">Period 6 · Group 11</span><span class="ti-sep">···</span><span class="ti-dim">Days not Dollars</span><span class="ti-sep">···</span><span class="ti-gold">Built for the moment before you spend</span><span class="ti-sep">···</span><span class="ti-dim">Density 19.3 g/cm³</span><span class="ti-sep">···</span><span class="ti-gold">Intelligence at the point of decision</span><span class="ti-sep">···</span><span class="ti-dim">Transition Metal</span><span class="ti-sep">···</span><span class="ti-gold">The only element that never tarnishes</span><span class="ti-sep">···</span><span class="ti-dim">Neither does a good financial decision</span><span class="ti-sep">···</span><span class="ti-gold">Au · 79 · Aurum</span><span class="ti-sep">···</span><span class="ti-dim">Rare · Enduring · Precise</span><span class="ti-sep">···</span><span class="ti-gold">196.967 g/mol</span><span class="ti-sep">···</span><span class="ti-dim">The AI Personal Finance App</span><span class="ti-sep">···</span><span class="ti-gold">Period 6 · Group 11</span><span class="ti-sep">···</span><span class="ti-dim">Days not Dollars</span><span class="ti-sep">···</span><span class="ti-gold">Built for the moment before you spend</span><span class="ti-sep">···</span><span class="ti-dim">Density 19.3 g/cm³</span><span class="ti-sep">···</span><span class="ti-gold">Intelligence at the point of decision</span><span class="ti-sep">···</span><span class="ti-dim">Transition Metal</span><span class="ti-sep">···</span><span class="ti-gold">The only element that never tarnishes</span><span class="ti-sep">···</span><span class="ti-dim">Neither does a good financial decision</span><span class="ti-sep">···</span></div></div>
+
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg" id="heroBg"></div>
