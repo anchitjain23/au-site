@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Features · Au</title>
+  <meta name="description" content="Every feature in Au — from the Goal Impact Bar to Atom AI." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;1,200;1,300&family=DM+Sans:wght@200;300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--black:#0C0B09;--cream:#F3F0E7;--cream-mid:#EDE9DE;--gold:#B8924A;--green:#5BA85A;--text:#111;--mid:#666;--light:#aaa;--border:rgba(0,0,0,0.08)}
+    html{scroll-behavior:smooth}
+    body{background:var(--cream);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden}
+    nav{background:var(--black);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:42px;position:sticky;top:0;z-index:200}
+    .nav-logo{width:32px;height:32px;border:1px solid rgba(255,255,255,0.28);border-radius:3px;display:flex;align-items:center;justify-content:center;flex-shrink:0;text-decoration:none}
+    .nav-wm{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:300;color:rgba(255,255,255,0.42);letter-spacing:0.08em;line-height:1}
+    .nav-links{display:flex;align-items:center;flex:1;justify-content:space-evenly;padding:0 40px}
+    .nav-links a{font-size:11px;color:rgba(255,255,255,0.42);letter-spacing:0.03em;text-decoration:none;transition:color .2s}
+    .nav-links a:hover,.nav-links a.active{color:rgba(255,255,255,0.78)}
+    .nav-dl{border:1px solid rgba(255,255,255,0.35);color:rgba(255,255,255,0.55);padding:5px 16px;border-radius:3px;font-size:11px;font-weight:300;letter-spacing:0.03em;text-decoration:none}
+    .page-hero{padding:72px 40px 56px;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
+    .page-hero-bg{position:absolute;inset:0;display:grid;grid-template-columns:repeat(18,1fr);gap:1.5px;padding:8px;pointer-events:none}
+    .phb{background:rgba(0,0,0,0.018);border-radius:1px}
+    .phb.au{background:rgba(184,146,74,0.07)}
+    .phb.nb{background:rgba(184,146,74,0.03)}
+    .page-hero-overlay{position:absolute;inset:0;background:linear-gradient(145deg,rgba(243,240,231,0.9) 0%,rgba(243,240,231,0.97) 60%)}
+    .page-hero-inner{position:relative;z-index:5;max-width:700px}
+    .eyebrow{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px}
+    .eyebrow::before{content:'';width:20px;height:1px;background:var(--gold);flex-shrink:0}
+    h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,6vw,72px);font-weight:200;line-height:0.92;letter-spacing:-0.04em;margin-bottom:20px}
+    h1 em{font-style:italic;color:var(--gold)}
+    .lead{font-size:15px;color:var(--mid);line-height:1.85;max-width:520px}
+    /* ── SCROLL STORY ── */
+    #story { display: grid; grid-template-columns: 1fr 380px; max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+    .panels { }
+    .panel { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 80px 60px 80px 0; border-bottom: 1px solid var(--border); }
+    .panel:last-child { border-bottom: none; }
+    .panel-eye { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+    .panel-eye::before { content: ''; width: 24px; height: 1px; background: var(--gold); flex-shrink: 0; }
+    .panel-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 4vw, 52px); font-weight: 200; line-height: 1.0; letter-spacing: -0.03em; color: var(--text-dark); margin-bottom: 20px; }
+    .panel-title em { font-style: italic; color: var(--gold); }
+    .panel-body { font-size: 14px; color: var(--text-mid); line-height: 1.85; margin-bottom: 14px; max-width: 460px; }
+    .panel-ex { padding: 14px 16px; background: rgba(0,0,0,0.03); border-left: 2px solid var(--gold); border-radius: 0 8px 8px 0; font-size: 12.5px; color: rgba(0,0,0,0.45); font-style: italic; line-height: 1.7; margin-top: 20px; }
+    .panel-ex strong { color: var(--gold); font-style: normal; font-weight: 500; }
+
+    /* sticky phone */
+    .phone-col { position: sticky; top: 0; height: 100vh; display: flex; align-items: center; justify-content: center; border-left: 1px solid var(--border); padding: 0 0 0 40px; }
+    .phone-stage { position: relative; }
+    .phone-aura { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 300px; height: 300px; border-radius: 50%; pointer-events: none; transition: background .8s ease; }
+    .phone-shell { width: 240px; height: 490px; background: #09080A; border-radius: 40px; border: 1px solid rgba(201,169,110,0.22); position: relative; overflow: hidden; box-shadow: 16px 20px 60px rgba(0,0,0,0.15), -4px -4px 0 rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.04); }
+    .phone-notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 76px; height: 22px; background: #09080A; border-radius: 0 0 14px 14px; z-index: 20; }
+    .screen-wrap { position: absolute; inset: 0; }
+    .pscreen { position: absolute; inset: 0; padding: 28px 12px 12px; opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; pointer-events: none; }
+    .pscreen.active { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .pdots { position: absolute; right: -24px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 8px; }
+    .pdot { width: 4px; height: 4px; border-radius: 50%; background: rgba(0,0,0,0.15); transition: background .3s, transform .3s; cursor: pointer; }
+    .pdot.on { background: var(--gold); transform: scale(1.6); }
+
+    /* screen components */
+    .s-hdr { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+    .s-logo { font-family: 'Cormorant Garamond', serif; font-size: 14px; color: #C9A96E; font-weight: 600; }
+    .s-date { font-size: 7.5px; color: rgba(255,255,255,0.25); }
+    .s-wc { background: #131110; border: 1px solid rgba(201,169,110,0.15); border-radius: 12px; padding: 11px 10px; margin-bottom: 8px; }
+    .s-wlbl { font-size: 6.5px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 2px; }
+    .s-wnum { font-family: 'Cormorant Garamond', serif; font-size: 24px; color: #F2EDE3; line-height: 1; margin-bottom: 8px; }
+    .s-chips { display: flex; gap: 4px; flex-wrap: wrap; }
+    .s-ch { font-size: 7px; font-weight: 500; padding: 2px 6px; border-radius: 4px; }
+    .s-chw { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.5); }
+    .s-chg { background: rgba(201,169,110,0.13); color: #C9A96E; }
+    .s-chgr { background: rgba(91,168,90,0.13); color: #5BA85A; }
+    .s-slbl { font-size: 7px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.2); margin: 7px 0 5px; }
+    .s-gm { background: #131110; border: 1px solid rgba(201,169,110,0.09); border-radius: 9px; padding: 8px; margin-bottom: 5px; }
+    .s-gt { display: flex; justify-content: space-between; margin-bottom: 4px; }
+    .s-gnm { font-size: 9px; color: #F2EDE3; font-weight: 500; }
+    .s-gpct { font-size: 9px; color: #C9A96E; }
+    .s-bt { height: 3px; background: rgba(91,168,90,0.13); border-radius: 2px; overflow: hidden; margin-bottom: 3px; }
+    .s-bf { height: 100%; background: #5BA85A; border-radius: 2px; }
+    .s-gbot { display: flex; justify-content: space-between; }
+    .s-gsm { font-size: 7px; color: rgba(255,255,255,0.25); }
+    /* wishlist */
+    .s-wi { background: #131110; border: 1px solid rgba(201,169,110,0.13); border-radius: 12px; padding: 10px; margin-bottom: 7px; }
+    .s-wir { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; }
+    .s-winm { font-size: 9.5px; color: #F2EDE3; font-weight: 500; max-width: 100px; line-height: 1.3; }
+    .s-wict { font-size: 7.5px; color: rgba(255,255,255,0.28); margin-top: 2px; }
+    .s-stk { display: flex; flex-direction: column; }
+    .s-stkg { background: #C9A96E; padding: 5px 8px; border-radius: 6px 6px 0 0; text-align: center; min-width: 58px; }
+    .s-stkg .sp { font-size: 11px; font-weight: 600; color: #080706; line-height: 1; }
+    .s-stkg .sl { font-size: 6.5px; text-transform: uppercase; letter-spacing: 0.07em; color: rgba(8,7,6,0.5); }
+    .s-stkb { background: #1C1A18; padding: 5px 8px; border-radius: 0 0 6px 6px; text-align: center; border-top: 1px solid rgba(201,169,110,0.18); }
+    .s-stkb .sd { font-size: 10px; font-weight: 500; color: #F2EDE3; line-height: 1; }
+    .s-stkb .si { font-size: 6.5px; text-transform: uppercase; letter-spacing: 0.07em; color: rgba(255,255,255,0.28); }
+    .s-dp { display: inline-flex; align-items: center; gap: 3px; background: rgba(91,168,90,0.1); border: 1px solid rgba(91,168,90,0.22); border-radius: 20px; padding: 2px 7px; font-size: 8px; color: #5BA85A; margin-bottom: 5px; }
+    .s-wbl { font-size: 7px; color: rgba(255,255,255,0.22); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 3px; }
+    .s-wbt { height: 3px; background: rgba(91,168,90,0.13); border-radius: 2px; overflow: hidden; margin-bottom: 3px; }
+    .s-wbf { height: 100%; background: #5BA85A; border-radius: 2px; }
+    .s-wdr { display: flex; justify-content: space-between; font-size: 7.5px; }
+    .s-wdn { color: rgba(255,255,255,0.25); }
+    .s-wda { color: #C9A96E; }
+    /* atom */
+    .s-ahdr { background: #080706; border-bottom: 1px solid rgba(201,169,110,0.08); padding: 10px 12px 10px; margin: -28px -12px 10px; padding-top: 30px; display: flex; align-items: center; gap: 7px; }
+    .s-aico { width: 26px; height: 26px; border: 1px solid #C9A96E; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; }
+    .s-anm { font-size: 10px; font-weight: 500; color: #F2EDE3; }
+    .s-ast { font-size: 7.5px; color: #5BA85A; display: flex; align-items: center; gap: 3px; }
+    .s-ast::before { content: ''; width: 4px; height: 4px; background: #5BA85A; border-radius: 50%; display: inline-block; }
+    .s-msgs { display: flex; flex-direction: column; gap: 7px; }
+    .s-mu { align-self: flex-end; background: #C9A96E; color: #080706; padding: 6px 9px; border-radius: 10px 10px 3px 10px; font-size: 9px; font-weight: 500; max-width: 80%; line-height: 1.4; }
+    .s-ma { align-self: flex-start; background: #1C1A18; color: rgba(255,255,255,0.75); padding: 7px 9px; border-radius: 10px 10px 10px 3px; font-size: 8.5px; max-width: 90%; line-height: 1.55; }
+    .s-ma .ag { color: #C9A96E; font-weight: 500; }
+    .s-ainp { background: #080706; border-top: 1px solid rgba(201,169,110,0.08); padding: 8px 12px; margin: 8px -12px -12px; display: flex; align-items: center; gap: 6px; }
+    .s-abar { flex: 1; background: #1C1A18; border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; padding: 6px 8px; font-size: 8.5px; color: rgba(255,255,255,0.2); font-family: 'DM Sans', sans-serif; }
+    .s-abtn { width: 26px; height: 26px; background: #C9A96E; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #080706; }
+    /* spend */
+    .s-sptl { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: #F2EDE3; font-weight: 500; margin-bottom: 8px; }
+    .s-spsum { background: #131110; border: 1px solid rgba(201,169,110,0.13); border-radius: 11px; padding: 10px; margin-bottom: 8px; }
+    .s-spr { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+    .s-spbig { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #F2EDE3; line-height: 1; }
+    .s-splft { font-size: 10px; color: #C9A96E; }
+    .s-spcat { background: #131110; border: 1px solid rgba(201,169,110,0.09); border-radius: 10px; padding: 9px; margin-bottom: 6px; }
+    .s-spcr { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+    .s-spico { width: 24px; height: 24px; background: rgba(201,169,110,0.08); border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 11px; flex-shrink: 0; }
+    .s-spcn { font-size: 9px; color: #F2EDE3; font-weight: 500; }
+    .s-spca { font-size: 10px; color: #F2EDE3; font-weight: 500; }
+    .s-spimp { display: inline-flex; align-items: center; gap: 3px; background: rgba(201,169,110,0.08); border: 1px solid rgba(201,169,110,0.16); border-radius: 4px; padding: 2px 6px; font-size: 7.5px; color: #C9A96E; margin-top: 3px; }
+
+    /* screen components */
+    .s-hdr { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+    .s-logo { font-family: 'Cormorant Garamond', serif; font-size: 14px; color: #C9A96E; font-weight: 600; }
+    .s-date { font-size: 7.5px; color: rgba(255,255,255,0.25); }
+    .s-wc { background: #131110; border: 1px solid rgba(201,169,110,0.15); border-radius: 12px; padding: 11px 10px; margin-bottom: 8px; }
+    .s-wlbl { font-size: 6.5px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 2px; }
+    .s-wnum { font-family: 'Cormorant Garamond', serif; font-size: 24px; color: #F2EDE3; line-height: 1; margin-bottom: 8px; }
+    .s-chips { display: flex; gap: 4px; flex-wrap: wrap; }
+    .s-ch { font-size: 7px; font-weight: 500; padding: 2px 6px; border-radius: 4px; }
+    .s-chw { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.5); }
+    .s-chg { background: rgba(201,169,110,0.13); color: #C9A96E; }
+    .s-chgr { background: rgba(91,168,90,0.13); color: #5BA85A; }
+    .s-slbl { font-size: 7px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.2); margin: 7px 0 5px; }
+    .s-gm { background: #131110; border: 1px solid rgba(201,169,110,0.09); border-radius: 9px; padding: 8px; margin-bottom: 5px; }
+    .s-gt { display: flex; justify-content: space-between; margin-bottom: 4px; }
+    .s-gnm { font-size: 9px; color: #F2EDE3; font-weight: 500; }
+    .s-gpct { font-size: 9px; color: #C9A96E; }
+    .s-bt { height: 3px; background: rgba(91,168,90,0.13); border-radius: 2px; overflow: hidden; margin-bottom: 3px; }
+    .s-bf { height: 100%; background: #5BA85A; border-radius: 2px; }
+    .s-gbot { display: flex; justify-content: space-between; }
+    .s-gsm { font-size: 7px; color: rgba(255,255,255,0.25); }
+    /* wishlist */
+    .s-wi { background: #131110; border: 1px solid rgba(201,169,110,0.13); border-radius: 12px; padding: 10px; margin-bottom: 7px; }
+    .s-wir { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; }
+    .s-winm { font-size: 9.5px; color: #F2EDE3; font-weight: 500; max-width: 100px; line-height: 1.3; }
+    .s-wict { font-size: 7.5px; color: rgba(255,255,255,0.28); margin-top: 2px; }
+    .s-stk { display: flex; flex-direction: column; }
+    .s-stkg { background: #C9A96E; padding: 5px 8px; border-radius: 6px 6px 0 0; text-align: center; min-width: 58px; }
+    .s-stkg .sp { font-size: 11px; font-weight: 600; color: #080706; line-height: 1; }
+    .s-stkg .sl { font-size: 6.5px; text-transform: uppercase; letter-spacing: 0.07em; color: rgba(8,7,6,0.5); }
+    .s-stkb { background: #1C1A18; padding: 5px 8px; border-radius: 0 0 6px 6px; text-align: center; border-top: 1px solid rgba(201,169,110,0.18); }
+    .s-stkb .sd { font-size: 10px; font-weight: 500; color: #F2EDE3; line-height: 1; }
+    .s-stkb .si { font-size: 6.5px; text-transform: uppercase; letter-spacing: 0.07em; color: rgba(255,255,255,0.28); }
+    .s-dp { display: inline-flex; align-items: center; gap: 3px; background: rgba(91,168,90,0.1); border: 1px solid rgba(91,168,90,0.22); border-radius: 20px; padding: 2px 7px; font-size: 8px; color: #5BA85A; margin-bottom: 5px; }
+    .s-wbl { font-size: 7px; color: rgba(255,255,255,0.22); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 3px; }
+    .s-wbt { height: 3px; background: rgba(91,168,90,0.13); border-radius: 2px; overflow: hidden; margin-bottom: 3px; }
+    .s-wbf { height: 100%; background: #5BA85A; border-radius: 2px; }
+    .s-wdr { display: flex; justify-content: space-between; font-size: 7.5px; }
+    .s-wdn { color: rgba(255,255,255,0.25); }
+    .s-wda { color: #C9A96E; }
+    /* atom */
+    .s-ahdr { background: #080706; border-bottom: 1px solid rgba(201,169,110,0.08); padding: 10px 12px 10px; margin: -28px -12px 10px; padding-top: 30px; display: flex; align-items: center; gap: 7px; }
+    .s-aico { width: 26px; height: 26px; border: 1px solid #C9A96E; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; }
+    .s-anm { font-size: 10px; font-weight: 500; color: #F2EDE3; }
+    .s-ast { font-size: 7.5px; color: #5BA85A; display: flex; align-items: center; gap: 3px; }
+    .s-ast::before { content: ''; width: 4px; height: 4px; background: #5BA85A; border-radius: 50%; display: inline-block; }
+    .s-msgs { display: flex; flex-direction: column; gap: 7px; }
+    .s-mu { align-self: flex-end; background: #C9A96E; color: #080706; padding: 6px 9px; border-radius: 10px 10px 3px 10px; font-size: 9px; font-weight: 500; max-width: 80%; line-height: 1.4; }
+    .s-ma { align-self: flex-start; background: #1C1A18; color: rgba(255,255,255,0.75); padding: 7px 9px; border-radius: 10px 10px 10px 3px; font-size: 8.5px; max-width: 90%; line-height: 1.55; }
+    .s-ma .ag { color: #C9A96E; font-weight: 500; }
+    .s-ainp { background: #080706; border-top: 1px solid rgba(201,169,110,0.08); padding: 8px 12px; margin: 8px -12px -12px; display: flex; align-items: center; gap: 6px; }
+    .s-abar { flex: 1; background: #1C1A18; border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; padding: 6px 8px; font-size: 8.5px; color: rgba(255,255,255,0.2); font-family: 'DM Sans', sans-serif; }
+    .s-abtn { width: 26px; height: 26px; background: #C9A96E; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #080706; }
+    /* spend */
+    .s-sptl { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: #F2EDE3; font-weight: 500; margin-bottom: 8px; }
+    .s-spsum { background: #131110; border: 1px solid rgba(201,169,110,0.13); border-radius: 11px; padding: 10px; margin-bottom: 8px; }
+    .s-spr { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+    .s-spbig { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #F2EDE3; line-height: 1; }
+    .s-splft { font-size: 10px; color: #C9A96E; }
+    .s-spcat { background: #131110; border: 1px solid rgba(201,169,110,0.09); border-radius: 10px; padding: 9px; margin-bottom: 6px; }
+    .s-spcr { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+    .s-spico { width: 24px; height: 24px; background: rgba(201,169,110,0.08); border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 11px; flex-shrink: 0; }
+    .s-spcn { font-size: 9px; color: #F2EDE3; font-weight: 500; }
+    .s-spca { font-size: 10px; color: #F2EDE3; font-weight: 500; }
+    .s-spimp { display: inline-flex; align-items: center; gap: 3px; background: rgba(201,169,110,0.08); border: 1px solid rgba(201,169,110,0.16); border-radius: 4px; padding: 2px 6px; font-size: 7.5px; color: #C9A96E; margin-top: 3px; }
+
+
+    .anchor-section{padding:80px 40px;background:var(--cream-mid);border-top:1px solid var(--border)}
+    .section-eye{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+    .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,44px);font-weight:200;color:var(--text);margin-bottom:48px;line-height:1.1}
+    .section-title em{font-style:italic;color:var(--gold)}
+    .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden;max-width:1100px;margin:0 auto}
+    .fc{padding:32px 28px;background:var(--cream);transition:background .25s;position:relative}
+    .fc::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity .3s}
+    .fc:hover{background:#F7F4EB}
+    .fc:hover::after{opacity:1}
+    .fc-n{font-family:'Space Mono',monospace;font-size:11px;color:rgba(184,146,74,0.4);margin-bottom:14px;letter-spacing:0.08em}
+    .fc-nm{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--text);margin-bottom:9px}
+    .fc-d{font-size:13px;color:var(--mid);line-height:1.75}
+    .rv{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+    .rv.show{opacity:1;transform:none}
+    .rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
+    footer{padding:52px 40px 36px;background:var(--black);border-top:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;gap:32px}
+    .ft-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
+    .ft-brand .fw{font-family:'Cormorant Garamond',serif;font-size:22px;color:rgba(255,255,255,0.7)}
+    .ft-brand p{font-size:12px;color:rgba(255,255,255,0.25);margin-top:6px;max-width:220px;line-height:1.7}
+    .ft-col{display:flex;flex-direction:column;gap:8px}
+    .ft-col h4{font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:0.16em;color:rgba(255,255,255,0.25);margin-bottom:2px}
+    .ft-col a{font-size:12px;color:rgba(255,255,255,0.35);text-decoration:none;transition:color .2s}
+    .ft-col a:hover{color:rgba(255,255,255,0.7)}
+    .ft-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.05);font-size:11px;color:rgba(255,255,255,0.18)}
+    @media(max-width:900px){#story{grid-template-columns:1fr;padding:0 24px}.phone-col{display:none}.panel{padding:60px 0;min-height:auto}.feat-grid{grid-template-columns:1fr}.page-hero{padding:56px 24px 40px}nav{padding:0 20px}.nav-links{display:none}footer{padding:48px 24px 32px}.ft-top{flex-direction:column}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo"><span class="nav-wm">Au</span></a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/features/" class="active">Features</a>
+    <a href="/pricing/">Pricing</a>
+    <a href="/news/">Blog</a>
+    <a href="/contact/">Contact</a>
+  </div>
+  <a href="/pricing/" class="nav-dl">Download</a>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-bg" id="heroBg"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-inner">
+    <p class="eyebrow rv">Features</p>
+    <h1 class="rv d1">Intelligence at every<br>point of <em>decision.</em></h1>
+    <p class="lead rv d2">Every feature in Au is built around one idea — the most important moment in personal finance is the second before you spend, not the month after.</p>
+  </div>
+</div>
+
+<!-- SCROLL STORY -->
+<div id="story">
+  <div class="panels">
+
+    <div class="panel" data-screen="0">
+      <p class="panel-eye rv">01 — Dashboard</p>
+      <h2 class="panel-title rv d1">Your wealth,<br><em>live.</em></h2>
+      <p class="panel-body rv d2">Net worth, income, spending, and goal progress — all live. When you spend $12 on lunch, the dashboard reflects it within minutes. Every number connected to everything else.</p>
+      <p class="panel-body rv d2">Connects to 12,000+ banks via Plaid. Read-only. Bank-level security. Setup in under two minutes.</p>
+      <div class="panel-ex rv d3"><strong>Example:</strong> It's the 20th. You've spent $2,400 of your usual $3,200 budget. House deposit at 62%. Emergency fund at 81%. All in one glance.</div>
+    </div>
+
+    <div class="panel" data-screen="1">
+      <p class="panel-eye rv">02 — Goal Impact Bar</p>
+      <h2 class="panel-title rv d1">Days, not<br><em>dollars.</em></h2>
+      <p class="panel-body rv d2">Every wishlist item shows one number: how many days it pushes your goal back. Not the price. Not a percentage. Days. The only reframe that makes a purchase feel real before you make it.</p>
+      <p class="panel-body rv d2">When you skip an item Au celebrates. When you buy it, Au shows the honest impact — no guilt, no lecture.</p>
+      <div class="panel-ex rv d3"><strong>Example:</strong> That $349 pair of headphones isn't $349. It's <strong>8 days further</strong> from your house deposit.</div>
+    </div>
+
+    <div class="panel" data-screen="2">
+      <p class="panel-eye rv">03 — Atom AI</p>
+      <h2 class="panel-title rv d1">Your AI<br><em>knows everything.</em></h2>
+      <p class="panel-body rv d2">Atom is Au's AI, powered by Claude. It knows your goals, your spending, your income, your net worth — and you can talk to it about any of it, in text or voice, backed by your real data.</p>
+      <p class="panel-body rv d2">Serious questions and wild simulations. Both get real, personalised answers.</p>
+      <div class="panel-ex rv d3"><strong>Example:</strong> "Should I buy this $1,200 laptop?" → "Buying now pushes Japan back 5 weeks. Wait for your bonus and it drops to 2 weeks."</div>
+    </div>
+
+    <div class="panel" data-screen="3">
+      <p class="panel-eye rv">04 — Spend Page</p>
+      <h2 class="panel-title rv d1">Every habit,<br><em>goal-linked.</em></h2>
+      <p class="panel-body rv d2">Every spending category shows exactly what it's costing you in days toward your goals. Not just dollars. See what your patterns actually mean in terms of the things you're working toward.</p>
+      <p class="panel-body rv d2">Run Atom simulations on any category — watch your goal dates update live before committing to anything.</p>
+      <div class="panel-ex rv d3"><strong>Example:</strong> Dining Out at $340 this month — $110 above your usual pace — is costing you <strong>4 extra days</strong> on your house deposit.</div>
+    </div>
+
+  </div>
+
+  <!-- STICKY PHONE -->
+  <div class="phone-col">
+    <div class="phone-stage">
+      <div class="phone-aura" id="phoneAura" style="background:radial-gradient(ellipse, rgba(184,146,74,0.08) 0%, transparent 65%);"></div>
+      <div class="phone-shell">
+        <div class="phone-notch"></div>
+        <div class="screen-wrap">
+
+          <!-- Screen 0: Dashboard -->
+          <div class="pscreen active" id="ps0">
+            <div class="s-hdr"><span class="s-logo">Au</span><span class="s-date">Thu, May 29</span></div>
+            <div class="s-wc">
+              <div class="s-wlbl">Net Worth</div>
+              <div class="s-wnum">$42,840</div>
+              <div class="s-chips">
+                <div class="s-ch s-chw">+$3,200</div>
+                <div class="s-ch s-chgr">+$640 saved</div>
+                <div class="s-ch s-chg">$720 left</div>
+              </div>
+            </div>
+            <div class="s-slbl">Active Goals</div>
+            <div class="s-gm"><div class="s-gt"><span class="s-gnm">House Deposit</span><span class="s-gpct">62%</span></div><div class="s-bt"><div class="s-bf" style="width:62%"></div></div><div class="s-gbot"><span class="s-gsm">$31k of $50k</span><span class="s-gsm">Oct 2027</span></div></div>
+            <div class="s-gm"><div class="s-gt"><span class="s-gnm">Bali Holiday</span><span class="s-gpct">38%</span></div><div class="s-bt"><div class="s-bf" style="width:38%"></div></div><div class="s-gbot"><span class="s-gsm">$1,520 of $4k</span><span class="s-gsm">Nov 2026</span></div></div>
+            <div class="s-gm"><div class="s-gt"><span class="s-gnm">Emergency Fund</span><span class="s-gpct">81%</span></div><div class="s-bt"><div class="s-bf" style="width:81%"></div></div><div class="s-gbot"><span class="s-gsm">$8,100 of $10k</span><span class="s-gsm">Aug 2026</span></div></div>
+          </div>
+
+          <!-- Screen 1: Wishlist -->
+          <div class="pscreen" id="ps1">
+            <div class="s-hdr"><span style="font-family:'Cormorant Garamond',serif;font-size:15px;color:#F2EDE3;font-weight:500">Wishlist</span><span class="s-date">3 items</span></div>
+            <div class="s-wi">
+              <div class="s-wir">
+                <div><div class="s-winm">Sony WH-1000XM5</div><div class="s-wict">Electronics</div></div>
+                <div class="s-stk"><div class="s-stkg"><div class="sp">$349</div><div class="sl">Afford</div></div><div class="s-stkb"><div class="sd">+8 days</div><div class="si">Impact</div></div></div>
+              </div>
+              <div class="s-dp">✦ Dupe on Amazon · $89</div>
+              <div class="s-wbl">House Deposit</div>
+              <div class="s-wbt"><div class="s-wbf" style="width:62%"></div></div>
+              <div class="s-wdr"><span class="s-wdn">Now: Oct 2027</span><span class="s-wda">If bought: Oct 28</span></div>
+            </div>
+            <div class="s-wi">
+              <div class="s-wir">
+                <div><div class="s-winm">Dyson Airwrap</div><div class="s-wict">Beauty</div></div>
+                <div class="s-stk"><div class="s-stkg"><div class="sp">$599</div><div class="sl">Tight</div></div><div class="s-stkb"><div class="sd">+20 days</div><div class="si">Impact</div></div></div>
+              </div>
+              <div class="s-dp">✦ Dupe on Amazon · $89</div>
+              <div class="s-wbl">House Deposit</div>
+              <div class="s-wbt"><div class="s-wbf" style="width:62%"></div></div>
+              <div class="s-wdr"><span class="s-wdn">Now: Oct 2027</span><span class="s-wda">If bought: Nov 20</span></div>
+            </div>
+          </div>
+
+          <!-- Screen 2: Atom -->
+          <div class="pscreen" id="ps2">
+            <div class="s-ahdr">
+              <div class="s-aico">⚛</div>
+              <div><div class="s-anm">Atom</div><div class="s-ast">Online</div></div>
+            </div>
+            <div class="s-msgs">
+              <div class="s-mu">Should I buy this $1,200 laptop?</div>
+              <div class="s-ma">Emergency fund at <span class="ag">60%</span> with <span class="ag">$340</span> in bills due next week. Buying now pushes Japan back <span class="ag">5 weeks.</span> Wait for bonus — drops to <span class="ag">2 weeks.</span></div>
+              <div class="s-mu">Cancel Netflix + Spotify?</div>
+              <div class="s-ma">Saves <span class="ag">$28/mo.</span> Japan moves <span class="ag">11 days closer.</span> House deposit forward <span class="ag">3 weeks</span> over the year.</div>
+            </div>
+            <div class="s-ainp">
+              <div class="s-abar">Ask Atom anything...</div>
+              <div class="s-abtn">→</div>
+            </div>
+          </div>
+
+          <!-- Screen 3: Spend -->
+          <div class="pscreen" id="ps3">
+            <div class="s-hdr"><span class="s-sptl">Spend</span><span class="s-date">May 2026</span></div>
+            <div class="s-spsum">
+              <div class="s-spr"><span class="s-spbig">$1,840</span><span class="s-splft">$720 left</span></div>
+              <div class="s-bt"><div class="s-bf" style="width:72%"></div></div>
+            </div>
+            <div class="s-spcat">
+              <div class="s-spcr"><div style="display:flex;align-items:center;gap:6px"><div class="s-spico">🍜</div><span class="s-spcn">Dining Out</span></div><span class="s-spca">$340</span></div>
+              <div class="s-bt"><div class="s-bf" style="width:85%"></div></div>
+              <div style="display:flex;justify-content:space-between;font-size:7px;color:rgba(255,255,255,0.25)"><span>$110 above usual</span><span>/ $400</span></div>
+              <div class="s-spimp">+4 days on House Deposit</div>
+            </div>
+            <div class="s-spcat">
+              <div class="s-spcr"><div style="display:flex;align-items:center;gap:6px"><div class="s-spico">🚗</div><span class="s-spcn">Transport</span></div><span class="s-spca">$180</span></div>
+              <div class="s-bt"><div class="s-bf" style="width:45%"></div></div>
+              <div style="display:flex;justify-content:space-between;font-size:7px;color:rgba(255,255,255,0.25)"><span>On track</span><span>/ $400</span></div>
+              <div class="s-spimp">+2 days on Bali Holiday</div>
+            </div>
+            <div class="s-spcat">
+              <div class="s-spcr"><div style="display:flex;align-items:center;gap:6px"><div class="s-spico">📱</div><span class="s-spcn">Subscriptions</span></div><span class="s-spca">$94</span></div>
+              <div class="s-bt"><div class="s-bf" style="width:94%"></div></div>
+              <div style="display:flex;justify-content:space-between;font-size:7px;color:rgba(255,255,255,0.25)"><span>7 active · 4 unused</span><span>/ $100</span></div>
+              <div class="s-spimp">+3 days on House Deposit</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="pdots" id="pdots">
+        <div class="pdot on" data-i="0"></div>
+        <div class="pdot" data-i="1"></div>
+        <div class="pdot" data-i="2"></div>
+        <div class="pdot" data-i="3"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<section class="anchor-section">
+  <div style="max-width:1100px;margin:0 auto;">
+    <p class="section-eye rv">All Features</p>
+    <h2 class="section-title rv d1">Everything Au <em>includes.</em></h2>
+    <div class="feat-grid">
+      <div class="fc rv"><div class="fc-n">01</div><div class="fc-nm">Goal Impact Bar</div><div class="fc-d">Every wishlist item shows how many days it costs toward your goal. The only number that makes a purchase feel real before you make it.</div></div>
+      <div class="fc rv d1"><div class="fc-n">02</div><div class="fc-nm">Bank Sync</div><div class="fc-d">12,000+ institutions via Plaid. Every transaction pulled in automatically. Read-only — Au never touches your money.</div></div>
+      <div class="fc rv d2"><div class="fc-n">03</div><div class="fc-nm">AI Categorisation</div><div class="fc-d">Self-improving AI that learns your patterns. 95%+ accuracy within 60 days. Goal-linked, not just spending buckets.</div></div>
+      <div class="fc rv"><div class="fc-n">04</div><div class="fc-nm">Atom AI</div><div class="fc-d">Powered by Claude. Text or voice. Knows your complete financial picture. Serious questions and wild simulations.</div></div>
+      <div class="fc rv d1"><div class="fc-n">05</div><div class="fc-nm">Dupe Finder</div><div class="fc-d">High-quality cheaper alternatives for anything in your wishlist. See how many days faster the dupe gets you to your goal.</div></div>
+      <div class="fc rv d2"><div class="fc-n">06</div><div class="fc-nm">AI Personal Shopper</div><div class="fc-d">Import from Amazon or screenshot any wishlist. Au evaluates timing against your goals, bills, and savings rate.</div></div>
+      <div class="fc rv"><div class="fc-n">07</div><div class="fc-nm">Mood Spending Detection</div><div class="fc-d">Identifies your highest-risk spending windows. One quiet line of context at the moment it matters. Never a lecture.</div></div>
+      <div class="fc rv d1"><div class="fc-n">08</div><div class="fc-nm">Spending Personality</div><div class="fc-d">After 30 days, a shareable profile of how you actually relate to money. Designed to spread like Spotify Wrapped.</div></div>
+      <div class="fc rv d2"><div class="fc-n">09</div><div class="fc-nm">Au Together</div><div class="fc-d">Shared goals, combined income tracking, per-member views. For couples, roommates, families — anyone.</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-top">
+    <div class="ft-brand"><div class="fw">Au</div><p>The AI personal finance app that shows you what every purchase truly costs — in days, not dollars.</p></div>
+    <div class="ft-col"><h4>Product</h4><a href="/features/">Features</a><a href="/pricing/">Pricing</a></div>
+    <div class="ft-col"><h4>Company</h4><a href="/about/">About</a><a href="/news/">Blog</a><a href="/contact/">Contact</a></div>
+    <div class="ft-col"><h4>Legal</h4><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Service</a></div>
+  </div>
+  <div class="ft-bot"><span>© 2026 Aurum Technologies Inc. All rights reserved.</span><span>au79.app · anchitj@au79.app</span></div>
+</footer>
+
+<script>
+  const syms = ['H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si','P','S','Cl','Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu','Zn','Ga','Ge','As','Se','Br','Kr','Rb','Sr','Y','Zr','Nb','Mo','Tc','Ru','Rh','Pd','Ag','Cd','In','Sn','Sb','Te','I','Xe','Cs','Ba','La','Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg','Tl','Pb','Bi','Po','At','Rn'];
+  const near = ['Ir','Pt','Hg','Tl'];
+  const hb = document.getElementById('heroBg');
+  if(hb) syms.forEach(s=>{const d=document.createElement('div');d.className='phb'+(s==='Au'?' au':near.includes(s)?' nb':'');hb.appendChild(d);});
+  // Scroll story phone switching
+  const panels = document.querySelectorAll('.panel');
+  const pscreens = document.querySelectorAll('.pscreen');
+  const pdots = document.querySelectorAll('.pdot');
+  const aura = document.getElementById('phoneAura');
+  let active = 0;
+  const auras = [
+    'radial-gradient(ellipse, rgba(184,146,74,0.08) 0%, transparent 65%)',
+    'radial-gradient(ellipse, rgba(184,146,74,0.1) 0%, transparent 65%)',
+    'radial-gradient(ellipse, rgba(184,146,74,0.09) 0%, transparent 65%)',
+    'radial-gradient(ellipse, rgba(91,168,90,0.06) 0%, transparent 65%)',
+  ];
+  function switchTo(i) {
+    if (i === active) return;
+    pscreens[active].classList.remove('active');
+    pdots[active].classList.remove('on');
+    active = i;
+    pscreens[active].classList.add('active');
+    pdots[active].classList.add('on');
+    aura.style.background = auras[i];
+  }
+  const sObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) switchTo(parseInt(e.target.dataset.screen)); });
+  }, { threshold: 0.5 });
+  panels.forEach(p => sObs.observe(p));
+  pdots.forEach(d => {
+    d.addEventListener('click', () => {
+      document.querySelectorAll('.panel')[parseInt(d.dataset.i)].scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+
+
+  // Banner grid — fills full width with square tiles, Au centered
+  (function() {
+    const rows = [
+      // Row 1
+      [{n:'26',s:'Fe',nm:'Iron'},{n:'27',s:'Co',nm:'Cobalt'},{n:'28',s:'Ni',nm:'Nickel'},{n:'29',s:'Cu',nm:'Copper',c:'near'},{n:'30',s:'Zn',nm:'Zinc'},{n:'31',s:'Ga',nm:'Gallium'},{n:'32',s:'Ge',nm:'German.'},{n:'33',s:'As',nm:'Arsenic'},{n:'34',s:'Se',nm:'Seleniu.'},{n:'35',s:'Br',nm:'Bromine'},{n:'36',s:'Kr',nm:'Krypton'},{n:'37',s:'Rb',nm:'Rubidium'},{n:'38',s:'Sr',nm:'Strontiu.'},{n:'39',s:'Y',nm:'Yttrium'},{n:'40',s:'Zr',nm:'Zirconiu.'},{n:'41',s:'Nb',nm:'Niobium'},{n:'42',s:'Mo',nm:'Molybden.'},{n:'43',s:'Tc',nm:'Technet.'},{n:'44',s:'Ru',nm:'Ruthen.'},{n:'45',s:'Rh',nm:'Rhodium'},{n:'46',s:'Pd',nm:'Pallad.'},{n:'47',s:'Ag',nm:'Silver',c:'near'},{n:'48',s:'Cd',nm:'Cadmium'},{n:'49',s:'In',nm:'Indium'},{n:'50',s:'Sn',nm:'Tin'}],
+      // Row 2
+      [{n:'44',s:'Ru',nm:'Ruthen.'},{n:'45',s:'Rh',nm:'Rhodium'},{n:'46',s:'Pd',nm:'Pallad.'},{n:'47',s:'Ag',nm:'Silver',c:'near'},{n:'48',s:'Cd',nm:'Cadmium'},{n:'49',s:'In',nm:'Indium'},{n:'50',s:'Sn',nm:'Tin'},{n:'51',s:'Sb',nm:'Antimony'},{n:'52',s:'Te',nm:'Telluriu.'},{n:'53',s:'I',nm:'Iodine'},{n:'54',s:'Xe',nm:'Xenon'},{n:'55',s:'Cs',nm:'Caesium'},{n:'56',s:'Ba',nm:'Barium'},{n:'57',s:'La',nm:'Lanthanu.'},{n:'58',s:'Ce',nm:'Cerium'},{n:'59',s:'Pr',nm:'Praseody.'},{n:'60',s:'Nd',nm:'Neodymiu.'},{n:'61',s:'Pm',nm:'Promethi.'},{n:'62',s:'Sm',nm:'Samarium'},{n:'63',s:'Eu',nm:'Europiu.'},{n:'64',s:'Gd',nm:'Gadolini.'},{n:'65',s:'Tb',nm:'Terbium'},{n:'66',s:'Dy',nm:'Dysprosi.'},{n:'67',s:'Ho',nm:'Holmium'},{n:'68',s:'Er',nm:'Erbium'}],
+      // Row 3 — AU ROW
+      [{n:'70',s:'Yb',nm:'Ytterbiu.'},{n:'71',s:'Lu',nm:'Lutetium'},{n:'72',s:'Hf',nm:'Hafnium'},{n:'73',s:'Ta',nm:'Tantalum'},{n:'74',s:'W',nm:'Tungsten'},{n:'75',s:'Re',nm:'Rhenium'},{n:'76',s:'Os',nm:'Osmium'},{n:'77',s:'Ir',nm:'Iridium',c:'near'},{n:'78',s:'Pt',nm:'Platinum',c:'near'},{n:'79',s:'Au',nm:'Aurum',c:'au'},{n:'80',s:'Hg',nm:'Mercury',c:'near'},{n:'81',s:'Tl',nm:'Thallium',c:'near'},{n:'82',s:'Pb',nm:'Lead'},{n:'83',s:'Bi',nm:'Bismuth'},{n:'84',s:'Po',nm:'Polonium'},{n:'85',s:'At',nm:'Astatine'},{n:'86',s:'Rn',nm:'Radon'},{n:'87',s:'Fr',nm:'Francium'},{n:'88',s:'Ra',nm:'Radium'},{n:'89',s:'Ac',nm:'Actinium'},{n:'90',s:'Th',nm:'Thorium'},{n:'91',s:'Pa',nm:'Protacti.'},{n:'92',s:'U',nm:'Uranium'},{n:'93',s:'Np',nm:'Neptunium'},{n:'94',s:'Pu',nm:'Plutonium'}],
+      // Row 4
+      [{n:'106',s:'Sg',nm:'Seaborg.'},{n:'107',s:'Bh',nm:'Bohrium'},{n:'108',s:'Hs',nm:'Hassium'},{n:'109',s:'Mt',nm:'Meitner.'},{n:'110',s:'Ds',nm:'Darmst.'},{n:'111',s:'Rg',nm:'Roentg.'},{n:'112',s:'Cn',nm:'Copern.'},{n:'113',s:'Nh',nm:'Nihonium'},{n:'114',s:'Fl',nm:'Fleroviu.'},{n:'115',s:'Mc',nm:'Moscov.'},{n:'116',s:'Lv',nm:'Livermor.'},{n:'117',s:'Ts',nm:'Tenness.'},{n:'118',s:'Og',nm:'Oganes.'},{n:'104',s:'Rf',nm:'Rutherfo.'},{n:'105',s:'Db',nm:'Dubnium'},{n:'106',s:'Sg',nm:'Seaborg.'},{n:'107',s:'Bh',nm:'Bohrium'},{n:'108',s:'Hs',nm:'Hassium'},{n:'109',s:'Mt',nm:'Meitner.'},{n:'110',s:'Ds',nm:'Darmst.'},{n:'111',s:'Rg',nm:'Roentg.'},{n:'112',s:'Cn',nm:'Copern.'},{n:'113',s:'Nh',nm:'Nihonium'},{n:'114',s:'Fl',nm:'Fleroviu.'},{n:'115',s:'Mc',nm:'Moscov.'}],
+      // Row 5
+      [{n:'118',s:'Og',nm:'Oganes.'},{n:'117',s:'Ts',nm:'Tenness.'},{n:'116',s:'Lv',nm:'Livermor.'},{n:'115',s:'Mc',nm:'Moscov.'},{n:'114',s:'Fl',nm:'Fleroviu.'},{n:'113',s:'Nh',nm:'Nihonium'},{n:'112',s:'Cn',nm:'Copern.'},{n:'111',s:'Rg',nm:'Roentg.'},{n:'110',s:'Ds',nm:'Darmst.'},{n:'109',s:'Mt',nm:'Meitner.'},{n:'108',s:'Hs',nm:'Hassium'},{n:'107',s:'Bh',nm:'Bohrium'},{n:'106',s:'Sg',nm:'Seaborg.'},{n:'105',s:'Db',nm:'Dubnium'},{n:'104',s:'Rf',nm:'Rutherfo.'},{n:'103',s:'Lr',nm:'Lawrence.'},{n:'102',s:'No',nm:'Nobelium'},{n:'101',s:'Md',nm:'Mendele.'},{n:'100',s:'Fm',nm:'Fermium'},{n:'99',s:'Es',nm:'Einstein.'},{n:'98',s:'Cf',nm:'Californ.'},{n:'97',s:'Bk',nm:'Berkeli.'},{n:'96',s:'Cm',nm:'Curium'},{n:'95',s:'Am',nm:'Americi.'},{n:'94',s:'Pu',nm:'Plutonium'}],
+    ];
+
+    const grid = document.getElementById('bannerGrid');
+    if (!grid) return;
+
+    // Calculate how many tiles fit across the screen
+    const tileSize = 82 + 5; // tile + gap
+    const cols = Math.ceil((window.innerWidth + tileSize) / tileSize) + 1;
+
+    // Au is at position 9 (0-based) in row 3 — center it
+    const auCol = 9;
+    const startOffset = Math.floor(cols / 2) - auCol;
+
+    rows.forEach(row => {
+      for (let i = 0; i < cols; i++) {
+        const idx = ((i - startOffset) % row.length + row.length) % row.length;
+        const el = row[idx];
+        const d = document.createElement('div');
+        d.className = 'el' + (el.c ? ' ' + el.c : '');
+        d.innerHTML = `<span class="el-n">${el.n}</span><span class="el-s">${el.s}</span><span class="el-nm">${el.nm}</span>`;
+        grid.appendChild(d);
+      }
+    });
+
+    // Set grid columns dynamically
+    grid.style.gridTemplateColumns = `repeat(${cols}, 82px)`;
+    grid.style.gridTemplateRows = `repeat(5, 82px)`;
+  })();
+
+
+  // Ticker color flip on cycle
+  (function(){
+    var track = document.querySelector('.ticker-track');
+    if(!track) return;
+    var dur = 40000; // matches animation duration
+    var flipped = false;
+    setInterval(function(){
+      flipped = !flipped;
+      if(flipped) track.classList.add('flipped');
+      else track.classList.remove('flipped');
+    }, dur);
+  })();
+
+
+  const rvObs = new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');rvObs.unobserve(e.target);}});},{threshold:0.1});
+  document.querySelectorAll('.rv').forEach(el=>rvObs.observe(el));
+</script>
+</body>
+</html>
