@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOC
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,7 +28,7 @@
     h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,6vw,72px);font-weight:200;line-height:0.92;letter-spacing:-0.04em;margin-bottom:20px}
     h1 em{font-style:italic;color:var(--gold)}
     .lead{font-size:15px;color:var(--mid);line-height:1.85;max-width:520px}
-    .content{max-width:800px;margin:0 auto;padding:72px 40px 80px}
+    .content{max-width:1280px;margin:0 auto;padding:72px 60px 80px}
     .section-block{margin-bottom:52px}
     .section-block h2{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3vw,34px);font-weight:300;color:var(--text);margin-bottom:14px;line-height:1.2}
     .section-block p{font-size:14px;color:var(--mid);line-height:1.85;margin-bottom:12px}
@@ -44,29 +44,39 @@
     .ft-col a:hover{color:rgba(255,255,255,0.7)}
     .ft-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.05);font-size:11px;color:rgba(255,255,255,0.18)}
     @media(max-width:768px){nav{padding:0 20px}.nav-links{display:none}.page-hero{padding:56px 24px 40px}.content{padding:52px 24px 60px}footer{padding:48px 24px 32px}.ft-top{flex-direction:column}}
+  
+    .billing-toggle{display:flex;justify-content:center;margin-bottom:44px;gap:0}
+    .tbtn{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;padding:9px 22px;border:1px solid rgba(0,0,0,0.15);color:rgba(0,0,0,0.3);background:transparent;cursor:pointer;transition:all .2s}
+    .tbtn:first-child{border-radius:4px 0 0 4px}
+    .tbtn:last-child{border-radius:0 4px 4px 0;border-left:none}
+    .tbtn.on{background:#0C0B09;color:#F3F0E7;border-color:#0C0B09}
+    .pr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1280px;margin:0 auto 56px}
+    .pc{background:#0C0B09;border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:40px 34px;position:relative;transition:transform .2s,border-color .2s}
+    .pc:hover{transform:translateY(-4px);border-color:rgba(201,169,110,0.2)}
+    .pc.feat{border-color:rgba(201,169,110,0.4);background:#100F0C}
+    .pc.feat::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#C9A96E,transparent);border-radius:14px 14px 0 0}
+    .pc-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:#C9A96E;color:#0C0B09;padding:2px 14px;border-radius:20px;font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap;font-family:'Space Mono',monospace}
+    .pc-tier{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.18em;text-transform:uppercase;color:#C9A96E;margin-bottom:10px}
+    .pc-nm{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:700;color:#fff;line-height:1;letter-spacing:-0.02em;margin-bottom:3px}
+    .pc-hint{font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.18);margin-bottom:20px}
+    .pc-pr{font-family:'DM Sans',sans-serif;font-size:58px;font-weight:300;line-height:1;letter-spacing:-0.03em;color:#C9A96E;display:flex;align-items:flex-start;gap:2px}
+    .pc-pr .sym{font-family:'DM Sans',sans-serif;font-size:20px;font-weight:300;color:rgba(201,169,110,0.5);margin-top:8px}
+    .pc-pr.gld{color:#C9A96E} .pc-pr.gld .sym{color:rgba(201,169,110,0.5)}
+    .pc-pr.gld .sym{color:rgba(201,169,110,0.5)}
+    .pc-per{font-size:11px;color:rgba(255,255,255,0.3);margin-top:5px}
+    .pc-ann{font-size:11px;color:#5BA85A;margin-top:2px;min-height:16px}
+    .pc-div{height:1px;background:rgba(255,255,255,0.07);margin:20px 0}
+    .pc-fs{list-style:none;display:flex;flex-direction:column;gap:10px}
+    .pc-fs li{font-size:13px;color:rgba(255,255,255,0.65);display:flex;align-items:flex-start;gap:9px;line-height:1.5}
+    .ck{color:#5BA85A;flex-shrink:0}
+    .price-m{display:block}.price-a{display:none}
+
+    @media(max-width:768px){.pr-grid{grid-template-columns:1fr;max-width:380px}.content{padding:52px 24px 60px}}
   </style>
   <title>Pricing · Au</title>
   <meta name="description" content="Au is free to start. Upgrade to Atomic or Fusion when you're ready." />
   <style>
     .pr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:56px}
-    .pc{background:#fff;border:1px solid var(--border);border-radius:14px;padding:30px 24px;position:relative;transition:transform .2s,border-color .2s}
-    .pc:hover{transform:translateY(-3px)}
-    .pc.feat{border-color:rgba(184,146,74,0.4);background:linear-gradient(160deg,rgba(184,146,74,0.03),#fff)}
-    .pc.feat::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);border-radius:14px 14px 0 0}
-    .pc-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;padding:2px 14px;border-radius:20px;font-size:9.5px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap}
-    .pc-tier{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:7px}
-    .pc-nm{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:var(--text);margin-bottom:14px}
-    .pc-pr{font-size:38px;font-weight:300;color:var(--text);line-height:1}
-    .pc-pr sup{font-size:16px;vertical-align:top;margin-top:6px;display:inline-block}
-    .pc-per{font-size:12px;color:var(--light);margin-top:4px;margin-bottom:5px}
-    .pc-ann{font-size:11px;color:var(--green);margin-bottom:20px;min-height:15px}
-    .pc-div{height:1px;background:var(--border);margin-bottom:18px}
-    .pc-fs{list-style:none;display:flex;flex-direction:column;gap:8px}
-    .pc-fs li{font-size:12.5px;color:var(--mid);display:flex;align-items:flex-start;gap:8px;line-height:1.5}
-    .ck{color:var(--green);flex-shrink:0} .gk{color:var(--gold);flex-shrink:0}
-    .faq-item{padding:22px 0;border-bottom:1px solid var(--border)}
-    .faq-q{font-size:15px;color:var(--text);font-weight:400;margin-bottom:8px}
-    .faq-a{font-size:13px;color:var(--mid);line-height:1.8}
     @media(max-width:768px){.pr-grid{grid-template-columns:1fr;max-width:360px;margin-left:auto;margin-right:auto}}
   </style>
 </head>
@@ -75,100 +85,115 @@
   <a href="/" class="nav-logo"><span class="nav-wm">Au</span></a>
   <div class="nav-links">
     <a href="/">Home</a>
-    <a href="/product/">Features</a>
+    <a href="/features/">Features</a>
     <a href="/pricing/">Pricing</a>
     <a href="/news/">Blog</a>
     <a href="/contact/">Contact</a>
   </div>
   <a href="/" class="nav-dl">Download</a>
 </nav>
-<div class="page-hero">
-  <div class="page-hero-bg"></div>
-  <div class="page-hero-overlay"></div>
-  <div class="page-hero-inner">
-    <p class="eyebrow">Pricing</p>
-    <h1>Start free.<br><em>Upgrade when ready.</em></h1>
-    <p class="lead">Au Oxygen is free forever. Upgrade to Atomic when you want unlimited everything, or Fusion for your whole household.</p>
-  </div>
-</div>
+
 <div class="content">
+  <div class="billing-toggle">
+    <button class="tbtn on" onclick="setBilling('monthly')">Monthly</button>
+    <button class="tbtn" onclick="setBilling('annual')">Annual</button>
+  </div>
   <div class="pr-grid">
     <div class="pc">
-      <p class="pc-tier">Free</p><h3 class="pc-nm">Au Oxygen</h3>
-      <div class="pc-pr"><sup>$</sup>0</div><p class="pc-per">forever free</p><p class="pc-ann">&nbsp;</p>
+      <p class="pc-tier">Free</p>
+      <div class="pc-nm">Oxygen</div>
+      <div class="pc-hint">1 user · 1 bank · 1 goal</div>
+      <div class="pc-pr"><span class="sym">$</span>0</div>
+      <div class="pc-per">forever free</div>
+      <div class="pc-ann">&nbsp;</div>
       <div class="pc-div"></div>
       <ul class="pc-fs">
         <li><span class="ck">✓</span>1 bank account</li>
         <li><span class="ck">✓</span>1 active goal</li>
         <li><span class="ck">✓</span>Goal Impact Bar</li>
-        <li><span class="ck">✓</span>Basic Atom AI</li>
-        <li><span class="ck">✓</span>AI categorisation</li>
-        <li><span class="ck">✓</span>3 Dupe Finder uses/mo</li>
+        <li><span class="ck">✓</span>Basic Atom ⚛ — text only</li>
+        <li><span class="ck">✓</span>AI transaction categorisation</li>
+        <li><span class="ck">✓</span>3 Dupe Finder uses/month</li>
         <li><span class="ck">✓</span>Real-time dashboard</li>
+        <li><span class="ck">✓</span>Contextual ads (non-targeted)</li>
       </ul>
     </div>
     <div class="pc feat">
       <div class="pc-badge">Most Popular</div>
-      <p class="pc-tier">Premium</p><h3 class="pc-nm">Au Atomic</h3>
-      <div class="pc-pr"><sup>$</sup>11.99</div><p class="pc-per">per month</p><p class="pc-ann">3.88/yr — 5 months free</p>
+      <p class="pc-tier">Premium</p>
+      <div class="pc-nm">Atomic</div>
+      <div class="pc-hint">1–2 users · unlimited everything</div>
+      <div class="price-m">
+        <div class="pc-pr gld"><span class="sym">$</span>11.99</div>
+        <div class="pc-per">per month</div>
+        <div class="pc-ann">&nbsp;</div>
+      </div>
+      <div class="price-a">
+        <div class="pc-pr gld"><span class="sym">$</span>6.99</div>
+        <div class="pc-per">per month, billed annually</div>
+        <div class="pc-ann">$83.88/yr — 5 months free</div>
+      </div>
       <div class="pc-div"></div>
       <ul class="pc-fs">
-        <li><span class="gk">✦</span>Everything in Oxygen</li>
-        <li><span class="gk">✦</span>Unlimited accounts &amp; goals</li>
-        <li><span class="gk">✦</span>Full Atom — text &amp; voice</li>
-        <li><span class="gk">✦</span>Unlimited Dupe Finder</li>
-        <li><span class="gk">✦</span>AI Personal Shopper</li>
-        <li><span class="gk">✦</span>Spending Personality Profile</li>
-        <li><span class="gk">✦</span>Bill Negotiation Coach</li>
-        <li><span class="gk">✦</span>1 partner free · Ad-free</li>
+        <li><span class="ck">✓</span>Everything in Oxygen</li>
+        <li><span class="ck">✓</span>Unlimited bank accounts &amp; goals</li>
+        <li><span class="ck">✓</span>Full Atom ⚛ — text &amp; voice</li>
+        <li><span class="ck">✓</span>Unlimited Dupe Finder</li>
+        <li><span class="ck">✓</span>Full AI Personal Shopper + Wishlist Import</li>
+        <li><span class="ck">✓</span>Mood Spending Detection</li>
+        <li><span class="ck">✓</span>Spending Personality Profile</li>
+        <li><span class="ck">✓</span>Future You Simulator</li>
+        <li><span class="ck">✓</span>Dream Big</li>
+        <li><span class="ck">✓</span>Bill Negotiation Coach</li>
+        <li><span class="ck">✓</span>Unlimited Au Insights</li>
+        <li><span class="ck">✓</span>1 partner free — shared dashboard &amp; goals</li>
+        <li><span class="ck">✓</span>Completely ad-free</li>
       </ul>
     </div>
     <div class="pc">
-      <p class="pc-tier">Household</p><h3 class="pc-nm">Au Fusion</h3>
-      <div class="pc-pr"><sup>$</sup>21.99</div><p class="pc-per">per month</p><p class="pc-ann">53.99/yr — 5 months free</p>
+      <p class="pc-tier">Household</p>
+      <div class="pc-nm">Fusion</div>
+      <div class="pc-hint">up to 5 users</div>
+      <div class="price-m">
+        <div class="pc-pr"><span class="sym">$</span>21.99</div>
+        <div class="pc-per">per month</div>
+        <div class="pc-ann">&nbsp;</div>
+      </div>
+      <div class="price-a">
+        <div class="pc-pr"><span class="sym">$</span>12.83</div>
+        <div class="pc-per">per month, billed annually</div>
+        <div class="pc-ann">$155.88/yr — 5 months free</div>
+      </div>
       <div class="pc-div"></div>
       <ul class="pc-fs">
         <li><span class="ck">✓</span>Everything in Atomic</li>
         <li><span class="ck">✓</span>Up to 5 users</li>
-        <li><span class="ck">✓</span>Shared goals &amp; wishlist</li>
-        <li><span class="ck">✓</span>Household Insights</li>
+        <li><span class="ck">✓</span>Shared Wishlist with Goal Impact</li>
+        <li><span class="ck">✓</span>Household Wishlist Voting</li>
+        <li><span class="ck">✓</span>Household Insights across all members</li>
         <li><span class="ck">✓</span>Spending Compatibility Score</li>
-        <li><span class="ck">✓</span>Combined Net Worth Dashboard</li>
+        <li><span class="ck">✓</span>Household Spending Personality</li>
         <li><span class="ck">✓</span>Atom Household Mode</li>
+        <li><span class="ck">✓</span>Combined Net Worth Dashboard</li>
+        <li><span class="ck">✓</span>Spending Transparency Toggle</li>
       </ul>
     </div>
   </div>
-  <div class="gold-rule"></div>
-  <div class="section-block">
-    <h2>Common questions</h2>
-    <div class="faq-item"><p class="faq-q">Is Au really free?</p><p class="faq-a">Yes. Au Oxygen is free forever with no credit card required. You get one bank account, one goal, the Goal Impact Bar, basic Atom, and 3 Dupe Finder uses per month.</p></div>
-    <div class="faq-item"><p class="faq-q">How does Au connect to my bank?</p><p class="faq-a">Au uses Plaid — the same network used by Venmo and Coinbase. The connection is read-only. Au can see your transactions but cannot move your money. Your bank credentials are never stored by Au.</p></div>
-    <div class="faq-item"><p class="faq-q">Can I cancel anytime?</p><p class="faq-a">Yes. Cancel anytime from within the app or your App Store settings. If you're on an annual plan, you retain access until the end of your billing period.</p></div>
-    <div class="faq-item"><p class="faq-q">How does Dupe Finder make money?</p><p class="faq-a">When you tap through to a recommended alternative, Au earns an affiliate commission from the retailer (typically 3–8%). You pay exactly the same price as going direct.</p></div>
-    <div class="faq-item"><p class="faq-q">What is Atom?</p><p class="faq-a">Atom is Au's AI, powered by Claude. It knows your complete financial picture and answers anything in text or voice. Basic Atom is free; full access is in Au Atomic and Fusion.</p></div>
-  </div>
 </div>
+
 <footer>
   <div class="ft-top">
     <div class="ft-brand"><div class="fw">Au</div><p>The AI personal finance app that shows you what every purchase truly costs — in days, not dollars.</p></div>
-    <div class="ft-col"><h4>Product</h4><a href="/product/">Features</a><a href="/pricing/">Pricing</a><a href="/">Download</a></div>
+    <div class="ft-col"><h4>Product</h4><a href="/features/">Features</a><a href="/pricing/">Pricing</a><a href="/">Download</a></div>
     <div class="ft-col"><h4>Company</h4><a href="/about/">About</a><a href="/news/">Blog</a><a href="/contact/">Contact</a></div>
     <div class="ft-col"><h4>Legal</h4><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Service</a></div>
   </div>
   <div class="ft-bot"><span>© 2026 Aurum Technologies Inc. All rights reserved.</span><span>au79.app · anchitj@au79.app</span></div>
 </footer>
-<script>
-(function(){
-  const syms=['H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si','P','S','Cl','Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu','Zn','Ga','Ge','As','Se','Br','Kr','Rb','Sr','Y','Zr','Nb','Mo','Tc','Ru','Rh','Pd','Ag','Cd','In','Sn','Sb','Te','I','Xe','Cs','Ba','La','Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg','Tl','Pb','Bi','Po','At','Rn'];
-  const near=['Ir','Pt','Hg','Tl'];
-  document.querySelectorAll('.page-hero-bg').forEach(bg=>{
-    syms.forEach(s=>{const d=document.createElement('div');d.className='phb'+(s==='Au'?' au':near.includes(s)?' nb':'');bg.appendChild(d);});
-  });
-})();
-</script>
+
 <script>
   function setBilling(mode){
-    document.querySelectorAll('.billing-btn').forEach(function(b,i){
+    document.querySelectorAll('.tbtn').forEach(function(b,i){
       b.classList.toggle('on',(mode==='monthly'&&i===0)||(mode==='annual'&&i===1));
     });
     document.querySelectorAll('.price-m').forEach(function(el){
