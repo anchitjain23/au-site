@@ -166,5 +166,18 @@
   });
 })();
 </script>
+<script>
+  function setBilling(mode){
+    document.querySelectorAll('.billing-btn').forEach(function(b,i){
+      b.classList.toggle('on',(mode==='monthly'&&i===0)||(mode==='annual'&&i===1));
+    });
+    document.querySelectorAll('.price-m').forEach(function(el){
+      el.style.display = mode==='monthly' ? 'block' : 'none';
+    });
+    document.querySelectorAll('.price-a').forEach(function(el){
+      el.style.display = mode==='annual' ? 'block' : 'none';
+    });
+  }
+</script>
 </body>
 </html>

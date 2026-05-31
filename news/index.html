@@ -2,121 +2,139 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog C · Au</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;1,200;1,300&family=DM+Sans:wght@200;300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@200;300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--black:#0C0B09;--cream:#F3F0E7;--cream-mid:#EDE9DE;--gold:#B8924A;--green:#5BA85A;--text:#111;--mid:#666;--light:#aaa;--border:rgba(0,0,0,0.08)}
-    html{scroll-behavior:smooth}
-    body{background:var(--cream);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden}
-    nav{background:var(--black);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:42px;position:sticky;top:0;z-index:200}
-    .nav-logo{width:32px;height:32px;border:1px solid rgba(255,255,255,0.28);border-radius:3px;display:flex;align-items:center;justify-content:center;flex-shrink:0;text-decoration:none}
+    body{background:#F3F0E7;color:#111;font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden}
+    nav{background:#0C0B09;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:42px;position:sticky;top:0;z-index:200}
+    .nav-logo{width:32px;height:32px;border:1px solid rgba(255,255,255,0.28);border-radius:3px;display:flex;align-items:center;justify-content:center;text-decoration:none}
     .nav-wm{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:300;color:rgba(255,255,255,0.42);letter-spacing:0.08em;line-height:1}
     .nav-links{display:flex;align-items:center;flex:1;justify-content:space-evenly;padding:0 40px}
-    .nav-links a{font-size:11px;color:rgba(255,255,255,0.42);letter-spacing:0.03em;text-decoration:none;transition:color .2s}
-    .nav-links a:hover,.nav-links a.active{color:rgba(255,255,255,0.78)}
+    .nav-links a{font-size:11px;color:rgba(255,255,255,0.42);letter-spacing:0.03em;text-decoration:none}
+    .nav-links a.active{color:rgba(255,255,255,0.78)}
     .nav-dl{border:1px solid rgba(255,255,255,0.35);color:rgba(255,255,255,0.55);padding:5px 16px;border-radius:3px;font-size:11px;font-weight:300;letter-spacing:0.03em;text-decoration:none}
-    .page-hero{padding:72px 40px 56px;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
-    .page-hero-bg{position:absolute;inset:0;display:grid;grid-template-columns:repeat(18,1fr);gap:1.5px;padding:8px;pointer-events:none}
-    .phb{background:rgba(0,0,0,0.018);border-radius:1px}
-    .phb.au{background:rgba(184,146,74,0.07)}
-    .phb.nb{background:rgba(184,146,74,0.03)}
-    .page-hero-overlay{position:absolute;inset:0;background:linear-gradient(145deg,rgba(243,240,231,0.9) 0%,rgba(243,240,231,0.97) 60%)}
-    .page-hero-inner{position:relative;z-index:5;max-width:700px}
-    .eyebrow{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px}
-    .eyebrow::before{content:'';width:20px;height:1px;background:var(--gold);flex-shrink:0}
-    h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,6vw,72px);font-weight:200;line-height:0.92;letter-spacing:-0.04em;margin-bottom:20px}
-    h1 em{font-style:italic;color:var(--gold)}
-    .lead{font-size:15px;color:var(--mid);line-height:1.85;max-width:520px}
-    .content{max-width:800px;margin:0 auto;padding:72px 40px 80px}
-    .section-block{margin-bottom:52px}
-    .section-block h2{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3vw,34px);font-weight:300;color:var(--text);margin-bottom:14px;line-height:1.2}
-    .section-block p{font-size:14px;color:var(--mid);line-height:1.85;margin-bottom:12px}
-    .section-block p a{color:var(--gold);text-decoration:none}
-    .gold-rule{height:1px;background:linear-gradient(90deg,transparent,rgba(184,146,74,0.25),transparent);margin:52px 0}
-    footer{padding:52px 40px 36px;background:var(--black);border-top:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;gap:32px}
-    .ft-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
-    .ft-brand .fw{font-family:'Cormorant Garamond',serif;font-size:22px;color:rgba(255,255,255,0.7)}
-    .ft-brand p{font-size:12px;color:rgba(255,255,255,0.25);margin-top:6px;max-width:220px;line-height:1.7}
+
+    /* MASTHEAD — asymmetric, title left-aligned */
+    .masthead { padding: 32px 60px 22px; }
+    .masthead-eyeline { display: flex; justify-content: space-between; font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: #bbb; margin-bottom: 12px; }
+    .masthead-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(64px, 9.5vw, 120px); font-weight: 700; letter-spacing: -0.04em; line-height: 0.88; color: #111; margin-bottom: 14px; text-align: center; }
+    .masthead-title span { color: #B8924A; }
+    .masthead-rule { height: 3px; background: #111; margin: 30px 0 14px; }
+    .masthead-sub { display: flex; gap: 0; font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: #bbb; justify-content: center; }
+    .masthead-sub span { padding-right: 20px; margin-right: 20px; border-right: 1px solid rgba(0,0,0,0.15); }
+    .masthead-sub span:last-child { border-right: none; }
+
+    /* BLACK BAND */
+    .black-band { background: #0C0B09; padding: 10px 60px; display: flex; justify-content: space-between; font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.28); border-bottom: 3px solid #111; }
+    .black-band .hi { color: #B8924A; }
+
+    /* POSTS — no number, pure left-aligned list, very clean */
+    .post-list { padding: 0 60px; max-width: 960px; }
+    .post-item { padding: 48px 0; border-bottom: 1px solid rgba(0,0,0,0.1); display: flex; align-items: flex-start; gap: 48px; }
+    .post-item:last-child { border-bottom: none; }
+    .post-meta-col { width: 140px; flex-shrink: 0; padding-top: 6px; }
+    .post-num { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 700; line-height: 1; color: rgba(0,0,0,0.07); letter-spacing: -0.04em; margin-bottom: 8px; }
+    .post-tag { font-family: 'Space Mono', monospace; font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #B8924A; margin-bottom: 4px; }
+    .post-date { font-family: 'Space Mono', monospace; font-size: 8.5px; letter-spacing: 0.1em; text-transform: uppercase; color: #ccc; }
+    .post-main { flex: 1; }
+    .post-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 3.2vw, 42px); font-weight: 600; line-height: 1.05; letter-spacing: -0.02em; color: #111; margin-bottom: 12px; }
+    .post-title em { font-style: italic; color: #B8924A; font-weight: 300; }
+    .post-excerpt { font-size: 14.5px; color: #666; line-height: 1.82; margin-bottom: 14px; }
+    .post-read { font-size: 12px; color: #B8924A; letter-spacing: 0.04em; }
+
+    /* SUB */
+    .sub { background: #0C0B09; padding: 32px 60px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; border-top: 3px solid #111; }
+    .sub-t { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: rgba(255,255,255,0.7); }
+    .sub-t em { font-style: italic; color: #B8924A; }
+    .sub-f { display: flex; gap: 6px; }
+    .sub-f input { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 2px; padding: 9px 14px; font-size: 12px; color: #fff; font-family: 'DM Sans', sans-serif; outline: none; min-width: 200px; }
+    .sub-f input::placeholder { color: rgba(255,255,255,0.25); }
+    .sub-f button { background: #B8924A; color: #0C0B09; border: none; border-radius: 2px; padding: 9px 16px; font-size: 10px; font-weight: 700; cursor: pointer; font-family: 'Space Mono', monospace; letter-spacing: 0.1em; text-transform: uppercase; }
+
+    footer{padding:48px 60px 36px;background:#0C0B09;display:flex;flex-direction:column;gap:28px;border-top:1px solid rgba(255,255,255,0.06)}
+    .ft-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px}
+    .ft-brand .fw{font-family:'Cormorant Garamond',serif;font-size:20px;color:rgba(255,255,255,0.7)}
+    .ft-brand p{font-size:12px;color:rgba(255,255,255,0.25);margin-top:6px;max-width:200px;line-height:1.7}
     .ft-col{display:flex;flex-direction:column;gap:8px}
     .ft-col h4{font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:0.16em;color:rgba(255,255,255,0.25);margin-bottom:2px}
-    .ft-col a{font-size:12px;color:rgba(255,255,255,0.35);text-decoration:none;transition:color .2s}
-    .ft-col a:hover{color:rgba(255,255,255,0.7)}
-    .ft-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.05);font-size:11px;color:rgba(255,255,255,0.18)}
-    @media(max-width:768px){nav{padding:0 20px}.nav-links{display:none}.page-hero{padding:56px 24px 40px}.content{padding:52px 24px 60px}footer{padding:48px 24px 32px}.ft-top{flex-direction:column}}
-  </style>
-  <title>Blog · Au</title>
-  <meta name="description" content="Updates and announcements from the Au team." />
-  <style>
-    .post-card{padding:40px 0;border-bottom:1px solid var(--border)}
-    .post-card:first-child{padding-top:0}
-    .post-meta{display:flex;align-items:center;gap:14px;margin-bottom:14px}
-    .post-tag{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);background:rgba(184,146,74,0.08);padding:3px 10px;border-radius:3px}
-    .post-date{font-size:11px;color:var(--light)}
-    .post-title{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,32px);font-weight:300;color:var(--text);margin-bottom:12px;line-height:1.2}
-    .post-excerpt{font-size:14px;color:var(--mid);line-height:1.8;max-width:580px}
-    .newsletter{background:var(--cream-mid);border:1px solid var(--border);border-radius:12px;padding:40px;text-align:center;margin-top:64px}
-    .newsletter h2{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;margin-bottom:10px}
-    .newsletter p{font-size:13px;color:var(--mid);margin-bottom:22px}
-    .nl-form{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;max-width:380px;margin:0 auto}
-    .nl-form input{flex:1;min-width:180px;background:#fff;border:1px solid var(--border);border-radius:5px;padding:10px 14px;font-size:13px;color:var(--text);font-family:'DM Sans',sans-serif;outline:none}
-    .nl-form input:focus{border-color:var(--gold)}
-    .nl-form button{background:var(--black);color:var(--cream);border:none;border-radius:5px;padding:10px 20px;font-size:13px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif}
+    .ft-col a{font-size:12px;color:rgba(255,255,255,0.35);text-decoration:none}
+    .ft-bot{display:flex;justify-content:space-between;padding-top:24px;border-top:1px solid rgba(255,255,255,0.05);font-size:11px;color:rgba(255,255,255,0.18)}
   </style>
 </head>
 <body>
 <nav>
   <a href="/" class="nav-logo"><span class="nav-wm">Au</span></a>
-  <div class="nav-links">
-    <a href="/">Home</a>
-    <a href="/product/">Features</a>
-    <a href="/pricing/">Pricing</a>
-    <a href="/news/">Blog</a>
-    <a href="/contact/">Contact</a>
-  </div>
+  <div class="nav-links"><a href="/">Home</a><a href="/product/">Features</a><a href="/pricing/">Pricing</a><a href="/news/" class="active">Blog</a><a href="/contact/">Contact</a></div>
   <a href="/" class="nav-dl">Download</a>
 </nav>
-<div class="page-hero">
-  <div class="page-hero-bg"></div>
-  <div class="page-hero-overlay"></div>
-  <div class="page-hero-inner">
-    <p class="eyebrow">Blog</p>
-    <h1>Updates from<br>the <em>Au</em> team.</h1>
-    <p class="lead">Product announcements and what we're building next.</p>
+
+<div class="masthead">
+  <div class="masthead-eyeline"><span>Aurum Technologies Inc.</span><span>Vol. I · No. 1 · May 2026</span><span>au79.app</span></div>
+  <div class="masthead-title">The <span>Au</span> Dispatch</div>
+  <div class="masthead-rule"></div>
+  <div class="masthead-sub">
+    <span>Est. 2026</span><span>Toronto, Canada</span><span>AI Personal Finance</span><span>Days, Not Dollars</span>
   </div>
 </div>
-<div class="content">
-  <div class="post-card">
-    <div class="post-meta"><span class="post-tag">Announcement</span><span class="post-date">May 2026</span></div>
-    <h2 class="post-title">Au is launching on the App Store in July 2026</h2>
-    <p class="post-excerpt">We're putting the finishing touches on Au and will be launching on iOS in July 2026. Au shows you what every purchase truly costs — not in dollars, but in days toward the goals that matter to you. Join the waitlist to be first in line.</p>
+
+<div class="black-band">
+  
+</div>
+
+<div class="post-list">
+  <div class="post-item">
+    <div class="post-meta-col">
+      <div class="post-num">01</div>
+      <div class="post-tag">Announcement</div>
+      <div class="post-date">May 2026</div>
+    </div>
+    <div class="post-main">
+      <h2 class="post-title">Au is launching on the App Store in <em>July 2026.</em></h2>
+      <p class="post-excerpt">We're putting the finishing touches on Au and will be launching on iOS this July. Au shows you what every purchase truly costs — not in dollars, but in days toward the goals that matter to you.</p>
+      <span class="post-read">Read more →</span>
+    </div>
   </div>
-  <div class="newsletter">
-    <h2>Be first to know</h2>
-    <p>Join the waitlist and get notified the moment Au launches.</p>
-    <div class="nl-form">
-      <input type="email" placeholder="your@email.com" />
-      <button onclick="this.textContent='✓ Done';this.style.background='#5BA85A'">Join Waitlist</button>
+  <div class="post-item">
+    <div class="post-meta-col">
+      <div class="post-num">02</div>
+      <div class="post-tag">Thinking</div>
+      <div class="post-date">April 2026</div>
+    </div>
+    <div class="post-main">
+      <h2 class="post-title">Why we measure everything in <em>days, not dollars.</em></h2>
+      <p class="post-excerpt">$310 means nothing. But 26 days further from your house deposit — that means something. The thinking behind Au's most important design decision.</p>
+      <span class="post-read">Read more →</span>
+    </div>
+  </div>
+  <div class="post-item">
+    <div class="post-meta-col">
+      <div class="post-num">03</div>
+      <div class="post-tag">Product</div>
+      <div class="post-date">March 2026</div>
+    </div>
+    <div class="post-main">
+      <h2 class="post-title">The problem with every finance app — and why we built <em>Au.</em></h2>
+      <p class="post-excerpt">Seventy percent delete it within thirty days. Not apathy. Shame. Au is built on a completely different idea.</p>
+      <span class="post-read">Read more →</span>
     </div>
   </div>
 </div>
+
+<div class="sub">
+  <div class="sub-t">The <em>Au</em> Dispatch — stay informed.</div>
+  <div class="sub-f"><input type="email" placeholder="your@email.com" /><button onclick="this.textContent='Done ✓';this.style.background='#5BA85A'">Subscribe</button></div>
+</div>
+
 <footer>
   <div class="ft-top">
-    <div class="ft-brand"><div class="fw">Au</div><p>The AI personal finance app that shows you what every purchase truly costs — in days, not dollars.</p></div>
-    <div class="ft-col"><h4>Product</h4><a href="/product/">Features</a><a href="/pricing/">Pricing</a><a href="/">Download</a></div>
+    <div class="ft-brand"><div class="fw">Au</div><p>The AI personal finance app — days, not dollars.</p></div>
+    <div class="ft-col"><h4>Product</h4><a href="/product/">Features</a><a href="/pricing/">Pricing</a></div>
     <div class="ft-col"><h4>Company</h4><a href="/about/">About</a><a href="/news/">Blog</a><a href="/contact/">Contact</a></div>
-    <div class="ft-col"><h4>Legal</h4><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Service</a></div>
+    <div class="ft-col"><h4>Legal</h4><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div>
   </div>
-  <div class="ft-bot"><span>© 2026 Aurum Technologies Inc. All rights reserved.</span><span>au79.app · anchitj@au79.app</span></div>
+  <div class="ft-bot"><span>© 2026 Aurum Technologies Inc.</span><span>au79.app</span></div>
 </footer>
-<script>
-(function(){
-  const syms=['H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si','P','S','Cl','Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu','Zn','Ga','Ge','As','Se','Br','Kr','Rb','Sr','Y','Zr','Nb','Mo','Tc','Ru','Rh','Pd','Ag','Cd','In','Sn','Sb','Te','I','Xe','Cs','Ba','La','Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg','Tl','Pb','Bi','Po','At','Rn'];
-  const near=['Ir','Pt','Hg','Tl'];
-  document.querySelectorAll('.page-hero-bg').forEach(bg=>{
-    syms.forEach(s=>{const d=document.createElement('div');d.className='phb'+(s==='Au'?' au':near.includes(s)?' nb':'');bg.appendChild(d);});
-  });
-})();
-</script>
 </body>
 </html>
