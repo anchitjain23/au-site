@@ -230,28 +230,32 @@
     .fc-d { font-size: 13px; color: var(--text-mid); line-height: 1.75; }
 
     /* ── PRICING ── */
-    #pricing { padding: 100px 40px; border-top: 1px solid var(--border); }
-    .pr-hdr { text-align: center; margin-bottom: 64px; }
-    .pr-eye { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
-    .pr-ttl { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 4vw, 48px); font-weight: 200; color: var(--text-dark); }
-    .pr-ttl em { font-style: italic; color: var(--gold); }
-    .pr-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; max-width: 960px; margin: 0 auto; }
-    .pc { background: var(--cream); border: 1px solid var(--border); border-radius: 16px; padding: 32px 26px; position: relative; transition: transform .2s, border-color .2s; }
-    .pc:hover { transform: translateY(-3px); }
-    .pc.feat { border-color: rgba(184,146,74,0.4); background: linear-gradient(160deg, rgba(184,146,74,0.04), var(--cream)); }
-    .pc.feat::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); border-radius: 16px 16px 0 0; }
-    .pc-badge { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: var(--gold); color: #fff; padding: 2px 14px; border-radius: 20px; font-size: 9.5px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; }
-    .pc-tier { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
-    .pc-nm { font-family: 'Cormorant Garamond', serif; font-size: 31px; font-weight: 400; color: var(--text-dark); margin-bottom: 16px; }
-    .pc-pr { font-size: 38px; font-weight: 300; color: var(--text-dark); line-height: 1; }
-    .pc-pr sup { font-size: 16px; vertical-align: top; margin-top: 6px; display: inline-block; }
-    .pc-per { font-size: 12px; color: var(--text-light); margin-top: 4px; margin-bottom: 6px; }
-    .pc-ann { font-size: 11px; color: var(--green); margin-bottom: 22px; min-height: 15px; }
-    .pc-div { height: 1px; background: var(--border); margin-bottom: 20px; }
-    .pc-fs { list-style: none; display: flex; flex-direction: column; gap: 9px; }
-    .pc-fs li { font-size: 12.5px; color: var(--text-mid); display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; }
-    .pc-fs li .ck { color: var(--green); flex-shrink: 0; }
-    .pc-fs li .gk { color: var(--gold); flex-shrink: 0; }
+    #pricing { padding: 80px 40px; border-top: 1px solid var(--border); }
+    .pr-hdr { text-align: center; margin-bottom: 44px; }
+    .billing-toggle { display: flex; justify-content: center; gap: 0; margin-bottom: 44px; }
+    .billing-btn { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; padding: 9px 22px; border: 1px solid rgba(0,0,0,0.15); color: rgba(0,0,0,0.3); background: transparent; cursor: pointer; transition: all .2s; }
+    .billing-btn:first-child { border-radius: 4px 0 0 4px; }
+    .billing-btn:last-child { border-radius: 0 4px 4px 0; border-left: none; }
+    .billing-btn.on { background: #0C0B09; color: #F3F0E7; border-color: #0C0B09; }
+    .pr-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; max-width: 1280px; margin: 0 auto; }
+    .pc { background: #0C0B09; border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 40px 34px; position: relative; transition: transform .2s, border-color .2s; }
+    .pc:hover { transform: translateY(-4px); border-color: rgba(201,169,110,0.2); }
+    .pc.feat { border-color: rgba(201,169,110,0.4); background: #100F0C; }
+    .pc.feat::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, #C9A96E, transparent); border-radius: 14px 14px 0 0; }
+    .pc-badge { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: #C9A96E; color: #0C0B09; padding: 2px 14px; border-radius: 20px; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; font-family: 'Space Mono', monospace; }
+    .pc-tier { font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; color: #C9A96E; margin-bottom: 10px; }
+    .pc-nm { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 700; color: #fff; line-height: 1; letter-spacing: -0.02em; margin-bottom: 3px; }
+    .pc-hint { font-family: 'Space Mono', monospace; font-size: 7.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.18); margin-bottom: 20px; }
+    .pc-pr { font-family: 'DM Sans', sans-serif; font-size: 58px; font-weight: 300; line-height: 1; letter-spacing: -0.03em; color: #C9A96E; display: flex; align-items: flex-start; gap: 2px; }
+    .pc-pr .sym { font-size: 20px; font-weight: 300; color: rgba(201,169,110,0.5); margin-top: 8px; }
+    .pc-per { font-size: 11px; color: rgba(255,255,255,0.3); margin-top: 5px; }
+    .pc-ann { font-size: 11px; color: #5BA85A; margin-top: 2px; min-height: 16px; }
+    .pc-div { height: 1px; background: rgba(255,255,255,0.07); margin: 20px 0; }
+    .pc-fs { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .pc-fs li { font-size: 13px; color: rgba(255,255,255,0.65); display: flex; align-items: flex-start; gap: 9px; line-height: 1.5; }
+    .pc-fs li .ck { color: #5BA85A; flex-shrink: 0; }
+    .price-m { display: block; } .price-a { display: none; }
+
 
     /* ── FINAL CTA ── */
     #cta { padding: 120px 40px; text-align: center; background: var(--black); position: relative; overflow: hidden; }
@@ -559,52 +563,70 @@
 
 <!-- PRICING -->
 <section id="pricing">
-  <div class="pr-hdr">
-    <p class="pr-eye rv">Pricing</p>
-    <h2 class="pr-ttl rv d1">Start free.<br><em>Upgrade when you're ready.</em></h2>
+  <div class="billing-toggle">
+    <button class="billing-btn on" onclick="setBilling('monthly')">Monthly</button>
+    <button class="billing-btn" onclick="setBilling('annual')">Annual</button>
   </div>
   <div class="pr-grid">
     <div class="pc rv">
       <p class="pc-tier">Free</p>
-      <h3 class="pc-nm">Au Oxygen</h3>
-      <div class="pc-pr"><sup>$</sup>0</div>
-      <p class="pc-per">forever free</p>
-      <p class="pc-ann">&nbsp;</p>
+      <div class="pc-nm">Oxygen</div>
+      <div class="pc-hint">1 user · 1 bank · 1 goal</div>
+      <div class="pc-pr"><span class="sym">$</span>0</div>
+      <div class="pc-per">forever free</div>
+      <div class="pc-ann">&nbsp;</div>
       <div class="pc-div"></div>
       <ul class="pc-fs">
         <li><span class="ck">✓</span>1 bank account</li>
         <li><span class="ck">✓</span>1 active goal</li>
         <li><span class="ck">✓</span>Goal Impact Bar</li>
-        <li><span class="ck">✓</span>Basic Atom AI</li>
-        <li><span class="ck">✓</span>AI categorisation</li>
-        <li><span class="ck">✓</span>3 Dupe Finder uses/mo</li>
+        <li><span class="ck">✓</span>Basic Atom ⚛ — text only</li>
+        <li><span class="ck">✓</span>AI transaction categorisation</li>
+        <li><span class="ck">✓</span>3 Dupe Finder uses/month</li>
+        <li><span class="ck">✓</span>Real-time dashboard</li>
       </ul>
     </div>
     <div class="pc feat rv d1">
       <div class="pc-badge">Most Popular</div>
       <p class="pc-tier">Premium</p>
-      <h3 class="pc-nm">Au Atomic</h3>
-      <div class="pc-pr"><sup>$</sup>11.99</div>
-      <p class="pc-per">per month</p>
-      <p class="pc-ann">$83.88/yr — 5 months free</p>
+      <div class="pc-nm">Atomic</div>
+      <div class="pc-hint">1–2 users · unlimited everything</div>
+      <div class="price-m">
+        <div class="pc-pr"><span class="sym">$</span>11.99</div>
+        <div class="pc-per">per month</div>
+        <div class="pc-ann">&nbsp;</div>
+      </div>
+      <div class="price-a">
+        <div class="pc-pr"><span class="sym">$</span>6.99</div>
+        <div class="pc-per">per month, billed annually</div>
+        <div class="pc-ann">$83.88/yr — 5 months free</div>
+      </div>
       <div class="pc-div"></div>
       <ul class="pc-fs">
-        <li><span class="gk">✦</span>Everything in Oxygen</li>
-        <li><span class="gk">✦</span>Unlimited accounts &amp; goals</li>
-        <li><span class="gk">✦</span>Full Atom — text &amp; voice</li>
-        <li><span class="gk">✦</span>Unlimited Dupe Finder</li>
-        <li><span class="gk">✦</span>AI Personal Shopper</li>
-        <li><span class="gk">✦</span>Spending Personality Profile</li>
-        <li><span class="gk">✦</span>Bill Negotiation Coach</li>
-        <li><span class="gk">✦</span>1 partner free · Ad-free</li>
+        <li><span class="ck">✓</span>Everything in Oxygen</li>
+        <li><span class="ck">✓</span>Unlimited accounts &amp; goals</li>
+        <li><span class="ck">✓</span>Full Atom ⚛ — text &amp; voice</li>
+        <li><span class="ck">✓</span>Unlimited Dupe Finder</li>
+        <li><span class="ck">✓</span>AI Personal Shopper</li>
+        <li><span class="ck">✓</span>Spending Personality Profile</li>
+        <li><span class="ck">✓</span>Bill Negotiation Coach</li>
+        <li><span class="ck">✓</span>1 partner free · Ad-free</li>
       </ul>
     </div>
     <div class="pc rv d2">
       <p class="pc-tier">Household</p>
-      <h3 class="pc-nm">Au Fusion</h3>
-      <div class="pc-pr"><sup>$</sup>21.99</div>
-      <p class="pc-per">per month</p>
-      <p class="pc-ann">$153.99/yr — 5 months free</p>
+      <div class="pc-nm">Fusion</div>
+      <div class="pc-hint">up to 5 users</div>
+      <div class="price-m">
+        <div class="pc-pr"><span class="sym">$</span>21.99</div>
+        <div class="pc-per">per month</div>
+        <div class="pc-ann">&nbsp;</div>
+      </div>
+      <div class="price-a">
+        <div class="pc-pr"><span class="sym">$</span>12.99</div>
+        <div class="pc-per">per month, billed annually</div>
+        <div class="pc-ann">$155.88/yr — 5 months free</div>
+      </div>
       <div class="pc-div"></div>
       <ul class="pc-fs">
         <li><span class="ck">✓</span>Everything in Atomic</li>
@@ -671,6 +693,12 @@
     d.className = 'ctab' + (s==='Au'?' au-c': near.includes(s)?' nb-c':'');
     cb.appendChild(d);
   });
+
+  function setBilling(mode){
+    document.querySelectorAll('.billing-btn').forEach(function(b,i){b.classList.toggle('on',(mode==='monthly'&&i===0)||(mode==='annual'&&i===1));});
+    document.querySelectorAll('.price-m').forEach(function(el){el.style.display=mode==='monthly'?'block':'none';});
+    document.querySelectorAll('.price-a').forEach(function(el){el.style.display=mode==='annual'?'block':'none';});
+  }
 
   // Scroll story phone switching
   const panels = document.querySelectorAll('.panel');
