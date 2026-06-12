@@ -189,27 +189,27 @@
   <div class="panels">
 
     <div class="panel" data-screen="0">
-      <p class="panel-eye rv">01 — Goal Impact Bar</p>
-      <h2 class="panel-title rv d1">Days, not<br><em>dollars.</em></h2>
-      <p class="panel-body rv d2">Every wishlist item shows one number: how many days it pushes your closest goal back. Not the price. Not a percentage. Days. The only reframe that makes a purchase feel real before you make it.</p>
-      <p class="panel-body rv d2">When you skip an item, Au celebrates. When you buy it, Au shows the honest impact — no guilt, no lecture.</p>
-      <div class="panel-ex rv d3"><strong>Example:</strong> That $349 pair of headphones isn't $349. It's <strong>8 days further</strong> from your house deposit.</div>
+      <p class="panel-eye rv">01 — Goals Screen</p>
+      <h2 class="panel-title rv d1">Every goal,<br><em>always live.</em></h2>
+      <p class="panel-body rv d2">Set as many goals as you want — house deposit, holiday, emergency fund. Each one shows what you've saved, what's left, and a projected date that updates automatically every time your spending changes.</p>
+      <p class="panel-body rv d2">The Goals page is a control panel, not a progress tracker. Adjust an allocation and every date — and every wishlist days number — updates instantly.</p>
+      <div class="panel-ex rv d3"><strong>Example:</strong> Cut takeout by $200/month and your house deposit date pulls forward from <strong>October 2027 to August 2027.</strong></div>
     </div>
 
     <div class="panel" data-screen="1">
-      <p class="panel-eye rv">02 — AI Personal Shopper</p>
-      <h2 class="panel-title rv d1">Your shopper,<br><em>before you buy.</em></h2>
-      <p class="panel-body rv d2">Add anything to your wishlist and Au evaluates it completely — not just whether you can afford it, but whether now is the right time given your bills, savings rate, and goals.</p>
-      <p class="panel-body rv d2">Import your Amazon wishlist with one tap, or screenshot any retailer and Au reads it instantly.</p>
-      <div class="panel-ex rv d3"><strong>Example:</strong> You screenshot 7 ASOS items — $340 total. Au surfaces the two with the least goal impact: <strong>$89 and just 3 days.</strong> The other five cost 22 days combined.</div>
+      <p class="panel-eye rv">02 — Expenses Screen</p>
+      <h2 class="panel-title rv d1">Every dollar,<br><em>goal-linked.</em></h2>
+      <p class="panel-body rv d2">Every spending category shows what it's costing you against your budget — and against your goals, in days. Not just "$340 on dining" but what that $340 actually means.</p>
+      <p class="panel-body rv d2">Run an Atom simulation on any category and watch the Combined Goal Impact tile update live, before you commit to anything.</p>
+      <div class="panel-ex rv d3"><strong>Example:</strong> Dining Out at $340 — $110 above your usual pace — is costing you <strong>4 extra days</strong> on your house deposit.</div>
     </div>
 
     <div class="panel" data-screen="2">
-      <p class="panel-eye rv">03 — Dupe Finder</p>
-      <h2 class="panel-title rv d1">Same thing,<br><em>fewer days.</em></h2>
-      <p class="panel-body rv d2">Au automatically searches for high-quality cheaper alternatives — strong reviews, comparable specs, meaningfully lower prices. Toggle between original and dupe and watch the days impact update live.</p>
-      <p class="panel-body rv d2">The user pays nothing extra. Au earns a small commission only when you choose the smarter option.</p>
-      <div class="panel-ex rv d3"><strong>Example:</strong> Dyson Airwrap at $599 → BaByliss dupe at $89, 4.7★ across 12,000 reviews. You save <strong>$510</strong> and gain <strong>17 days</strong> toward your goal.</div>
+      <p class="panel-eye rv">03 — Shopper Screen</p>
+      <h2 class="panel-title rv d1">Buy less.<br><em>Or buy smarter.</em></h2>
+      <p class="panel-body rv d2">Every wishlist item shows its days impact — and right below it, a high-quality cheaper alternative with its own impact. One screen, instant comparison.</p>
+      <p class="panel-body rv d2">No toggling, no extra taps. The smarter choice is just sitting there next to the original.</p>
+      <div class="panel-ex rv d3"><strong>Example:</strong> Sony WH-1000XM5 at $349 = <strong>+8 days.</strong> The BaByliss dupe at $89 = <strong>+3 days.</strong> Save $260, gain 5 days.</div>
     </div>
 
   </div>
@@ -222,62 +222,61 @@
         <div class="phone-notch"></div>
         <div class="screen-wrap" id="screens-1">
 
-          <!-- Screen 0: Wishlist / Goal Impact Bar -->
+          <!-- Screen 0: Goals -->
           <div class="pscreen active">
-            <div class="s-hdr"><span style="font-family:'Cormorant Garamond',serif;font-size:15px;color:#F2EDE3;font-weight:500">Wishlist</span><span class="s-date">3 items</span></div>
+            <div class="s-hdr"><span style="font-family:'Cormorant Garamond',serif;font-size:15px;color:#F2EDE3;font-weight:500">Goals</span><span class="s-date">3 active</span></div>
+            <div class="s-gm"><div class="s-gt"><span class="s-gnm">House Deposit</span><span class="s-gpct">62%</span></div><div class="s-bt"><div class="s-bf" style="width:62%"></div></div><div class="s-gbot"><span class="s-gsm">$31k of $50k</span><span class="s-gsm">Oct 2027</span></div></div>
+            <div class="s-gm"><div class="s-gt"><span class="s-gnm">Bali Holiday</span><span class="s-gpct">38%</span></div><div class="s-bt"><div class="s-bf" style="width:38%"></div></div><div class="s-gbot"><span class="s-gsm">$1,520 of $4k</span><span class="s-gsm">Nov 2026</span></div></div>
+            <div class="s-gm"><div class="s-gt"><span class="s-gnm">Emergency Fund</span><span class="s-gpct">81%</span></div><div class="s-bt"><div class="s-bf" style="width:81%"></div></div><div class="s-gbot"><span class="s-gsm">$8,100 of $10k</span><span class="s-gsm">Aug 2026</span></div></div>
+            <div class="s-slbl">Monthly Allocation</div>
+            <div class="s-wc">
+              <div class="s-chips">
+                <div class="s-ch s-chw">Available $720</div>
+                <div class="s-ch s-chg">Allocated $640</div>
+                <div class="s-ch s-chgr">Unallocated $80</div>
+              </div>
+            </div>
+            <div class="s-note">Cut takeout by <strong>$200/mo</strong> → House Deposit moves from Oct 2027 to <strong>Aug 2027.</strong></div>
+          </div>
+
+          <!-- Screen 1: Expenses / Spend -->
+          <div class="pscreen">
+            <div class="s-hdr"><span class="s-sptl">Spend</span><span class="s-date">May 2026</span></div>
+            <div class="s-spsum">
+              <div class="s-spr"><span class="s-spbig">$1,840</span><span class="s-splft">$720 left</span></div>
+              <div class="s-bt"><div class="s-bf" style="width:72%"></div></div>
+            </div>
+            <div class="s-spcat">
+              <div class="s-spcr"><div style="display:flex;align-items:center;gap:6px"><div class="s-spico">🍜</div><span class="s-spcn">Dining Out</span></div><span class="s-spca">$340</span></div>
+              <div class="s-bt"><div class="s-bf" style="width:85%"></div></div>
+              <div style="display:flex;justify-content:space-between;font-size:7px;color:rgba(255,255,255,0.25)"><span>$110 above usual</span><span>/ $400</span></div>
+              <div class="s-spimp">+4 days on House Deposit</div>
+            </div>
+            <div class="s-spcat">
+              <div class="s-spcr"><div style="display:flex;align-items:center;gap:6px"><div class="s-spico">🚗</div><span class="s-spcn">Transport</span></div><span class="s-spca">$180</span></div>
+              <div class="s-bt"><div class="s-bf" style="width:45%"></div></div>
+              <div style="display:flex;justify-content:space-between;font-size:7px;color:rgba(255,255,255,0.25)"><span>On track</span><span>/ $400</span></div>
+              <div class="s-spimp">+2 days on Bali Holiday</div>
+            </div>
+            <div class="s-spcat">
+              <div class="s-spcr"><div style="display:flex;align-items:center;gap:6px"><div class="s-spico">📱</div><span class="s-spcn">Subscriptions</span></div><span class="s-spca">$94</span></div>
+              <div class="s-bt"><div class="s-bf" style="width:94%"></div></div>
+              <div style="display:flex;justify-content:space-between;font-size:7px;color:rgba(255,255,255,0.25)"><span>7 active · 4 unused</span><span>/ $100</span></div>
+              <div class="s-spimp">+3 days on House Deposit</div>
+            </div>
+          </div>
+
+          <!-- Screen 2: Shopper — wishlist + dupe in one screen -->
+          <div class="pscreen">
+            <div class="s-hdr"><span style="font-family:'Cormorant Garamond',serif;font-size:15px;color:#F2EDE3;font-weight:500">Shopper</span><span class="s-date">1 item</span></div>
             <div class="s-wi">
               <div class="s-wir">
-                <div><div class="s-winm">Sony WH-1000XM5</div><div class="s-wict">Electronics</div></div>
+                <div><div class="s-winm">Sony WH-1000XM5</div><div class="s-wict">Electronics · Original</div></div>
                 <div class="s-stk"><div class="s-stkg"><div class="sp">$349</div><div class="sl">Afford</div></div><div class="s-stkb"><div class="sd">+8 days</div><div class="si">Impact</div></div></div>
               </div>
-              <div class="s-dp">✦ Dupe on Amazon · $89</div>
               <div class="s-wbl">House Deposit</div>
               <div class="s-wbt"><div class="s-wbf" style="width:62%"></div></div>
               <div class="s-wdr"><span class="s-wdn">Now: Oct 2027</span><span class="s-wda">If bought: Oct 28</span></div>
-            </div>
-            <div class="s-wi">
-              <div class="s-wir">
-                <div><div class="s-winm">Dyson Airwrap</div><div class="s-wict">Beauty</div></div>
-                <div class="s-stk"><div class="s-stkg"><div class="sp">$599</div><div class="sl">Tight</div></div><div class="s-stkb"><div class="sd">+20 days</div><div class="si">Impact</div></div></div>
-              </div>
-              <div class="s-dp">✦ Dupe on Amazon · $89</div>
-              <div class="s-wbl">House Deposit</div>
-              <div class="s-wbt"><div class="s-wbf" style="width:62%"></div></div>
-              <div class="s-wdr"><span class="s-wdn">Now: Oct 2027</span><span class="s-wda">If bought: Nov 20</span></div>
-            </div>
-          </div>
-
-          <!-- Screen 1: AI Personal Shopper -->
-          <div class="pscreen">
-            <div class="s-hdr"><span style="font-family:'Cormorant Garamond',serif;font-size:15px;color:#F2EDE3;font-weight:500">Shopper</span><span class="s-date">7 imported</span></div>
-            <div class="s-dp">✦ Imported from ASOS</div>
-            <div class="s-wi">
-              <div class="s-wir">
-                <div><div class="s-winm">Linen Shirt</div><div class="s-wict">Clothing · $45</div></div>
-                <div class="s-stk"><div class="s-stkg"><div class="sp">$45</div><div class="sl">Afford</div></div><div class="s-stkb"><div class="sd">+1 day</div><div class="si">Impact</div></div></div>
-              </div>
-              <div class="s-wbl">Bali Holiday</div>
-              <div class="s-wbt"><div class="s-wbf" style="width:38%"></div></div>
-            </div>
-            <div class="s-wi">
-              <div class="s-wir">
-                <div><div class="s-winm">Canvas Tote</div><div class="s-wict">Accessories · $44</div></div>
-                <div class="s-stk"><div class="s-stkg"><div class="sp">$44</div><div class="sl">Afford</div></div><div class="s-stkb"><div class="sd">+2 days</div><div class="si">Impact</div></div></div>
-              </div>
-              <div class="s-wbl">Bali Holiday</div>
-              <div class="s-wbt"><div class="s-wbf" style="width:38%"></div></div>
-            </div>
-            <div class="s-note">These two cost <strong>$89</strong> and only <strong>3 days</strong>. The other five items cost <strong>22 days</strong> combined.</div>
-          </div>
-
-          <!-- Screen 2: Dupe Finder -->
-          <div class="pscreen">
-            <div class="s-hdr"><span style="font-family:'Cormorant Garamond',serif;font-size:15px;color:#F2EDE3;font-weight:500">Dupe Finder</span><span class="s-date">Dyson Airwrap</span></div>
-            <div class="s-wi">
-              <div class="s-wir">
-                <div><div class="s-winm">Dyson Airwrap</div><div class="s-wict">Original</div></div>
-                <div class="s-stk"><div class="s-stkg"><div class="sp">$599</div><div class="sl">Tight</div></div><div class="s-stkb"><div class="sd">+20 days</div><div class="si">Impact</div></div></div>
-              </div>
             </div>
             <div class="s-dp" style="margin:6px 0">✦ Best match · 4.7★ · 12,000 reviews</div>
             <div class="s-wi">
@@ -285,8 +284,11 @@
                 <div><div class="s-winm">BaByliss Air Style 1000</div><div class="s-wict">Dupe · Amazon</div></div>
                 <div class="s-stk"><div class="s-stkg"><div class="sp">$89</div><div class="sl">Afford</div></div><div class="s-stkb"><div class="sd">+3 days</div><div class="si">Impact</div></div></div>
               </div>
+              <div class="s-wbl">House Deposit</div>
+              <div class="s-wbt"><div class="s-wbf" style="width:62%"></div></div>
+              <div class="s-wdr"><span class="s-wdn">Now: Oct 2027</span><span class="s-wda">If bought: Oct 23</span></div>
             </div>
-            <div class="s-note">Save <strong>$510</strong> → gain <strong>17 days</strong> toward House Deposit.</div>
+            <div class="s-note">Save <strong>$260</strong> → gain <strong>5 days</strong> toward House Deposit.</div>
           </div>
 
         </div>
@@ -320,19 +322,19 @@
     </div>
 
     <div class="panel" data-screen="1">
-      <p class="panel-eye rv">05 — Insights Engine</p>
-      <h2 class="panel-title rv d1">Patterns,<br><em>before they cost you.</em></h2>
-      <p class="panel-body rv d2">Au notices things you don't — and quantifies exactly what they cost in time against your goals. Insights are proactive, not reactive. They surface before the damage is done, not after.</p>
-      <p class="panel-body rv d2">It never tells you off. It shows you the consequence clearly and lets you decide.</p>
-      <div class="panel-ex rv d3"><strong>Example:</strong> "14 Uber rides this month — $180 above usual. Cutting back moves your Japan holiday <strong>12 days closer.</strong>"</div>
-    </div>
-
-    <div class="panel" data-screen="2">
-      <p class="panel-eye rv">06 — Future You Simulator</p>
+      <p class="panel-eye rv">05 — Future You Simulator</p>
       <h2 class="panel-title rv d1">Two futures,<br><em>side by side.</em></h2>
       <p class="panel-body rv d2">Toggle purchases on and off in your wishlist and watch your projected financial future update in real time. One future where you keep spending as you are. One where you make the changes Atom suggests.</p>
       <p class="panel-body rv d2">The gap between them is the most motivating number in personal finance.</p>
       <div class="panel-ex rv d3"><strong>Example:</strong> Future You at 35 has <strong>$4,200</strong> at your current pace. Toggle off 3 wishlist items and cancel 2 subscriptions — Future You has <strong>$11,800.</strong> Same income, different decisions.</div>
+    </div>
+
+    <div class="panel" data-screen="2">
+      <p class="panel-eye rv">06 — Insights Engine</p>
+      <h2 class="panel-title rv d1">Patterns,<br><em>before they cost you.</em></h2>
+      <p class="panel-body rv d2">Au notices things you don't — and quantifies exactly what they cost in time against your goals. Insights are proactive, not reactive. They surface before the damage is done, not after.</p>
+      <p class="panel-body rv d2">It never tells you off. It shows you the consequence clearly and lets you decide.</p>
+      <div class="panel-ex rv d3"><strong>Example:</strong> "14 Uber rides this month — $180 above usual. Cutting back moves your Japan holiday <strong>12 days closer.</strong>"</div>
     </div>
 
   </div>
@@ -363,24 +365,7 @@
             </div>
           </div>
 
-          <!-- Screen 1: Insights -->
-          <div class="pscreen">
-            <div class="s-hdr"><span style="font-family:'Cormorant Garamond',serif;font-size:15px;color:#F2EDE3;font-weight:500">Insights</span><span class="s-date">3 new</span></div>
-            <div class="s-gm">
-              <div class="s-gt"><span class="s-gnm">Uber spend up</span><span class="s-gpct">+$180</span></div>
-              <div style="font-size:8px;color:rgba(255,255,255,0.4);line-height:1.55;margin-top:2px">14 rides this month — $180 above usual. Cutting back moves Japan <span style="color:#C9A96E">12 days closer.</span></div>
-            </div>
-            <div class="s-gm">
-              <div class="s-gt"><span class="s-gnm">Unused subscriptions</span><span class="s-gpct">$94/mo</span></div>
-              <div style="font-size:8px;color:rgba(255,255,255,0.4);line-height:1.55;margin-top:2px">7 active subs, 4 untouched this month. Cancelling moves House Deposit <span style="color:#C9A96E">9 days closer.</span></div>
-            </div>
-            <div class="s-gm">
-              <div class="s-gt"><span class="s-gnm">On track ✓</span><span class="s-gpct" style="color:#5BA85A">Dining</span></div>
-              <div style="font-size:8px;color:rgba(255,255,255,0.4);line-height:1.55;margin-top:2px">Right at your usual pace this month. Nothing to change here.</div>
-            </div>
-          </div>
-
-          <!-- Screen 2: Future You -->
+          <!-- Screen 1: Future You -->
           <div class="pscreen">
             <div class="s-hdr"><span style="font-family:'Cormorant Garamond',serif;font-size:15px;color:#F2EDE3;font-weight:500">Future You</span><span class="s-date">Age 35</span></div>
             <div style="display:flex;gap:6px;margin-bottom:8px">
@@ -398,6 +383,23 @@
               <div style="font-size:8px;color:rgba(255,255,255,0.4);line-height:1.55;margin-top:2px">3 wishlist items + 2 unused subscriptions</div>
             </div>
             <div class="s-note">Same income, same life — just different decisions.</div>
+          </div>
+
+          <!-- Screen 2: Insights -->
+          <div class="pscreen">
+            <div class="s-hdr"><span style="font-family:'Cormorant Garamond',serif;font-size:15px;color:#F2EDE3;font-weight:500">Insights</span><span class="s-date">3 new</span></div>
+            <div class="s-gm">
+              <div class="s-gt"><span class="s-gnm">Uber spend up</span><span class="s-gpct">+$180</span></div>
+              <div style="font-size:8px;color:rgba(255,255,255,0.4);line-height:1.55;margin-top:2px">14 rides this month — $180 above usual. Cutting back moves Japan <span style="color:#C9A96E">12 days closer.</span></div>
+            </div>
+            <div class="s-gm">
+              <div class="s-gt"><span class="s-gnm">Unused subscriptions</span><span class="s-gpct">$94/mo</span></div>
+              <div style="font-size:8px;color:rgba(255,255,255,0.4);line-height:1.55;margin-top:2px">7 active subs, 4 untouched this month. Cancelling moves House Deposit <span style="color:#C9A96E">9 days closer.</span></div>
+            </div>
+            <div class="s-gm">
+              <div class="s-gt"><span class="s-gnm">On track ✓</span><span class="s-gpct" style="color:#5BA85A">Dining</span></div>
+              <div style="font-size:8px;color:rgba(255,255,255,0.4);line-height:1.55;margin-top:2px">Right at your usual pace this month. Nothing to change here.</div>
+            </div>
           </div>
 
         </div>
@@ -594,8 +596,8 @@
   ]);
   initStory('2', [
     'radial-gradient(ellipse, rgba(184,146,74,0.1) 0%, transparent 65%)',
-    'radial-gradient(ellipse, rgba(184,146,74,0.08) 0%, transparent 65%)',
-    'radial-gradient(ellipse, rgba(91,168,90,0.08) 0%, transparent 65%)'
+    'radial-gradient(ellipse, rgba(91,168,90,0.08) 0%, transparent 65%)',
+    'radial-gradient(ellipse, rgba(184,146,74,0.08) 0%, transparent 65%)'
   ]);
   initStory('3', [
     'radial-gradient(ellipse, rgba(184,146,74,0.09) 0%, transparent 65%)',
