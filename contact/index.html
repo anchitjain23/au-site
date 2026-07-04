@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact · Au</title>
+  <meta name="description" content="Get in touch with the Au team. Questions, press, partnerships — we read everything." />
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;1,200;1,300&family=DM+Sans:wght@200;300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,400&family=DM+Sans:wght@200;300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--black:#0C0B09;--cream:#F3F0E7;--cream-mid:#EDE9DE;--gold:#B8924A;--green:#5BA85A;--text:#111;--mid:#666;--light:#aaa;--border:rgba(0,0,0,0.08)}
-    html{scroll-behavior:smooth}
-    body{background:var(--cream);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden}
+    :root{--black:#0C0B09;--cream:#F3F0E7;--cream-mid:#EDE9DE;--gold:#B8924A;--text:#111;--mid:#666;--border:rgba(0,0,0,0.08)}
+    body{background:var(--cream);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column}
+
     nav{background:var(--black);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:42px;position:sticky;top:0;z-index:200}
     .nav-logo{width:32px;height:32px;border:1px solid rgba(255,255,255,0.28);border-radius:3px;display:flex;align-items:center;justify-content:center;flex-shrink:0;text-decoration:none}
     .nav-wm{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:300;color:rgba(255,255,255,0.42);letter-spacing:0.08em;line-height:1}
@@ -16,56 +18,68 @@
     .nav-links a{font-size:11px;color:rgba(255,255,255,0.42);letter-spacing:0.03em;text-decoration:none;transition:color .2s}
     .nav-links a:hover,.nav-links a.active{color:rgba(255,255,255,0.78)}
     .nav-dl{border:1px solid rgba(255,255,255,0.35);color:rgba(255,255,255,0.55);padding:5px 16px;border-radius:3px;font-size:11px;font-weight:300;letter-spacing:0.03em;text-decoration:none}
-    .page-hero{padding:72px 40px 56px;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
-    .page-hero-bg{position:absolute;inset:0;display:grid;grid-template-columns:repeat(18,1fr);gap:1.5px;padding:8px;pointer-events:none}
-    .phb{background:rgba(0,0,0,0.018);border-radius:1px}
-    .phb.au{background:rgba(184,146,74,0.07)}
-    .phb.nb{background:rgba(184,146,74,0.03)}
-    .page-hero-overlay{position:absolute;inset:0;background:linear-gradient(145deg,rgba(243,240,231,0.9) 0%,rgba(243,240,231,0.97) 60%)}
-    .page-hero-inner{position:relative;z-index:5;max-width:700px}
-    .eyebrow{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px}
-    .eyebrow::before{content:'';width:20px;height:1px;background:var(--gold);flex-shrink:0}
-    h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,6vw,72px);font-weight:200;line-height:0.92;letter-spacing:-0.04em;margin-bottom:20px}
-    h1 em{font-style:italic;color:var(--gold)}
-    .lead{font-size:15px;color:var(--mid);line-height:1.85;max-width:520px}
-    .content{max-width:800px;margin:0 auto;padding:72px 40px 80px}
-    .section-block{margin-bottom:52px}
-    .section-block h2{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3vw,34px);font-weight:300;color:var(--text);margin-bottom:14px;line-height:1.2}
-    .section-block p{font-size:14px;color:var(--mid);line-height:1.85;margin-bottom:12px}
-    .section-block p a{color:var(--gold);text-decoration:none}
-    .gold-rule{height:1px;background:linear-gradient(90deg,transparent,rgba(184,146,74,0.25),transparent);margin:52px 0}
-    footer{padding:52px 40px 36px;background:var(--black);border-top:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;gap:32px}
-    .ft-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
-    .ft-brand .fw{font-family:'Cormorant Garamond',serif;font-size:22px;color:rgba(255,255,255,0.7)}
-    .ft-brand p{font-size:12px;color:rgba(255,255,255,0.25);margin-top:6px;max-width:220px;line-height:1.7}
+
+    /* ── MASTHEAD ── */
+    .masthead{padding:44px 60px 0;border-bottom:3px solid #111}
+    .mast-eyebrow{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+    .mast-eyebrow::before{content:'';width:16px;height:1px;background:var(--gold)}
+    .mast-title{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,7vw,96px);font-weight:700;line-height:0.9;letter-spacing:-0.03em;color:#111;margin-bottom:0}
+    .mast-title em{font-style:italic;font-weight:400;color:var(--gold)}
+    .mast-rule{height:1px;background:#111;margin-top:20px}
+    .mast-sub{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(0,0,0,0.28);padding:12px 0 16px}
+
+    /* ── BODY GRID ── */
+    .body{flex:1;display:grid;grid-template-columns:300px 1fr}
+
+    /* ── SIDEBAR ── */
+    .sidebar{padding:40px 40px 40px 60px;border-right:1px solid var(--border)}
+    .sidebar-label{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(0,0,0,0.25);margin-bottom:20px}
+    .channel{display:block;padding:18px 0;border-bottom:0.5px solid var(--border);text-decoration:none;transition:padding-left .15s}
+    .channel:first-of-type{border-top:0.5px solid var(--border)}
+    .channel:hover{padding-left:4px}
+    .ch-label{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+    .ch-val{font-size:13px;color:#111;font-weight:400;margin-bottom:2px}
+    .ch-desc{font-size:11px;color:#999;line-height:1.5}
+
+    .sidebar-note{margin-top:32px;font-size:12px;color:#aaa;line-height:1.7;padding-top:20px;border-top:0.5px solid var(--border)}
+
+    /* ── FORM ── */
+    .form-wrap{padding:40px 60px 60px 52px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+    .form-field{margin-bottom:16px}
+    .form-label{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(0,0,0,0.35);display:block;margin-bottom:7px}
+    .form-input{width:100%;background:#fff;border:1px solid var(--border);border-radius:5px;padding:11px 14px;font-size:13px;color:#111;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s;-webkit-appearance:none}
+    .form-input:focus{border-color:var(--gold)}
+    .form-select{width:100%;background:#fff;border:1px solid var(--border);border-radius:5px;padding:11px 14px;font-size:13px;color:#111;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s;appearance:none;cursor:pointer}
+    .form-select:focus{border-color:var(--gold)}
+    .form-textarea{width:100%;background:#fff;border:1px solid var(--border);border-radius:5px;padding:11px 14px;font-size:13px;color:#111;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s;resize:none;min-height:120px}
+    .form-textarea:focus{border-color:var(--gold)}
+    .form-submit{background:var(--black);color:var(--cream);border:none;border-radius:5px;padding:13px 32px;font-size:12px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;letter-spacing:0.02em;transition:background .2s}
+    .form-submit:hover{background:#222}
+
+    /* ── FOOTER ── */
+    footer{padding:48px 60px 36px;background:var(--black);display:flex;flex-direction:column;gap:28px;border-top:3px solid #111}
+    .ft-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px}
+    .ft-brand .fw{font-family:'Cormorant Garamond',serif;font-size:20px;color:rgba(255,255,255,0.7)}
+    .ft-brand p{font-size:12px;color:rgba(255,255,255,0.25);margin-top:6px;max-width:200px;line-height:1.7}
     .ft-col{display:flex;flex-direction:column;gap:8px}
     .ft-col h4{font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:0.16em;color:rgba(255,255,255,0.25);margin-bottom:2px}
-    .ft-col a{font-size:12px;color:rgba(255,255,255,0.35);text-decoration:none;transition:color .2s}
-    .ft-col a:hover{color:rgba(255,255,255,0.7)}
-    .ft-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.05);font-size:11px;color:rgba(255,255,255,0.18)}
-    @media(max-width:768px){nav{padding:0 20px}.nav-links{display:none}.page-hero{padding:56px 24px 40px}.content{padding:52px 24px 60px}footer{padding:48px 24px 32px}.ft-top{flex-direction:column}}
-  </style>
-  <title>Contact · Au</title>
-  <meta name="description" content="Get in touch with the Au team." />
-  <style>
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
-    .channel{background:#fff;border:1px solid var(--border);border-radius:10px;padding:18px 20px;text-decoration:none;display:block;margin-bottom:12px;transition:border-color .2s,transform .2s}
-    .channel:hover{border-color:rgba(184,146,74,0.35);transform:translateX(3px)}
-    .channel-lbl{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
-    .channel-val{font-size:13px;color:var(--text);font-weight:400}
-    .channel-desc{font-size:12px;color:var(--light);margin-top:2px}
-    .form-label{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);display:block;margin-bottom:7px}
-    .form-field{margin-bottom:18px}
-    .form-field input,.form-field select,.form-field textarea{width:100%;background:#fff;border:1px solid var(--border);border-radius:6px;padding:11px 14px;font-size:13px;color:var(--text);font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s}
-    .form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--gold)}
-    .form-field select{appearance:none;cursor:pointer}
-    .form-field textarea{resize:vertical;min-height:110px}
-    .form-submit{width:100%;background:var(--black);color:var(--cream);border:none;border-radius:6px;padding:13px;font-size:13px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .2s}
-    .form-submit:hover{background:#222}
-    @media(max-width:768px){.contact-grid{grid-template-columns:1fr}}
+    .ft-col a{font-size:12px;color:rgba(255,255,255,0.35);text-decoration:none}
+    .ft-bot{display:flex;justify-content:space-between;padding-top:24px;border-top:1px solid rgba(255,255,255,0.05);font-size:11px;color:rgba(255,255,255,0.18)}
+
+    @media(max-width:768px){
+      nav{padding:0 20px}.nav-links{display:none}
+      .masthead{padding:36px 24px 0}
+      .body{grid-template-columns:1fr}
+      .sidebar{padding:32px 24px;border-right:none;border-bottom:1px solid var(--border)}
+      .form-wrap{padding:32px 24px}
+      .form-row{grid-template-columns:1fr}
+      footer{padding:36px 24px}
+    }
   </style>
 </head>
 <body>
+
 <nav>
   <a href="/" class="nav-logo"><span class="nav-wm">Au</span></a>
   <div class="nav-links">
@@ -73,53 +87,80 @@
     <a href="/product/">Features</a>
     <a href="/pricing/">Pricing</a>
     <a href="/news/">News</a>
-    <a href="/contact/">Contact</a>
-  
-    <a href="/legal/">Policy</a></div>
+    <a href="/contact/" class="active">Contact</a>
+    <a href="/legal/">Policy</a>
+  </div>
   <a href="/download/" class="nav-dl">Download</a>
 </nav>
-<div class="page-hero">
-  <div class="page-hero-bg"></div>
-  <div class="page-hero-overlay"></div>
-  <div class="page-hero-inner">
-    <p class="eyebrow">Contact</p>
-    <h1>We read<br><em>everything.</em></h1>
-    <p class="lead">Questions, press inquiries, partnerships — reach out. We're based in Toronto and respond within one business day.</p>
+
+<div class="masthead">
+  <div class="mast-eyebrow">Get in touch</div>
+  <h1 class="mast-title">We read<br><em>everything.</em></h1>
+  <div class="mast-rule"></div>
+  <div class="mast-sub">Toronto, Canada &middot; Responds within one business day</div>
+</div>
+
+<div class="body">
+  <div class="sidebar">
+    <div class="sidebar-label">Reach us directly</div>
+    <a href="mailto:anchitj@au79.app" class="channel">
+      <div class="ch-label">General</div>
+      <div class="ch-val">anchitj@au79.app</div>
+      <div class="ch-desc">Product questions, feedback, everything else</div>
+    </a>
+    <a href="mailto:anchitj@au79.app?subject=Press%20Inquiry" class="channel">
+      <div class="ch-label">Press</div>
+      <div class="ch-val">anchitj@au79.app</div>
+      <div class="ch-desc">Media inquiries and press requests</div>
+    </a>
+    <a href="mailto:anchitj@au79.app?subject=Partnership" class="channel">
+      <div class="ch-label">Partnerships</div>
+      <div class="ch-val">anchitj@au79.app</div>
+      <div class="ch-desc">Business development and affiliates</div>
+    </a>
+    <div class="sidebar-note">Based in Toronto, Canada. We respond to every message within one business day.</div>
+  </div>
+
+  <div class="form-wrap">
+    <div class="form-row">
+      <div>
+        <label class="form-label">Name</label>
+        <input class="form-input" type="text" placeholder="Your name" />
+      </div>
+      <div>
+        <label class="form-label">Email</label>
+        <input class="form-input" type="email" placeholder="your@email.com" />
+      </div>
+    </div>
+    <div class="form-field">
+      <label class="form-label">Topic</label>
+      <select class="form-select">
+        <option value="" disabled selected>Select a topic</option>
+        <option>Product question</option>
+        <option>Bug report</option>
+        <option>Press inquiry</option>
+        <option>Partnership</option>
+        <option>Feedback</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="form-field">
+      <label class="form-label">Message</label>
+      <textarea class="form-textarea" placeholder="How can we help?"></textarea>
+    </div>
+    <button class="form-submit" onclick="this.textContent='Sent ✓';this.style.background='#5BA85A'">Send message</button>
   </div>
 </div>
-<div class="content">
-  <div class="contact-grid">
-    <div>
-      <a href="mailto:anchitj@au79.app" class="channel"><div class="channel-lbl">General</div><div class="channel-val">anchitj@au79.app</div><div class="channel-desc">Product questions, feedback, everything else</div></a>
-      <a href="mailto:anchitj@au79.app?subject=Press%20Inquiry" class="channel"><div class="channel-lbl">Press</div><div class="channel-val">anchitj@au79.app</div><div class="channel-desc">Media inquiries and press requests</div></a>
-      <a href="mailto:anchitj@au79.app?subject=Partnership" class="channel"><div class="channel-lbl">Partnerships</div><div class="channel-val">anchitj@au79.app</div><div class="channel-desc">Business development and affiliate partnerships</div></a>
-    </div>
-    <div>
-      <div class="form-field"><label class="form-label">Name</label><input type="text" placeholder="Your name" /></div>
-      <div class="form-field"><label class="form-label">Email</label><input type="email" placeholder="your@email.com" /></div>
-      <div class="form-field"><label class="form-label">Topic</label><select><option value="" disabled selected>Select a topic</option><option>Product question</option><option>Bug report</option><option>Press inquiry</option><option>Partnership</option><option>Feedback</option><option>Other</option></select></div>
-      <div class="form-field"><label class="form-label">Message</label><textarea placeholder="How can we help?"></textarea></div>
-      <button class="form-submit" onclick="this.textContent='Sent ✓';this.style.background='#5BA85A'">Send Message</button>
-    </div>
-  </div>
-</div>
+
 <footer>
   <div class="ft-top">
-    <div class="ft-brand"><div class="fw">Au</div><p>The AI personal finance app that shows you what every purchase truly costs — in days, not dollars.</p></div>
-    <div class="ft-col"><h4>Product</h4><a href="/product/">Features</a><a href="/pricing/">Pricing</a><a href="/">Download</a></div>
+    <div class="ft-brand"><div class="fw">Au</div><p>The AI personal finance app — days, not dollars.</p></div>
+    <div class="ft-col"><h4>Product</h4><a href="/product/">Features</a><a href="/pricing/">Pricing</a></div>
     <div class="ft-col"><h4>Company</h4><a href="/about/">About</a><a href="/news/">News</a><a href="/contact/">Contact</a></div>
     <div class="ft-col"><h4>Legal</h4><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Service</a></div>
   </div>
-  <div class="ft-bot"><span>© 2026 Aurum Technologies Inc. All rights reserved.</span><span>au79.app · anchitj@au79.app</span></div>
+  <div class="ft-bot"><span>© 2026 Aurum Technologies Inc.</span><span>au79.app</span></div>
 </footer>
-<script>
-(function(){
-  const syms=['H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si','P','S','Cl','Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu','Zn','Ga','Ge','As','Se','Br','Kr','Rb','Sr','Y','Zr','Nb','Mo','Tc','Ru','Rh','Pd','Ag','Cd','In','Sn','Sb','Te','I','Xe','Cs','Ba','La','Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg','Tl','Pb','Bi','Po','At','Rn'];
-  const near=['Ir','Pt','Hg','Tl'];
-  document.querySelectorAll('.page-hero-bg').forEach(bg=>{
-    syms.forEach(s=>{const d=document.createElement('div');d.className='phb'+(s==='Au'?' au':near.includes(s)?' nb':'');bg.appendChild(d);});
-  });
-})();
-</script>
+
 </body>
 </html>
