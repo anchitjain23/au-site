@@ -8,57 +8,42 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,400&family=DM+Sans:wght@200;300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--black:#0C0B09;--cream:#F3F0E7;--cream-mid:#EDE9DE;--gold:#B8924A;--text:#111;--mid:#666;--border:rgba(0,0,0,0.08)}
-    body{background:var(--cream);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column}
+    :root{--black:#0C0B09;--cream:#F3F0E7;--gold:#B8924A;--text:#111;--mid:#666;--light:#aaa;--border:rgba(0,0,0,0.1)}
+    body{background:var(--cream);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;min-height:100vh;display:flex;flex-direction:column}
 
     nav{background:var(--black);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:42px;position:sticky;top:0;z-index:200}
-    .nav-logo{width:32px;height:32px;border:1px solid rgba(255,255,255,0.28);border-radius:3px;display:flex;align-items:center;justify-content:center;flex-shrink:0;text-decoration:none}
+    .nav-logo{width:32px;height:32px;border:1px solid rgba(255,255,255,0.28);border-radius:3px;display:flex;align-items:center;justify-content:center;text-decoration:none}
     .nav-wm{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:300;color:rgba(255,255,255,0.42);letter-spacing:0.08em;line-height:1}
     .nav-links{display:flex;align-items:center;flex:1;justify-content:space-evenly;padding:0 40px}
     .nav-links a{font-size:11px;color:rgba(255,255,255,0.42);letter-spacing:0.03em;text-decoration:none;transition:color .2s}
     .nav-links a:hover,.nav-links a.active{color:rgba(255,255,255,0.78)}
     .nav-dl{border:1px solid rgba(255,255,255,0.35);color:rgba(255,255,255,0.55);padding:5px 16px;border-radius:3px;font-size:11px;font-weight:300;letter-spacing:0.03em;text-decoration:none}
 
-    /* ── MASTHEAD ── */
-    .masthead{padding:44px 60px 0;border-bottom:3px solid #111}
-    .mast-eyebrow{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:10px}
-    .mast-eyebrow::before{content:'';width:16px;height:1px;background:var(--gold)}
-    .mast-title{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,7vw,96px);font-weight:700;line-height:0.9;letter-spacing:-0.03em;color:#111;margin-bottom:0}
-    .mast-title em{font-style:italic;font-weight:400;color:var(--gold)}
-    .mast-rule{height:1px;background:#111;margin-top:20px}
-    .mast-sub{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(0,0,0,0.28);padding:12px 0 16px}
+    .page{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;padding:80px 60px}
 
-    /* ── BODY GRID ── */
-    .body{flex:1;display:grid;grid-template-columns:300px 1fr}
+    .left{}
+    .eyebrow{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+    .eyebrow::before{content:'';width:16px;height:1px;background:var(--gold)}
+    .title{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,5vw,64px);font-weight:700;line-height:0.9;letter-spacing:-0.03em;color:var(--text);margin-bottom:16px}
+    .title em{font-style:italic;font-weight:400;color:var(--gold)}
+    .sub{font-size:13px;color:var(--light);line-height:1.8;margin-bottom:36px;max-width:280px}
+    .email-label{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+    .email-val{font-size:13px;color:#444;margin-bottom:3px}
+    .email-desc{font-size:11px;color:var(--light)}
 
-    /* ── SIDEBAR ── */
-    .sidebar{padding:40px 40px 40px 60px;border-right:1px solid var(--border)}
-    .sidebar-label{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(0,0,0,0.25);margin-bottom:20px}
-    .channel{display:block;padding:18px 0;border-bottom:0.5px solid var(--border);text-decoration:none;transition:padding-left .15s}
-    .channel:first-of-type{border-top:0.5px solid var(--border)}
-    .channel:hover{padding-left:4px}
-    .ch-label{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
-    .ch-val{font-size:13px;color:#111;font-weight:400;margin-bottom:2px}
-    .ch-desc{font-size:11px;color:#999;line-height:1.5}
+    .right{}
+    .ff{margin-bottom:28px}
+    .fl{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:var(--light);display:block;margin-bottom:6px}
+    .fi{width:100%;background:transparent;border:none;border-bottom:1px solid var(--border);padding:10px 0;font-size:14px;font-family:'DM Sans',sans-serif;font-weight:300;outline:none;color:var(--text);transition:border-color .2s}
+    .fi:focus{border-bottom-color:var(--gold)}
+    .fi::placeholder{color:#ccc}
+    .ta{width:100%;background:transparent;border:none;border-bottom:1px solid var(--border);padding:10px 0;font-size:14px;font-family:'DM Sans',sans-serif;font-weight:300;outline:none;resize:none;min-height:100px;color:var(--text);transition:border-color .2s}
+    .ta:focus{border-bottom-color:var(--gold)}
+    .ta::placeholder{color:#ccc}
+    .btn{background:var(--black);color:var(--cream);border:none;padding:13px 32px;font-size:12px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;letter-spacing:0.02em;border-radius:4px;transition:background .2s}
+    .btn:hover{background:#222}
 
-    .sidebar-note{margin-top:32px;font-size:12px;color:#aaa;line-height:1.7;padding-top:20px;border-top:0.5px solid var(--border)}
-
-    /* ── FORM ── */
-    .form-wrap{padding:40px 60px 60px 52px}
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
-    .form-field{margin-bottom:16px}
-    .form-label{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(0,0,0,0.35);display:block;margin-bottom:7px}
-    .form-input{width:100%;background:#fff;border:1px solid var(--border);border-radius:5px;padding:11px 14px;font-size:13px;color:#111;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s;-webkit-appearance:none}
-    .form-input:focus{border-color:var(--gold)}
-    .form-select{width:100%;background:#fff;border:1px solid var(--border);border-radius:5px;padding:11px 14px;font-size:13px;color:#111;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s;appearance:none;cursor:pointer}
-    .form-select:focus{border-color:var(--gold)}
-    .form-textarea{width:100%;background:#fff;border:1px solid var(--border);border-radius:5px;padding:11px 14px;font-size:13px;color:#111;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s;resize:none;min-height:120px}
-    .form-textarea:focus{border-color:var(--gold)}
-    .form-submit{background:var(--black);color:var(--cream);border:none;border-radius:5px;padding:13px 32px;font-size:12px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;letter-spacing:0.02em;transition:background .2s}
-    .form-submit:hover{background:#222}
-
-    /* ── FOOTER ── */
-    footer{padding:48px 60px 36px;background:var(--black);display:flex;flex-direction:column;gap:28px;border-top:3px solid #111}
+    footer{padding:48px 60px 36px;background:var(--black);display:flex;flex-direction:column;gap:28px;border-top:1px solid rgba(255,255,255,0.06)}
     .ft-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px}
     .ft-brand .fw{font-family:'Cormorant Garamond',serif;font-size:20px;color:rgba(255,255,255,0.7)}
     .ft-brand p{font-size:12px;color:rgba(255,255,255,0.25);margin-top:6px;max-width:200px;line-height:1.7}
@@ -69,11 +54,7 @@
 
     @media(max-width:768px){
       nav{padding:0 20px}.nav-links{display:none}
-      .masthead{padding:36px 24px 0}
-      .body{grid-template-columns:1fr}
-      .sidebar{padding:32px 24px;border-right:none;border-bottom:1px solid var(--border)}
-      .form-wrap{padding:32px 24px}
-      .form-row{grid-template-columns:1fr}
+      .page{grid-template-columns:1fr;padding:48px 24px;gap:48px}
       footer{padding:36px 24px}
     }
   </style>
@@ -93,62 +74,21 @@
   <a href="/download/" class="nav-dl">Download</a>
 </nav>
 
-<div class="masthead">
-  <div class="mast-eyebrow">Get in touch</div>
-  <h1 class="mast-title">We read<br><em>everything.</em></h1>
-  <div class="mast-rule"></div>
-  <div class="mast-sub">Toronto, Canada &middot; Responds within one business day</div>
-</div>
-
-<div class="body">
-  <div class="sidebar">
-    <div class="sidebar-label">Reach us directly</div>
-    <a href="mailto:anchitj@au79.app" class="channel">
-      <div class="ch-label">General</div>
-      <div class="ch-val">anchitj@au79.app</div>
-      <div class="ch-desc">Product questions, feedback, everything else</div>
-    </a>
-    <a href="mailto:anchitj@au79.app?subject=Press%20Inquiry" class="channel">
-      <div class="ch-label">Press</div>
-      <div class="ch-val">anchitj@au79.app</div>
-      <div class="ch-desc">Media inquiries and press requests</div>
-    </a>
-    <a href="mailto:anchitj@au79.app?subject=Partnership" class="channel">
-      <div class="ch-label">Partnerships</div>
-      <div class="ch-val">anchitj@au79.app</div>
-      <div class="ch-desc">Business development and affiliates</div>
-    </a>
-    <div class="sidebar-note">Based in Toronto, Canada. We respond to every message within one business day.</div>
+<div class="page">
+  <div class="left">
+    <div class="eyebrow">Contact</div>
+    <h1 class="title">We read<br><em>everything.</em></h1>
+    <p class="sub">Questions, press, partnerships — reach out. Based in Toronto, we respond within one business day.</p>
+    <div class="email-label">Email us directly</div>
+    <div class="email-val">au@au79.app</div>
+    <div class="email-desc">Product questions, feedback, everything else</div>
   </div>
 
-  <div class="form-wrap">
-    <div class="form-row">
-      <div>
-        <label class="form-label">Name</label>
-        <input class="form-input" type="text" placeholder="Your name" />
-      </div>
-      <div>
-        <label class="form-label">Email</label>
-        <input class="form-input" type="email" placeholder="your@email.com" />
-      </div>
-    </div>
-    <div class="form-field">
-      <label class="form-label">Topic</label>
-      <select class="form-select">
-        <option value="" disabled selected>Select a topic</option>
-        <option>Product question</option>
-        <option>Bug report</option>
-        <option>Press inquiry</option>
-        <option>Partnership</option>
-        <option>Feedback</option>
-        <option>Other</option>
-      </select>
-    </div>
-    <div class="form-field">
-      <label class="form-label">Message</label>
-      <textarea class="form-textarea" placeholder="How can we help?"></textarea>
-    </div>
-    <button class="form-submit" onclick="this.textContent='Sent ✓';this.style.background='#5BA85A'">Send message</button>
+  <div class="right">
+    <div class="ff"><label class="fl">Name</label><input class="fi" type="text" placeholder="Your name" /></div>
+    <div class="ff"><label class="fl">Email</label><input class="fi" type="email" placeholder="your@email.com" /></div>
+    <div class="ff"><label class="fl">Message</label><textarea class="ta" placeholder="How can we help?"></textarea></div>
+    <button class="btn" onclick="this.textContent='Sent ✓';this.style.background='#5BA85A'">Send message</button>
   </div>
 </div>
 
