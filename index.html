@@ -7,7 +7,7 @@
   <meta name="description" content="Au shows you what every purchase really costs — in days, not dollars." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=DM+Sans:wght@200;300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -36,7 +36,7 @@
       position: sticky; top: 0; z-index: 200;
     }
     .nav-logo { width: 32px; height: 32px; border: 1px solid rgba(255,255,255,0.28); border-radius: 3px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; text-decoration: none; }
-    .nav-wm { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.42); letter-spacing: 0.08em; line-height: 1; }
+    .nav-wm { font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.42); letter-spacing: 0.08em; line-height: 1; }
     .nav-links { display: flex; align-items: center; flex: 1; justify-content: space-evenly; padding: 0 40px; }
     .nav-links a { font-size: 11px; color: rgba(255,255,255,0.42); letter-spacing: 0.03em; text-decoration: none; transition: color .2s; }
     .nav-links a:hover { color: rgba(255,255,255,0.75); }
@@ -49,7 +49,7 @@
     .table-grid { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 1; display: grid; grid-template-columns: repeat(auto-fill, 82px); grid-template-rows: repeat(5, 82px); gap: 5px; width: calc(100% + 72px); }
     .el { width: 82px; height: 82px; border: 1px solid rgba(255,255,255,0.05); border-radius: 5px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 8px 7px; background: rgba(255,255,255,0.015); flex-shrink: 0; }
     .el .el-n { font-family: 'Space Mono', monospace; font-size: 9.5px; color: rgba(255,255,255,0.1); align-self: flex-start; line-height: 1; }
-    .el .el-s { font-family: 'Cormorant Garamond', serif; font-size: 31px; color: rgba(255,255,255,0.1); line-height: 1; font-weight: 300; }
+    .el .el-s { font-family: 'DM Sans', sans-serif; font-size: 26px; color: rgba(255,255,255,0.1); line-height: 1; font-weight: 500; }
     .el .el-nm { font-family: 'Space Mono', monospace; font-size: 7px; color: rgba(255,255,255,0.07); letter-spacing: 0.02em; line-height: 1; }
     .el.near { border-color: rgba(255,255,255,0.08); background: rgba(255,255,255,0.025); }
     .el.near .el-n { color: rgba(255,255,255,0.18); }
@@ -74,10 +74,10 @@
     .hero-left { }
     .hero-kicker { font-family: 'Space Mono', monospace; font-size: 8.5px; color: var(--gold); letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 28px; display: flex; align-items: center; gap: 10px; }
     .hero-kicker::before { content: ''; width: 20px; height: 1px; background: var(--gold); flex-shrink: 0; }
-    .hero-h1 { font-family: 'Cormorant Garamond', serif; font-weight: 200; line-height: 0.88; letter-spacing: -0.04em; margin-bottom: 28px; }
-    .hero-h1 .r { display: block; font-size: clamp(52px, 6vw, 80px); color: var(--text-dark); }
-    .hero-h1 .ri { display: block; font-size: clamp(56px, 6.5vw, 86px); font-style: italic; color: var(--gold); }
-    .hero-h1 .rd { display: block; font-size: clamp(38px, 4.5vw, 58px); color: rgba(0,0,0,0.18); }
+    .hero-h1 { font-family: 'DM Sans', sans-serif; font-weight: 700; line-height: 0.92; letter-spacing: -0.03em; margin-bottom: 28px; }
+    .hero-h1 .r { display: block; font-size: clamp(44px, 5.5vw, 72px); font-weight: 600; color: var(--text-dark); }
+    .hero-h1 .ri { display: block; font-size: clamp(48px, 6vw, 78px); font-weight: 700; font-style: normal; color: var(--gold); }
+    .hero-h1 .rd { display: block; font-size: clamp(32px, 4vw, 52px); font-weight: 300; color: rgba(0,0,0,0.18); }
     .hero-sub { font-size: 14px; color: var(--text-mid); line-height: 1.85; max-width: 400px; margin-bottom: 32px; }
     .hero-ctas { display: flex; align-items: center; gap: 14px; }
     .btn-dark { display: inline-flex; align-items: center; gap: 8px; background: var(--black); color: var(--cream); padding: 13px 26px; border-radius: 5px; font-size: 12px; font-weight: 500; text-decoration: none; letter-spacing: 0.02em; transition: background .2s, transform .15s; }
@@ -93,11 +93,11 @@
     .hp-pill { width: 60px; height: 10px; background: #111; border-radius: 5px; }
     .hp-screen { padding: 10px 12px 14px; }
     .hp-hdr { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-    .hp-logo { font-family: 'Cormorant Garamond', serif; font-size: 14px; color: #C9A96E; font-weight: 600; }
+    .hp-logo { font-family: 'DM Sans', sans-serif; font-size: 13px; color: #C9A96E; font-weight: 600; }
     .hp-date { font-size: 7.5px; color: rgba(255,255,255,0.25); }
     .hp-wcard { background: #131110; border: 1px solid rgba(201,169,110,0.15); border-radius: 12px; padding: 11px 10px; margin-bottom: 8px; }
     .hp-wlbl { font-size: 6.5px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 3px; }
-    .hp-wnum { font-family: 'Cormorant Garamond', serif; font-size: 24px; color: #F2EDE3; line-height: 1; margin-bottom: 8px; }
+    .hp-wnum { font-family: 'DM Sans', sans-serif; font-size: 22px; font-weight: 600; color: #F2EDE3; line-height: 1; margin-bottom: 8px; }
     .hp-chips { display: flex; gap: 4px; flex-wrap: wrap; }
     .hp-chip { font-size: 7px; font-weight: 500; padding: 2px 6px; border-radius: 4px; }
     .hp-cw { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.5); }
@@ -117,7 +117,7 @@
     .stats { display: grid; grid-template-columns: repeat(4,1fr); border-bottom: 1px solid var(--border); }
     .stat { padding: 18px 24px; border-right: 1px solid var(--border); }
     .stat:last-child { border-right: none; }
-    .stat-v { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--text-dark); font-weight: 300; line-height: 1; }
+    .stat-v { font-family: 'DM Sans', sans-serif; font-size: 26px; color: var(--text-dark); font-weight: 600; line-height: 1; }
     .stat-v.g { color: var(--gold); }
     .stat-l { font-family: 'Space Mono', monospace; font-size: 7.5px; color: var(--text-light); letter-spacing: 0.14em; text-transform: uppercase; margin-top: 4px; }
 
@@ -129,8 +129,8 @@
     .panel:last-child { border-bottom: none; }
     .panel-eye { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
     .panel-eye::before { content: ''; width: 24px; height: 1px; background: var(--gold); flex-shrink: 0; }
-    .panel-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 4vw, 52px); font-weight: 200; line-height: 1.0; letter-spacing: -0.03em; color: var(--text-dark); margin-bottom: 20px; }
-    .panel-title em { font-style: italic; color: var(--gold); }
+    .panel-title { font-family: 'DM Sans', sans-serif; font-size: clamp(30px, 3.5vw, 46px); font-weight: 700; line-height: 1.0; letter-spacing: -0.025em; color: var(--text-dark); margin-bottom: 20px; }
+    .panel-title em { font-style: normal; color: var(--gold); }
     .panel-body { font-size: 14px; color: var(--text-mid); line-height: 1.85; margin-bottom: 14px; max-width: 460px; }
     .panel-ex { padding: 14px 16px; background: rgba(0,0,0,0.03); border-left: 2px solid var(--gold); border-radius: 0 8px 8px 0; font-size: 12.5px; color: rgba(0,0,0,0.45); font-style: italic; line-height: 1.7; margin-top: 20px; }
     .panel-ex strong { color: var(--gold); font-style: normal; font-weight: 500; }
@@ -150,11 +150,11 @@
 
     /* screen components */
     .s-hdr { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-    .s-logo { font-family: 'Cormorant Garamond', serif; font-size: 14px; color: #C9A96E; font-weight: 600; }
+    .s-logo { font-family: 'DM Sans', sans-serif; font-size: 13px; color: #C9A96E; font-weight: 600; }
     .s-date { font-size: 7.5px; color: rgba(255,255,255,0.25); }
     .s-wc { background: #131110; border: 1px solid rgba(201,169,110,0.15); border-radius: 12px; padding: 11px 10px; margin-bottom: 8px; }
     .s-wlbl { font-size: 6.5px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); margin-bottom: 2px; }
-    .s-wnum { font-family: 'Cormorant Garamond', serif; font-size: 24px; color: #F2EDE3; line-height: 1; margin-bottom: 8px; }
+    .s-wnum { font-family: 'DM Sans', sans-serif; font-size: 22px; font-weight: 600; color: #F2EDE3; line-height: 1; margin-bottom: 8px; }
     .s-chips { display: flex; gap: 4px; flex-wrap: wrap; }
     .s-ch { font-size: 7px; font-weight: 500; padding: 2px 6px; border-radius: 4px; }
     .s-chw { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.5); }
@@ -202,10 +202,10 @@
     .s-abar { flex: 1; background: #1C1A18; border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; padding: 6px 8px; font-size: 8.5px; color: rgba(255,255,255,0.2); font-family: 'DM Sans', sans-serif; }
     .s-abtn { width: 26px; height: 26px; background: #C9A96E; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #080706; }
     /* spend */
-    .s-sptl { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: #F2EDE3; font-weight: 500; margin-bottom: 8px; }
+    .s-sptl { font-family: 'DM Sans', sans-serif; font-size: 14px; color: #F2EDE3; font-weight: 600; margin-bottom: 8px; }
     .s-spsum { background: #131110; border: 1px solid rgba(201,169,110,0.13); border-radius: 11px; padding: 10px; margin-bottom: 8px; }
     .s-spr { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
-    .s-spbig { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: #F2EDE3; line-height: 1; }
+    .s-spbig { font-family: 'DM Sans', sans-serif; font-size: 20px; font-weight: 600; color: #F2EDE3; line-height: 1; }
     .s-splft { font-size: 10px; color: #C9A96E; }
     .s-spcat { background: #131110; border: 1px solid rgba(201,169,110,0.09); border-radius: 10px; padding: 9px; margin-bottom: 6px; }
     .s-spcr { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
@@ -218,15 +218,15 @@
     #features { padding: 0 0 80px; background: var(--cream-mid); border-top: 1px solid var(--border); }
     .feat-band { background: var(--black); padding: 64px 40px; text-align: center; margin-bottom: 56px; }
     .feat-eye { font-family: 'Space Mono', monospace; font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: #C9A96E; margin-bottom: 16px; }
-    .feat-ttl { font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 4vw, 52px); font-weight: 200; color: rgba(255,255,255,0.88); line-height: 1.1; }
-    .feat-ttl em { font-style: italic; color: #C9A96E; }
+    .feat-ttl { font-family: 'DM Sans', sans-serif; font-size: clamp(30px, 3.5vw, 46px); font-weight: 700; color: rgba(255,255,255,0.88); line-height: 1.05; letter-spacing: -0.02em; }
+    .feat-ttl em { font-style: normal; color: #C9A96E; }
     .feat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; max-width: 1100px; margin: 0 auto; }
     .fc { padding: 36px 30px; background: var(--cream); transition: background .25s; position: relative; }
     .fc::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0; transition: opacity .3s; }
     .fc:hover { background: #F7F4EB; }
     .fc:hover::after { opacity: 1; }
     .fc-n { font-family: 'Space Mono', monospace; font-size: 11px; color: rgba(184,146,74,0.4); margin-bottom: 16px; letter-spacing: 0.08em; }
-    .fc-nm { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 400; color: var(--text); margin-bottom: 10px; }
+    .fc-nm { font-family: 'DM Sans', sans-serif; font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 10px; letter-spacing: -0.01em; }
     .fc-d { font-size: 13px; color: var(--mid); line-height: 1.75; }
 
     /* ── PRICING ── */
@@ -244,7 +244,7 @@
     .pc.feat::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, #C9A96E, transparent); border-radius: 14px 14px 0 0; }
     .pc-badge { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: #C9A96E; color: #0C0B09; padding: 2px 14px; border-radius: 20px; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; font-family: 'Space Mono', monospace; }
     .pc-tier { font-family: 'Space Mono', monospace; font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; color: #C9A96E; margin-bottom: 10px; }
-    .pc-nm { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 700; color: #fff; line-height: 1; letter-spacing: -0.02em; margin-bottom: 3px; }
+    .pc-nm { font-family: 'DM Sans', sans-serif; font-size: 32px; font-weight: 700; color: #fff; line-height: 1; letter-spacing: -0.02em; margin-bottom: 3px; }
     .pc-hint { font-family: 'Space Mono', monospace; font-size: 7.5px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.18); margin-bottom: 20px; }
     .pc-pr { font-family: 'DM Sans', sans-serif; font-size: 58px; font-weight: 300; line-height: 1; letter-spacing: -0.03em; color: #C9A96E; display: flex; align-items: flex-start; gap: 2px; }
     .pc-pr .sym { font-size: 20px; font-weight: 300; color: rgba(201,169,110,0.5); margin-top: 8px; }
@@ -265,8 +265,8 @@
     .ctab.nb-c { background: rgba(201,169,110,0.03); }
     .cta-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,11,9,0.4) 0%, transparent 30%, transparent 70%, rgba(12,11,9,0.4) 100%); }
     .cta-inner { position: relative; z-index: 5; }
-    .cta-ttl { font-family: 'Cormorant Garamond', serif; font-size: clamp(44px, 7vw, 88px); font-weight: 200; line-height: 0.92; letter-spacing: -0.04em; color: var(--cream); margin-bottom: 24px; }
-    .cta-ttl em { font-style: italic; color: #C9A96E; }
+    .cta-ttl { font-family: 'DM Sans', sans-serif; font-size: clamp(36px, 5.5vw, 70px); font-weight: 700; line-height: 0.95; letter-spacing: -0.03em; color: var(--cream); margin-bottom: 24px; }
+    .cta-ttl em { font-style: normal; color: #C9A96E; }
     .cta-sub { font-size: 15px; color: rgba(255,255,255,0.4); max-width: 380px; margin: 0 auto 40px; line-height: 1.85; }
     .btn-gold { display: inline-flex; align-items: center; gap: 8px; background: #C9A96E; color: var(--black); padding: 14px 28px; border-radius: 5px; font-size: 12px; font-weight: 500; text-decoration: none; letter-spacing: 0.02em; transition: background .2s, transform .15s; }
     .btn-gold:hover { background: #D9BA80; transform: translateY(-1px); }
@@ -275,7 +275,7 @@
     /* ── FOOTER ── */
     footer { padding: 52px 40px 36px; background: var(--black); border-top: 1px solid rgba(255,255,255,0.06); display: flex; flex-direction: column; gap: 32px; }
     .ft-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 24px; }
-    .ft-brand .fw { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: rgba(255,255,255,0.7); }
+    .ft-brand .fw { font-family: 'DM Sans', sans-serif; font-size: 20px; font-weight: 600; color: rgba(255,255,255,0.7); }
     .ft-brand p { font-size: 12px; color: rgba(255,255,255,0.25); margin-top: 6px; max-width: 220px; line-height: 1.7; }
     .ft-col { display: flex; flex-direction: column; gap: 8px; }
     .ft-col h4 { font-family: 'Space Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: 0.16em; color: rgba(255,255,255,0.25); margin-bottom: 2px; }
@@ -551,22 +551,81 @@
   </div>
 </div>
 
+<!-- DREAM BIG STANDALONE -->
+<section style="background:#0C0B09;padding:100px 52px;border-top:1px solid rgba(255,255,255,0.06)">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="rv" style="max-width:560px;margin-bottom:64px">
+      <p style="font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#B8924A;margin-bottom:20px;display:flex;align-items:center;gap:10px"><span style="width:16px;height:1px;background:#B8924A;display:inline-block;flex-shrink:0"></span>Dream Big</p>
+      <h2 style="font-family:'DM Sans',sans-serif;font-size:clamp(32px,5vw,58px);font-weight:700;line-height:0.95;letter-spacing:-0.03em;color:rgba(255,255,255,0.88);margin-bottom:20px">Their wealth was <span style="color:#C9A96E">legendary.</span><br>Yours is just getting started.<br>See how you stack up.</h2>
+      <p style="font-size:14px;color:rgba(255,255,255,0.4);line-height:1.8;max-width:420px">Pick a historical figure. Au breaks down their wealth into the assets you actually recognise — and tells you exactly how long it would take you to get there. The numbers are absurd. That's the point. Share it, laugh about it, then get back to the goals that are actually within reach.</p>
+    </div>
+    <div class="rv d1" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px">
+      <div style="background:#131110;border:1px solid rgba(201,169,110,0.15);border-radius:16px;padding:24px;position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,169,110,0.3),transparent)"></div>
+        <div style="font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(201,169,110,0.5);margin-bottom:12px">Egypt · 51 BC</div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:17px;font-weight:700;color:#F2EDE3;margin-bottom:4px">Cleopatra VII</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.25);margin-bottom:16px">~5.8B adjusted net worth</div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><span style="font-size:10px;color:rgba(255,255,255,0.45)">Alexandria Palace</span><div style="text-align:right"><div style="font-size:10px;color:#C9A96E;font-weight:500">.2B</div><div style="font-size:8px;color:rgba(255,255,255,0.2)">Your pace: 351 yrs</div></div></div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><span style="font-size:10px;color:rgba(255,255,255,0.45)">Gold Reserves</span><div style="text-align:right"><div style="font-size:10px;color:#C9A96E;font-weight:500">8.7B</div><div style="font-size:8px;color:rgba(255,255,255,0.2)">Your pace: 1,562 yrs</div></div></div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0"><span style="font-size:10px;color:rgba(255,255,255,0.45)">Control of the Nile</span><div style="text-align:right"><div style="font-size:10px;color:#C9A96E;font-weight:500">Priceless</div><div style="font-size:8px;color:rgba(255,255,255,0.2)">Not for sale</div></div></div>
+        <div style="background:#080706;border-top:1px solid rgba(201,169,110,0.1);margin:16px -24px -24px;padding:12px 16px;font-size:10px;color:rgba(255,255,255,0.35);line-height:1.6;font-style:italic">Atom: "Her net worth in 4,200 years. Your house deposit, however, is 11 months away. I'll take it."</div>
+      </div>
+      <div style="background:#131110;border:1px solid rgba(201,169,110,0.15);border-radius:16px;padding:24px;position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,169,110,0.3),transparent)"></div>
+        <div style="font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(201,169,110,0.5);margin-bottom:12px">Mali Empire · 1324</div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:17px;font-weight:700;color:#F2EDE3;margin-bottom:4px">Mansa Musa</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.25);margin-bottom:16px">~00B adjusted net worth</div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><span style="font-size:10px;color:rgba(255,255,255,0.45)">Mali Gold Mines</span><div style="text-align:right"><div style="font-size:10px;color:#C9A96E;font-weight:500">80B</div><div style="font-size:8px;color:rgba(255,255,255,0.2)">Your pace: 15,000 yrs</div></div></div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><span style="font-size:10px;color:rgba(255,255,255,0.45)">Salt Trade Monopoly</span><div style="text-align:right"><div style="font-size:10px;color:#C9A96E;font-weight:500">5B</div><div style="font-size:8px;color:rgba(255,255,255,0.2)">Your pace: 7,083 yrs</div></div></div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0"><span style="font-size:10px;color:rgba(255,255,255,0.45)">Timbuktu</span><div style="text-align:right"><div style="font-size:10px;color:#C9A96E;font-weight:500">5B</div><div style="font-size:8px;color:rgba(255,255,255,0.2)">Your pace: 3,750 yrs</div></div></div>
+        <div style="background:#080706;border-top:1px solid rgba(201,169,110,0.1);margin:16px -24px -24px;padding:12px 16px;font-size:10px;color:rgba(255,255,255,0.35);line-height:1.6;font-style:italic">Atom: "14,000 years to his net worth. Your emergency fund though — 4 months away. Start there."</div>
+      </div>
+      <div style="background:#131110;border:1px solid rgba(201,169,110,0.15);border-radius:16px;padding:24px;position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,169,110,0.3),transparent)"></div>
+        <div style="font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(201,169,110,0.5);margin-bottom:12px">Atlantic · 1716</div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:17px;font-weight:700;color:#F2EDE3;margin-bottom:4px">Blackbeard</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.25);margin-bottom:16px">~2.5M adjusted net worth</div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><span style="font-size:10px;color:rgba(255,255,255,0.45)">Queen Anne's Revenge</span><div style="text-align:right"><div style="font-size:10px;color:#C9A96E;font-weight:500">.2M</div><div style="font-size:8px;color:rgba(255,255,255,0.2)">Your pace: 52 yrs</div></div></div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04)"><span style="font-size:10px;color:rgba(255,255,255,0.45)">Plundered Cargo</span><div style="text-align:right"><div style="font-size:10px;color:#C9A96E;font-weight:500">.1M</div><div style="font-size:8px;color:rgba(255,255,255,0.2)">Your pace: 34 yrs</div></div></div>
+        <div style="display:flex;justify-content:space-between;padding:8px 0"><span style="font-size:10px;color:rgba(255,255,255,0.45)">Infamy</span><div style="text-align:right"><div style="font-size:10px;color:#C9A96E;font-weight:500">Incalculable</div><div style="font-size:8px;color:rgba(255,255,255,0.2)">Yours to earn</div></div></div>
+        <div style="background:#080706;border-top:1px solid rgba(201,169,110,0.1);margin:16px -24px -24px;padding:12px 16px;font-size:10px;color:rgba(255,255,255,0.35);line-height:1.6;font-style:italic">Atom: "Blackbeard terrorised the Atlantic and still went broke. Some things never change."</div>
+      </div>
+    </div>
+    <div class="rv d2" style="text-align:center">
+      <a href="/download/" style="display:inline-block;background:#C9A96E;color:#080706;padding:14px 32px;border-radius:6px;font-size:13px;font-weight:600;letter-spacing:0.02em;text-decoration:none">Download Au to see all figures →</a>
+    </div>
+  </div>
+</section>
+
 <!-- FEATURES -->
 <section id="features">
   <div class="feat-band">
-    <p class="feat-eye rv">Everything in Au</p>
-    <h2 class="feat-ttl rv d1">Intelligence at every<br><em>point of decision.</em></h2>
+    <p class="feat-eye rv">All Features</p>
+    <h2 class="feat-ttl rv d1">Everything Au <em>includes.</em></h2>
   </div>
-  <div class="feat-grid">
-    <div class="fc rv"><div class="fc-n">01</div><div class="fc-nm">Goal Impact Bar</div><div class="fc-d">Every wishlist item shows the days it costs toward your goal. The only number that makes a purchase feel real before you make it.</div></div>
-    <div class="fc rv d1"><div class="fc-n">02</div><div class="fc-nm">Bank Sync</div><div class="fc-d">12,000+ institutions via Plaid. Every transaction in automatically, reflected in your goals within minutes. Read-only — Au never touches your money.</div></div>
-    <div class="fc rv d2"><div class="fc-n">03</div><div class="fc-nm">AI Categorisation</div><div class="fc-d">Self-improving AI that learns your patterns. 95%+ accuracy within 60 days. Goal-linked categories, not just spending buckets.</div></div>
-    <div class="fc rv"><div class="fc-n">04</div><div class="fc-nm">Atom AI</div><div class="fc-d">Powered by Claude. Text or voice. Knows your complete financial picture. Serious questions and wild simulations — backed by your real data.</div></div>
-    <div class="fc rv d1"><div class="fc-n">05</div><div class="fc-nm">Dupe Finder</div><div class="fc-d">High-quality cheaper alternatives for anything in your wishlist. See exactly how many days faster the dupe gets you to your goal.</div></div>
-    <div class="fc rv d2"><div class="fc-n">06</div><div class="fc-nm">AI Personal Shopper</div><div class="fc-d">Import from Amazon or screenshot any wishlist. Au evaluates timing against your goals, bills, and savings rate.</div></div>
-    <div class="fc rv"><div class="fc-n">07</div><div class="fc-nm">Mood Spending Detection</div><div class="fc-d">Identifies your highest-risk spending windows. One quiet line of context at the moment it matters. Never a block. Never a lecture.</div></div>
-    <div class="fc rv d1"><div class="fc-n">08</div><div class="fc-nm">Spending Personality</div><div class="fc-d">After 30 days, a shareable profile of how you actually relate to money. Designed to spread like Spotify Wrapped.</div></div>
-    <div class="fc rv d2"><div class="fc-n">09</div><div class="fc-nm">Au Together</div><div class="fc-d">Shared goals, combined income tracking, per-member views. For couples, roommates, families — anyone.</div></div>
+  <div class="feat-grid" style="max-width:1100px;margin:0 auto">
+    <div class="fc rv"><div class="fc-n">01</div><div class="fc-nm">Bank Sync</div><div class="fc-d">12,000+ institutions via Plaid. Every transaction pulled in automatically. Read-only — Au never touches your money.</div></div>
+    <div class="fc rv d1"><div class="fc-n">02</div><div class="fc-nm">AI Categorisation</div><div class="fc-d">Self-improving AI that learns your patterns. 95%+ accuracy within 60 days. Goal-linked, not just spending buckets.</div></div>
+    <div class="fc rv d2"><div class="fc-n">03</div><div class="fc-nm">Real-Time Dashboard</div><div class="fc-d">Net worth, income, spend, and every goal — live. Updates within minutes of every transaction.</div></div>
+    <div class="fc rv"><div class="fc-n">04</div><div class="fc-nm">Goal Tracking</div><div class="fc-d">Unlimited goals with AI-calculated timelines that update automatically every time your spending changes.</div></div>
+    <div class="fc rv d1"><div class="fc-n">05</div><div class="fc-nm">Atom AI</div><div class="fc-d">Your AI that knows your entire financial life. Ask it anything, anywhere in the app, at any moment.</div></div>
+    <div class="fc rv d2"><div class="fc-n">06</div><div class="fc-nm">Insights Engine</div><div class="fc-d">Proactive, goal-linked intelligence. Spots patterns and costs before they compound — never after the fact.</div></div>
+    <div class="fc rv"><div class="fc-n">07</div><div class="fc-nm">Atom Playground</div><div class="fc-d">Custom dashboards, one-tap macros, automated watch rules. Built by you in plain language, connected to live data.</div></div>
+    <div class="fc rv d1"><div class="fc-n">08</div><div class="fc-nm">Dream Path</div><div class="fc-d">Set a goal. Get the exact steps to reach it automatically. Based on your real numbers, not generic advice.</div></div>
+    <div class="fc rv d2"><div class="fc-n">09</div><div class="fc-nm">Shopping Assistant</div><div class="fc-d">Add anything from any store. See what it costs toward your goals. Import from Amazon or screenshot any wishlist.</div></div>
+    <div class="fc rv"><div class="fc-n">10</div><div class="fc-nm">Scoops</div><div class="fc-d">High-quality cheaper alternatives for anything in your wishlist. Better price, same result, less impact on your goals.</div></div>
+    <div class="fc rv d1"><div class="fc-n">11</div><div class="fc-nm">Goal Impact Bar</div><div class="fc-d">Every purchase shown in days toward your goals. The single number that makes a decision feel real before you make it.</div></div>
+    <div class="fc rv d2"><div class="fc-n">12</div><div class="fc-nm">Mood Spending Detection</div><div class="fc-d">Au learns your highest-risk spending windows. One quiet line of context at the right moment. Never a lecture.</div></div>
+    <div class="fc rv"><div class="fc-n">13</div><div class="fc-nm">Bill Negotiation</div><div class="fc-d">Au finds where you're overpaying and Atom writes the exact script to fix it. Included in Au Atomic, no extra charge.</div></div>
+    <div class="fc rv d1"><div class="fc-n">14</div><div class="fc-nm">Spending Personality</div><div class="fc-d">A shareable profile of how you actually relate to money. Updated monthly. Designed to spread like Spotify Wrapped.</div></div>
+    <div class="fc rv d2"><div class="fc-n">15</div><div class="fc-nm">Monthly Review</div><div class="fc-d">Your complete financial month, clearly summarised. Goals hit, habits shifted, net worth change — all in one place.</div></div>
+    <div class="fc rv"><div class="fc-n">16</div><div class="fc-nm">Dream Big</div><div class="fc-d">Pick a historical figure. See how your wealth stacks up against theirs. Absurd on purpose. Shareable by design.</div></div>
+    <div class="fc rv d1"><div class="fc-n">17</div><div class="fc-nm">Future You Simulator</div><div class="fc-d">Two versions of you, side by side. Toggle purchases on and off and watch your future update in real time.</div></div>
+    <div class="fc rv d2"><div class="fc-n">18</div><div class="fc-nm">Au Together</div><div class="fc-d">Shared goals, combined income, per-member views. For couples, roommates, families — anyone.</div></div>
+    <div class="fc rv" style="opacity:0.6"><div style="font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:#B8924A;border:1px solid rgba(184,146,74,0.3);border-radius:4px;padding:2px 7px;margin-bottom:10px;display:inline-block">Coming Soon</div><div class="fc-n">19</div><div class="fc-nm">Atom Voice</div><div class="fc-d">Talk to Atom hands-free. Ask anything, anywhere, without touching your phone.</div></div>
+    <div class="fc rv d1" style="opacity:0.6"><div style="font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:#B8924A;border:1px solid rgba(184,146,74,0.3);border-radius:4px;padding:2px 7px;margin-bottom:10px;display:inline-block">Coming Soon</div><div class="fc-n">20</div><div class="fc-nm">Annual Review</div><div class="fc-d">Your entire financial year, beautifully summarised. Every goal, every win, every shift.</div></div>
+    <div class="fc rv d2" style="opacity:0.6"><div style="font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:#B8924A;border:1px solid rgba(184,146,74,0.3);border-radius:4px;padding:2px 7px;margin-bottom:10px;display:inline-block">Coming Soon</div><div class="fc-n">21</div><div class="fc-nm">Investments</div><div class="fc-d">Your investment accounts, factored into your complete financial picture.</div></div>
+    <div class="fc rv" style="opacity:0.6"><div style="font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:#B8924A;border:1px solid rgba(184,146,74,0.3);border-radius:4px;padding:2px 7px;margin-bottom:10px;display:inline-block">Coming Soon</div><div class="fc-n">22</div><div class="fc-nm">Debt Planner</div><div class="fc-d">A clear path out of debt. Every payment connected to your goals and timelines.</div></div>
   </div>
 </section>
 
@@ -586,13 +645,14 @@
       <div class="pc-ann">&nbsp;</div>
       <div class="pc-div"></div>
       <ul class="pc-fs">
-        <li><span class="ck">✓</span>1 bank account</li>
-        <li><span class="ck">✓</span>1 active goal</li>
-        <li><span class="ck">✓</span>Goal Impact Bar</li>
-        <li><span class="ck">✓</span>Basic Atom ⚛ — text only</li>
-        <li><span class="ck">✓</span>AI transaction categorisation</li>
-        <li><span class="ck">✓</span>3 Dupe Finder uses/month</li>
-        <li><span class="ck">✓</span>Real-time dashboard</li>
+        <li><span class="ck">✓</span>1 Bank Account Sync</li>
+        <li><span class="ck">✓</span>1 Goal Impact Bar</li>
+        <li><span class="ck">✓</span>Atom Chat</li>
+        <li><span class="ck">✓</span>Bill Negotiation</li>
+        <li><span class="ck">✓</span>5 Scoops/month</li>
+        <li><span class="ck">✓</span>Spending Personality</li>
+        <li><span class="ck">✓</span>Dream Big</li>
+        <li><span class="ck">✓</span>Ads</li>
       </ul>
     </div>
     <div class="pc feat rv d1">
@@ -602,49 +662,60 @@
       <div class="pc-hint">1–2 users · unlimited everything</div>
       <div class="price-m">
         <div class="pc-pr"><span class="sym">$</span>11.99</div>
-        <div class="pc-per">per month</div>
+        <div class="pc-per">per month <span style="font-size:10px;color:rgba(255,255,255,0.25)">(~6.79 CAD)</span></div>
         <div class="pc-ann">&nbsp;</div>
       </div>
       <div class="price-a">
-        <div class="pc-pr"><span class="sym">$</span>6.99</div>
-        <div class="pc-per">per month, billed annually</div>
-        <div class="pc-ann">$83.88/yr — 5 months free</div>
+        <div class="pc-pr"><span class="sym">$</span>9.99</div>
+        <div class="pc-per">per month, billed annually <span style="font-size:10px;color:rgba(255,255,255,0.25)">(~3.99 CAD)</span></div>
+        <div class="pc-ann">19.88/yr — 2 months free</div>
       </div>
       <div class="pc-div"></div>
       <ul class="pc-fs">
-        <li><span class="ck">✓</span>Everything in Oxygen</li>
-        <li><span class="ck">✓</span>Unlimited accounts &amp; goals</li>
-        <li><span class="ck">✓</span>Full Atom ⚛ — text &amp; voice</li>
-        <li><span class="ck">✓</span>Unlimited Dupe Finder</li>
-        <li><span class="ck">✓</span>AI Personal Shopper</li>
-        <li><span class="ck">✓</span>Spending Personality Profile</li>
-        <li><span class="ck">✓</span>Bill Negotiation Coach</li>
-        <li><span class="ck">✓</span>1 partner free · Ad-free</li>
+        <li><span class="ck">✓</span>Unlimited Bank Account Sync</li>
+        <li><span class="ck">✓</span>Unlimited Goal Impact Bars</li>
+        <li><span class="ck">✓</span>Future You Simulator</li>
+        <li><span class="ck">✓</span>Monthly Review</li>
+        <li><span class="ck">✓</span>Dream Path</li>
+        <li><span class="ck">✓</span>Atom Chat</li>
+        <li><span class="ck">✓</span>Atom Insights</li>
+        <li><span class="ck">✓</span>Atom Playground</li>
+        <li><span class="ck">✓</span>Bill Negotiation</li>
+        <li><span class="ck">✓</span>Unlimited Scoops</li>
+        <li><span class="ck">✓</span>Mood Spending Detection</li>
+        <li><span class="ck">✓</span>Spending Personality</li>
+        <li><span class="ck">✓</span>Dream Big</li>
+        <li><span class="ck">✓</span>No Ads</li>
       </ul>
     </div>
     <div class="pc rv d2">
       <p class="pc-tier">Household</p>
-      <div class="pc-nm">Fusion</div>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px">
+        <div class="pc-nm">Fusion</div>
+        <span style="font-family:'Space Mono',monospace;font-size:8px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;background:#C9A96E;color:#080706;padding:5px 10px;border-radius:4px">Coming Soon</span>
+      </div>
       <div class="pc-hint">up to 5 users</div>
       <div class="price-m">
-        <div class="pc-pr"><span class="sym">$</span>21.99</div>
-        <div class="pc-per">per month</div>
+        <div class="pc-pr"><span class="sym">$</span>24.99</div>
+        <div class="pc-per">per month <span style="font-size:10px;color:rgba(255,255,255,0.25)">(~4.99 CAD)</span></div>
         <div class="pc-ann">&nbsp;</div>
       </div>
       <div class="price-a">
-        <div class="pc-pr"><span class="sym">$</span>12.99</div>
-        <div class="pc-per">per month, billed annually</div>
-        <div class="pc-ann">$155.88/yr — 5 months free</div>
+        <div class="pc-pr"><span class="sym">$</span>19.99</div>
+        <div class="pc-per">per month, billed annually <span style="font-size:10px;color:rgba(255,255,255,0.25)">(~7.99 CAD)</span></div>
+        <div class="pc-ann">39.88/yr — 3 months free</div>
       </div>
       <div class="pc-div"></div>
       <ul class="pc-fs">
         <li><span class="ck">✓</span>Everything in Atomic</li>
-        <li><span class="ck">✓</span>Up to 5 users</li>
-        <li><span class="ck">✓</span>Shared goals &amp; wishlist</li>
+        <li><span class="ck">✓</span>Shared Goals &amp; Accounts</li>
+        <li><span class="ck">✓</span>Combined Dashboards</li>
+        <li><span class="ck">✓</span>Shared Wishlist</li>
+        <li><span class="ck">✓</span>Household Wishlist Voting</li>
         <li><span class="ck">✓</span>Household Insights</li>
         <li><span class="ck">✓</span>Spending Compatibility Score</li>
-        <li><span class="ck">✓</span>Combined Net Worth Dashboard</li>
-        <li><span class="ck">✓</span>Atom Household Mode</li>
+        <li><span class="ck">✓</span>Household Spending Personality</li>
+        <li><span class="ck">✓</span>Spending Transparency Toggle</li>
       </ul>
     </div>
   </div>
@@ -655,8 +726,8 @@
   <div class="cta-bg" id="ctaBg"></div>
   <div class="cta-overlay"></div>
   <div class="cta-inner">
-    <h2 class="cta-ttl rv">See the <em>true cost</em><br>of every purchase.</h2>
-    <p class="cta-sub rv d1">Connect your bank in under two minutes. Your financial future starts with the next thing you almost buy.</p>
+    <h2 class="cta-ttl rv">Know more. <em>Spend better.</em><br>Start free.</h2>
+    <p class="cta-sub rv d1">No credit card. No catch.</p>
     <div class="rv d2">
       <a href="#download" class="btn-gold">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
@@ -671,7 +742,7 @@
   <div class="ft-top">
     <div class="ft-brand">
       <div class="fw">Au</div>
-      <p>The AI personal finance app that shows you what every purchase truly costs — in days, not dollars.</p>
+      <p>The AI personal finance app that actually knows you. Built for your next decision, not your last one.</p>
     </div>
     <div class="ft-col"><h4>Product</h4><a href="/features/">Features</a><a href="/pricing/">Pricing</a><a href="#download">Download</a></div>
     <div class="ft-col"><h4>Company</h4><a href="/about/">About</a><a href="/news/">News</a><a href="/contact/">Contact</a></div>
@@ -814,3 +885,4 @@
 </script>
 </body>
 </html>
+
