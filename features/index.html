@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Features · Au</title>
-  <meta name="description" content="Every feature in Au — from the Goal Impact Bar to Atom AI." />
+  <meta name="description" content="Every feature in Au — from Atom AI to the Shopping Assistant." />
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;1,200;1,300&family=DM+Sans:wght@200;300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{--black:#0C0B09;--cream:#F3F0E7;--cream-mid:#EDE9DE;--gold:#B8924A;--green:#5BA85A;--text:#111;--mid:#666;--light:#aaa;--border:rgba(0,0,0,0.08)}
@@ -13,25 +13,25 @@
     body{background:var(--cream);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden}
     nav{background:var(--black);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:42px;position:sticky;top:0;z-index:200}
     .nav-logo{width:32px;height:32px;border:1px solid rgba(255,255,255,0.28);border-radius:3px;display:flex;align-items:center;justify-content:center;flex-shrink:0;text-decoration:none}
-    .nav-wm{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:300;color:rgba(255,255,255,0.42);letter-spacing:0.08em;line-height:1}
+    .nav-wm{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;color:rgba(255,255,255,0.7);letter-spacing:0.04em;line-height:1}
     .nav-links{display:flex;align-items:center;flex:1;justify-content:space-evenly;padding:0 40px}
     .nav-links a{font-size:11px;color:rgba(255,255,255,0.42);letter-spacing:0.03em;text-decoration:none;transition:color .2s}
     .nav-links a:hover,.nav-links a.active{color:rgba(255,255,255,0.78)}
-    .nav-dl{border:1px solid rgba(255,255,255,0.35);color:rgba(255,255,255,0.55);padding:5px 16px;border-radius:3px;font-size:11px;font-weight:300;letter-spacing:0.03em;text-decoration:none}
+    .nav-dl{border:1px solid rgba(255,255,255,0.35);color:rgba(255,255,255,0.55);padding:5px 16px;border-radius:3px;font-size:11px;font-weight:400;letter-spacing:0.03em;text-decoration:none}
     .page-hero{padding:60px 52px 52px;border-bottom:1px solid var(--border)}
     .page-hero-inner{max-width:900px}
     .eyebrow{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:10px}
     .eyebrow::before{content:'';width:16px;height:1px;background:var(--gold);flex-shrink:0}
-    h1{font-family:'Cormorant Garamond',serif;font-size:clamp(56px,7.5vw,96px);font-weight:200;line-height:0.88;letter-spacing:-0.04em;margin-bottom:20px}
-    h1 em{font-style:italic;color:var(--gold)}
+    h1{font-family:'DM Sans',sans-serif;font-size:clamp(48px,6.5vw,84px);font-weight:700;line-height:0.92;letter-spacing:-0.03em;margin-bottom:20px}
+    h1 span.gold{color:var(--gold)}
     .lead{font-size:14px;color:var(--mid);line-height:1.8;max-width:520px}
 
-    /* ── STORY HEAD (black divider band between scroll stories) ── */
+    /* ── STORY HEAD ── */
     .story-head{background:var(--black);padding:64px 40px;border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06)}
     .story-head-inner{max-width:1200px;margin:0 auto}
     .story-head .section-eye{color:var(--gold)}
     .story-head .section-title{color:rgba(255,255,255,0.85);margin-bottom:0}
-    .story-head .section-title em{color:var(--gold)}
+    .story-head .section-title span.gold{color:var(--gold)}
 
     /* ── SCROLL STORY ── */
     .story{display:grid;grid-template-columns:1fr 380px;max-width:1200px;margin:0 auto;padding:0 40px}
@@ -39,13 +39,13 @@
     .panel:last-child{border-bottom:none}
     .panel-eye{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:10px}
     .panel-eye::before{content:'';width:24px;height:1px;background:var(--gold);flex-shrink:0}
-    .panel-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4vw,52px);font-weight:200;line-height:1.0;letter-spacing:-0.03em;color:var(--text);margin-bottom:20px}
-    .panel-title em{font-style:italic;color:var(--gold)}
+    .panel-title{font-family:'DM Sans',sans-serif;font-size:clamp(32px,3.5vw,48px);font-weight:700;line-height:1.0;letter-spacing:-0.025em;color:var(--text);margin-bottom:20px}
+    .panel-title span.gold{color:var(--gold)}
     .panel-body{font-size:14px;color:var(--mid);line-height:1.85;margin-bottom:14px;max-width:460px}
     .panel-ex{padding:14px 16px;background:rgba(0,0,0,0.03);border-left:2px solid var(--gold);border-radius:0 8px 8px 0;font-size:12.5px;color:rgba(0,0,0,0.45);font-style:italic;line-height:1.7;margin-top:20px}
     .panel-ex strong{color:var(--gold);font-style:normal;font-weight:500}
 
-    /* phone-on-right (default) */
+    /* phone-on-right */
     .phone-col{position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;border-left:1px solid var(--border);padding:0 0 0 40px}
     .phone-stage{position:relative}
     .phone-aura{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:300px;height:300px;border-radius:50%;pointer-events:none;transition:background .8s ease}
@@ -58,7 +58,7 @@
     .pdot{width:4px;height:4px;border-radius:50%;background:rgba(0,0,0,0.15);transition:background .3s,transform .3s;cursor:pointer}
     .pdot.on{background:var(--gold);transform:scale(1.6)}
 
-    /* ── phone-on-left (Atom story) — reversed via rtl trick ── */
+    /* phone-on-left */
     .story.rev{direction:rtl}
     .story.rev .panels{direction:ltr;padding-left:60px}
     .story.rev .phone-col{direction:ltr;border-left:none;border-right:1px solid var(--border);padding:0 40px 0 0}
@@ -66,11 +66,11 @@
 
     /* screen components */
     .s-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
-    .s-logo{font-family:'Cormorant Garamond',serif;font-size:14px;color:#C9A96E;font-weight:600}
+    .s-title{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;color:#F2EDE3}
     .s-date{font-size:7.5px;color:rgba(255,255,255,0.25)}
     .s-wc{background:#131110;border:1px solid rgba(201,169,110,0.15);border-radius:12px;padding:11px 10px;margin-bottom:8px}
     .s-wlbl{font-size:6.5px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.25);margin-bottom:2px}
-    .s-wnum{font-family:'Cormorant Garamond',serif;font-size:24px;color:#F2EDE3;line-height:1;margin-bottom:8px}
+    .s-wnum{font-family:'DM Sans',sans-serif;font-size:22px;font-weight:600;color:#F2EDE3;line-height:1;margin-bottom:8px}
     .s-chips{display:flex;gap:4px;flex-wrap:wrap}
     .s-ch{font-size:7px;font-weight:500;padding:2px 6px;border-radius:4px}
     .s-chw{background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.5)}
@@ -85,7 +85,6 @@
     .s-bf{height:100%;background:#5BA85A;border-radius:2px}
     .s-gbot{display:flex;justify-content:space-between}
     .s-gsm{font-size:7px;color:rgba(255,255,255,0.25)}
-    /* wishlist */
     .s-wi{background:#131110;border:1px solid rgba(201,169,110,0.13);border-radius:12px;padding:10px;margin-bottom:7px}
     .s-wir{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px}
     .s-winm{font-size:9.5px;color:#F2EDE3;font-weight:500;max-width:100px;line-height:1.3}
@@ -104,10 +103,10 @@
     .s-wdr{display:flex;justify-content:space-between;font-size:7.5px}
     .s-wdn{color:rgba(255,255,255,0.25)}
     .s-wda{color:#C9A96E}
-    /* atom */
+    /* atom screen */
     .s-ahdr{background:#080706;border-bottom:1px solid rgba(201,169,110,0.08);padding:10px 12px 10px;margin:-28px -12px 10px;padding-top:30px;display:flex;align-items:center;gap:7px}
     .s-aico{width:26px;height:26px;border:1px solid #C9A96E;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
-    .s-anm{font-size:10px;font-weight:500;color:#F2EDE3}
+    .s-anm{font-size:10px;font-weight:600;color:#F2EDE3}
     .s-ast{font-size:7.5px;color:#5BA85A;display:flex;align-items:center;gap:3px}
     .s-ast::before{content:'';width:4px;height:4px;background:#5BA85A;border-radius:50%;display:inline-block}
     .s-msgs{display:flex;flex-direction:column;gap:7px}
@@ -117,35 +116,88 @@
     .s-ainp{background:#080706;border-top:1px solid rgba(201,169,110,0.08);padding:8px 12px;margin:8px -12px -12px;display:flex;align-items:center;gap:6px}
     .s-abar{flex:1;background:#1C1A18;border:1px solid rgba(255,255,255,0.06);border-radius:6px;padding:6px 8px;font-size:8.5px;color:rgba(255,255,255,0.2);font-family:'DM Sans',sans-serif}
     .s-abtn{width:26px;height:26px;background:#C9A96E;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;color:#080706}
-    /* generic note */
     .s-note{font-size:7.5px;color:rgba(255,255,255,0.4);line-height:1.65;background:#131110;border:1px solid rgba(201,169,110,0.13);border-radius:8px;padding:8px 9px;margin-top:6px}
     .s-note strong{color:#C9A96E;font-weight:500}
 
+    /* ── DREAM BIG STANDALONE ── */
+    .dream-section{background:var(--black);padding:100px 52px;border-top:1px solid rgba(255,255,255,0.06)}
+    .dream-inner{max-width:1100px;margin:0 auto}
+    .dream-copy{max-width:560px;margin-bottom:64px}
+    .dream-copy .section-eye{color:var(--gold);margin-bottom:20px}
+    .dream-copy h2{font-family:'DM Sans',sans-serif;font-size:clamp(36px,5vw,64px);font-weight:700;line-height:0.95;letter-spacing:-0.03em;color:rgba(255,255,255,0.88);margin-bottom:20px}
+    .dream-copy h2 span.gold{color:var(--gold)}
+    .dream-copy p{font-size:14px;color:rgba(255,255,255,0.4);line-height:1.8;max-width:420px}
+    .dream-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px}
+    .dream-card{background:#131110;border:1px solid rgba(201,169,110,0.15);border-radius:16px;padding:24px;position:relative;overflow:hidden}
+    .dream-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(201,169,110,0.3),transparent)}
+    .dc-eye{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(201,169,110,0.5);margin-bottom:12px}
+    .dc-name{font-family:'DM Sans',sans-serif;font-size:17px;font-weight:700;color:#F2EDE3;margin-bottom:4px;letter-spacing:-0.01em}
+    .dc-era{font-size:11px;color:rgba(255,255,255,0.25);margin-bottom:16px}
+    .dc-asset{display:flex;justify-content:space-between;align-items:flex-start;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+    .dc-asset:last-of-type{border-bottom:none}
+    .dc-an{font-size:10px;color:rgba(255,255,255,0.45);line-height:1.4}
+    .dc-av{font-size:10px;color:#C9A96E;font-weight:500;text-align:right}
+    .dc-years{font-size:8px;color:rgba(255,255,255,0.2);text-align:right;margin-top:1px}
+    .dc-atom{background:#080706;border-top:1px solid rgba(201,169,110,0.1);margin:16px -24px -24px;padding:12px 16px;font-size:10px;color:rgba(255,255,255,0.35);line-height:1.6;font-style:italic}
+    .dream-cta{text-align:center}
+    .dream-cta a{display:inline-block;background:var(--gold);color:#080706;padding:14px 32px;border-radius:6px;font-size:13px;font-weight:600;letter-spacing:0.02em;text-decoration:none}
+
+    /* ── FEATURE GRID ── */
     .anchor-section{padding:80px 40px;background:var(--cream-mid);border-top:1px solid var(--border)}
     .section-eye{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
-    .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,44px);font-weight:200;color:var(--text);margin-bottom:48px;line-height:1.1}
-    .section-title em{font-style:italic;color:var(--gold)}
+    .section-title{font-family:'DM Sans',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:700;color:var(--text);margin-bottom:48px;line-height:1.05;letter-spacing:-0.02em}
+    .section-title span.gold{color:var(--gold)}
     .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden;max-width:1100px;margin:0 auto}
     .fc{padding:32px 28px;background:var(--cream);transition:background .25s;position:relative}
     .fc::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity .3s}
     .fc:hover{background:#F7F4EB}
     .fc:hover::after{opacity:1}
     .fc-n{font-family:'Space Mono',monospace;font-size:11px;color:rgba(184,146,74,0.4);margin-bottom:14px;letter-spacing:0.08em}
-    .fc-nm{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--text);margin-bottom:9px}
+    .fc-nm{font-family:'DM Sans',sans-serif;font-size:18px;font-weight:600;color:var(--text);margin-bottom:9px;letter-spacing:-0.01em}
     .fc-d{font-size:13px;color:var(--mid);line-height:1.75}
+    .fc.coming{opacity:0.6}
+    .fc-cs{display:inline-block;font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(184,146,74,0.3);border-radius:4px;padding:2px 7px;margin-bottom:10px}
+
+    /* ── PRICING CTA ── */
+    .pricing-cta{background:var(--black);padding:100px 52px;text-align:center;border-top:1px solid rgba(255,255,255,0.06)}
+    .pricing-cta h2{font-family:'DM Sans',sans-serif;font-size:clamp(32px,5vw,60px);font-weight:700;color:rgba(255,255,255,0.88);letter-spacing:-0.03em;line-height:1.0;margin-bottom:12px}
+    .pricing-cta h2 span.gold{color:var(--gold)}
+    .pricing-cta p{font-size:14px;color:rgba(255,255,255,0.35);margin-bottom:36px}
+    .cta-btns{display:flex;align-items:center;justify-content:center;gap:16px}
+    .btn-primary{background:var(--gold);color:#080706;padding:14px 32px;border-radius:6px;font-size:13px;font-weight:600;letter-spacing:0.02em;text-decoration:none}
+    .btn-secondary{border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.5);padding:14px 28px;border-radius:6px;font-size:13px;font-weight:400;text-decoration:none}
+
     .rv{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
     .rv.show{opacity:1;transform:none}
     .rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
+
     footer{padding:52px 40px 36px;background:var(--black);border-top:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;gap:32px}
     .ft-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
-    .ft-brand .fw{font-family:'Cormorant Garamond',serif;font-size:22px;color:rgba(255,255,255,0.7)}
+    .ft-brand .fw{font-family:'DM Sans',sans-serif;font-size:20px;font-weight:600;color:rgba(255,255,255,0.7)}
     .ft-brand p{font-size:12px;color:rgba(255,255,255,0.25);margin-top:6px;max-width:220px;line-height:1.7}
     .ft-col{display:flex;flex-direction:column;gap:8px}
     .ft-col h4{font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:0.16em;color:rgba(255,255,255,0.25);margin-bottom:2px}
     .ft-col a{font-size:12px;color:rgba(255,255,255,0.35);text-decoration:none;transition:color .2s}
     .ft-col a:hover{color:rgba(255,255,255,0.7)}
     .ft-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.05);font-size:11px;color:rgba(255,255,255,0.18)}
-    @media(max-width:900px){.story{grid-template-columns:1fr;padding:0 24px}.story.rev{direction:ltr}.story.rev .panels{padding-left:0}.phone-col{display:none}.panel{padding:60px 0;min-height:auto}.feat-grid{grid-template-columns:1fr}.page-hero{padding:56px 24px 40px}.story-head{padding:48px 24px}nav{padding:0 20px}.nav-links{display:none}footer{padding:48px 24px 32px}.ft-top{flex-direction:column}}
+
+    @media(max-width:900px){
+      .story{grid-template-columns:1fr;padding:0 24px}
+      .story.rev{direction:ltr}
+      .story.rev .panels{padding-left:0}
+      .phone-col{display:none}
+      .panel{padding:60px 0;min-height:auto}
+      .feat-grid{grid-template-columns:1fr}
+      .dream-cards{grid-template-columns:1fr}
+      .page-hero{padding:56px 24px 40px}
+      .story-head{padding:48px 24px}
+      .dream-section{padding:72px 24px}
+      .pricing-cta{padding:72px 24px}
+      nav{padding:0 20px}
+      .nav-links{display:none}
+      footer{padding:48px 24px 32px}
+      .ft-top{flex-direction:column}
+    }
   </style>
 </head>
 <body>
@@ -158,54 +210,60 @@
     <a href="/pricing/">Pricing</a>
     <a href="/news/">News</a>
     <a href="/contact/">Contact</a>
-  
-    <a href="/legal/">Policy</a></div>
+    <a href="/privacy/">Policy</a>
+  </div>
   <a href="/download/" class="nav-dl">Download</a>
 </nav>
 
 <div class="page-hero">
-  <div class="page-hero-bg" id="heroBg"></div>
-  <div class="page-hero-overlay"></div>
   <div class="page-hero-inner">
     <p class="eyebrow rv">Features</p>
-    <h1 class="rv d1">Intelligence at every<br>point of <em>decision.</em></h1>
-    <p class="lead rv d2">Every feature in Au is built around one idea — the most important moment in personal finance is the second before you spend, not the month after. Three ways that shows up, every day.</p>
+    <h1 class="rv d1">Everything Au<br><span class="gold">can do for you.</span></h1>
+    <p class="lead rv d2">Three sets of features. One idea — the most important moment in your financial life is right now, before you decide. Not after.</p>
   </div>
 </div>
 
-<!-- ════════ STORY 1 — BEFORE YOU SPEND ════════ -->
+<!-- ════════ STORY 1 — ATOM ════════ -->
 <div class="story-head">
   <div class="story-head-inner">
-    <p class="section-eye rv">01 · Before You Spend</p>
-    <h2 class="section-title rv d1">The moment that<br>actually <em>matters.</em></h2>
+    <p class="section-eye rv">01 · Atom</p>
+    <h2 class="section-title rv d1">The AI that knows<br>your entire <span class="gold">financial life.</span></h2>
   </div>
 </div>
 
-<div class="story story1">
+<div class="story story1 rev">
   <div class="panels">
 
     <div class="panel" data-screen="0">
-      <p class="panel-eye rv">01 — Goals Screen</p>
-      <h2 class="panel-title rv d1">Every goal,<br><em>always live.</em></h2>
-      <p class="panel-body rv d2">Set as many goals as you want — house deposit, holiday, emergency fund. Each one shows what you've saved, what's left, and a projected date that updates automatically every time your spending changes.</p>
-      <p class="panel-body rv d2">The Goals page is a control panel, not a progress tracker. Adjust an allocation and every date — and every wishlist days number — updates instantly.</p>
-      <div class="panel-ex rv d3"><strong>Example:</strong> Cut takeout by $200/month and your house deposit date pulls forward from <strong>October 2027 to August 2027.</strong></div>
+      <p class="panel-eye rv">01 — Atom AI</p>
+      <h2 class="panel-title rv d1">Your AI that knows<br>your entire <span class="gold">financial life.</span></h2>
+      <p class="panel-body rv d2">Atom isn't a chatbot. It knows your goals, your spending, your income, your net worth — and you can ask it anything, anywhere in the app. Spot something on your Spend screen? Ask Atom. Looking at a goal? Ask Atom.</p>
+      <p class="panel-body rv d2">It's woven into every screen, ready the second you need it.</p>
+      <div class="panel-ex rv d3"><strong>Example:</strong> "Should I buy this $1,200 laptop?" → "Buying now pushes Japan back <strong>5 weeks.</strong> Wait for your bonus and it drops to <strong>2 weeks.</strong>"</div>
     </div>
 
     <div class="panel" data-screen="1">
-      <p class="panel-eye rv">02 — Expenses Screen</p>
-      <h2 class="panel-title rv d1">Every dollar,<br><em>goal-linked.</em></h2>
-      <p class="panel-body rv d2">Every spending category shows what it's costing you against your budget — and against your goals, in days. Not just "$340 on dining" but what that $340 actually means.</p>
-      <p class="panel-body rv d2">Run an Atom simulation on any category and watch the Combined Goal Impact tile update live, before you commit to anything.</p>
-      <div class="panel-ex rv d3"><strong>Example:</strong> Dining Out at $340 — $110 above your usual pace — is costing you <strong>4 extra days</strong> on your house deposit.</div>
+      <p class="panel-eye rv">02 — Insights Engine</p>
+      <h2 class="panel-title rv d1">Already watching.<br><span class="gold">Before you even ask.</span></h2>
+      <p class="panel-body rv d2">Atom doesn't wait for your questions. It's constantly scanning your patterns, spotting things you'd never catch yourself, and surfacing them before they cost you.</p>
+      <p class="panel-body rv d2">Not generic warnings — specific, goal-linked intelligence that tells you exactly what a habit is costing you in time.</p>
+      <div class="panel-ex rv d3"><strong>Example:</strong> "14 Uber rides this month — $180 above usual. Cutting back moves your Japan holiday <strong>12 days closer.</strong>"</div>
     </div>
 
     <div class="panel" data-screen="2">
-      <p class="panel-eye rv">03 — Shopper Screen</p>
-      <h2 class="panel-title rv d1">Buy less.<br><em>Or buy smarter.</em></h2>
-      <p class="panel-body rv d2">Every wishlist item shows its days impact — and right below it, a high-quality cheaper alternative with its own impact. One screen, instant comparison.</p>
-      <p class="panel-body rv d2">No toggling, no extra taps. The smarter choice is just sitting there next to the original.</p>
-      <div class="panel-ex rv d3"><strong>Example:</strong> Sony WH-1000XM5 at $349 = <strong>+8 days.</strong> The BaByliss dupe at $89 = <strong>+3 days.</strong> Save $260, gain 5 days.</div>
+      <p class="panel-eye rv">03 — Atom Playground</p>
+      <h2 class="panel-title rv d1">Build your own<br><span class="gold">financial tools.</span></h2>
+      <p class="panel-body rv d2">No other finance app gives you this. Atom Playground lets you create custom dashboards, one-tap macros, and automated watch rules — all connected to your live financial data.</p>
+      <p class="panel-body rv d2">Tell Atom what you want to build in plain language. It handles everything else.</p>
+      <div class="panel-ex rv d3"><strong>Example:</strong> "Every Friday, show me this week's spend and how it moved my goals." Atom builds it, saves it, runs it with one tap — forever.</div>
+    </div>
+
+    <div class="panel" data-screen="3">
+      <p class="panel-eye rv">04 — Dream Path</p>
+      <h2 class="panel-title rv d1">Your biggest goals.<br><span class="gold">With a real plan.</span></h2>
+      <p class="panel-body rv d2">Set a goal and Au doesn't just track it — it hands you the exact steps to reach it. What to adjust, what to cut, what to prioritise, in what order.</p>
+      <p class="panel-body rv d2">Based on your actual numbers, not generic advice. Not a projection. A path.</p>
+      <div class="panel-ex rv d3"><strong>Example:</strong> House deposit in 14 months. Dream Path shows: increase goal allocation by <strong>$180/mo,</strong> cut two unused subscriptions, skip the three highest-impact wishlist items. Date moves to <strong>11 months.</strong></div>
     </div>
 
   </div>
@@ -217,131 +275,6 @@
       <div class="phone-shell">
         <div class="phone-notch"></div>
         <div class="screen-wrap" id="screens-1">
-
-          <!-- Screen 0: Goals -->
-          <div class="pscreen active">
-            <div class="s-hdr"><span style="font-family:'Cormorant Garamond',serif;font-size:15px;color:#F2EDE3;font-weight:500">Goals</span><span class="s-date">3 active</span></div>
-            <div class="s-gm"><div class="s-gt"><span class="s-gnm">House Deposit</span><span class="s-gpct">62%</span></div><div class="s-bt"><div class="s-bf" style="width:62%"></div></div><div class="s-gbot"><span class="s-gsm">$31k of $50k</span><span class="s-gsm">Oct 2027</span></div></div>
-            <div class="s-gm"><div class="s-gt"><span class="s-gnm">Bali Holiday</span><span class="s-gpct">38%</span></div><div class="s-bt"><div class="s-bf" style="width:38%"></div></div><div class="s-gbot"><span class="s-gsm">$1,520 of $4k</span><span class="s-gsm">Nov 2026</span></div></div>
-            <div class="s-gm"><div class="s-gt"><span class="s-gnm">Emergency Fund</span><span class="s-gpct">81%</span></div><div class="s-bt"><div class="s-bf" style="width:81%"></div></div><div class="s-gbot"><span class="s-gsm">$8,100 of $10k</span><span class="s-gsm">Aug 2026</span></div></div>
-            <div class="s-slbl">Monthly Allocation</div>
-            <div class="s-wc">
-              <div class="s-chips">
-                <div class="s-ch s-chw">Available $720</div>
-                <div class="s-ch s-chg">Allocated $640</div>
-                <div class="s-ch s-chgr">Unallocated $80</div>
-              </div>
-            </div>
-            <div class="s-note">Cut takeout by <strong>$200/mo</strong> → House Deposit moves from Oct 2027 to <strong>Aug 2027.</strong></div>
-          </div>
-
-          <!-- Screen 1: Expenses / Spend -->
-          <div class="pscreen">
-            <div class="s-hdr"><span class="s-sptl">Spend</span><span class="s-date">May 2026</span></div>
-            <div class="s-spsum">
-              <div class="s-spr"><span class="s-spbig">$1,840</span><span class="s-splft">$720 left</span></div>
-              <div class="s-bt"><div class="s-bf" style="width:72%"></div></div>
-            </div>
-            <div class="s-spcat">
-              <div class="s-spcr"><div style="display:flex;align-items:center;gap:6px"><div class="s-spico">🍜</div><span class="s-spcn">Dining Out</span></div><span class="s-spca">$340</span></div>
-              <div class="s-bt"><div class="s-bf" style="width:85%"></div></div>
-              <div style="display:flex;justify-content:space-between;font-size:7px;color:rgba(255,255,255,0.25)"><span>$110 above usual</span><span>/ $400</span></div>
-              <div class="s-spimp">+4 days on House Deposit</div>
-            </div>
-            <div class="s-spcat">
-              <div class="s-spcr"><div style="display:flex;align-items:center;gap:6px"><div class="s-spico">🚗</div><span class="s-spcn">Transport</span></div><span class="s-spca">$180</span></div>
-              <div class="s-bt"><div class="s-bf" style="width:45%"></div></div>
-              <div style="display:flex;justify-content:space-between;font-size:7px;color:rgba(255,255,255,0.25)"><span>On track</span><span>/ $400</span></div>
-              <div class="s-spimp">+2 days on Bali Holiday</div>
-            </div>
-            <div class="s-spcat">
-              <div class="s-spcr"><div style="display:flex;align-items:center;gap:6px"><div class="s-spico">📱</div><span class="s-spcn">Subscriptions</span></div><span class="s-spca">$94</span></div>
-              <div class="s-bt"><div class="s-bf" style="width:94%"></div></div>
-              <div style="display:flex;justify-content:space-between;font-size:7px;color:rgba(255,255,255,0.25)"><span>7 active · 4 unused</span><span>/ $100</span></div>
-              <div class="s-spimp">+3 days on House Deposit</div>
-            </div>
-          </div>
-
-          <!-- Screen 2: Shopper — wishlist + dupe in one screen -->
-          <div class="pscreen">
-            <div class="s-hdr"><span style="font-family:'Cormorant Garamond',serif;font-size:15px;color:#F2EDE3;font-weight:500">Shopper</span><span class="s-date">1 item</span></div>
-            <div class="s-wi">
-              <div class="s-wir">
-                <div><div class="s-winm">Sony WH-1000XM5</div><div class="s-wict">Electronics · Original</div></div>
-                <div class="s-stk"><div class="s-stkg"><div class="sp">$349</div><div class="sl">Afford</div></div><div class="s-stkb"><div class="sd">+8 days</div><div class="si">Impact</div></div></div>
-              </div>
-              <div class="s-wbl">House Deposit</div>
-              <div class="s-wbt"><div class="s-wbf" style="width:62%"></div></div>
-              <div class="s-wdr"><span class="s-wdn">Now: Oct 2027</span><span class="s-wda">If bought: Oct 28</span></div>
-            </div>
-            <div class="s-dp" style="margin:6px 0">✦ Best match · 4.7★ · 12,000 reviews</div>
-            <div class="s-wi">
-              <div class="s-wir">
-                <div><div class="s-winm">BaByliss Air Style 1000</div><div class="s-wict">Dupe · Amazon</div></div>
-                <div class="s-stk"><div class="s-stkg"><div class="sp">$89</div><div class="sl">Afford</div></div><div class="s-stkb"><div class="sd">+3 days</div><div class="si">Impact</div></div></div>
-              </div>
-              <div class="s-wbl">House Deposit</div>
-              <div class="s-wbt"><div class="s-wbf" style="width:62%"></div></div>
-              <div class="s-wdr"><span class="s-wdn">Now: Oct 2027</span><span class="s-wda">If bought: Oct 23</span></div>
-            </div>
-            <div class="s-note">Save <strong>$260</strong> → gain <strong>5 days</strong> toward House Deposit.</div>
-          </div>
-
-        </div>
-      </div>
-      <div class="pdots" id="pdots-1">
-        <div class="pdot on" data-i="0"></div>
-        <div class="pdot" data-i="1"></div>
-        <div class="pdot" data-i="2"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ════════ STORY 2 — MEET ATOM ════════ -->
-<div class="story-head">
-  <div class="story-head-inner">
-    <p class="section-eye rv">02 · Meet Atom</p>
-    <h2 class="section-title rv d1">An AI that knows your<br>whole financial <em>life.</em></h2>
-  </div>
-</div>
-
-<div class="story story2 rev">
-  <div class="panels">
-
-    <div class="panel" data-screen="0">
-      <p class="panel-eye rv">04 — Atom AI</p>
-      <h2 class="panel-title rv d1">Ask Atom<br><em>anything.</em></h2>
-      <p class="panel-body rv d2">Atom is Au's AI, powered by Claude. It knows your goals, your spending, your income, your net worth — and you can talk to it about any of it, in text or voice, backed by your real data.</p>
-      <p class="panel-body rv d2">Serious questions and wild simulations. Both get real, personalised answers.</p>
-      <div class="panel-ex rv d3"><strong>Example:</strong> "Should I buy this $1,200 laptop?" → "Buying now pushes Japan back 5 weeks. Wait for your bonus and it drops to 2 weeks."</div>
-    </div>
-
-    <div class="panel" data-screen="1">
-      <p class="panel-eye rv">05 — Future You Simulator</p>
-      <h2 class="panel-title rv d1">Two futures,<br><em>side by side.</em></h2>
-      <p class="panel-body rv d2">Toggle purchases on and off in your wishlist and watch your projected financial future update in real time. One future where you keep spending as you are. One where you make the changes Atom suggests.</p>
-      <p class="panel-body rv d2">The gap between them is the most motivating number in personal finance.</p>
-      <div class="panel-ex rv d3"><strong>Example:</strong> Future You at 35 has <strong>$4,200</strong> at your current pace. Toggle off 3 wishlist items and cancel 2 subscriptions — Future You has <strong>$11,800.</strong> Same income, different decisions.</div>
-    </div>
-
-    <div class="panel" data-screen="2">
-      <p class="panel-eye rv">06 — Insights Engine</p>
-      <h2 class="panel-title rv d1">Patterns,<br><em>before they cost you.</em></h2>
-      <p class="panel-body rv d2">Au notices things you don't — and quantifies exactly what they cost in time against your goals. Insights are proactive, not reactive. They surface before the damage is done, not after.</p>
-      <p class="panel-body rv d2">It never tells you off. It shows you the consequence clearly and lets you decide.</p>
-      <div class="panel-ex rv d3"><strong>Example:</strong> "14 Uber rides this month — $180 above usual. Cutting back moves your Japan holiday <strong>12 days closer.</strong>"</div>
-    </div>
-
-  </div>
-
-  <!-- STICKY PHONE -->
-  <div class="phone-col">
-    <div class="phone-stage">
-      <div class="phone-aura" id="aura-2" style="background:radial-gradient(ellipse, rgba(184,146,74,0.1) 0%, transparent 65%);"></div>
-      <div class="phone-shell">
-        <div class="phone-notch"></div>
-        <div class="screen-wrap" id="screens-2">
 
           <!-- Screen 0: Atom chat -->
           <div class="pscreen active">
@@ -361,29 +294,9 @@
             </div>
           </div>
 
-          <!-- Screen 1: Future You -->
+          <!-- Screen 1: Insights -->
           <div class="pscreen">
-            <div class="s-hdr"><span style="font-family:'Cormorant Garamond',serif;font-size:15px;color:#F2EDE3;font-weight:500">Future You</span><span class="s-date">Age 35</span></div>
-            <div style="display:flex;gap:6px;margin-bottom:8px">
-              <div style="flex:1;background:#131110;border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:10px;text-align:center">
-                <div class="s-wlbl">Current pace</div>
-                <div class="s-wnum" style="font-size:18px;margin-bottom:0">$4,200</div>
-              </div>
-              <div style="flex:1;background:#131110;border:1px solid rgba(91,168,90,0.25);border-radius:10px;padding:10px;text-align:center">
-                <div class="s-wlbl" style="color:#5BA85A">Atom's plan</div>
-                <div class="s-wnum" style="font-size:18px;margin-bottom:0;color:#5BA85A">$11,800</div>
-              </div>
-            </div>
-            <div class="s-gm">
-              <div class="s-gt"><span class="s-gnm">Toggled off</span></div>
-              <div style="font-size:8px;color:rgba(255,255,255,0.4);line-height:1.55;margin-top:2px">3 wishlist items + 2 unused subscriptions</div>
-            </div>
-            <div class="s-note">Same income, same life — just different decisions.</div>
-          </div>
-
-          <!-- Screen 2: Insights -->
-          <div class="pscreen">
-            <div class="s-hdr"><span style="font-family:'Cormorant Garamond',serif;font-size:15px;color:#F2EDE3;font-weight:500">Insights</span><span class="s-date">3 new</span></div>
+            <div class="s-hdr"><span class="s-title">Insights</span><span class="s-date">3 new</span></div>
             <div class="s-gm">
               <div class="s-gt"><span class="s-gnm">Uber spend up</span><span class="s-gpct">+$180</span></div>
               <div style="font-size:8px;color:rgba(255,255,255,0.4);line-height:1.55;margin-top:2px">14 rides this month — $180 above usual. Cutting back moves Japan <span style="color:#C9A96E">12 days closer.</span></div>
@@ -398,50 +311,222 @@
             </div>
           </div>
 
+          <!-- Screen 2: Playground -->
+          <div class="pscreen">
+            <div class="s-hdr"><span class="s-title">Playground</span><span class="s-date">My Tools</span></div>
+            <div class="s-gm">
+              <div class="s-gt"><span class="s-gnm">⚡ Friday Review</span><span class="s-gpct" style="color:#5BA85A">Ready</span></div>
+              <div style="font-size:8px;color:rgba(255,255,255,0.4);line-height:1.55;margin-top:2px">Weekly spend + goal impact summary. Runs every Friday with one tap.</div>
+            </div>
+            <div class="s-gm">
+              <div class="s-gt"><span class="s-gnm">⚡ Payday Allocator</span><span class="s-gpct" style="color:#5BA85A">Ready</span></div>
+              <div style="font-size:8px;color:rgba(255,255,255,0.4);line-height:1.55;margin-top:2px">Runs when income lands. Splits it across goals before you spend a dollar.</div>
+            </div>
+            <div class="s-gm">
+              <div class="s-gt"><span class="s-gnm">👁 Coffee Watch</span><span class="s-gpct" style="color:#C9A96E">Watching</span></div>
+              <div style="font-size:8px;color:rgba(255,255,255,0.4);line-height:1.55;margin-top:2px">Alert if coffee spend exceeds gym membership this month.</div>
+            </div>
+          </div>
+
+          <!-- Screen 3: Dream Path -->
+          <div class="pscreen">
+            <div class="s-hdr"><span class="s-title">Dream Path</span><span class="s-date">House Deposit</span></div>
+            <div class="s-wc">
+              <div class="s-wlbl">Current timeline</div>
+              <div class="s-wnum">14 months</div>
+              <div class="s-chips">
+                <div class="s-ch s-chg">Oct 2027</div>
+              </div>
+            </div>
+            <div class="s-gm">
+              <div class="s-gt"><span class="s-gnm">Step 1</span><span class="s-gpct" style="color:#5BA85A">+$180/mo</span></div>
+              <div style="font-size:8px;color:rgba(255,255,255,0.4);line-height:1.55;margin-top:2px">Increase goal allocation. Moves date to Sep 2027.</div>
+            </div>
+            <div class="s-gm">
+              <div class="s-gt"><span class="s-gnm">Step 2</span><span class="s-gpct" style="color:#5BA85A">−$28/mo</span></div>
+              <div style="font-size:8px;color:rgba(255,255,255,0.4);line-height:1.55;margin-top:2px">Cancel 2 unused subscriptions. Moves date to Aug 2027.</div>
+            </div>
+            <div class="s-note">Follow all steps → <strong>11 months.</strong> Aug 2027.</div>
+          </div>
+
+        </div>
+      </div>
+      <div class="pdots" id="pdots-1">
+        <div class="pdot on" data-i="0"></div>
+        <div class="pdot" data-i="1"></div>
+        <div class="pdot" data-i="2"></div>
+        <div class="pdot" data-i="3"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ STORY 2 — BEFORE YOU BUY ════════ -->
+<div class="story-head">
+  <div class="story-head-inner">
+    <p class="section-eye rv">02 · Before You Buy</p>
+    <h2 class="section-title rv d1">The only app working<br>at the moment that <span class="gold">actually matters.</span></h2>
+  </div>
+</div>
+
+<div class="story story2">
+  <div class="panels">
+
+    <div class="panel" data-screen="0">
+      <p class="panel-eye rv">01 — Shopping Assistant</p>
+      <h2 class="panel-title rv d1">Everything you want.<br><span class="gold">What it actually costs you.</span></h2>
+      <p class="panel-body rv d2">Add anything to your wishlist — from any store, any retailer. Au shows you exactly what it costs toward your goals and finds you a Scoop — a high-quality, cheaper alternative with its own impact already calculated.</p>
+      <p class="panel-body rv d2">One screen. Instant clarity before you spend a thing.</p>
+      <div class="panel-ex rv d3"><strong>Example:</strong> Sony headphones at $349 = <strong>+8 days.</strong> Au's Scoop: BaByliss alternative at $89 = <strong>+3 days.</strong> Save $260, gain 5 days toward your goal.</div>
+    </div>
+
+    <div class="panel" data-screen="1">
+      <p class="panel-eye rv">02 — Goals</p>
+      <h2 class="panel-title rv d1">Every goal, live.<br><span class="gold">Every decision, connected.</span></h2>
+      <p class="panel-body rv d2">Set as many goals as you want — house deposit, holiday, emergency fund, anything. Au calculates the exact path to each one based on your real income and spending.</p>
+      <p class="panel-body rv d2">Adjust your monthly allocation and every projected date updates instantly. Every purchase you consider shows how many days it costs you toward the things you're actually working for.</p>
+      <div class="panel-ex rv d3"><strong>Example:</strong> Cut takeout by $200/month and your house deposit date pulls forward from <strong>October 2027 to August 2027.</strong></div>
+    </div>
+
+    <div class="panel" data-screen="2">
+      <p class="panel-eye rv">03 — Mood Spending Detection</p>
+      <h2 class="panel-title rv d1">Au knows when<br><span class="gold">you're about to slip.</span></h2>
+      <p class="panel-body rv d2">Late nights. Post-payday. Sunday evenings. Au learns your highest-risk spending windows and adds one quiet line of context when you're in one.</p>
+      <p class="panel-body rv d2">It never blocks you. It never lectures. Just the right information at exactly the right moment.</p>
+      <div class="panel-ex rv d3"><strong>Example:</strong> 11:47pm Friday. You add a $280 jacket. Au adds quietly: "This is your highest-spend window. You remove <strong>60% of things</strong> added at this hour."</div>
+    </div>
+
+    <div class="panel" data-screen="3">
+      <p class="panel-eye rv">04 — Bill Negotiation</p>
+      <h2 class="panel-title rv d1">You're overpaying<br>on bills. <span class="gold">Au fixes that.</span></h2>
+      <p class="panel-body rv d2">Au identifies every bill where you're paying above market rate — internet, insurance, phone, streaming. Then Atom writes you the exact script to negotiate it down, tailored to your provider and how long you've been a customer.</p>
+      <p class="panel-body rv d2">You make the call. Au tracks the saving.</p>
+      <div class="panel-ex rv d3"><strong>Example:</strong> Internet at $89/mo. Average in your area: $61. Atom writes the script. You call. New rate: <strong>$65/mo. $288 saved this year.</strong></div>
+    </div>
+
+  </div>
+
+  <!-- STICKY PHONE -->
+  <div class="phone-col">
+    <div class="phone-stage">
+      <div class="phone-aura" id="aura-2" style="background:radial-gradient(ellipse, rgba(184,146,74,0.1) 0%, transparent 65%);"></div>
+      <div class="phone-shell">
+        <div class="phone-notch"></div>
+        <div class="screen-wrap" id="screens-2">
+
+          <!-- Screen 0: Shopping Assistant -->
+          <div class="pscreen active">
+            <div class="s-hdr"><span class="s-title">Shop</span><span class="s-date">2 items</span></div>
+            <div class="s-wi">
+              <div class="s-wir">
+                <div><div class="s-winm">Sony WH-1000XM5</div><div class="s-wict">Electronics · Original</div></div>
+                <div class="s-stk"><div class="s-stkg"><div class="sp">$349</div><div class="sl">Afford</div></div><div class="s-stkb"><div class="sd">+8 days</div><div class="si">Impact</div></div></div>
+              </div>
+              <div class="s-wbl">House Deposit</div>
+              <div class="s-wbt"><div class="s-wbf" style="width:62%"></div></div>
+              <div class="s-wdr"><span class="s-wdn">Now: Oct 2027</span><span class="s-wda">If bought: Oct 28</span></div>
+            </div>
+            <div class="s-dp" style="margin:6px 0">✦ Scoop · 4.7★ · 12,000 reviews</div>
+            <div class="s-wi">
+              <div class="s-wir">
+                <div><div class="s-winm">BaByliss Air Style 1000</div><div class="s-wict">Scoop · Amazon</div></div>
+                <div class="s-stk"><div class="s-stkg"><div class="sp">$89</div><div class="sl">Afford</div></div><div class="s-stkb"><div class="sd">+3 days</div><div class="si">Impact</div></div></div>
+              </div>
+              <div class="s-wbl">House Deposit</div>
+              <div class="s-wbt"><div class="s-wbf" style="width:62%"></div></div>
+              <div class="s-wdr"><span class="s-wdn">Now: Oct 2027</span><span class="s-wda">If bought: Oct 23</span></div>
+            </div>
+            <div class="s-note">Save <strong>$260</strong> → gain <strong>5 days</strong> toward House Deposit.</div>
+          </div>
+
+          <!-- Screen 1: Goals -->
+          <div class="pscreen">
+            <div class="s-hdr"><span class="s-title">Goals</span><span class="s-date">3 active</span></div>
+            <div class="s-gm"><div class="s-gt"><span class="s-gnm">House Deposit</span><span class="s-gpct">62%</span></div><div class="s-bt"><div class="s-bf" style="width:62%"></div></div><div class="s-gbot"><span class="s-gsm">$31k of $50k</span><span class="s-gsm">Oct 2027</span></div></div>
+            <div class="s-gm"><div class="s-gt"><span class="s-gnm">Bali Holiday</span><span class="s-gpct">38%</span></div><div class="s-bt"><div class="s-bf" style="width:38%"></div></div><div class="s-gbot"><span class="s-gsm">$1,520 of $4k</span><span class="s-gsm">Nov 2026</span></div></div>
+            <div class="s-gm"><div class="s-gt"><span class="s-gnm">Emergency Fund</span><span class="s-gpct">81%</span></div><div class="s-bt"><div class="s-bf" style="width:81%"></div></div><div class="s-gbot"><span class="s-gsm">$8,100 of $10k</span><span class="s-gsm">Aug 2026</span></div></div>
+            <div class="s-slbl">Monthly Allocation</div>
+            <div class="s-wc">
+              <div class="s-chips">
+                <div class="s-ch s-chw">Available $720</div>
+                <div class="s-ch s-chg">Allocated $640</div>
+                <div class="s-ch s-chgr">Unallocated $80</div>
+              </div>
+            </div>
+            <div class="s-note">Cut takeout by <strong>$200/mo</strong> → House Deposit moves from Oct 2027 to <strong>Aug 2027.</strong></div>
+          </div>
+
+          <!-- Screen 2: Mood Detection -->
+          <div class="pscreen">
+            <div class="s-hdr"><span class="s-title">Shop</span><span class="s-date">11:47 PM</span></div>
+            <div class="s-wi">
+              <div class="s-wir">
+                <div><div class="s-winm">Leather Jacket</div><div class="s-wict">Fashion · Added now</div></div>
+                <div class="s-stk"><div class="s-stkg"><div class="sp">$280</div><div class="sl">Tight</div></div><div class="s-stkb"><div class="sd">+7 days</div><div class="si">Impact</div></div></div>
+              </div>
+            </div>
+            <div class="s-note" style="border-color:rgba(201,169,110,0.35)">⚠ This is your highest-spend window — Friday nights after 10pm. You remove <strong>60% of things</strong> added at this hour. Check back tomorrow.</div>
+          </div>
+
+          <!-- Screen 3: Bill Negotiation -->
+          <div class="pscreen">
+            <div class="s-hdr"><span class="s-title">Bill Negotiation</span><span class="s-date">3 found</span></div>
+            <div class="s-gm">
+              <div class="s-gt"><span class="s-gnm">Internet · Rogers</span><span class="s-gpct" style="color:#5BA85A">Save $288/yr</span></div>
+              <div style="font-size:8px;color:rgba(255,255,255,0.4);line-height:1.55;margin-top:2px">You pay $89/mo. Area average: $61. Atom has your script ready.</div>
+            </div>
+            <div class="s-gm">
+              <div class="s-gt"><span class="s-gnm">Phone · Bell</span><span class="s-gpct" style="color:#5BA85A">Save $180/yr</span></div>
+              <div style="font-size:8px;color:rgba(255,255,255,0.4);line-height:1.55;margin-top:2px">3 years as a customer. Strong negotiating position.</div>
+            </div>
+            <div class="s-note">Total potential savings: <strong>$468/yr → 39 days closer</strong> to House Deposit.</div>
+          </div>
+
         </div>
       </div>
       <div class="pdots" id="pdots-2">
         <div class="pdot on" data-i="0"></div>
         <div class="pdot" data-i="1"></div>
         <div class="pdot" data-i="2"></div>
+        <div class="pdot" data-i="3"></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ════════ STORY 3 — MADE TO SHARE ════════ -->
+<!-- ════════ STORY 3 — YOUR MONEY LIFE ════════ -->
 <div class="story-head">
   <div class="story-head-inner">
-    <p class="section-eye rv">03 · Made To Share</p>
-    <h2 class="section-title rv d1">Your money,<br>in <em>perspective.</em></h2>
+    <p class="section-eye rv">03 · Your Money Life</p>
+    <h2 class="section-title rv d1">Au doesn't just track your money.<br>It <span class="gold">understands you.</span></h2>
   </div>
 </div>
 
-<div class="story story3">
+<div class="story story3 rev">
   <div class="panels">
 
     <div class="panel" data-screen="0">
-      <p class="panel-eye rv">07 — Spending Personality</p>
-      <h2 class="panel-title rv d1">Know your<br><em>money type.</em></h2>
-      <p class="panel-body rv d2">After 30 days of data, Au generates a personalised spending personality — a short, sharp, accurate description of how you actually relate to money. Your patterns, your blind spots, your strengths.</p>
-      <p class="panel-body rv d2">Shareable by design — built to spread the way Spotify Wrapped does.</p>
-      <div class="panel-ex rv d3"><strong>Example:</strong> "The Experience Collector — you spend intentionally on travel and moments, rarely on things. Blind spot: 7 unused subscriptions costing <strong>$94/mo.</strong>"</div>
+      <p class="panel-eye rv">01 — Spending Personality</p>
+      <h2 class="panel-title rv d1">Your money.<br><span class="gold">Your personality.</span></h2>
+      <p class="panel-body rv d2">After 30 days Au knows exactly how you relate to money. Your patterns, your blind spots, your strengths — captured in a short, sharp profile that feels uncomfortably accurate.</p>
+      <p class="panel-body rv d2">Share it, screenshot it, send it to your friends. The Spotify Wrapped moment for your finances.</p>
+      <div class="panel-ex rv d3"><strong>Example:</strong> "The Experience Collector — you spend on travel and moments, never on things. Blind spot: 7 unused subscriptions costing <strong>$94/mo.</strong>"</div>
     </div>
 
     <div class="panel" data-screen="1">
-      <p class="panel-eye rv">08 — Dream Big</p>
-      <h2 class="panel-title rv d1">Your goals,<br><em>in perspective.</em></h2>
-      <p class="panel-body rv d2">Pick any celebrity from Au's curated list. Au breaks their net worth into the assets people actually know — the houses, the jets, the watch collections — and calculates how long it would take you to get there at your current pace.</p>
-      <p class="panel-body rv d2">It's absurd on purpose. It makes your real goals feel achievable by comparison.</p>
-      <div class="panel-ex rv d3"><strong>Example:</strong> Leonardo DiCaprio's Malibu compound: $10.7M — <strong>89 years</strong> at your pace. "You won't be Leo in this lifetime. But your Bali holiday is 6 months away."</div>
+      <p class="panel-eye rv">02 — Monthly Review</p>
+      <h2 class="panel-title rv d1">Your month.<br><span class="gold">The whole picture.</span></h2>
+      <p class="panel-body rv d2">Every month Au puts together a complete picture of where you stood — what came in, what went out, which goals moved forward, which habits shifted.</p>
+      <p class="panel-body rv d2">Not a spreadsheet. A clear, personal summary of your financial month that actually means something.</p>
+      <div class="panel-ex rv d3"><strong>Example:</strong> "May — you saved <strong>$840,</strong> hit your emergency fund goal, and cut food delivery by $190 from last month. Net worth up <strong>$1,240.</strong>"</div>
     </div>
 
     <div class="panel" data-screen="2">
-      <p class="panel-eye rv">09 — Au Together</p>
-      <h2 class="panel-title rv d1">Shared goals,<br><em>shared wins.</em></h2>
-      <p class="panel-body rv d2">Combined income tracking, per-member spend views, and joint Au Insights. Each person keeps their own private view, but everyone can see the shared household picture when they choose to.</p>
-      <p class="panel-body rv d2">Works for couples, roommates, families — any combination of people.</p>
-      <div class="panel-ex rv d3"><strong>Example:</strong> Combined income $9,400, combined spend $6,200, house deposit at 44%. "Skip dining out twice a week and your deposit date moves from March 2028 to <strong>November 2027.</strong>"</div>
+      <p class="panel-eye rv">03 — Future You Simulator</p>
+      <h2 class="panel-title rv d1">Two versions of you.<br><span class="gold">Same income. Different decisions.</span></h2>
+      <p class="panel-body rv d2">Toggle purchases on and off and watch your financial future update in real time. One version of you keeps spending as you are. The other makes different choices.</p>
+      <p class="panel-body rv d2">The gap between them is the most motivating number in personal finance.</p>
+      <div class="panel-ex rv d3"><strong>Example:</strong> Future You at 35 has <strong>$4,200</strong> at your current pace. Toggle off 3 wishlist items and cancel 2 subscriptions — Future You has <strong>$11,800.</strong></div>
     </div>
 
   </div>
@@ -456,10 +541,10 @@
 
           <!-- Screen 0: Spending Personality -->
           <div class="pscreen active">
-            <div class="s-hdr"><span style="font-family:'Cormorant Garamond',serif;font-size:15px;color:#F2EDE3;font-weight:500">Your Profile</span><span class="s-date">30 days</span></div>
+            <div class="s-hdr"><span class="s-title">Your Profile</span><span class="s-date">30 days</span></div>
             <div style="text-align:center;padding:10px 0 12px">
               <div style="font-size:26px">🧭</div>
-              <div style="font-family:'Cormorant Garamond',serif;font-size:17px;color:#F2EDE3;margin-top:4px">The Experience Collector</div>
+              <div style="font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:#F2EDE3;margin-top:4px">The Experience Collector</div>
             </div>
             <div class="s-gm"><div style="font-size:8.5px;color:rgba(255,255,255,0.45);line-height:1.6">You spend intentionally on travel, food, and moments — rarely on things.</div></div>
             <div class="s-gm">
@@ -469,41 +554,44 @@
             <div class="s-note">Share your profile →</div>
           </div>
 
-          <!-- Screen 1: Dream Big -->
+          <!-- Screen 1: Monthly Review -->
           <div class="pscreen">
-            <div class="s-hdr"><span style="font-family:'Cormorant Garamond',serif;font-size:15px;color:#F2EDE3;font-weight:500">Dream Big</span><span class="s-date">Leo DiCaprio</span></div>
-            <div class="s-gm">
-              <div class="s-gt"><span class="s-gnm">🏖️ Malibu Compound</span><span class="s-gpct">$10.7M</span></div>
-              <div style="font-size:8px;color:rgba(255,255,255,0.35);margin-top:2px">Your pace: 89 years</div>
-            </div>
-            <div class="s-gm">
-              <div class="s-gt"><span class="s-gnm">🛥️ Superyacht</span><span class="s-gpct">$30M</span></div>
-              <div style="font-size:8px;color:rgba(255,255,255,0.35);margin-top:2px">Your pace: 251 years</div>
-            </div>
-            <div class="s-gm">
-              <div class="s-gt"><span class="s-gnm">Full net worth</span><span class="s-gpct">$310M</span></div>
-              <div style="font-size:8px;color:rgba(255,255,255,0.35);margin-top:2px">Your pace: 4,847 years</div>
-            </div>
-            <div class="s-ma" style="margin-top:6px">"You won't be Leo in this lifetime. But your Bali holiday is 6 months away. That's not nothing."</div>
-          </div>
-
-          <!-- Screen 2: Au Together -->
-          <div class="pscreen">
-            <div class="s-hdr"><span style="font-family:'Cormorant Garamond',serif;font-size:15px;color:#F2EDE3;font-weight:500">Au Together</span><span class="s-date">2 members</span></div>
+            <div class="s-hdr"><span class="s-title">Monthly Review</span><span class="s-date">May 2026</span></div>
             <div class="s-wc">
-              <div class="s-wlbl">Combined Net Worth</div>
-              <div class="s-wnum">$84,200</div>
+              <div class="s-wlbl">Saved this month</div>
+              <div class="s-wnum">$840</div>
               <div class="s-chips">
-                <div class="s-ch s-chw">Income $9,400</div>
-                <div class="s-ch s-chgr">Spend $6,200</div>
+                <div class="s-ch s-chgr">Net worth +$1,240</div>
               </div>
             </div>
             <div class="s-gm">
-              <div class="s-gt"><span class="s-gnm">House Deposit</span><span class="s-gpct">44%</span></div>
-              <div class="s-bt"><div class="s-bf" style="width:44%"></div></div>
-              <div class="s-gbot"><span class="s-gsm">$22k of $50k</span><span class="s-gsm">Mar 2028</span></div>
+              <div class="s-gt"><span class="s-gnm">Emergency Fund ✓</span><span class="s-gpct" style="color:#5BA85A">Hit</span></div>
+              <div style="font-size:8px;color:rgba(255,255,255,0.4);line-height:1.55;margin-top:2px">Goal reached this month. $10,000 saved.</div>
             </div>
-            <div class="s-note">"Skip dining out twice a week and your deposit date moves to <strong>Nov 2027.</strong>"</div>
+            <div class="s-gm">
+              <div class="s-gt"><span class="s-gnm">Food Delivery</span><span class="s-gpct" style="color:#5BA85A">−$190</span></div>
+              <div style="font-size:8px;color:rgba(255,255,255,0.4);line-height:1.55;margin-top:2px">Down from $340 last month. Best month yet.</div>
+            </div>
+          </div>
+
+          <!-- Screen 2: Future You -->
+          <div class="pscreen">
+            <div class="s-hdr"><span class="s-title">Future You</span><span class="s-date">Age 35</span></div>
+            <div style="display:flex;gap:6px;margin-bottom:8px">
+              <div style="flex:1;background:#131110;border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:10px;text-align:center">
+                <div class="s-wlbl">Current pace</div>
+                <div class="s-wnum" style="font-size:18px;margin-bottom:0">$4,200</div>
+              </div>
+              <div style="flex:1;background:#131110;border:1px solid rgba(91,168,90,0.25);border-radius:10px;padding:10px;text-align:center">
+                <div class="s-wlbl" style="color:#5BA85A">Atom's plan</div>
+                <div class="s-wnum" style="font-size:18px;margin-bottom:0;color:#5BA85A">$11,800</div>
+              </div>
+            </div>
+            <div class="s-gm">
+              <div class="s-gt"><span class="s-gnm">Toggled off</span></div>
+              <div style="font-size:8px;color:rgba(255,255,255,0.4);line-height:1.55;margin-top:2px">3 wishlist items + 2 unused subscriptions</div>
+            </div>
+            <div class="s-note">Same income, same life — just <strong>different decisions.</strong></div>
           </div>
 
         </div>
@@ -517,34 +605,98 @@
   </div>
 </div>
 
+<!-- ════════ DREAM BIG STANDALONE ════════ -->
+<section class="dream-section">
+  <div class="dream-inner">
+    <div class="dream-copy rv">
+      <p class="section-eye">Dream Big</p>
+      <h2>Their wealth was <span class="gold">legendary.</span><br>Yours is just getting started.<br>See how you stack up.</h2>
+      <p style="margin-top:20px">Pick a historical figure. Au breaks down their wealth into the assets you actually recognise — and tells you exactly how long it'd take you to get there. The numbers are absurd. That's the point. Share it, laugh about it, then get back to the goals that are actually within reach.</p>
+    </div>
+    <div class="dream-cards rv d1">
 
+      <div class="dream-card">
+        <div class="dc-eye">Egypt · 51 BC</div>
+        <div class="dc-name">Cleopatra VII</div>
+        <div class="dc-era">~$95.8B adjusted net worth</div>
+        <div class="dc-asset"><span class="dc-an">Alexandria Palace</span><div><div class="dc-av">$4.2B</div><div class="dc-years">Your pace: 351 yrs</div></div></div>
+        <div class="dc-asset"><span class="dc-an">Gold Reserves</span><div><div class="dc-av">$18.7B</div><div class="dc-years">Your pace: 1,562 yrs</div></div></div>
+        <div class="dc-asset"><span class="dc-an">Control of the Nile</span><div><div class="dc-av">Priceless</div><div class="dc-years">Not for sale</div></div></div>
+        <div class="dc-atom">Atom: "Her net worth in 4,200 years. Your house deposit, however, is 11 months away. I'll take it."</div>
+      </div>
+
+      <div class="dream-card">
+        <div class="dc-eye">Mali Empire · 1324</div>
+        <div class="dc-name">Mansa Musa</div>
+        <div class="dc-era">~$400B adjusted net worth</div>
+        <div class="dc-asset"><span class="dc-an">Mali Gold Mines</span><div><div class="dc-av">$180B</div><div class="dc-years">Your pace: 15,000 yrs</div></div></div>
+        <div class="dc-asset"><span class="dc-an">Salt Trade Monopoly</span><div><div class="dc-av">$85B</div><div class="dc-years">Your pace: 7,083 yrs</div></div></div>
+        <div class="dc-asset"><span class="dc-an">Timbuktu</span><div><div class="dc-av">$45B</div><div class="dc-years">Your pace: 3,750 yrs</div></div></div>
+        <div class="dc-atom">Atom: "14,000 years to his net worth. Your emergency fund though — 4 months away. Start there."</div>
+      </div>
+
+      <div class="dream-card">
+        <div class="dc-eye">Atlantic · 1716</div>
+        <div class="dc-name">Blackbeard</div>
+        <div class="dc-era">~$12.5M adjusted net worth</div>
+        <div class="dc-asset"><span class="dc-an">Queen Anne's Revenge</span><div><div class="dc-av">$6.2M</div><div class="dc-years">Your pace: 52 yrs</div></div></div>
+        <div class="dc-asset"><span class="dc-an">Plundered Cargo</span><div><div class="dc-av">$4.1M</div><div class="dc-years">Your pace: 34 yrs</div></div></div>
+        <div class="dc-asset"><span class="dc-an">Infamy</span><div><div class="dc-av">Incalculable</div><div class="dc-years">Yours to earn</div></div></div>
+        <div class="dc-atom">Atom: "Blackbeard terrorised the Atlantic and still went broke. Some things never change."</div>
+      </div>
+
+    </div>
+    <div class="dream-cta rv d2">
+      <a href="/download/">Download Au to see all figures →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FEATURE GRID ════════ -->
 <section class="anchor-section">
   <div style="max-width:1100px;margin:0 auto;">
     <p class="section-eye rv">All Features</p>
-    <h2 class="section-title rv d1">Everything Au <em>includes.</em></h2>
+    <h2 class="section-title rv d1">Everything Au <span class="gold">includes.</span></h2>
     <div class="feat-grid">
-      <div class="fc rv"><div class="fc-n">01</div><div class="fc-nm">Goal Impact Bar</div><div class="fc-d">Every wishlist item shows how many days it costs toward your goal. The only number that makes a purchase feel real before you make it.</div></div>
-      <div class="fc rv d1"><div class="fc-n">02</div><div class="fc-nm">AI Personal Shopper</div><div class="fc-d">Import from Amazon or screenshot any wishlist. Au evaluates timing against your goals, bills, and savings rate.</div></div>
-      <div class="fc rv d2"><div class="fc-n">03</div><div class="fc-nm">Dupe Finder</div><div class="fc-d">High-quality cheaper alternatives for anything in your wishlist. See how many days faster the dupe gets you to your goal.</div></div>
-      <div class="fc rv"><div class="fc-n">04</div><div class="fc-nm">Atom AI</div><div class="fc-d">Powered by Claude. Text or voice. Knows your complete financial picture. Serious questions and wild simulations.</div></div>
-      <div class="fc rv d1"><div class="fc-n">05</div><div class="fc-nm">Insights Engine</div><div class="fc-d">Proactive, goal-linked intelligence that quantifies patterns before they cost you — not generic warnings after the fact.</div></div>
-      <div class="fc rv d2"><div class="fc-n">06</div><div class="fc-nm">Future You Simulator</div><div class="fc-d">Toggle wishlist items on and off and watch your projected net worth update in real time. Two futures, side by side.</div></div>
-      <div class="fc rv"><div class="fc-n">07</div><div class="fc-nm">Spending Personality</div><div class="fc-d">After 30 days, a shareable profile of how you actually relate to money. Designed to spread like Spotify Wrapped.</div></div>
-      <div class="fc rv d1"><div class="fc-n">08</div><div class="fc-nm">Dream Big</div><div class="fc-d">Break down any celebrity's net worth into assets you recognise, then see how long it'd take you to get there. Funny on purpose.</div></div>
-      <div class="fc rv d2"><div class="fc-n">09</div><div class="fc-nm">Au Together</div><div class="fc-d">Shared goals, combined income tracking, per-member views. For couples, roommates, families — anyone.</div></div>
-      <div class="fc rv"><div class="fc-n">10</div><div class="fc-nm">Bank Sync</div><div class="fc-d">12,000+ institutions via Plaid. Every transaction pulled in automatically. Read-only — Au never touches your money.</div></div>
-      <div class="fc rv d1"><div class="fc-n">11</div><div class="fc-nm">AI Categorisation</div><div class="fc-d">Self-improving AI that learns your patterns. 95%+ accuracy within 60 days. Goal-linked, not just spending buckets.</div></div>
-      <div class="fc rv d2"><div class="fc-n">12</div><div class="fc-nm">Real-Time Dashboard</div><div class="fc-d">Net worth, income, spend, and every goal — live. Updates within minutes of a transaction landing.</div></div>
-      <div class="fc rv"><div class="fc-n">13</div><div class="fc-nm">Goal Tracking</div><div class="fc-d">Unlimited goals with AI-calculated timelines that update automatically every time your spending changes.</div></div>
-      <div class="fc rv d1"><div class="fc-n">14</div><div class="fc-nm">Mood Spending Detection</div><div class="fc-d">Identifies your highest-risk spending windows. One quiet line of context at the moment it matters. Never a lecture.</div></div>
-      <div class="fc rv d2"><div class="fc-n">15</div><div class="fc-nm">Bill Negotiation Coach</div><div class="fc-d">Au flags bills where you're overpaying and gives Atom-written negotiation scripts. Included in Au Atomic.</div></div>
+      <div class="fc rv"><div class="fc-n">01</div><div class="fc-nm">Bank Sync</div><div class="fc-d">12,000+ institutions via Plaid. Every transaction pulled in automatically. Read-only — Au never touches your money.</div></div>
+      <div class="fc rv d1"><div class="fc-n">02</div><div class="fc-nm">AI Categorisation</div><div class="fc-d">Self-improving AI that learns your patterns. 95%+ accuracy within 60 days. Goal-linked, not just spending buckets.</div></div>
+      <div class="fc rv d2"><div class="fc-n">03</div><div class="fc-nm">Real-Time Dashboard</div><div class="fc-d">Net worth, income, spend, and every goal — live. Updates within minutes of every transaction.</div></div>
+      <div class="fc rv"><div class="fc-n">04</div><div class="fc-nm">Goal Tracking</div><div class="fc-d">Unlimited goals with AI-calculated timelines that update automatically every time your spending changes.</div></div>
+      <div class="fc rv d1"><div class="fc-n">05</div><div class="fc-nm">Atom AI</div><div class="fc-d">Your AI that knows your entire financial life. Ask it anything, anywhere in the app, at any moment.</div></div>
+      <div class="fc rv d2"><div class="fc-n">06</div><div class="fc-nm">Insights Engine</div><div class="fc-d">Proactive, goal-linked intelligence. Spots patterns and costs before they compound — never after the fact.</div></div>
+      <div class="fc rv"><div class="fc-n">07</div><div class="fc-nm">Atom Playground</div><div class="fc-d">Custom dashboards, one-tap macros, automated watch rules. Built by you in plain language, connected to live data.</div></div>
+      <div class="fc rv d1"><div class="fc-n">08</div><div class="fc-nm">Dream Path</div><div class="fc-d">Set a goal. Get the exact steps to reach it automatically. Based on your real numbers, not generic advice.</div></div>
+      <div class="fc rv d2"><div class="fc-n">09</div><div class="fc-nm">Shopping Assistant</div><div class="fc-d">Add anything from any store. See what it costs toward your goals. Import from Amazon or screenshot any wishlist.</div></div>
+      <div class="fc rv"><div class="fc-n">10</div><div class="fc-nm">Scoops</div><div class="fc-d">High-quality cheaper alternatives for anything in your wishlist. Better price, same result, less impact on your goals.</div></div>
+      <div class="fc rv d1"><div class="fc-n">11</div><div class="fc-nm">Goal Impact Bar</div><div class="fc-d">Every purchase shown in days toward your goals. The single number that makes a decision feel real before you make it.</div></div>
+      <div class="fc rv d2"><div class="fc-n">12</div><div class="fc-nm">Mood Spending Detection</div><div class="fc-d">Au learns your highest-risk spending windows. One quiet line of context at the right moment. Never a lecture.</div></div>
+      <div class="fc rv"><div class="fc-n">13</div><div class="fc-nm">Bill Negotiation</div><div class="fc-d">Au finds where you're overpaying and Atom writes the exact script to fix it. Included in Au Atomic, no extra charge.</div></div>
+      <div class="fc rv d1"><div class="fc-n">14</div><div class="fc-nm">Spending Personality</div><div class="fc-d">A shareable profile of how you actually relate to money. Updated monthly. Designed to spread like Spotify Wrapped.</div></div>
+      <div class="fc rv d2"><div class="fc-n">15</div><div class="fc-nm">Monthly Review</div><div class="fc-d">Your complete financial month, clearly summarised. Goals hit, habits shifted, net worth change — all in one place.</div></div>
+      <div class="fc rv"><div class="fc-n">16</div><div class="fc-nm">Dream Big</div><div class="fc-d">Pick a historical figure. See how your wealth stacks up against theirs. Absurd on purpose. Shareable by design.</div></div>
+      <div class="fc rv d1"><div class="fc-n">17</div><div class="fc-nm">Future You Simulator</div><div class="fc-d">Two versions of you, side by side. Toggle purchases on and off and watch your future update in real time.</div></div>
+      <div class="fc rv d2"><div class="fc-n">18</div><div class="fc-nm">Au Together</div><div class="fc-d">Shared goals, combined income, per-member views. For couples, roommates, families — anyone.</div></div>
+      <div class="fc coming rv"><div class="fc-cs">Coming Soon</div><div class="fc-n">19</div><div class="fc-nm">Atom Voice</div><div class="fc-d">Talk to Atom hands-free. Ask anything, anywhere, without touching your phone.</div></div>
+      <div class="fc coming rv d1"><div class="fc-cs">Coming Soon</div><div class="fc-n">20</div><div class="fc-nm">Annual Review</div><div class="fc-d">Your entire financial year, beautifully summarised. Every goal, every win, every shift.</div></div>
+      <div class="fc coming rv d2"><div class="fc-cs">Coming Soon</div><div class="fc-n">21</div><div class="fc-nm">Investments</div><div class="fc-d">Your investment accounts, factored into your complete financial picture.</div></div>
+      <div class="fc coming rv"><div class="fc-cs">Coming Soon</div><div class="fc-n">22</div><div class="fc-nm">Debt Planner</div><div class="fc-d">A clear path out of debt. Every payment connected to your goals and timelines.</div></div>
     </div>
+  </div>
+</section>
+
+<!-- ════════ PRICING CTA ════════ -->
+<section class="pricing-cta">
+  <h2 class="rv">Know more. <span class="gold">Spend better.</span><br>Start free.</h2>
+  <p class="rv d1">No credit card. No catch.</p>
+  <div class="cta-btns rv d2">
+    <a href="/download/" class="btn-primary">Download Au</a>
+    <a href="/pricing/" class="btn-secondary">See pricing</a>
   </div>
 </section>
 
 <footer>
   <div class="ft-top">
-    <div class="ft-brand"><div class="fw">Au</div><p>The AI personal finance app that shows you what every purchase truly costs — in days, not dollars.</p></div>
+    <div class="ft-brand"><div class="fw">Au</div><p>The AI personal finance app that actually knows you. Built for your next decision, not your last one.</p></div>
     <div class="ft-col"><h4>Product</h4><a href="/features/">Features</a><a href="/pricing/">Pricing</a></div>
     <div class="ft-col"><h4>Company</h4><a href="/about/">About</a><a href="/news/">News</a><a href="/contact/">Contact</a></div>
     <div class="ft-col"><h4>Legal</h4><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Service</a></div>
@@ -553,12 +705,9 @@
 </footer>
 
 <script>
-  const syms = ['H','He','Li','Be','B','C','N','O','F','Ne','Na','Mg','Al','Si','P','S','Cl','Ar','K','Ca','Sc','Ti','V','Cr','Mn','Fe','Co','Ni','Cu','Zn','Ga','Ge','As','Se','Br','Kr','Rb','Sr','Y','Zr','Nb','Mo','Tc','Ru','Rh','Pd','Ag','Cd','In','Sn','Sb','Te','I','Xe','Cs','Ba','La','Hf','Ta','W','Re','Os','Ir','Pt','Au','Hg','Tl','Pb','Bi','Po','At','Rn'];
-  const near = ['Ir','Pt','Hg','Tl'];
-  const hb = document.getElementById('heroBg');
-  if(hb) syms.forEach(s=>{const d=document.createElement('div');d.className='phb'+(s==='Au'?' au':near.includes(s)?' nb':'');hb.appendChild(d);});
+  const rvObs = new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');rvObs.unobserve(e.target);}});},{threshold:0.1});
+  document.querySelectorAll('.rv').forEach(el=>rvObs.observe(el));
 
-  // Scroll story phone switching — one instance per story
   function initStory(idx, auraColors){
     const panels = document.querySelectorAll('.story' + idx + ' .panel');
     const pscreens = document.querySelectorAll('#screens-' + idx + ' .pscreen');
@@ -588,63 +737,20 @@
   initStory('1', [
     'radial-gradient(ellipse, rgba(184,146,74,0.08) 0%, transparent 65%)',
     'radial-gradient(ellipse, rgba(184,146,74,0.1) 0%, transparent 65%)',
-    'radial-gradient(ellipse, rgba(91,168,90,0.07) 0%, transparent 65%)'
+    'radial-gradient(ellipse, rgba(91,168,90,0.07) 0%, transparent 65%)',
+    'radial-gradient(ellipse, rgba(184,146,74,0.09) 0%, transparent 65%)'
   ]);
   initStory('2', [
     'radial-gradient(ellipse, rgba(184,146,74,0.1) 0%, transparent 65%)',
     'radial-gradient(ellipse, rgba(91,168,90,0.08) 0%, transparent 65%)',
-    'radial-gradient(ellipse, rgba(184,146,74,0.08) 0%, transparent 65%)'
+    'radial-gradient(ellipse, rgba(184,146,74,0.08) 0%, transparent 65%)',
+    'radial-gradient(ellipse, rgba(91,168,90,0.09) 0%, transparent 65%)'
   ]);
   initStory('3', [
     'radial-gradient(ellipse, rgba(184,146,74,0.09) 0%, transparent 65%)',
     'radial-gradient(ellipse, rgba(184,146,74,0.11) 0%, transparent 65%)',
     'radial-gradient(ellipse, rgba(91,168,90,0.07) 0%, transparent 65%)'
   ]);
-
-  // Banner grid — fills full width with square tiles, Au centered
-  (function() {
-    const rows = [
-      [{n:'26',s:'Fe',nm:'Iron'},{n:'27',s:'Co',nm:'Cobalt'},{n:'28',s:'Ni',nm:'Nickel'},{n:'29',s:'Cu',nm:'Copper',c:'near'},{n:'30',s:'Zn',nm:'Zinc'},{n:'31',s:'Ga',nm:'Gallium'},{n:'32',s:'Ge',nm:'German.'},{n:'33',s:'As',nm:'Arsenic'},{n:'34',s:'Se',nm:'Seleniu.'},{n:'35',s:'Br',nm:'Bromine'},{n:'36',s:'Kr',nm:'Krypton'},{n:'37',s:'Rb',nm:'Rubidium'},{n:'38',s:'Sr',nm:'Strontiu.'},{n:'39',s:'Y',nm:'Yttrium'},{n:'40',s:'Zr',nm:'Zirconiu.'},{n:'41',s:'Nb',nm:'Niobium'},{n:'42',s:'Mo',nm:'Molybden.'},{n:'43',s:'Tc',nm:'Technet.'},{n:'44',s:'Ru',nm:'Ruthen.'},{n:'45',s:'Rh',nm:'Rhodium'},{n:'46',s:'Pd',nm:'Pallad.'},{n:'47',s:'Ag',nm:'Silver',c:'near'},{n:'48',s:'Cd',nm:'Cadmium'},{n:'49',s:'In',nm:'Indium'},{n:'50',s:'Sn',nm:'Tin'}],
-      [{n:'44',s:'Ru',nm:'Ruthen.'},{n:'45',s:'Rh',nm:'Rhodium'},{n:'46',s:'Pd',nm:'Pallad.'},{n:'47',s:'Ag',nm:'Silver',c:'near'},{n:'48',s:'Cd',nm:'Cadmium'},{n:'49',s:'In',nm:'Indium'},{n:'50',s:'Sn',nm:'Tin'},{n:'51',s:'Sb',nm:'Antimony'},{n:'52',s:'Te',nm:'Telluriu.'},{n:'53',s:'I',nm:'Iodine'},{n:'54',s:'Xe',nm:'Xenon'},{n:'55',s:'Cs',nm:'Caesium'},{n:'56',s:'Ba',nm:'Barium'},{n:'57',s:'La',nm:'Lanthanu.'},{n:'58',s:'Ce',nm:'Cerium'},{n:'59',s:'Pr',nm:'Praseody.'},{n:'60',s:'Nd',nm:'Neodymiu.'},{n:'61',s:'Pm',nm:'Promethi.'},{n:'62',s:'Sm',nm:'Samarium'},{n:'63',s:'Eu',nm:'Europiu.'},{n:'64',s:'Gd',nm:'Gadolini.'},{n:'65',s:'Tb',nm:'Terbium'},{n:'66',s:'Dy',nm:'Dysprosi.'},{n:'67',s:'Ho',nm:'Holmium'},{n:'68',s:'Er',nm:'Erbium'}],
-      [{n:'70',s:'Yb',nm:'Ytterbiu.'},{n:'71',s:'Lu',nm:'Lutetium'},{n:'72',s:'Hf',nm:'Hafnium'},{n:'73',s:'Ta',nm:'Tantalum'},{n:'74',s:'W',nm:'Tungsten'},{n:'75',s:'Re',nm:'Rhenium'},{n:'76',s:'Os',nm:'Osmium'},{n:'77',s:'Ir',nm:'Iridium',c:'near'},{n:'78',s:'Pt',nm:'Platinum',c:'near'},{n:'79',s:'Au',nm:'Aurum',c:'au'},{n:'80',s:'Hg',nm:'Mercury',c:'near'},{n:'81',s:'Tl',nm:'Thallium',c:'near'},{n:'82',s:'Pb',nm:'Lead'},{n:'83',s:'Bi',nm:'Bismuth'},{n:'84',s:'Po',nm:'Polonium'},{n:'85',s:'At',nm:'Astatine'},{n:'86',s:'Rn',nm:'Radon'},{n:'87',s:'Fr',nm:'Francium'},{n:'88',s:'Ra',nm:'Radium'},{n:'89',s:'Ac',nm:'Actinium'},{n:'90',s:'Th',nm:'Thorium'},{n:'91',s:'Pa',nm:'Protacti.'},{n:'92',s:'U',nm:'Uranium'},{n:'93',s:'Np',nm:'Neptunium'},{n:'94',s:'Pu',nm:'Plutonium'}],
-      [{n:'106',s:'Sg',nm:'Seaborg.'},{n:'107',s:'Bh',nm:'Bohrium'},{n:'108',s:'Hs',nm:'Hassium'},{n:'109',s:'Mt',nm:'Meitner.'},{n:'110',s:'Ds',nm:'Darmst.'},{n:'111',s:'Rg',nm:'Roentg.'},{n:'112',s:'Cn',nm:'Copern.'},{n:'113',s:'Nh',nm:'Nihonium'},{n:'114',s:'Fl',nm:'Fleroviu.'},{n:'115',s:'Mc',nm:'Moscov.'},{n:'116',s:'Lv',nm:'Livermor.'},{n:'117',s:'Ts',nm:'Tenness.'},{n:'118',s:'Og',nm:'Oganes.'},{n:'104',s:'Rf',nm:'Rutherfo.'},{n:'105',s:'Db',nm:'Dubnium'},{n:'106',s:'Sg',nm:'Seaborg.'},{n:'107',s:'Bh',nm:'Bohrium'},{n:'108',s:'Hs',nm:'Hassium'},{n:'109',s:'Mt',nm:'Meitner.'},{n:'110',s:'Ds',nm:'Darmst.'},{n:'111',s:'Rg',nm:'Roentg.'},{n:'112',s:'Cn',nm:'Copern.'},{n:'113',s:'Nh',nm:'Nihonium'},{n:'114',s:'Fl',nm:'Fleroviu.'},{n:'115',s:'Mc',nm:'Moscov.'}],
-      [{n:'118',s:'Og',nm:'Oganes.'},{n:'117',s:'Ts',nm:'Tenness.'},{n:'116',s:'Lv',nm:'Livermor.'},{n:'115',s:'Mc',nm:'Moscov.'},{n:'114',s:'Fl',nm:'Fleroviu.'},{n:'113',s:'Nh',nm:'Nihonium'},{n:'112',s:'Cn',nm:'Copern.'},{n:'111',s:'Rg',nm:'Roentg.'},{n:'110',s:'Ds',nm:'Darmst.'},{n:'109',s:'Mt',nm:'Meitner.'},{n:'108',s:'Hs',nm:'Hassium'},{n:'107',s:'Bh',nm:'Bohrium'},{n:'106',s:'Sg',nm:'Seaborg.'},{n:'105',s:'Db',nm:'Dubnium'},{n:'104',s:'Rf',nm:'Rutherfo.'},{n:'103',s:'Lr',nm:'Lawrence.'},{n:'102',s:'No',nm:'Nobelium'},{n:'101',s:'Md',nm:'Mendele.'},{n:'100',s:'Fm',nm:'Fermium'},{n:'99',s:'Es',nm:'Einstein.'},{n:'98',s:'Cf',nm:'Californ.'},{n:'97',s:'Bk',nm:'Berkeli.'},{n:'96',s:'Cm',nm:'Curium'},{n:'95',s:'Am',nm:'Americi.'},{n:'94',s:'Pu',nm:'Plutonium'}],
-    ];
-    const grid = document.getElementById('bannerGrid');
-    if (!grid) return;
-    const tileSize = 82 + 5;
-    const cols = Math.ceil((window.innerWidth + tileSize) / tileSize) + 1;
-    const auCol = 9;
-    const startOffset = Math.floor(cols / 2) - auCol;
-    rows.forEach(row => {
-      for (let i = 0; i < cols; i++) {
-        const idx = ((i - startOffset) % row.length + row.length) % row.length;
-        const el = row[idx];
-        const d = document.createElement('div');
-        d.className = 'el' + (el.c ? ' ' + el.c : '');
-        d.innerHTML = `<span class="el-n">${el.n}</span><span class="el-s">${el.s}</span><span class="el-nm">${el.nm}</span>`;
-        grid.appendChild(d);
-      }
-    });
-    grid.style.gridTemplateColumns = `repeat(${cols}, 82px)`;
-    grid.style.gridTemplateRows = `repeat(5, 82px)`;
-  })();
-
-  // Ticker color flip on cycle
-  (function(){
-    var track = document.querySelector('.ticker-track');
-    if(!track) return;
-    var dur = 40000;
-    var flipped = false;
-    setInterval(function(){
-      flipped = !flipped;
-      if(flipped) track.classList.add('flipped');
-      else track.classList.remove('flipped');
-    }, dur);
-  })();
-
-  const rvObs = new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');rvObs.unobserve(e.target);}});},{threshold:0.1});
-  document.querySelectorAll('.rv').forEach(el=>rvObs.observe(el));
 </script>
 </body>
 </html>
