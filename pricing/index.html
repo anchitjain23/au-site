@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;1,200;1,300&family=DM+Sans:wght@200;300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{--black:#0C0B09;--cream:#F3F0E7;--cream-mid:#EDE9DE;--gold:#B8924A;--green:#5BA85A;--text:#111;--mid:#666;--light:#aaa;--border:rgba(0,0,0,0.08)}
@@ -11,7 +11,7 @@
     body{background:var(--cream);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden}
     nav{background:var(--black);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:42px;position:sticky;top:0;z-index:200}
     .nav-logo{width:32px;height:32px;border:1px solid rgba(255,255,255,0.28);border-radius:3px;display:flex;align-items:center;justify-content:center;flex-shrink:0;text-decoration:none}
-    .nav-wm{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:300;color:rgba(255,255,255,0.42);letter-spacing:0.08em;line-height:1}
+    .nav-wm{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;color:rgba(255,255,255,0.42);letter-spacing:0.08em;line-height:1}
     .nav-links{display:flex;align-items:center;flex:1;justify-content:space-evenly;padding:0 40px}
     .nav-links a{font-size:11px;color:rgba(255,255,255,0.42);letter-spacing:0.03em;text-decoration:none;transition:color .2s}
     .nav-links a:hover,.nav-links a.active{color:rgba(255,255,255,0.78)}
@@ -25,18 +25,18 @@
     .page-hero-inner{position:relative;z-index:5;max-width:700px}
     .eyebrow{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;display:flex;align-items:center;gap:10px}
     .eyebrow::before{content:'';width:20px;height:1px;background:var(--gold);flex-shrink:0}
-    h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,6vw,72px);font-weight:200;line-height:0.92;letter-spacing:-0.04em;margin-bottom:20px}
+    h1{font-family:'DM Sans',sans-serif;font-size:clamp(38px,5.5vw,66px);font-weight:700;line-height:0.92;letter-spacing:-0.03em;margin-bottom:20px}
     h1 em{font-style:italic;color:var(--gold)}
     .lead{font-size:15px;color:var(--mid);line-height:1.85;max-width:520px}
     .content{max-width:1280px;margin:0 auto;padding:72px 60px 80px}
     .section-block{margin-bottom:52px}
-    .section-block h2{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3vw,34px);font-weight:300;color:var(--text);margin-bottom:14px;line-height:1.2}
+    .section-block h2{font-family:'DM Sans',sans-serif;font-size:clamp(22px,2.5vw,30px);font-weight:600;color:var(--text);margin-bottom:14px;line-height:1.2}
     .section-block p{font-size:14px;color:var(--mid);line-height:1.85;margin-bottom:12px}
     .section-block p a{color:var(--gold);text-decoration:none}
     .gold-rule{height:1px;background:linear-gradient(90deg,transparent,rgba(184,146,74,0.25),transparent);margin:52px 0}
     footer{padding:52px 40px 36px;background:var(--black);border-top:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;gap:32px}
     .ft-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
-    .ft-brand .fw{font-family:'Cormorant Garamond',serif;font-size:22px;color:rgba(255,255,255,0.7)}
+    .ft-brand .fw{font-family:'DM Sans',sans-serif;font-size:20px;font-weight:600;color:rgba(255,255,255,0.7)}
     .ft-brand p{font-size:12px;color:rgba(255,255,255,0.25);margin-top:6px;max-width:220px;line-height:1.7}
     .ft-col{display:flex;flex-direction:column;gap:8px}
     .ft-col h4{font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:0.16em;color:rgba(255,255,255,0.25);margin-bottom:2px}
@@ -57,7 +57,7 @@
     .pc.feat::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#C9A96E,transparent);border-radius:14px 14px 0 0}
     .pc-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:#C9A96E;color:#0C0B09;padding:2px 14px;border-radius:20px;font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;white-space:nowrap;font-family:'Space Mono',monospace}
     .pc-tier{font-family:'Space Mono',monospace;font-size:8px;letter-spacing:0.18em;text-transform:uppercase;color:#C9A96E;margin-bottom:10px}
-    .pc-nm{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:700;color:#fff;line-height:1;letter-spacing:-0.02em;margin-bottom:3px}
+    .pc-nm{font-family:'DM Sans',sans-serif;font-size:36px;font-weight:700;color:#fff;line-height:1;letter-spacing:-0.02em;margin-bottom:3px}
     .pc-hint{font-family:'Space Mono',monospace;font-size:7.5px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.18);margin-bottom:20px}
     .pc-pr{font-family:'DM Sans',sans-serif;font-size:58px;font-weight:300;line-height:1;letter-spacing:-0.03em;color:#C9A96E;display:flex;align-items:flex-start;gap:2px}
     .pc-pr .sym{font-family:'DM Sans',sans-serif;font-size:20px;font-weight:300;color:rgba(201,169,110,0.5);margin-top:8px}
@@ -121,7 +121,7 @@
         <li><span class="ck">✓</span>1 Goal Impact Bar</li>
         <li><span class="ck">✓</span>Atom Chat</li>
         <li><span class="ck">✓</span>Bill Negotiation</li>
-        <li><span class="ck">✓</span>5 Dupe Finds</li>
+        <li><span class="ck">✓</span>5 Scoops</li>
         <li><span class="ck">✓</span>Spending Personality</li>
         <li><span class="ck">✓</span>Dream Big</li>
         <li><span class="ck">✓</span>Ads</li>
@@ -153,7 +153,7 @@
         <li><span class="ck">✓</span>Atom Insights</li>
         <li><span class="ck">✓</span>Atom Playground</li>
         <li><span class="ck">✓</span>Bill Negotiation</li>
-        <li><span class="ck">✓</span>Unlimited Dupe Finds</li>
+        <li><span class="ck">✓</span>Unlimited Scoops</li>
         <li><span class="ck">✓</span>Mood Spending Detection</li>
         <li><span class="ck">✓</span>Spending Personality</li>
         <li><span class="ck">✓</span>Dream Big</li>
@@ -162,7 +162,7 @@
     </div>
     <div class="pc">
       <p class="pc-tier">Household</p>
-      <div class="pc-nm-row"><div class="pc-nm">Fusion</div><a class="pc-btn" href="/download/">Get started</a></div>
+      <div class="pc-nm-row"><div class="pc-nm">Fusion</div><span style="font-family:'Space Mono',monospace;font-size:8px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;background:#C9A96E;color:#080706;padding:6px 12px;border-radius:4px;white-space:nowrap">Coming Soon</span></div>
       <div class="pc-hint">up to 5 users</div>
       <div class="price-m">
         <div class="pc-pr"><span class="sym">$</span>24.99</div>
@@ -192,7 +192,7 @@
 
 <footer>
   <div class="ft-top">
-    <div class="ft-brand"><div class="fw">Au</div><p>The AI personal finance app that shows you what every purchase truly costs — in days, not dollars.</p></div>
+    <div class="ft-brand"><div class="fw">Au</div><p>The AI personal finance app that actually knows you. Built for your next decision, not your last one.</p></div>
     <div class="ft-col"><h4>Product</h4><a href="/features/">Features</a><a href="/pricing/">Pricing</a><a href="/">Download</a></div>
     <div class="ft-col"><h4>Company</h4><a href="/about/">About</a><a href="/news/">News</a><a href="/contact/">Contact</a></div>
     <div class="ft-col"><h4>Legal</h4><a href="/privacy/">Privacy Policy</a><a href="/terms/">Terms of Service</a></div>
@@ -215,4 +215,5 @@
 </script>
 </body>
 </html>
+
 
