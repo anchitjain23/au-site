@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shades Of Green · The Au Dispatch</title>
+  <meta name="description" content="Every finance app in existence was built to show you the past. We thought that was insane. So we built something different." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@200;300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background:#080706;color:#EDE8DF;font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden}
+
+    nav{background:#0C0B09;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:42px;position:sticky;top:0;z-index:200}
+    .nav-logo{width:32px;height:32px;border:1px solid rgba(255,255,255,0.28);border-radius:3px;display:flex;align-items:center;justify-content:center;text-decoration:none}
+    .nav-wm{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:300;color:rgba(255,255,255,0.42);letter-spacing:0.08em;line-height:1}
+    .nav-links{display:flex;align-items:center;flex:1;justify-content:space-evenly;padding:0 40px}
+    .nav-links a{font-size:11px;color:rgba(255,255,255,0.42);letter-spacing:0.03em;text-decoration:none}
+    .nav-links a.active{color:rgba(255,255,255,0.78)}
+    .nav-dl{border:1px solid rgba(255,255,255,0.35);color:rgba(255,255,255,0.55);padding:5px 16px;border-radius:3px;font-size:11px;font-weight:300;letter-spacing:0.03em;text-decoration:none}
+
+    .article-header{padding:64px 24px 48px;max-width:740px;margin:0 auto}
+    .article-tag{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C9A96E;opacity:0.7;margin-bottom:20px}
+    .article-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,60px);font-weight:700;line-height:1.0;letter-spacing:-0.03em;color:#EDE8DF;margin-bottom:24px}
+    .article-title em{font-style:italic;color:#C9A96E;font-weight:300}
+    .article-meta{display:flex;align-items:center;gap:20px;border-top:0.5px solid rgba(237,232,223,0.1);border-bottom:0.5px solid rgba(237,232,223,0.1);padding:14px 0}
+    .article-date{font-family:'Space Mono',monospace;font-size:9px;color:rgba(237,232,223,0.28);letter-spacing:0.06em}
+    .article-read{font-family:'Space Mono',monospace;font-size:9px;color:rgba(237,232,223,0.28);letter-spacing:0.06em}
+
+    .article-body{max-width:740px;margin:0 auto;padding:48px 24px 80px}
+    .article-body p{font-size:17px;line-height:1.8;color:rgba(237,232,223,0.82);margin-bottom:28px;font-weight:300}
+    .article-body p:last-child{margin-bottom:0}
+    .article-body strong{color:#EDE8DF;font-weight:500}
+    .article-body em{color:#C9A96E;font-style:italic}
+
+    .article-body .section-break{margin:52px 0 32px;padding-bottom:16px;border-bottom:0.5px solid rgba(237,232,223,0.08)}
+    .article-body .section-label{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:0.22em;text-transform:uppercase;color:#C9A96E;opacity:0.6;margin-bottom:10px}
+    .article-body .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3vw,34px);font-weight:600;line-height:1.1;letter-spacing:-0.02em;color:#EDE8DF}
+
+    .pull-quote{border-left:2px solid #C9A96E;padding:0 0 0 28px;margin:40px 0;font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.4vw,26px);font-weight:300;font-style:italic;color:rgba(237,232,223,0.7);line-height:1.45}
+
+    .verdict{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:0.06em;color:#C9A96E;border-top:0.5px solid rgba(201,169,110,0.2);padding-top:16px;margin-top:8px;margin-bottom:40px}
+
+    .sub{background:#0C0B09;padding:32px 60px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;border-top:1px solid rgba(237,232,223,0.06)}
+    .sub-t{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:rgba(255,255,255,0.7)}
+    .sub-t em{font-style:italic;color:#C9A96E}
+    .sub-f{display:flex;gap:6px}
+    .sub-f input{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:2px;padding:9px 14px;font-size:12px;color:#fff;font-family:'DM Sans',sans-serif;outline:none;min-width:200px}
+    .sub-f input::placeholder{color:rgba(255,255,255,0.25)}
+    .sub-f button{background:#C9A96E;color:#0C0B09;border:none;border-radius:2px;padding:9px 16px;font-size:10px;font-weight:700;cursor:pointer;font-family:'Space Mono',monospace;letter-spacing:0.1em;text-transform:uppercase}
+
+    footer{padding:48px 60px 36px;background:#0C0B09;display:flex;flex-direction:column;gap:28px;border-top:1px solid rgba(255,255,255,0.06)}
+    .ft-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px}
+    .ft-brand .fw{font-family:'Cormorant Garamond',serif;font-size:20px;color:rgba(255,255,255,0.7)}
+    .ft-brand p{font-size:12px;color:rgba(255,255,255,0.25);margin-top:6px;max-width:200px;line-height:1.7}
+    .ft-col{display:flex;flex-direction:column;gap:8px}
+    .ft-col h4{font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:0.16em;color:rgba(255,255,255,0.25);margin-bottom:2px}
+    .ft-col a{font-size:12px;color:rgba(255,255,255,0.35);text-decoration:none}
+    .ft-bot{display:flex;justify-content:space-between;padding-top:24px;border-top:1px solid rgba(255,255,255,0.05);font-size:11px;color:rgba(255,255,255,0.18)}
+
+    @media(max-width:900px){
+      nav{padding:0 24px}
+      .nav-links{padding:0 16px}
+      .article-header{padding:40px 24px 32px}
+      .sub{padding:28px 24px}
+      footer{padding:32px 24px}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo"><span class="nav-wm">Au</span></a>
+  <div class="nav-links">
+    <a href="/">Home</a>
+    <a href="/product/">Features</a>
+    <a href="/pricing/">Pricing</a>
+    <a href="/news/" class="active">News</a>
+    <a href="/contact/">Contact</a>
+    <a href="/legal/">Policy</a>
+  </div>
+  <a href="/download/" class="nav-dl">Download</a>
+</nav>
+
+<div class="article-header">
+  <div class="article-tag">Thinking · July 2026</div>
+  <h1 class="article-title">Shades Of <em>Green</em></h1>
+  <div class="article-meta">
+    <span class="article-date">July 2026</span>
+    <span class="article-read">12 min read</span>
+  </div>
+</div>
+
+<div class="article-body">
+
+  <p>Every finance app in existence was built to show you the past. We thought that was insane. So we built something different.</p>
+
+  <p>This is the honest comparison nobody else will write — what every major app actually does, what it costs, and why Au exists.</p>
+
+  <div class="pull-quote">Every app tells you the score after the game is over. Au tells you what the next move costs you before you make it.</div>
+
+  <!-- MINT -->
+  <div class="section-break">
+    <div class="section-label">Switching from</div>
+    <div class="section-title">Mint</div>
+  </div>
+
+  <p>Mint had 20 years. 22 million users. And in January 2024 they shut it down and redirected every single one of those users to Credit Karma — a credit score tool with banner ads and zero budgeting capability. That was their answer to two decades of trust. Not a better product. Not a migration path. Just a redirect to something completely different.</p>
+
+  <p>The truth is Mint was already dead before they pulled the plug. It tracked your spending, turned categories red when you overspent, and called that financial guidance. It wasn't. It was a guilt machine dressed up as an app. Most users deleted it within a month — not because they stopped caring about money, but because being shown damage after it has already happened is not intelligence. It is a post-mortem. Nobody improves their finances from a post-mortem.</p>
+
+  <p>Au is free. Mint never was either — it was free because the model depended on advertising, not on serving you. Au Oxygen costs nothing and contains no targeted advertising. Au was also built around the insight Mint spent 20 years ignoring: real AI that knows your goals, your spending, your income, and your complete financial picture simultaneously. Real intervention at the moment that actually matters — before you spend, not after. A product philosophy built around one idea Mint never once considered: that the most powerful moment in personal finance is not the review. It is the decision.</p>
+
+  <p>Mint is gone. You deserve what it should have been.</p>
+
+  <div class="verdict">Mint showed you what you spent. Au changes what you spend.</div>
+
+  <!-- YNAB -->
+  <div class="section-break">
+    <div class="section-label">Switching from</div>
+    <div class="section-title">YNAB</div>
+  </div>
+
+  <p>YNAB charges up to $14.99 a month — and then requires you to take courses to use it. They have built an entire education business around the fact that their product is too complicated to use without instruction. That is not depth. That is a confession.</p>
+
+  <p>Give every dollar a job. That is YNAB's entire philosophy — manual, rigid, requiring weekly reconciliation and a complete rewiring of how you think about money. People who stick with it swear by it. Most people quit before the free trial ends and blame themselves. YNAB has spent years convincing those people it was their fault for not trying hard enough.</p>
+
+  <p>There is no AI. There is no wishlist intelligence. There is no concept of what a decision costs you in time. There is no moment where YNAB intercepts a purchase and gives you real information before you make it. It is a budgeting ideology with a subscription fee attached.</p>
+
+  <p>Au Oxygen is free. No subscription. No courses. No methodology to memorise. Atom knows your goals, your spending, your income, and your entire financial picture in real time — and it tells you exactly what every decision costs you in days before you make it. No homework required.</p>
+
+  <div class="verdict">YNAB asks you to change how you think about money. Au just shows you what your money is actually doing.</div>
+
+  <!-- MONARCH -->
+  <div class="section-break">
+    <div class="section-label">Switching from</div>
+    <div class="section-title">Monarch</div>
+  </div>
+
+  <p>Monarch calls itself an AI-powered finance app. In our view, their AI is effectively a chat window sitting on top of data it was already displaying. Ask it about last month and it answers. Ask it what you're about to spend is going to cost you toward your goals and it goes completely silent — because Monarch was never built to operate before a decision. Only after.</p>
+
+  <p>That is not AI. That is search with a friendlier font.</p>
+
+  <p>And for that, they charge up to $14.99 a month.</p>
+
+  <p>There is no wishlist. No Goal Impact Bar. No concept of what a specific decision costs you in time toward the thing you are actually working toward. No moment where Monarch steps in before a purchase and gives you real information that changes what you do next. It knows your past with reasonable accuracy. It has zero opinion about your future.</p>
+
+  <p>That is not financial intelligence. That is a receipt with a subscription attached.</p>
+
+  <p>Au Oxygen is free. And the AI is not a feature added after the fact — it is the entire architecture. Atom runs on your complete financial picture simultaneously: your goals, your spending patterns, your income, your net worth, your wishlist, your upcoming bills — all of it, in real time, every time you ask it anything. When you're standing in a store about to spend $600 on something, Atom tells you exactly what that costs you in days toward your house deposit before you tap pay. Monarch tells you about it next month.</p>
+
+  <p>One of those is financial intelligence. The other is a receipt.</p>
+
+  <div class="verdict">Monarch shows you where your money went. Au changes where it goes next.</div>
+
+  <!-- COPILOT -->
+  <div class="section-break">
+    <div class="section-label">Switching from</div>
+    <div class="section-title">Copilot</div>
+  </div>
+
+  <p>Copilot calls itself intelligent. In our view, it categorises your past spending with accuracy and calls that AI. Knowing what you spent on last Thursday is not intelligence — it is record keeping. Intelligence is knowing what you are about to spend and what it will cost you before you do it. Copilot has never done that. It was never built to.</p>
+
+  <p>Copilot's AI stops at categorisation. It sorts your transactions into tidy buckets, steps aside, and considers its job done. There is no wishlist. No Goal Impact Bar. No concept of what a specific decision costs you in time toward your goals. No moment where Copilot intercepts a purchase and gives you information that changes what you do next. One mode of intelligence, applied entirely to the past, dressed up as something more.</p>
+
+  <p>And at $13 a month — for a single user, Apple devices only, no Android, no household sharing — that is a significant constraint for a product positioning itself as premium.</p>
+
+  <p>Au Oxygen is free. It works on iOS and Android. It covers your entire household. And Atom does not stop at categorisation — it operates at the exact moment you are making a financial decision, with your complete financial picture loaded, telling you not just what something costs in dollars but what it costs you in days toward the things you are actually working toward. The gap between what Copilot does and what Au does is not a feature difference. It is a fundamental product difference.</p>
+
+  <div class="verdict">Copilot is the best finance app of the last decade. Au is the first finance app of the next one.</div>
+
+  <!-- ROCKET MONEY -->
+  <div class="section-break">
+    <div class="section-label">Switching from</div>
+    <div class="section-title">Rocket Money</div>
+  </div>
+
+  <p>Rocket Money built its business on one real insight: people overpay on bills and hate dealing with it. The bill negotiation feature works. We'll give them that.</p>
+
+  <p>But Rocket Money charges a monthly subscription for premium features, and on top of that takes a percentage cut of whatever they save you through bill negotiation. The savings they show you and the savings you actually keep are two different numbers. Read their pricing carefully before you sign up.</p>
+
+  <p>Beyond bill negotiation there is no AI worth naming. No wishlist. No Goal Impact Bar. No goal tracking connected to real decision-making. No concept of what your spending costs you in time toward anything. Rocket Money found one real pain point and built its entire product around it. If that pain point isn't yours, there is almost nothing else there.</p>
+
+  <p>Au includes bill negotiation completely free. No monthly fee for the feature. No cut of your savings. Ever. Atom generates a personalised negotiation script built around your specific provider, your tenure as a customer, and current market rates in your area. Every dollar you save is yours. All of it. And that is one feature inside an app that also has real AI, wishlist intelligence, Scoop, Goal Impact Bar, household finance, and a product philosophy built around the moment before you spend — not just the bills you forgot to cancel.</p>
+
+  <div class="verdict">Rocket Money profits when you save. Au just helps you save.</div>
+
+  <!-- CLEO -->
+  <div class="section-break">
+    <div class="section-label">Switching from</div>
+    <div class="section-title">Cleo</div>
+  </div>
+
+  <p>Cleo is a gimmick. A well-executed one, but a gimmick nonetheless. It roasts you for your spending, sends you memes about your bank balance, and calls that financial intelligence. It isn't. Being told you're broke in a funny voice does not make you less broke. It just makes the experience of being broke more entertaining.</p>
+
+  <p>That is the entire product. A shtick dressed up as an app.</p>
+
+  <p>There is no real AI. No goals. No wishlist. No concept of what a specific decision costs you in time toward anything that actually matters to you. Cleo cannot tell you what that $400 jacket costs you toward your house deposit because Cleo does not know you have a house deposit goal. It does not know your net worth, your upcoming bills, or what any decision costs you in time toward the things you are actually working toward. It knows your last transaction and has a joke ready about it. That is not intelligence.</p>
+
+  <p>Atom is the opposite of everything Cleo is.</p>
+
+  <p>Atom knows what Cleo never bothered to build. Your goals. Your wishlist. Your net worth across every connected account. Your upcoming bills. Your complete spending picture — not just your last transaction, but every pattern across every category since day one. When you ask Atom a question it does not reach for a punchline. It reaches for your actual data and gives you a real answer. What does this purchase cost me toward my Japan trip? What happens to my goals if I take a pay cut? Should I buy this now or wait until next month? Atom answers all of it — in plain language, in real time, connected to your actual life. Cleo cannot. It was never built to.</p>
+
+  <p>Au knows your personality too — not as a joke, as a genuine financial profile. After 30 days Atom builds your Spending Personality — a sharp, accurate read on how you actually relate to money. Your patterns, your blind spots, your strengths. It is designed to be shared because it feels uncomfortably real. Not a roast. Not a meme. An insight that actually means something.</p>
+
+  <p>And when you are ready to stop looking at your finances and start changing them, Dream Path shows you exactly how to get there. A concrete, personalised roadmap built around your actual goals — what to do, in what order, by when — so that your house deposit, your holiday, your emergency fund are not wishes on a list but milestones on a schedule. Cleo has never built anything like it because Cleo was never serious about your goals to begin with.</p>
+
+  <p>Cleo makes being bad with money feel fun. Atom makes being good with money feel effortless.</p>
+
+  <div class="verdict">Cleo is a punchline. Atom is the answer.</div>
+
+  <!-- CLOSING -->
+  <div class="section-break">
+    <div class="section-label">The bottom line</div>
+    <div class="section-title">Still comparing?</div>
+  </div>
+
+  <p>Every app on this page does something. Some do it well. But not one of them operates at the moment that actually matters. Not one of them connects a purchase to a goal and shows you what it costs you in time before you make it. Not one of them has Atom.</p>
+
+  <p>You can keep comparing. Or you can just try the product that made every other app on this page look like what it is — a very expensive way to look at last month.</p>
+
+</div>
+
+<div class="sub">
+  <div class="sub-t">The <em>Au</em> Dispatch — stay informed.</div>
+  <div class="sub-f">
+    <input type="email" placeholder="your@email.com" />
+    <button>Subscribe</button>
+  </div>
+</div>
+
+<footer>
+  <div class="ft-top">
+    <div class="ft-brand"><div class="fw">Au</div><p>The AI personal finance app — days, not dollars.</p></div>
+    <div class="ft-col"><h4>Product</h4><a href="/product/">Features</a><a href="/pricing/">Pricing</a></div>
+    <div class="ft-col"><h4>Company</h4><a href="/about/">About</a><a href="/news/">News</a><a href="/contact/">Contact</a></div>
+    <div class="ft-col"><h4>Legal</h4><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div>
+  </div>
+  <div class="ft-bot"><span>© 2026 Aurum Technologies Inc.</span><span>au79.app</span></div>
+</footer>
+
+</body>
+</html>
