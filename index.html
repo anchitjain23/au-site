@@ -138,10 +138,10 @@
     /* sticky phone */
     .phone-col { position: sticky; top: 0; height: 100vh; display: flex; align-items: center; justify-content: center; border-left: 1px solid var(--border); padding: 0 0 0 40px; }
     .phone-stage { position: relative; }
-    .phone-aura { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 300px; height: 300px; border-radius: 50%; pointer-events: none; transition: background .8s ease; }
-    .phone-shell { width: 240px; height: 490px; background: #09080A; border-radius: 40px; border: 1px solid rgba(201,169,110,0.22); position: relative; overflow: hidden; box-shadow: 16px 20px 60px rgba(0,0,0,0.15), -4px -4px 0 rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.04); }
-    .phone-notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 76px; height: 22px; background: #09080A; border-radius: 0 0 14px 14px; z-index: 20; }
-    .screen-wrap { position: absolute; inset: 0; }
+    .phone-aura { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 361px; height: 361px; border-radius: 50%; pointer-events: none; transition: background .8s ease; }
+    .phone-shell { width: 329px; height: 665px; background: linear-gradient(165deg,#3a3a3e 0%,#111113 45%,#050505 100%); border-radius: 59px; border: 1px solid rgba(255,255,255,0.10); position: relative; padding: 15px; box-shadow: 20px 26px 70px rgba(0,0,0,0.22), -4px -4px 0 rgba(0,0,0,0.04), inset 0 1px 1px rgba(255,255,255,0.10), inset 0 -2px 6px rgba(0,0,0,0.55); }
+    .phone-notch { display: none; }
+    .screen-wrap { position: absolute; top: 15px; left: 15px; right: 15px; bottom: 15px; border-radius: 44px; overflow: hidden; background: #050505; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.6); }
     .pscreen { position: absolute; inset: 0; padding: 28px 12px 12px; opacity: 0; transform: translateY(8px); transition: opacity .5s ease, transform .5s ease; pointer-events: none; }
     .pscreen.active { opacity: 1; transform: translateY(0); pointer-events: auto; }
     .pdots { position: absolute; right: -24px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 8px; }
@@ -453,61 +453,19 @@
         <div class="phone-notch"></div>
         <div class="screen-wrap">
 
-          <!-- Screen 0: Atom Chat -->
-          <div class="pscreen active" id="ps0">
-            <div class="s-ahdr">
-              <div class="s-aico">⚛</div>
-              <div><div class="s-anm">Atom</div><div class="s-ast">Online</div></div>
-            </div>
-            <div class="s-msgs">
-              <div class="s-mu">Should I buy this $1,200 laptop?</div>
-              <div class="s-ma">Emergency fund at <span class="ag">60%</span> with <span class="ag">$340</span> in bills due next week. Buying now pushes Japan back <span class="ag">5 weeks.</span> Wait for bonus — drops to <span class="ag">2 weeks.</span></div>
-              <div class="s-mu">Cancel Netflix + Spotify?</div>
-              <div class="s-ma">Saves <span class="ag">$28/mo.</span> Japan moves <span class="ag">11 days closer.</span> House deposit forward <span class="ag">3 weeks</span> over the year.</div>
-            </div>
-            <div class="s-ainp">
-              <div class="s-abar">Ask Atom anything...</div>
-              <div class="s-abtn">→</div>
-            </div>
+          <!-- Screen 0: Atom Chat (real screenshot) -->
+          <div class="pscreen active" id="ps0" style="padding:0">
+            <img src="/img/screens-atomchat.png" alt="Au Atom chat screen" style="display:block;width:100%;height:100%;object-fit:contain;object-position:top center;background:#050505">
           </div>
 
-          <!-- Screen 1: Goals -->
-          <div class="pscreen" id="ps1">
-            <div class="s-hdr"><span class="s-logo">Au</span><span class="s-date">Goals</span></div>
-            <div class="s-gm"><div class="s-gt"><span class="s-gnm">House Deposit</span><span class="s-gpct">62%</span></div><div class="s-bt"><div class="s-bf" style="width:62%"></div></div><div class="s-gbot"><span class="s-gsm">$31k of $50k</span><span class="s-gsm">Oct 2027</span></div></div>
-            <div class="s-gm"><div class="s-gt"><span class="s-gnm">Bali Holiday</span><span class="s-gpct">38%</span></div><div class="s-bt"><div class="s-bf" style="width:38%"></div></div><div class="s-gbot"><span class="s-gsm">$1,520 of $4k</span><span class="s-gsm">Nov 2026</span></div></div>
-            <div class="s-gm"><div class="s-gt"><span class="s-gnm">Emergency Fund</span><span class="s-gpct">81%</span></div><div class="s-bt"><div class="s-bf" style="width:81%"></div></div><div class="s-gbot"><span class="s-gsm">$8,100 of $10k</span><span class="s-gsm">Aug 2026</span></div></div>
-            <div class="s-slbl">Monthly Allocation</div>
-            <div class="s-wc">
-              <div class="s-chips">
-                <div class="s-ch s-chw">Available $720</div>
-                <div class="s-ch s-chg">Allocated $640</div>
-                <div class="s-ch s-chgr">Unallocated $80</div>
-              </div>
-            </div>
-            <div class="s-note">Cut takeout $200/mo → House Deposit moves to <strong>Aug 2027.</strong></div>
+          <!-- Screen 1: Goals (real screenshot) -->
+          <div class="pscreen" id="ps1" style="padding:0">
+            <img src="/img/screens-goals-real.png" alt="Au Goals screen" style="display:block;width:100%;height:100%;object-fit:contain;object-position:top center;background:#F5F0E8">
           </div>
 
-          <!-- Screen 2: Shopping Assistant -->
-          <div class="pscreen" id="ps2">
-            <div class="s-hdr"><span class="s-logo">Au</span><span class="s-date">Shop</span></div>
-            <div class="s-wi">
-              <div class="s-wir">
-                <div><div class="s-winm">Sony WH-1000XM5</div><div class="s-wict">Electronics · Original</div></div>
-                <div class="s-stk"><div class="s-stkg"><div class="sp">$349</div><div class="sl">Afford</div></div><div class="s-stkb"><div class="sd">+8 days</div><div class="si">Impact</div></div></div>
-              </div>
-              <div class="s-wbl">House Deposit</div>
-              <div class="s-wbt"><div class="s-wbf" style="width:62%"></div></div>
-              <div class="s-wdr"><span class="s-wdn">Now: Oct 2027</span><span class="s-wda">If bought: Oct 28</span></div>
-            </div>
-            <div class="s-dp">✦ Scoop · 4.7★ · 12,000 reviews</div>
-            <div class="s-wi" style="margin-top:6px">
-              <div class="s-wir">
-                <div><div class="s-winm">BaByliss Air Style 1000</div><div class="s-wict">Scoop · Amazon</div></div>
-                <div class="s-stk"><div class="s-stkg"><div class="sp">$89</div><div class="sl">Afford</div></div><div class="s-stkb"><div class="sd">+3 days</div><div class="si">Impact</div></div></div>
-              </div>
-            </div>
-            <div class="s-note">Save <strong>$260</strong> → gain <strong>5 days</strong> toward House Deposit.</div>
+          <!-- Screen 2: Shopping Assistant (real screenshot) -->
+          <div class="pscreen" id="ps2" style="padding:0">
+            <img src="/img/screens-shop.png" alt="Au Shop screen" style="display:block;width:100%;height:100%;object-fit:contain;object-position:top center;background:#050505">
           </div>
 
         </div>
