@@ -713,30 +713,7 @@
   updateMobileScreens();
 
 
-  // Mobile screen switcher — show screen matching current panel in view
-  function initMobileScreens() {
-    if (window.innerWidth > 900) return;
-    ['1','2','3'].forEach(function(idx) {
-      var panels = document.querySelectorAll('.story' + idx + ' .panel');
-      var screens = document.querySelectorAll('#screens-' + idx + ' .pscreen');
-      if (!panels.length || !screens.length) return;
-      // Show first screen by default
-      screens[0].classList.add('active');
-      function update() {
-        var best = 0;
-        panels.forEach(function(p, i) {
-          if (p.getBoundingClientRect().top <= window.innerHeight * 0.5) best = i;
-        });
-        screens.forEach(function(s, i) {
-          s.classList.toggle('active', i === best);
-        });
-      }
-      window.addEventListener('scroll', update, {passive:true});
-      update();
-    });
-  }
-  initMobileScreens();
-  window.addEventListener('resize', initMobileScreens);
+  
 
 </script>
 <script>
@@ -749,5 +726,69 @@
     o.classList.toggle('open');
     document.body.style.overflow = m.classList.contains('open') ? 'hidden' : '';
   }</script>
+<script>
+  // Mobile: inject each screen inline after its panel
+  function setupMobileInline() {
+    if (window.innerWidth > 900) return;
+
+    // Features page — 3 stories
+    ['1','2','3'].forEach(function(idx) {
+      var panels = document.querySelectorAll('.story' + idx + ' .panel');
+      var screensWrap = document.getElementById('screens-' + idx);
+      if (!panels.length || !screensWrap) return;
+
+      panels.forEach(function(panel, i) {
+        var screen = screensWrap.querySelector('.pscreen:nth-child(' + (i+1) + ')');
+        if (!screen) return;
+        // Create a mobile screen container after this panel
+        var existing = panel.nextElementSibling;
+        if (existing && existing.classList.contains('mobile-screen-inline')) return;
+        var wrap = document.createElement('div');
+        wrap.className = 'mobile-screen-inline';
+        wrap.style.cssText = 'margin:0 20px 40px;background:#09080A;border-radius:20px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.2);padding:16px';
+        var clone = screen.cloneNode(true);
+        clone.style.cssText = 'opacity:1;transform:none;position:relative;display:block;padding:0';
+        wrap.appendChild(clone);
+        panel.parentNode.insertBefore(wrap, panel.nextSibling);
+      });
+    });
+
+    // Home page — single story
+    var homePanels = document.querySelectorAll('#story .panel');
+    var homeScreens = document.getElementById('screens');
+    if (homePanels.length && homeScreens) {
+      homePanels.forEach(function(panel, i) {
+        var screen = homeScreens.querySelector('.pscreen:nth-child(' + (i+1) + ')');
+        if (!screen) return;
+        var existing = panel.nextElementSibling;
+        if (existing && existing.classList.contains('mobile-screen-inline')) return;
+        var wrap = document.createElement('div');
+        wrap.className = 'mobile-screen-inline';
+        wrap.style.cssText = 'margin:0 20px 40px;background:#09080A;border-radius:20px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.2);padding:16px';
+        var clone = screen.cloneNode(true);
+        clone.style.cssText = 'opacity:1;transform:none;position:relative;display:block;padding:0';
+        wrap.appendChild(clone);
+        panel.parentNode.insertBefore(wrap, panel.nextSibling);
+      });
+    }
+
+    // Hide the original phone columns on mobile
+    document.querySelectorAll('.phone-col').forEach(function(col) {
+      col.style.display = 'none';
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupMobileInline);
+  } else {
+    setupMobileInline();
+  }
+  window.addEventListener('resize', function() {
+    // Reset on resize
+    document.querySelectorAll('.mobile-screen-inline').forEach(function(el) { el.remove(); });
+    document.querySelectorAll('.phone-col').forEach(function(col) { col.style.display = ''; });
+    setupMobileInline();
+  });
+</script>
 </body>
 </html>
