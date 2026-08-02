@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: sans-serif; background: #F3F0E7; }
+
+.story { display: grid; grid-template-columns: 1fr 360px; }
+.panel { padding: 60px 40px; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+.phone-col { position: sticky; top: 0; height: 100vh; display: flex; align-items: center; justify-content: center; background: #eee; }
+.pscreen { display: none; background: #09080A; border-radius: 16px; padding: 20px; color: white; width: 260px; }
+.pscreen.active { display: block; }
+
+h2 { font-size: 32px; margin-bottom: 16px; }
+p { font-size: 14px; color: #666; line-height: 1.7; }
+
+@media (max-width: 700px) {
+  .story { display: block; }
+  .phone-col { display: none; }
+  .mobile-insert { display: block; background: #09080A; border-radius: 20px; margin: 0 20px 40px; padding: 20px; color: white; }
+}
+</style>
+</head>
+<body>
+
+<div class="story" id="story">
+  <div class="panels">
+    <div class="panel" data-screen="0">
+      <h2>Panel 1 — Atom AI</h2>
+      <p>Your AI that knows your entire financial life. Ask it anything, anywhere.</p>
+    </div>
+    <div class="panel" data-screen="1">
+      <h2>Panel 2 — Insights</h2>
+      <p>Already watching before you even ask. Spots patterns you'd never catch.</p>
+    </div>
+    <div class="panel" data-screen="2">
+      <h2>Panel 3 — Playground</h2>
+      <p>Build your own financial tools. One sentence, Atom does the rest.</p>
+    </div>
+  </div>
+  <div class="phone-col">
+    <div id="screens">
+      <div class="pscreen active" id="s0">
+        <div style="font-size:11px;color:#C9A96E;margin-bottom:8px">⚛ Atom · Online</div>
+        <div style="background:#C9A96E;color:#080706;padding:8px 12px;border-radius:8px;font-size:12px;margin-bottom:8px">Should I buy the Dyson Airwrap?</div>
+        <div style="background:#1C1A18;padding:8px 12px;border-radius:8px;font-size:11px;color:#eee;line-height:1.5">Your Bali holiday is 4 months away. The Airwrap pushes it back <span style="color:#C9A96E">11 days</span>. Timing isn't ideal.</div>
+      </div>
+      <div class="pscreen" id="s1">
+        <div style="font-size:13px;font-weight:600;color:#F2EDE3;margin-bottom:12px">Insights · 3 new</div>
+        <div style="background:#1C1A18;padding:10px;border-radius:8px;margin-bottom:6px;font-size:11px;color:#aaa">You've spent <span style="color:#C9A96E">$340</span> on dining — <span style="color:#C9A96E">9 days</span> further from Bali.</div>
+        <div style="background:#1C1A18;padding:10px;border-radius:8px;margin-bottom:6px;font-size:11px;color:#aaa">3 unused subscriptions · <span style="color:#C9A96E">$47/mo</span></div>
+        <div style="background:#1C1A18;padding:10px;border-radius:8px;font-size:11px;color:#5BA85A">Groceries on track ✓</div>
+      </div>
+      <div class="pscreen" id="s2">
+        <div style="font-size:13px;font-weight:600;color:#F2EDE3;margin-bottom:12px">Playground</div>
+        <div style="background:#1C1A18;padding:10px;border-radius:8px;margin-bottom:6px;font-size:11px;color:#C9A96E">⚡ Friday Review · pinned</div>
+        <div style="background:#1C1A18;padding:10px;border-radius:8px;margin-bottom:6px;font-size:11px;color:#C9A96E">⚡ Payday Allocator · pinned</div>
+        <div style="background:#1C1A18;padding:10px;border-radius:8px;font-size:11px;color:#aaa">👁 Coffee Watch · watching</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Desktop: sticky phone switches on scroll
+var panels = document.querySelectorAll('.panel');
+var screens = [document.getElementById('s0'), document.getElementById('s1'), document.getElementById('s2')];
+var obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) {
+      var i = parseInt(e.target.dataset.screen);
+      screens.forEach(function(s,j){ s.classList.toggle('active', j===i); });
+    }
+  });
+}, { threshold: 0.5 });
+panels.forEach(function(p){ obs.observe(p); });
+
+// Mobile: inject screen after each panel
+function setupMobile() {
+  if (window.innerWidth > 700) return;
+  // Remove any previously inserted mobile screens
+  document.querySelectorAll('.mobile-insert').forEach(function(el){ el.remove(); });
+  panels.forEach(function(panel, i) {
+    if (!screens[i]) return;
+    var div = document.createElement('div');
+    div.className = 'mobile-insert';
+    div.innerHTML = screens[i].innerHTML;
+    panel.insertAdjacentElement('afterend', div);
+  });
+}
+window.addEventListener('DOMContentLoaded', setupMobile);
+window.addEventListener('resize', setupMobile);
+setupMobile();
+</script>
+</body>
+</html>
