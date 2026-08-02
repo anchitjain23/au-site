@@ -865,6 +865,41 @@
   
   
 
+
+  function setupHomeMobileInterleave() {
+    if (window.innerWidth > 900) return;
+
+    var panels = document.querySelectorAll('.panel');
+    var screens = document.querySelectorAll('#screens .pscreen');
+    var phoneCol = document.querySelector('.phone-col');
+    if (!panels.length || !screens.length || !phoneCol) return;
+
+    phoneCol.style.display = 'none';
+
+    panels.forEach(function(panel, i) {
+      if (!screens[i]) return;
+
+      var screenClone = screens[i].cloneNode(true);
+      screenClone.style.opacity = '1';
+      screenClone.style.display = 'block';
+      screenClone.style.position = 'relative';
+      screenClone.style.transform = 'none';
+      screenClone.style.pointerEvents = 'auto';
+
+      var wrapper = document.createElement('div');
+      wrapper.style.cssText = 'background:#09080A;border-radius:24px;overflow:hidden;margin:0 20px 48px;box-shadow:0 8px 40px rgba(0,0,0,0.2);padding:16px;border-bottom:1px solid rgba(201,169,110,0.1)';
+      wrapper.appendChild(screenClone);
+
+      panel.parentNode.insertBefore(wrapper, panel.nextSibling);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupHomeMobileInterleave);
+  } else {
+    setupHomeMobileInterleave();
+  }
+
 </script>
 <script>
   function toggleMenu() {
