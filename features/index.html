@@ -183,88 +183,99 @@
 
     @media(max-width:900px){
       /* Nav */
-      nav{padding:0 20px}
+      nav{padding:0 16px}
       .nav-links{display:none}
-
-      .nav-hamburger { display: flex !important; }
-      .mobile-menu { display: flex !important; }
+      .nav-hamburger{display:flex !important}
+      .mobile-menu{display:flex !important}
 
       /* Page hero */
       .page-hero{padding:40px 20px 32px}
-      .page-hero-inner h1{font-size:clamp(36px,10vw,52px)}
+      .page-hero-inner h1{font-size:clamp(32px,9vw,48px)}
+      .lead{font-size:13px}
 
       /* Story head */
-      .story-head{padding:40px 20px 32px}
-      .story-head .section-title{font-size:clamp(24px,7vw,36px)}
+      .story-head{padding:40px 20px 28px;text-align:left}
+      .story-head .section-title{font-size:clamp(22px,7vw,32px)}
 
-      /* Story layout — stack vertically */
-      .story{grid-template-columns:1fr;padding:0}
+      /* Story — full width vertical stack */
+      .story{display:block;padding:0}
       .story.rev{direction:ltr}
-      .story.rev .panels{padding-left:0;direction:ltr}
-      .story.rev .phone-col{direction:ltr;border-right:none;padding:0}
+      .story.rev .panels{direction:ltr;padding-left:0}
 
-      /* Panels */
-      .panel{padding:36px 20px 0;min-height:auto;border-bottom:none}
-      .panel-title{font-size:clamp(26px,7vw,36px)}
-      .panel-body{font-size:13px}
+      /* Panels — copy first, full width */
+      .panels{display:block}
+      .panel{
+        padding:36px 20px 24px;
+        min-height:auto;
+        border-bottom:none;
+        display:block
+      }
+      .panel-eye{margin-bottom:14px}
+      .panel-title{font-size:clamp(24px,7vw,34px);margin-bottom:14px}
+      .panel-body{font-size:13.5px;line-height:1.75}
+      .panel-ex{margin-top:16px;font-size:12px}
 
-      /* Phone column — show inline on mobile */
+      /* Phone col — full width screen below copy, no bezel */
       .phone-col{
         position:relative;
         top:auto;
         height:auto;
-        border-left:none;
-        border-right:none;
-        padding:24px 20px 40px;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        border-bottom:1px solid rgba(0,0,0,0.08)
+        border:none;
+        padding:0 20px 48px;
+        display:block;
+        border-bottom:1px solid rgba(0,0,0,0.07)
       }
-      .phone-shell{width:200px;height:408px;border-radius:34px}
-      .phone-aura{width:240px;height:240px}
+      .phone-stage{width:100%;display:block}
+      .phone-shell{
+        width:100%;
+        height:auto;
+        min-height:420px;
+        border-radius:24px;
+        border:none;
+        box-shadow:0 8px 40px rgba(0,0,0,0.18);
+        background:#09080A;
+        overflow:hidden;
+        position:relative
+      }
+      .phone-notch{display:none}
+      .phone-aura{display:none}
       .pdots{display:none}
-      .phone-stage{display:flex;flex-direction:column;align-items:center}
-      /* On mobile: show first screen in each phone by default */
-      .pscreen{opacity:0;transform:none;pointer-events:none}
-      .pscreen.active{opacity:1;pointer-events:auto}
-      /* Show all screens stacked per panel - handled by JS below */
+      .screen-wrap{position:relative;inset:auto;padding:16px}
+      .pscreen{
+        position:relative;
+        opacity:0;
+        transform:none;
+        padding:12px;
+        display:none
+      }
+      .pscreen.active{
+        opacity:1;
+        display:block
+      }
 
       /* Feature grid */
-      .feat-grid{grid-template-columns:1fr}
+      .feat-grid{grid-template-columns:1fr;border-radius:0;border-left:none;border-right:none}
       .fc{padding:24px 20px}
+      .fc-nm{font-size:16px}
 
       /* Dream Big */
-      .dream-section{padding:56px 20px}
-      .dream-cards{grid-template-columns:1fr}
-      .dream-copy h2{font-size:clamp(24px,7vw,36px)}
-      .dream-copy{text-align:center;margin-bottom:40px}
+      .dream-section{padding:48px 20px}
+      .dream-copy{text-align:center;margin-bottom:36px}
+      .dream-copy h2{font-size:clamp(22px,7vw,32px)}
+      .dream-cards{grid-template-columns:1fr;gap:12px}
+      .dream-cta a{padding:12px 24px;font-size:12px}
 
       /* Pricing CTA */
-      .pricing-cta{padding:56px 20px}
-      .pricing-cta h2{font-size:clamp(28px,8vw,42px)}
-      .cta-btns{flex-direction:column;align-items:stretch;gap:12px}
-      .btn-primary,.btn-secondary{text-align:center;padding:14px 20px}
+      .pricing-cta{padding:48px 20px}
+      .pricing-cta h2{font-size:clamp(24px,7vw,36px)}
+      .cta-btns{flex-direction:column;gap:10px}
+      .btn-primary,.btn-secondary{text-align:center;padding:13px 20px}
 
       /* Footer */
       footer{padding:40px 20px 28px}
       .ft-top{flex-direction:column}
+      .ft-bot{flex-direction:column;gap:6px}
     }
-  
-    /* Hamburger menu */
-    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
-    .nav-hamburger span { display: block; width: 22px; height: 2px; background: rgba(255,255,255,0.6); border-radius: 2px; transition: all 0.3s; }
-    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
-    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-    .mobile-menu { display: none; position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background: #0C0B09; border-left: 1px solid rgba(255,255,255,0.08); z-index: 999; padding: 80px 32px 40px; flex-direction: column; gap: 8px; transition: right 0.3s ease; }
-    .mobile-menu.open { right: 0; }
-    .mobile-menu a { font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; color: rgba(255,255,255,0.6); text-decoration: none; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06); letter-spacing: -0.01em; transition: color 0.2s; }
-    .mobile-menu a:hover { color: #C9A96E; }
-    .mobile-menu a:last-child { border-bottom: none; }
-    .mobile-menu-dl { background: #C9A96E; color: #080706 !important; padding: 14px 24px !important; border-radius: 8px; text-align: center; margin-top: 16px; font-weight: 600 !important; border-bottom: none !important; }
-    .mobile-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 998; }
-    .mobile-overlay.open { display: block; }
   </style>
 </head>
 <body>
@@ -700,6 +711,32 @@
   window.addEventListener('scroll', updateMobileScreens, {passive: true});
   window.addEventListener('resize', updateMobileScreens);
   updateMobileScreens();
+
+
+  // Mobile screen switcher — show screen matching current panel in view
+  function initMobileScreens() {
+    if (window.innerWidth > 900) return;
+    ['1','2','3'].forEach(function(idx) {
+      var panels = document.querySelectorAll('.story' + idx + ' .panel');
+      var screens = document.querySelectorAll('#screens-' + idx + ' .pscreen');
+      if (!panels.length || !screens.length) return;
+      // Show first screen by default
+      screens[0].classList.add('active');
+      function update() {
+        var best = 0;
+        panels.forEach(function(p, i) {
+          if (p.getBoundingClientRect().top <= window.innerHeight * 0.5) best = i;
+        });
+        screens.forEach(function(s, i) {
+          s.classList.toggle('active', i === best);
+        });
+      }
+      window.addEventListener('scroll', update, {passive:true});
+      update();
+    });
+  }
+  initMobileScreens();
+  window.addEventListener('resize', initMobileScreens);
 
 </script>
 <script>
