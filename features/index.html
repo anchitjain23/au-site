@@ -690,30 +690,52 @@
     'radial-gradient(ellipse, rgba(91,168,90,0.07) 0%, transparent 65%)'
   ]);
 
-  // Mobile: show screen matching the most recently scrolled-past panel
-  function updateMobileScreens() {
-    if (window.innerWidth > 900) return;
-    ['1','2','3'].forEach(function(idx) {
-      var panels = document.querySelectorAll('.story' + idx + ' .panel');
-      var screens = document.querySelectorAll('#screens-' + idx + ' .pscreen');
-      var dots = document.querySelectorAll('#pdots-' + idx + ' .pdot');
-      if (!panels.length || !screens.length) return;
-      var best = 0;
-      panels.forEach(function(p, i) {
-        var rect = p.getBoundingClientRect();
-        if (rect.top <= window.innerHeight * 0.6) best = i;
-      });
-      screens.forEach(function(s, i) {
-        s.classList.toggle('active', i === best);
-      });
-    });
-  }
-  window.addEventListener('scroll', updateMobileScreens, {passive: true});
-  window.addEventListener('resize', updateMobileScreens);
+  
   updateMobileScreens();
 
 
   
+
+
+  function setupMobileInterleave() {
+    if (window.innerWidth > 900) return;
+
+    ['1','2','3'].forEach(function(storyIdx) {
+      var panels = document.querySelectorAll('.story' + storyIdx + ' .panel');
+      var screens = document.querySelectorAll('#screens-' + storyIdx + ' .pscreen');
+      var phoneCol = document.querySelector('.story' + storyIdx + ' .phone-col');
+      if (!panels.length || !screens.length || !phoneCol) return;
+
+      // Hide the original phone col
+      phoneCol.style.display = 'none';
+
+      panels.forEach(function(panel, i) {
+        if (!screens[i]) return;
+
+        // Clone the screen content
+        var screenClone = screens[i].cloneNode(true);
+        screenClone.style.opacity = '1';
+        screenClone.style.display = 'block';
+        screenClone.style.position = 'relative';
+        screenClone.style.transform = 'none';
+        screenClone.style.pointerEvents = 'auto';
+
+        // Wrap in a phone shell (no bezel)
+        var wrapper = document.createElement('div');
+        wrapper.style.cssText = 'background:#09080A;border-radius:24px;overflow:hidden;margin:0 20px 48px;box-shadow:0 8px 40px rgba(0,0,0,0.2);padding:16px;border-bottom:1px solid rgba(201,169,110,0.1)';
+        wrapper.appendChild(screenClone);
+
+        // Insert after the panel
+        panel.parentNode.insertBefore(wrapper, panel.nextSibling);
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupMobileInterleave);
+  } else {
+    setupMobileInterleave();
+  }
 
 </script>
 <script>
