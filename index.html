@@ -370,6 +370,9 @@
     .mobile-menu-dl { background: #C9A96E; color: #080706 !important; padding: 14px 24px !important; border-radius: 8px; text-align: center; margin-top: 16px; font-weight: 600 !important; border-bottom: none !important; }
     .mobile-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 998; }
     .mobile-overlay.open { display: block; }
+  
+      .mobile-panel-screen{display:none}
+      @media (max-width: 900px){.mobile-panel-screen{display:block;width:calc(100% - 40px);margin:0 20px 40px;border-radius:20px;box-shadow:0 8px 32px rgba(0,0,0,0.15)}}
   </style>
 <!-- cache-bust-2026-08-02T19:52:03.870563 --></head>
 <body>
@@ -476,6 +479,7 @@
       <p class="panel-body rv d2">Woven into every screen. Ready the second you need it.</p>
       <div class="panel-ex rv d3"><strong>Example:</strong> "Should I buy this $1,200 laptop?" → "Buying now pushes Japan back <strong>5 weeks.</strong> Wait for your bonus and it drops to <strong>2 weeks.</strong>"</div>
     </div>
+    <img src="/img/screens-atomchat.png" class="mobile-panel-screen" alt="Au screen" />
 
     <div class="panel" data-screen="1">
       <p class="panel-eye rv">02 — Insights Engine</p>
@@ -484,6 +488,7 @@
       <p class="panel-body rv d2">Not generic warnings — specific, goal-linked intelligence that tells you exactly what a habit is costing you in time.</p>
       <div class="panel-ex rv d3"><strong>Example:</strong> "14 Uber rides this month — $180 above usual. Cutting back moves your Japan holiday <strong>12 days closer.</strong>"</div>
     </div>
+    <img src="/img/screens-goals-real.png" class="mobile-panel-screen" alt="Au screen" />
 
     <div class="panel" data-screen="2">
       <p class="panel-eye rv">03 — Atom Playground</p>
@@ -492,6 +497,7 @@
       <p class="panel-body rv d2">Tell Atom what you want to build in plain language. It handles everything else.</p>
       <div class="panel-ex rv d3"><strong>Example:</strong> "Every Friday, show me this week's spend and how it moved my goals." Atom builds it, saves it, runs it with one tap — forever.</div>
     </div>
+    <img src="/img/screens-shop.png" class="mobile-panel-screen" alt="Au screen" />
 
     <div class="panel" data-screen="3">
       <p class="panel-eye rv">04 — Shopping Assistant</p>
