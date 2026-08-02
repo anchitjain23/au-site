@@ -706,36 +706,26 @@
       var phoneCol = document.querySelector('.story' + storyIdx + ' .phone-col');
       if (!panels.length || !screens.length || !phoneCol) return;
 
-      // Hide the original phone col
-      phoneCol.style.display = 'none';
+      phoneCol.style.cssText = 'display:none!important';
 
       panels.forEach(function(panel, i) {
         if (!screens[i]) return;
 
-        // Clone the screen content
         var screenClone = screens[i].cloneNode(true);
-        screenClone.style.opacity = '1';
-        screenClone.style.display = 'block';
-        screenClone.style.position = 'relative';
-        screenClone.style.transform = 'none';
-        screenClone.style.pointerEvents = 'auto';
+        // Remove pscreen class so CSS display:none doesnt apply
+        screenClone.className = 'mobile-screen-insert';
+        screenClone.style.cssText = 'display:block!important;opacity:1!important;position:relative!important;transform:none!important;pointer-events:auto!important;padding:12px';
 
-        // Wrap in a phone shell (no bezel)
         var wrapper = document.createElement('div');
-        wrapper.style.cssText = 'background:#09080A;border-radius:24px;overflow:hidden;margin:0 20px 48px;box-shadow:0 8px 40px rgba(0,0,0,0.2);padding:16px;border-bottom:1px solid rgba(201,169,110,0.1)';
+        wrapper.style.cssText = 'background:#09080A;border-radius:24px;overflow:hidden;margin:0 20px 40px;box-shadow:0 8px 32px rgba(0,0,0,0.22)';
         wrapper.appendChild(screenClone);
 
-        // Insert after the panel
         panel.parentNode.insertBefore(wrapper, panel.nextSibling);
       });
     });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setupMobileInterleave);
-  } else {
-    setupMobileInterleave();
-  }
+  document.addEventListener('DOMContentLoaded', setupMobileInterleave);
 
 </script>
 <script>
