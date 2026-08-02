@@ -265,6 +265,9 @@
       nav { padding: 0 16px; }
       .nav-links { display: none; }
 
+      .nav-hamburger { display: flex; }
+      .mobile-menu { display: flex; }
+
       /* Hero */
       .hero-inner { padding: 40px 20px 48px; flex-direction: column; gap: 32px; }
       .hero-h1 .r { font-size: clamp(32px, 9vw, 52px); }
@@ -337,6 +340,21 @@
     .ticker-inner.flipped .ti-fact.gold { color: rgba(255,255,255,0.28); }
     .ticker-inner.flipped .ti-fact.dim { color: #C9A96E; }
     .ticker-track.flipped .ti-dim { color:#C9A96E; }
+  
+    /* Hamburger menu */
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: rgba(255,255,255,0.6); border-radius: 2px; transition: all 0.3s; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background: #0C0B09; border-left: 1px solid rgba(255,255,255,0.08); z-index: 999; padding: 80px 32px 40px; flex-direction: column; gap: 8px; transition: right 0.3s ease; }
+    .mobile-menu.open { right: 0; }
+    .mobile-menu a { font-family: 'DM Sans', sans-serif; font-size: 18px; font-weight: 500; color: rgba(255,255,255,0.6); text-decoration: none; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06); letter-spacing: -0.01em; transition: color 0.2s; }
+    .mobile-menu a:hover { color: #C9A96E; }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu-dl { background: #C9A96E; color: #080706 !important; padding: 14px 24px !important; border-radius: 8px; text-align: center; margin-top: 16px; font-weight: 600 !important; border-bottom: none !important; }
+    .mobile-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 998; }
+    .mobile-overlay.open { display: block; }
   </style>
 <!-- cache-bust --></head>
 <body>
@@ -355,6 +373,19 @@
     <a href="/legal/">Policy</a></div>
   <a href="/download/" class="nav-dl">Download</a>
 </nav>
+<button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="mobile-overlay" id="overlay" onclick="toggleMenu()"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/">Home</a>
+    <a href="/features/">Features</a>
+    <a href="/pricing/">Pricing</a>
+    <a href="/news/">News</a>
+    <a href="/contact/">Contact</a>
+    <a href="/legal/">Policy</a>
+    <a href="/download/" class="mobile-menu-dl">Download Au</a>
+  </div>
 
 <!-- BANNER -->
 <div class="banner">
@@ -836,6 +867,16 @@
   updateHomeMobileScreen();
 
 </script>
+<script>
+  function toggleMenu() {
+    var h = document.getElementById('hamburger');
+    var m = document.getElementById('mobileMenu');
+    var o = document.getElementById('overlay');
+    h.classList.toggle('open');
+    m.classList.toggle('open');
+    o.classList.toggle('open');
+    document.body.style.overflow = m.classList.contains('open') ? 'hidden' : '';
+  }</script>
 </body>
 </html>
 
