@@ -264,71 +264,86 @@
       /* Nav */
       nav { padding: 0 16px; }
       .nav-links { display: none; }
-
       .nav-hamburger { display: flex !important; }
       .mobile-menu { display: flex !important; }
 
       /* Hero */
-      .hero-inner { padding: 40px 20px 48px; flex-direction: column; gap: 32px; }
-      .hero-h1 .r { font-size: clamp(32px, 9vw, 52px); }
-      .hero-h1 .ri { font-size: clamp(34px, 9.5vw, 56px); }
-      .hero-h1 .rd { font-size: clamp(22px, 6vw, 36px); }
-      .hero-sub { font-size: 13px; }
-      .hero-ctas { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .hero { padding: 0; }
+      .hero-inner { padding: 40px 20px 48px; flex-direction: column; gap: 0; }
+      .hero-left { width: 100%; }
+      .hero-h1 .r { font-size: clamp(28px, 8vw, 44px); }
+      .hero-h1 .ri { font-size: clamp(30px, 8.5vw, 46px); }
+      .hero-h1 .rd { font-size: clamp(20px, 5.5vw, 30px); }
+      .hero-sub { font-size: 13px; max-width: 100%; }
+      .hero-ctas { flex-wrap: wrap; gap: 10px; }
       .hero-right { display: none; }
+      .btn-dl { padding: 12px 20px; font-size: 12px; }
+      .btn-wl { padding: 10px 16px; font-size: 12px; }
 
       /* Bridge band */
-      .stats { display: block; padding: 28px 20px; text-align: center; }
+      .stats { display: block !important; padding: 28px 20px; text-align: center; }
 
-      /* Story */
-      #story { grid-template-columns: 1fr; padding: 0; }
-      .panels { padding: 0; }
-      .panel { padding: 36px 20px 0; min-height: auto; border-bottom: none; }
-      .panel-title { font-size: clamp(26px, 7vw, 36px); }
-      .panel-body { font-size: 13px; }
+      /* Story — vertical stack, copy then screen */
+      #story { display: block; padding: 0; }
+      .panels { display: block; }
+      .panel { padding: 36px 20px 24px; min-height: auto; border-bottom: none; }
+      .panel-title { font-size: clamp(22px, 7vw, 32px); }
+      .panel-body { font-size: 13.5px; }
 
-      /* Phone col — show inline */
+      /* Phone col — full width, no bezel */
       .phone-col {
         position: relative;
         top: auto;
         height: auto;
-        border-left: none;
-        padding: 24px 20px 40px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border-bottom: 1px solid rgba(0,0,0,0.08);
+        border: none;
+        padding: 0 20px 48px;
+        display: block;
+        border-bottom: 1px solid rgba(0,0,0,0.07);
       }
-      .phone-shell { width: 200px; height: 408px; border-radius: 34px; }
-      .phone-aura { width: 220px; height: 220px; }
+      .phone-stage { width: 100%; display: block; }
+      .phone-shell {
+        width: 100%;
+        height: auto;
+        min-height: 380px;
+        border-radius: 24px;
+        border: none;
+        box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+        background: #09080A;
+        overflow: hidden;
+        position: relative;
+      }
+      .phone-notch { display: none; }
+      .phone-aura { display: none; }
       .pdots { display: none; }
-      .phone-stage { display: flex; flex-direction: column; align-items: center; }
-      .pscreen { opacity: 0; transform: none; pointer-events: none; }
-      .pscreen.active { opacity: 1; pointer-events: auto; }
+      .screen-wrap { position: relative; inset: auto; padding: 16px; }
+      .pscreen { position: relative; opacity: 0; transform: none; padding: 12px; display: none; }
+      .pscreen.active { opacity: 1; display: block; }
 
       /* Features */
-      #features { padding: 48px 0; }
-      .feat-band { padding: 48px 20px 32px; }
-      .feat-grid { grid-template-columns: 1fr; border-radius: 0; }
-      .fc { padding: 24px 20px; }
+      #features { padding: 0; }
+      .feat-band { padding: 40px 20px 24px; }
+      .feat-ttl { font-size: clamp(24px, 7vw, 34px); }
+      .feat-grid { grid-template-columns: 1fr; border-radius: 0; border-left: none; border-right: none; }
+      .fc { padding: 22px 20px; }
 
       /* Dream Big */
-      .dream-section { padding: 56px 20px; }
-      .dream-copy h2 { font-size: clamp(22px, 7vw, 34px); }
+      .dream-section { padding: 48px 20px; }
+      .dream-copy h2 { font-size: clamp(20px, 6vw, 30px); }
       .dream-cards { grid-template-columns: 1fr; }
 
       /* Pricing */
       #pricing { padding: 48px 20px; }
-      .pr-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+      .pr-grid { grid-template-columns: 1fr; max-width: 100%; }
 
       /* CTA */
-      #cta { padding: 56px 20px; }
-      .cta-ttl { font-size: clamp(28px, 8vw, 42px); }
-      .cta-btns { flex-direction: column; align-items: stretch; gap: 12px; }
+      #cta { padding: 48px 20px; }
+      .cta-ttl { font-size: clamp(24px, 7vw, 36px); }
+      .cta-btns { flex-direction: column; gap: 10px; }
 
       /* Footer */
       footer { padding: 40px 20px 28px; }
       .ft-top { flex-direction: column; }
+      .ft-bot { flex-direction: column; gap: 6px; }
     }
   
     .ticker-wrap { background: #0C0B09; border-bottom: 1px solid rgba(201,169,110,0.12); height: 50px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
@@ -847,24 +862,27 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.rv').forEach(el => rvObs.observe(el));
 
-  // Mobile: update phone screen based on scroll position
-  function updateHomeMobileScreen() {
+  
+  function initHomeMobile() {
     if (window.innerWidth > 900) return;
     var panels = document.querySelectorAll('.panel');
     var screens = document.querySelectorAll('#screens .pscreen');
     if (!panels.length || !screens.length) return;
-    var best = 0;
-    panels.forEach(function(p, i) {
-      var rect = p.getBoundingClientRect();
-      if (rect.top <= window.innerHeight * 0.6) best = i;
-    });
-    screens.forEach(function(s, i) {
-      s.classList.toggle('active', i === best);
-    });
+    screens[0].classList.add('active');
+    function update() {
+      var best = 0;
+      panels.forEach(function(p, i) {
+        if (p.getBoundingClientRect().top <= window.innerHeight * 0.5) best = i;
+      });
+      screens.forEach(function(s, i) {
+        s.classList.toggle('active', i === best);
+      });
+    }
+    window.addEventListener('scroll', update, {passive:true});
+    update();
   }
-  window.addEventListener('scroll', updateHomeMobileScreen, {passive: true});
-  window.addEventListener('resize', updateHomeMobileScreen);
-  updateHomeMobileScreen();
+  initHomeMobile();
+  window.addEventListener('resize', initHomeMobile);
 
 </script>
 <script>
