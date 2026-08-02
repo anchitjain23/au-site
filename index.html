@@ -261,17 +261,71 @@
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
-      #story { grid-template-columns: 1fr; padding: 0 24px; }
-      .phone-col { display: none; }
-      .panel { padding: 60px 0; min-height: auto; }
-      .feat-grid { grid-template-columns: 1fr; }
-      .pr-grid { grid-template-columns: 1fr; max-width: 380px; }
-      nav { padding: 0 20px; }
-      .nav-links { padding: 0 16px; }
-      #features, #pricing, #cta { padding: 72px 24px; }
-      footer { padding: 48px 24px 32px; }
+      /* Nav */
+      nav { padding: 0 16px; }
+      .nav-links { display: none; }
+
+      /* Hero */
+      .hero-inner { padding: 40px 20px 48px; flex-direction: column; gap: 32px; }
+      .hero-h1 .r { font-size: clamp(32px, 9vw, 52px); }
+      .hero-h1 .ri { font-size: clamp(34px, 9.5vw, 56px); }
+      .hero-h1 .rd { font-size: clamp(22px, 6vw, 36px); }
+      .hero-sub { font-size: 13px; }
+      .hero-ctas { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .hero-right { display: none; }
+
+      /* Bridge band */
+      .stats { display: block; padding: 28px 20px; text-align: center; }
+
+      /* Story */
+      #story { grid-template-columns: 1fr; padding: 0; }
+      .panels { padding: 0; }
+      .panel { padding: 36px 20px 0; min-height: auto; border-bottom: none; }
+      .panel-title { font-size: clamp(26px, 7vw, 36px); }
+      .panel-body { font-size: 13px; }
+
+      /* Phone col — show inline */
+      .phone-col {
+        position: relative;
+        top: auto;
+        height: auto;
+        border-left: none;
+        padding: 24px 20px 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-bottom: 1px solid rgba(0,0,0,0.08);
+      }
+      .phone-shell { width: 200px; height: 408px; border-radius: 34px; }
+      .phone-aura { width: 220px; height: 220px; }
+      .pdots { display: none; }
+      .phone-stage { display: flex; flex-direction: column; align-items: center; }
+      .pscreen { opacity: 0; transform: none; pointer-events: none; }
+      .pscreen.active { opacity: 1; pointer-events: auto; }
+
+      /* Features */
+      #features { padding: 48px 0; }
+      .feat-band { padding: 48px 20px 32px; }
+      .feat-grid { grid-template-columns: 1fr; border-radius: 0; }
+      .fc { padding: 24px 20px; }
+
+      /* Dream Big */
+      .dream-section { padding: 56px 20px; }
+      .dream-copy h2 { font-size: clamp(22px, 7vw, 34px); }
+      .dream-cards { grid-template-columns: 1fr; }
+
+      /* Pricing */
+      #pricing { padding: 48px 20px; }
+      .pr-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+
+      /* CTA */
+      #cta { padding: 56px 20px; }
+      .cta-ttl { font-size: clamp(28px, 8vw, 42px); }
+      .cta-btns { flex-direction: column; align-items: stretch; gap: 12px; }
+
+      /* Footer */
+      footer { padding: 40px 20px 28px; }
       .ft-top { flex-direction: column; }
-      .stats { grid-template-columns: repeat(2,1fr); }
     }
   
     .ticker-wrap { background: #0C0B09; border-bottom: 1px solid rgba(201,169,110,0.12); height: 50px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
@@ -761,6 +815,26 @@
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); rvObs.unobserve(e.target); } });
   }, { threshold: 0.1 });
   document.querySelectorAll('.rv').forEach(el => rvObs.observe(el));
+
+  // Mobile: update phone screen based on scroll position
+  function updateHomeMobileScreen() {
+    if (window.innerWidth > 900) return;
+    var panels = document.querySelectorAll('.panel');
+    var screens = document.querySelectorAll('#screens .pscreen');
+    if (!panels.length || !screens.length) return;
+    var best = 0;
+    panels.forEach(function(p, i) {
+      var rect = p.getBoundingClientRect();
+      if (rect.top <= window.innerHeight * 0.6) best = i;
+    });
+    screens.forEach(function(s, i) {
+      s.classList.toggle('active', i === best);
+    });
+  }
+  window.addEventListener('scroll', updateHomeMobileScreen, {passive: true});
+  window.addEventListener('resize', updateHomeMobileScreen);
+  updateHomeMobileScreen();
+
 </script>
 </body>
 </html>
