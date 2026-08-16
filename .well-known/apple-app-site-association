@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "928Q3QAF74.com.aurum.au79app",
+        "paths": [
+          "/auth/callback*",
+          "/auth/reset-password*",
+          "/together/accept*"
+        ]
+      }
+    ]
+  }
+}
