@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reset password — Au</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Space+Mono:wght@400;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #080706;
+    color: #F3F0E7;
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  .card { max-width: 420px; width: 100%; text-align: center; }
+  .icon {
+    width: 64px; height: 64px; margin: 0 auto 28px;
+    border-radius: 50%;
+    background: rgba(201,169,110,0.1);
+    border: 1px solid rgba(201,169,110,0.4);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .icon svg { width: 26px; height: 26px; }
+  .eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: #C9A96E; margin-bottom: 16px;
+  }
+  h1 { font-size: 26px; font-weight: 500; line-height: 1.35; margin-bottom: 14px; color: #F3F0E7; }
+  p { font-size: 15px; line-height: 1.6; color: rgba(237,232,223,0.72); margin-bottom: 32px; }
+  .btn {
+    display: inline-block; background: #C9A96E; color: #080706;
+    font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 15px;
+    text-decoration: none; padding: 14px 32px; border-radius: 8px;
+    transition: opacity 0.15s ease;
+  }
+  .btn:hover { opacity: 0.9; }
+  .wordmark {
+    margin-top: 48px; font-family: 'Space Mono', monospace;
+    font-size: 12px; letter-spacing: 0.15em; color: rgba(237,232,223,0.4);
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#C9A96E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="11" width="16" height="9" rx="2"/>
+        <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+      </svg>
+    </div>
+    <div class="eyebrow">Password Reset</div>
+    <h1>Almost done!</h1>
+    <p>Continue in the Au app to set your new password.</p>
+    <a class="btn" href="https://apps.apple.com/app/id6789685540">Open Au</a>
+    <div class="wordmark">Au · 79</div>
+  </div>
+</body>
+</html>
