@@ -68,6 +68,16 @@
     transition: opacity 0.15s ease;
   }
   .btn:hover { opacity: 0.9; }
+  .fallback {
+    display: block;
+    margin-top: 18px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: rgba(237,232,223,0.55);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .fallback:hover { color: rgba(237,232,223,0.8); }
   .wordmark {
     margin-top: 48px;
     font-family: 'Space Mono', monospace;
@@ -87,7 +97,8 @@
     <div class="eyebrow">Email Verified</div>
     <h1>Your email is verified!</h1>
     <p>Open the Au app to continue.</p>
-    <a class="btn" href="https://apps.apple.com/app/id6789685540">Open Au</a>
+    <a class="btn" href="au://auth/callback">Open Au</a>
+    <a class="fallback" href="https://apps.apple.com/app/id6789685540">Don't have the app? Get it here</a>
     <div class="wordmark">Au · 79</div>
   </div>
 </body>
