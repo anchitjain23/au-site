@@ -40,6 +40,16 @@
     transition: opacity 0.15s ease;
   }
   .btn:hover { opacity: 0.9; }
+  .fallback {
+    display: block;
+    margin-top: 18px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: rgba(237,232,223,0.55);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .fallback:hover { color: rgba(237,232,223,0.8); }
   .wordmark {
     margin-top: 48px; font-family: 'Space Mono', monospace;
     font-size: 12px; letter-spacing: 0.15em; color: rgba(237,232,223,0.4);
@@ -59,7 +69,8 @@
     <div class="eyebrow">Household Invite</div>
     <h1>You've been invited!</h1>
     <p>Open the Au app to accept your household invitation.</p>
-    <a class="btn" href="https://apps.apple.com/app/id6789685540">Open Au</a>
+    <a class="btn" href="au://together/accept">Open Au</a>
+    <a class="fallback" href="https://apps.apple.com/app/id6789685540">Don't have the app? Get it here</a>
     <div class="wordmark">Au · 79</div>
   </div>
 </body>
