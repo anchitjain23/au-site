@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Delete Your Account · Au</title>
+<meta name="description" content="How to permanently delete your Au account and all associated data.">
+<link rel="icon" href="/au-logo-gold.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A96E;
+    --bg: #0C0B09;
+    --bg-deep: #080706;
+    --card: #131110;
+    --cream: #F3F0E7;
+    --text: rgba(237,232,223,0.72);
+    --muted: rgba(237,232,223,0.45);
+    --line: rgba(237,232,223,0.1);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; scroll-padding-top: env(safe-area-inset-top, 0px); }
+  body {
+    background: var(--bg-deep);
+    color: var(--text);
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1.75;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  a { color: var(--gold); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
+
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: var(--bg);
+    padding-top: env(safe-area-inset-top, 0px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: 1160px; margin: 0 auto; height: 42px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 24px;
+  }
+  .nav-logo img { height: 20px; display: block; }
+  .nav-dl {
+    font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 600;
+    background: var(--gold); color: #0C0B09;
+    padding: 6px 14px; border-radius: 999px;
+  }
+  .nav-dl:hover { text-decoration: none; opacity: 0.9; }
+
+  main { max-width: 680px; margin: 0 auto; padding: 88px 24px 120px; }
+  .eyebrow {
+    display: flex; align-items: center; gap: 10px;
+    font-family: 'Space Mono', monospace; font-size: 9px;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .eyebrow::before { content: ''; width: 16px; height: 1px; background: var(--gold); }
+  h1 {
+    font-size: clamp(38px, 7vw, 56px); font-weight: 600; color: var(--cream);
+    letter-spacing: -0.03em; line-height: 1.05; margin-bottom: 24px;
+  }
+  .lede { font-size: 19px; color: var(--cream); opacity: 0.85; margin-bottom: 64px; }
+  h2 {
+    font-size: 22px; font-weight: 600; color: var(--cream);
+    letter-spacing: -0.01em; margin-bottom: 20px;
+  }
+  section { margin-bottom: 56px; }
+  p + p { margin-top: 16px; }
+
+  ol.steps { list-style: none; counter-reset: step; margin-bottom: 24px; }
+  ol.steps li {
+    counter-increment: step;
+    display: flex; align-items: baseline; gap: 18px;
+    padding: 16px 0; border-top: 1px solid var(--line);
+    color: var(--cream);
+  }
+  ol.steps li:last-child { border-bottom: 1px solid var(--line); }
+  ol.steps li::before {
+    content: counter(step);
+    font-family: 'Space Mono', monospace; font-size: 13px; color: var(--gold);
+    min-width: 16px;
+  }
+  code {
+    font-family: 'Space Mono', monospace; font-size: 14px;
+    color: var(--gold); background: rgba(201,169,110,0.1);
+    padding: 2px 8px; border-radius: 4px;
+  }
+
+  .warning {
+    background: var(--card); border-left: 2px solid var(--gold);
+    padding: 20px 24px; border-radius: 0 10px 10px 0;
+    color: var(--cream);
+  }
+  .note { margin-top: 20px; font-weight: 500; color: var(--cream); }
+
+  .contact {
+    background: var(--card); border-radius: 14px; padding: 32px;
+    border: 1px solid var(--line);
+  }
+  .contact h2 { margin-bottom: 12px; }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 32px 24px; text-align: center;
+    font-size: 13px; color: var(--muted);
+  }
+  footer a { color: var(--muted); margin: 0 10px; }
+  footer a:hover { color: var(--gold); }
+  footer p { margin-top: 12px; }
+
+  @media (max-width: 600px) {
+    main { padding: 56px 20px 88px; }
+    .lede { margin-bottom: 48px; }
+    .contact { padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="/" aria-label="Au home"><img src="/au-logo-gold.svg" alt="Au"></a>
+    <a class="nav-dl" href="/download/">Download</a>
+  </div>
+</nav>
+
+<main>
+  <div class="eyebrow">Account</div>
+  <h1>Delete Your Account</h1>
+  <p class="lede">You can permanently delete your Au account and all associated data at any time.</p>
+
+  <section>
+    <h2>How to delete your account</h2>
+    <ol class="steps">
+      <li>Open the Au app and go to Profile</li>
+      <li>Select Delete Account</li>
+      <li><span>Confirm by typing <code>DELETE</code></span></li>
+    </ol>
+    <p class="warning">Your account will be permanently deleted immediately — there is no waiting period, and this action cannot be undone.</p>
+  </section>
+
+  <section>
+    <h2>What gets deleted</h2>
+    <p>When you delete your account, we permanently erase your profile, financial goals, transactions (bank-synced and manually entered), budgets, wishlist items, AI chat history and insights, spending categorization rules, generated financial reports, notification settings, and all authentication records. We also revoke access to any linked bank connections through Plaid.</p>
+    <p class="note">No account data is retained after deletion.</p>
+  </section>
+
+  <section class="contact">
+    <h2>Questions about account deletion?</h2>
+    <p>Contact us at <a href="mailto:au@au79.app">au@au79.app</a> and we'll assist you.</p>
+    <p>Don't have the app installed? Email us from the address on your account and we'll delete it for you.</p>
+  </section>
+</main>
+
+<footer>
+  <a href="/">Home</a>
+  <a href="/legal.html">Privacy &amp; Terms</a>
+  <a href="/contact/">Contact</a>
+  <p>© 2026 Aurum Technologies Inc.</p>
+</footer>
+
+</body>
+</html>
