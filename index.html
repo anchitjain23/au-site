@@ -625,10 +625,6 @@
 
 <!-- PRICING -->
 <section id="pricing">
-  <div class="billing-toggle">
-    <button class="billing-btn on" onclick="setBilling('monthly')">Monthly</button>
-    <button class="billing-btn" onclick="setBilling('annual')">Annual</button>
-  </div>
   <div class="pr-grid">
     <div class="pc rv">
       <p class="pc-tier">Free</p>
@@ -646,7 +642,6 @@
         <li><span class="ck">✓</span>5 Scoops/month</li>
         <li><span class="ck">✓</span>Spending Personality</li>
         <li><span class="ck">✓</span>Dream Big</li>
-        <li><span class="ck">✓</span>Ads</li>
       </ul>
     </div>
     <div class="pc feat rv d1">
@@ -655,14 +650,9 @@
       <div class="pc-nm">Atomic</div>
       <div class="pc-hint">1–2 users · unlimited everything</div>
       <div class="price-m">
-        <div class="pc-pr"><span class="sym">$</span>11.99</div>
-        <div class="pc-per">per month <span style="font-size:10px;color:rgba(255,255,255,0.25)">(~6.79 CAD)</span></div>
+        <div class="pc-pr"><span class="sym">$</span>12.99</div>
+        <div class="pc-per">per month <span style="font-size:10px;color:rgba(255,255,255,0.25)">(~$18.19 CAD)</span></div>
         <div class="pc-ann">&nbsp;</div>
-      </div>
-      <div class="price-a">
-        <div class="pc-pr"><span class="sym">$</span>9.99</div>
-        <div class="pc-per">per month, billed annually <span style="font-size:10px;color:rgba(255,255,255,0.25)">(~3.99 CAD)</span></div>
-        <div class="pc-ann">$119.88/yr — 2 months free</div>
       </div>
       <div class="pc-div"></div>
       <ul class="pc-fs">
@@ -679,25 +669,16 @@
         <li><span class="ck">✓</span>Mood Spending Detection</li>
         <li><span class="ck">✓</span>Spending Personality</li>
         <li><span class="ck">✓</span>Dream Big</li>
-        <li><span class="ck">✓</span>No Ads</li>
       </ul>
     </div>
     <div class="pc rv d2">
       <p class="pc-tier">Household</p>
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:3px">
-        <div class="pc-nm">Fusion</div>
-        <span style="font-family:'Space Mono',monospace;font-size:8px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;background:#C9A96E;color:#080706;padding:5px 10px;border-radius:4px">Coming Soon</span>
-      </div>
+      <div class="pc-nm">Fusion</div>
       <div class="pc-hint">up to 5 users</div>
       <div class="price-m">
-        <div class="pc-pr"><span class="sym">$</span>24.99</div>
-        <div class="pc-per">per month <span style="font-size:10px;color:rgba(255,255,255,0.25)">(~4.99 CAD)</span></div>
+        <div class="pc-pr"><span class="sym">$</span>25.99</div>
+        <div class="pc-per">per month <span style="font-size:10px;color:rgba(255,255,255,0.25)">(~$36.39 CAD)</span></div>
         <div class="pc-ann">&nbsp;</div>
-      </div>
-      <div class="price-a">
-        <div class="pc-pr"><span class="sym">$</span>19.99</div>
-        <div class="pc-per">per month, billed annually <span style="font-size:10px;color:rgba(255,255,255,0.25)">(~7.99 CAD)</span></div>
-        <div class="pc-ann">$239.88/yr — 3 months free</div>
       </div>
       <div class="pc-div"></div>
       <ul class="pc-fs">
@@ -758,12 +739,6 @@
     d.className = 'ctab' + (s==='Au'?' au-c': near.includes(s)?' nb-c':'');
     cb.appendChild(d);
   });
-
-  function setBilling(mode){
-    document.querySelectorAll('.billing-btn').forEach(function(b,i){b.classList.toggle('on',(mode==='monthly'&&i===0)||(mode==='annual'&&i===1));});
-    document.querySelectorAll('.price-m').forEach(function(el){el.style.display=mode==='monthly'?'block':'none';});
-    document.querySelectorAll('.price-a').forEach(function(el){el.style.display=mode==='annual'?'block':'none';});
-  }
 
   // Scroll story phone switching
   const panels = document.querySelectorAll('.panel');
