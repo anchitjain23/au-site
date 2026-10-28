@@ -63,6 +63,23 @@ footer{padding:52px 40px 36px;background:var(--black);border-top:1px solid rgba(
 .ft-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.05);font-size:11px;color:rgba(255,255,255,0.16)}
 @media(max-width:700px){nav{padding:0 20px}.nav-links{display:none}.ph{padding:36px 20px 32px}.ph-h1{font-size:32px}.wrap{padding:36px 20px 60px;grid-template-columns:1fr}.toc{display:none}footer{padding:36px 20px 28px}.ft-top{flex-direction:column}}
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4703711436574821');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4703711436574821&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 <nav>
@@ -281,6 +298,17 @@ var obs = new IntersectionObserver(function(entries){
   });
 },{rootMargin:'-20% 0px -70% 0px'});
 secs.forEach(function(s){obs.observe(s)});
+</script>
+<!-- Meta Pixel: app download clicks -->
+<script>
+document.addEventListener('click', function (e) {
+  var link = e.target.closest('a');
+  if (!link || typeof fbq !== 'function') return;
+  var href = link.href || '';
+  if (href.indexOf('apps.apple.com') !== -1 || href.indexOf('play.google.com') !== -1) {
+    fbq('track', 'Lead', {content_name: 'App Download Click'});
+  }
+});
 </script>
 </body>
 </html>

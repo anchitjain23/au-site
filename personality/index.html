@@ -72,6 +72,23 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .fade-up{animation:fadeUp 0.45s cubic-bezier(0.4,0,0.2,1) both}
 .a0{animation-delay:0s}.a1{animation-delay:0.08s}.a2{animation-delay:0.16s}.a3{animation-delay:0.24s}.a4{animation-delay:0.32s}.a5{animation-delay:0.40s}
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4703711436574821');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4703711436574821&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 <div class="container">
@@ -127,6 +144,17 @@ function shareTwitter(){const text='My spending personality: "'+window._rType+'"
 function shareLinkedIn(){window.open('https://www.linkedin.com/sharing/share-offsite/?url='+encodeURIComponent('https://au79.app/personality'),'_blank');}
 function copyLink(){navigator.clipboard.writeText('https://au79.app/personality').then(()=>{const btn=event.target.closest('.share-btn');const orig=btn.innerHTML;btn.innerHTML='Copied!';setTimeout(()=>{btn.innerHTML=orig;},2000);});}
 function retake(){currentQ=0;answers=[];document.getElementById('screen-result').classList.remove('active');document.getElementById('screen-intro').style.display='';window.scrollTo({top:0,behavior:'smooth'});}
+</script>
+<!-- Meta Pixel: app download clicks -->
+<script>
+document.addEventListener('click', function (e) {
+  var link = e.target.closest('a');
+  if (!link || typeof fbq !== 'function') return;
+  var href = link.href || '';
+  if (href.indexOf('apps.apple.com') !== -1 || href.indexOf('play.google.com') !== -1) {
+    fbq('track', 'Lead', {content_name: 'App Download Click'});
+  }
+});
 </script>
 </body>
 </html>
